@@ -83,7 +83,7 @@
 -(void)closeBtnAction:(UIButton *)btn {
     if (buttons.count == 1) {
         [buttons removeObjectAtIndex:buttons.count - 1];
-    }else{
+    }else if(buttons.count>0){
         [buttons removeObjectAtIndex:buttons.count-2];
     }
     self.phoneTextField.text = [buttons componentsJoinedByString:@""];

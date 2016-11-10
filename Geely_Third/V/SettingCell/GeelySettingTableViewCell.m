@@ -89,6 +89,13 @@
         case 8:
             self.titleLabel.text =@"平衡衰减";
             break;
+        case 9:
+            self.titleLabel.text =@"视频浏览";
+            break;
+        case 10:
+            self.titleLabel.text =@"图片浏览";
+            break;
+            
         default:
             break;
     }
