@@ -43,6 +43,14 @@
         [weakself setupSubViews];
     }];
     //
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeMediaPlayer) name:@"closeMediaPlayer" object:nil];
+    //
+}
+- (void)closeMediaPlayer{
+    [mplayerView.player pause];
+    [mplayerView.playerLayer removeFromSuperlayer];
+    [mplayerView.player.currentItem cancelPendingSeeks];
+    [mplayerView.player.currentItem.asset cancelLoading];
 }
 -(UIView *)geelyTopAnimateView{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(82, 0, 819,57)];

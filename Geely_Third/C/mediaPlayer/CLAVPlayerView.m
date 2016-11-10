@@ -271,6 +271,8 @@
     [self.playerLayer removeFromSuperlayer];
     [self.player.currentItem cancelPendingSeeks];
     [self.player.currentItem.asset cancelLoading];
+    [self.player replaceCurrentItemWithPlayerItem:nil];
+    
     self.player=nil;
     self.playerLayer=nil;
     self.playerItem=nil;

@@ -169,6 +169,7 @@
 
 #pragma mark GeelyLeftContainsDelegate
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeMediaPlayer" object:nil];
     if (indexPath.row == 4) {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }else {
@@ -207,6 +208,7 @@
 }
 
 -(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeMediaPlayer" object:nil];
     if (indexPath.row == 1) {
         GeelyMusicAViewController *mm = [[GeelyMusicAViewController alloc] init];
         [self.navigationController pushViewController:mm animated:NO];
