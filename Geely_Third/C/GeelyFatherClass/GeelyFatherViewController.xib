@@ -30,22 +30,16 @@
                         <constraint firstAttribute="width" constant="1310" id="SUR-Nf-dEV"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-V4-lec">
+                <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-V4-lec">
                     <rect key="frame" x="619" y="820" width="128" height="87"/>
-                    <connections>
-                        <action selector="homeBtn:" destination="-1" eventType="touchUpInside" id="lfd-Lj-jho"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asz-K2-nAa">
                     <rect key="frame" x="799" y="846" width="46" height="42"/>
-                    <connections>
-                        <action selector="vlumeAdd:" destination="-1" eventType="touchUpInside" id="WcN-qD-awV"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-Uf-7Kd">
                     <rect key="frame" x="515" y="846" width="46" height="42"/>
                     <connections>
-                        <action selector="volumeLess:" destination="-1" eventType="touchUpInside" id="yHP-Mv-58O"/>
+                        <action selector="less:" destination="-1" eventType="touchUpInside" id="bqx-ht-LnF"/>
                     </connections>
                 </button>
             </subviews>

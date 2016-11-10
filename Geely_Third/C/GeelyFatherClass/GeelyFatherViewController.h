@@ -10,6 +10,11 @@
 
 #import "UIImageView+LevelAnimation.h"
 #import "UIView+LevelAnimation.h"
+#import "GeelyFatherViewController+PopAnimation.h"
+#import "GeelyDisplayPowerView.h"
+#import "GeelyPowerDisplayView.h"
+#import "GeelyScreenView.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 typedef void(^TopViewAnimationSuccessful)();
 
@@ -20,7 +25,11 @@ typedef void(^TopViewAnimationSuccessful)();
 
 @end
 
-@interface GeelyFatherViewController : GeelyPublicViewController <GeelyFatherViewDatasource,UIScrollViewDelegate>
+@interface GeelyFatherViewController : GeelyPublicViewController <GeelyFatherViewDatasource,UIScrollViewDelegate,GeelyDisplayPowerViewDelegate>{
+    MainRequest *mainRequest;
+    MPMusicPlayerController *vvlioce;
+    CGFloat volume;
+}
 @property (nonatomic, strong) UIImageView *contentImageView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UIScrollView *contentScrollView;

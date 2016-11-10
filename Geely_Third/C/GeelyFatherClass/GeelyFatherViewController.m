@@ -15,12 +15,14 @@
 #import "GeelyCallAViewController.h"
 #import "GeelyMusicAViewController.h"
 
+
 @interface GeelyFatherViewController () <GeelyLeftContainsDelegate> {
     GelelyLeftContainsView *leftView;
     UIView *scrollViewContent;
     GeelyLittleShowView *leftFrameScroll;
     UIView *topView;
     NSIndexPath *indexPathLast;
+    GeelyScreenView *screenView;
 }
 
 @end
@@ -30,6 +32,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    vvlioce = [[MPMusicPlayerController alloc] init];
+    volume = vvlioce.volume;
+    
+    mainRequest = [[MainRequest alloc] init];
+    mainRequest.requestVolume = [[Volume alloc] init];
+    mainRequest.requestVoice = [[Voice alloc] init];
+    mainRequest.requestPhone = [[Phone alloc] init];
+    mainRequest.requestMusic = [[Music alloc] init];
+    mainRequest.requestRadio = [[Radio alloc] init];
+    mainRequest.requestMute = [[Mute alloc] init];
+
+    
+//    UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
+//    button_volume_.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:button_volume_];
+//    [button_volume_ addTarget:self action:@selector(volumeLes) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIButton *button_vo = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+280, button_volume_.frame.origin.y, 60, 60)];
+//    button_vo.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:button_vo];
+//    
+//    UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
+//    home.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:home];
+//    [home addTarget:self action:@selector(btnAction1:) forControlEvents:UIControlEventTouchUpInside];
+//    
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     imageView.userInteractionEnabled = YES;
     imageView.image = [UIImage imageNamed:@"0930-IPAD-底图V2"];
@@ -91,8 +119,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)btnAction1:(UIButton *)btn {
+    NSLog(@"1");
+}
+
 - (IBAction)homeBtn:(id)sender {
     NSLog(@"首页");
+    GeelyDisplayPowerView *cc = [[GeelyDisplayPowerView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    cc.delegate = self;
+    [cc showAnimation];
+}
+- (IBAction)home:(id)sender {
+    NSLog(@"首页");
+    GeelyDisplayPowerView *cc = [[GeelyDisplayPowerView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    cc.delegate = self;
+    [cc showAnimation];
 }
 - (IBAction)vlumeAdd:(id)sender {
     NSLog(@"音量加");
@@ -100,6 +142,10 @@
 - (IBAction)volumeLess:(id)sender {
     NSLog(@"音量减");
 }
+- (IBAction)less:(id)sender {
+}
+
+
 
 #pragma mark GeelyLeftContainsDelegate
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +157,7 @@
             [scrollViewContent geelyContentViewFrameAnimation:^{
                 leftFrameScroll.frame = CGRectMake(82, 0, 340, 492-57);
                 leftFrameScroll.show = YES;
-                
+                self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
                 leftFrameScroll.contentScrollView.frame = CGRectMake(0, 0, 340, 435);
                 topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
             } successful:^{

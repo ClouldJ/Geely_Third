@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GeelyPublicHeader.h"
 #import "ZXPAutoLayout.h"
-
-@interface GeelyPublicViewController : UIViewController
+#import "GeelyDisplayPowerView.h"
+#import "GeelyPowerDisplayView.h"
+#import "GeelyScreenView.h"
+@interface GeelyPublicViewController : UIViewController<GeelyDisplayPowerViewDelegate>
 
 @end
