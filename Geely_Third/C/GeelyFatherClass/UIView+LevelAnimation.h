@@ -13,6 +13,8 @@ typedef void (^AnimationCompletedBlock)();
 @property (nonatomic, assign) AnimationBlock block;
 -(void)geelyContentViewFrameAnimation:(AnimationBlock)block successful:(AnimationCompletedBlock)success;
 
+-(void)geelyContentViewDismiss:(AnimationBlock)running successful:(AnimationCompletedBlock)compelete;
+
 -(void)resumeGeelyContentViewFrame;
 
 -(void)geelyAirborneViewAnimation:(AnimationBlock)block;

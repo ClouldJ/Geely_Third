@@ -23,6 +23,16 @@
     
 }
 
+-(void)geelyContentViewDismiss:(AnimationBlock)running successful:(AnimationCompletedBlock)compelete {
+    CGRect frameOld = self.frame;
+    [UIView animateWithDuration:.5f animations:^{
+        self.frame = CGRectMake(frameOld.origin.x-340, frameOld.origin.y, frameOld.size.width, frameOld.size.height);
+        running();
+    } completion:^(BOOL finished) {
+        compelete();
+    }];
+}
+
 -(void)resumeGeelyContentViewFrame {
     CGRect frameOld = self.frame;
     
