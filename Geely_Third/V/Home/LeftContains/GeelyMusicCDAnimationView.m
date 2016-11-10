@@ -20,6 +20,7 @@
     CGFloat repeatCount_;
     CGFloat duration_;
     BOOL stop;
+    AVAudioPlayer *acPlayer;
 }
 
 @property(nonatomic, strong) dispatch_source_t timer;
@@ -108,11 +109,17 @@
     if (![SingleModel sharedInstance].isMusic) {
         [SingleModel sharedInstance].isMusic = YES;
         [self showAnimation];
+        
+        GeelyMusicAudioManager *manager = [GeelyMusicAudioManager defaultManager];
+        acPlayer = [manager playMusic:@"Zki & Dobre-Listen To The Talk"];
+        
     }else{
         if (!stop) {
             [self pauseLayer:self.imageView_.layer];
             stop = YES;
-            
+            if (acPlayer) {
+                [acPlayer stop];
+            }
             if ([self.delegate respondsToSelector:@selector(musicCDAnimationPaused:)]&&self.delegate) {
                 [self.delegate musicCDAnimationPaused:self];
             }
@@ -120,7 +127,9 @@
         }else{
             stop = NO;
             [self resumeLayer:self.imageView_.layer];
-            
+            if (acPlayer) {
+                [acPlayer play];
+            }
             if ([self.delegate respondsToSelector:@selector(musicCDAnimationResumed:)]&&self.delegate) {
                 [self.delegate musicCDAnimationResumed:self];
             }

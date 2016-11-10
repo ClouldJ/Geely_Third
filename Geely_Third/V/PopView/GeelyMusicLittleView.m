@@ -9,6 +9,12 @@
 #import "GeelyMusicLittleView.h"
 #import "GeelyMusicAudioManager.h"
 
+@interface GeelyMusicLittleView () {
+    CGFloat singTime;
+}
+
+@end
+
 @implementation GeelyMusicLittleView
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -24,6 +30,7 @@
             self.animationImage.delegate = weakself;
             GeelyMusicAudioManager *manager = [GeelyMusicAudioManager defaultManager];
             acPlayer = [manager playMusic:@"Zki & Dobre-Listen To The Talk"];
+            singTime = (CGFloat)acPlayer.duration;
         };
         
         mainRequest = [[MainRequest alloc] init];
@@ -57,6 +64,10 @@
     if ([self.delegate respondsToSelector:@selector(didSwitch:)] && self.delegate) {
         [self.delegate didSwitch:self];
     }
+}
+
+-(float)musicTime{
+    return singTime;
 }
 
 -(void)musciCDAnimationRunning:(GeelyMusicCDAnimationView *)musciView currentPosition:(CGFloat)currenttime{

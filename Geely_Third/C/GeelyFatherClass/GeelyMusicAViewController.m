@@ -52,7 +52,7 @@
     home.backgroundColor = [UIColor clearColor];
     [self.view addSubview:home];
     [home addTarget:self action:@selector(btnAction1:) forControlEvents:UIControlEventTouchUpInside];
-    
+    manager = [GeelyMusicAudioManager defaultManager];
     music = YES;
     mainRequest = [[MainRequest alloc] init];
     mainRequest.requestMusic = [[Music alloc] init];
