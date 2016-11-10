@@ -155,7 +155,7 @@
 /** toolView显示时开始计时，5s后隐藏toolView */
 -(void)addShowTime
 {
-    self.showTime = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(upDateToolView) userInfo:nil repeats:NO];
+    self.showTime = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(upDateToolView) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop]addTimer:self.showTime forMode:NSRunLoopCommonModes];
 }
 /** 将toolView隐藏 */

@@ -155,14 +155,14 @@
     tipLabel.textColor = RGBAAAABBB(128, 125, 118, 1.0);
     tipLabel.font = [UIFont systemFontOfSize:16];
     //
-    leftTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x, tipLabel.frame.origin.y+tipLabel.frame.size.height, 35, 30)];
+    leftTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x, tipLabel.frame.origin.y+tipLabel.frame.size.height-10, 45, 35)];
     leftTime.textColor = [UIColor whiteColor];
-    leftTime.font = [UIFont systemFontOfSize:12];
+    leftTime.font = [UIFont systemFontOfSize:13];
     [self.contentScrollView addSubview:leftTime];
     //
-    rightTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x+rightLabel.frame.size.width-35, tipLabel.frame.origin.y+tipLabel.frame.size.height, 35, 30)];
+    rightTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x+rightLabel.frame.size.width-35, tipLabel.frame.origin.y+tipLabel.frame.size.height-10, 45, 35)];
     rightTime.textColor = [UIColor whiteColor];
-    rightTime.font = [UIFont systemFontOfSize:12];
+    rightTime.font = [UIFont systemFontOfSize:13];
     [self.contentScrollView addSubview:rightTime];
     //
     NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"f4v" ofType:@"mp4"]];
