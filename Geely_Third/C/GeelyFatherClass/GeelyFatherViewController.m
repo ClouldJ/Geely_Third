@@ -219,7 +219,7 @@
         GeelyCallAViewController *setting = [[GeelyCallAViewController alloc] init];
         [self.navigationController pushViewController:setting animated:NO];
     }else if (indexPath.row == 4) {
-        [self.navigationController popViewControllerAnimated:NO];
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
 

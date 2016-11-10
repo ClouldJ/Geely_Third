@@ -37,6 +37,11 @@
 		2C0E976F1DD464D9002EEC72 /* GeelyLittleSettingACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0E976D1DD464D9002EEC72 /* GeelyLittleSettingACell.xib */; };
 		2C0E97721DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E97711DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m */; };
 		C20279AE1DB773AA00B5ACA3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20279AD1DB773AA00B5ACA3 /* AVFoundation.framework */; };
+		C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */; };
+		C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */; };
+		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
+		C239C5541DD49E970017F443 /* GeelyModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C239C5521DD49E970017F443 /* GeelyModeViewController.m */; };
+		C239C5551DD49E970017F443 /* GeelyModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C239C5531DD49E970017F443 /* GeelyModeViewController.xib */; };
 		C24F91C01DBF386600CBE76F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24F91BF1DBF386600CBE76F /* MediaPlayer.framework */; };
 		C263F7BB1DD40C9E00ED9EC4 /* 0930-IPAD-底图V2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C263F7171DD40C9E00ED9EC4 /* 0930-IPAD-底图V2@2x.png */; };
 		C263F7BC1DD40C9E00ED9EC4 /* 12.3_ts_comfort_ac_20160927airairgeely@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C263F7181DD40C9E00ED9EC4 /* 12.3_ts_comfort_ac_20160927airairgeely@2x.png */; };
@@ -435,6 +440,12 @@
 		2C0E97701DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeelyFatherViewController+PopAnimation.h"; sourceTree = "<group>"; };
 		2C0E97711DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GeelyFatherViewController+PopAnimation.m"; sourceTree = "<group>"; };
 		C20279AD1DB773AA00B5ACA3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_blue@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_blue@2x.png"; sourceTree = "<group>"; };
+		C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_red@2x.png"; sourceTree = "<group>"; };
+		C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_yellow@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_yellow@2x.png"; sourceTree = "<group>"; };
+		C239C5511DD49E970017F443 /* GeelyModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyModeViewController.h; sourceTree = "<group>"; };
+		C239C5521DD49E970017F443 /* GeelyModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyModeViewController.m; sourceTree = "<group>"; };
+		C239C5531DD49E970017F443 /* GeelyModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeelyModeViewController.xib; sourceTree = "<group>"; };
 		C24F91BF1DBF386600CBE76F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C263F7171DD40C9E00ED9EC4 /* 0930-IPAD-底图V2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0930-IPAD-底图V2@2x.png"; sourceTree = "<group>"; };
 		C263F7181DD40C9E00ED9EC4 /* 12.3_ts_comfort_ac_20160927airairgeely@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.3_ts_comfort_ac_20160927airairgeely@2x.png"; sourceTree = "<group>"; };
@@ -973,9 +984,23 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
+		C239C54B1DD49E140017F443 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C239C5511DD49E970017F443 /* GeelyModeViewController.h */,
+				C239C5521DD49E970017F443 /* GeelyModeViewController.m */,
+				C239C5531DD49E970017F443 /* GeelyModeViewController.xib */,
+			);
+			name = Setting;
+			path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/Setting;
+			sourceTree = "<group>";
+		};
 		C263F7161DD40C9E00ED9EC4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */,
+				C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */,
+				C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */,
 				C263F7171DD40C9E00ED9EC4 /* 0930-IPAD-底图V2@2x.png */,
 				C263F7181DD40C9E00ED9EC4 /* 12.3_ts_comfort_ac_20160927airairgeely@2x.png */,
 				C263F7191DD40C9E00ED9EC4 /* 12.3_ts_comfort_audio-text_20160928@2x.png */,
@@ -1391,6 +1416,7 @@
 		C263F9171DD40F3100ED9EC4 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				C239C54B1DD49E140017F443 /* Setting */,
 				2C0E97301DD46407002EEC72 /* mediaPlayer */,
 				C263F9181DD40F3100ED9EC4 /* call */,
 				C263F9371DD40F3100ED9EC4 /* GeelyFatherClass */,
@@ -1905,6 +1931,7 @@
 				2C0E975A1DD46407002EEC72 /* mediaPlayer_icon_cell_selected.png in Resources */,
 				C263F9A31DD40F3100ED9EC4 /* GeelyWeatherViewController.xib in Resources */,
 				C263F7D31DD40C9E00ED9EC4 /* Geely_home_content_fm@2x.png in Resources */,
+				C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */,
 				C27232D91D9A23520070F431 /* Assets.xcassets in Resources */,
 				C263F8001DD40C9F00ED9EC4 /* topcallgeely@2x.png in Resources */,
 				C263F7CD1DD40C9E00ED9EC4 /* Geely_Custom_btnbottom@2x.png in Resources */,
@@ -1952,6 +1979,7 @@
 				C263F97D1DD40F3100ED9EC4 /* keyBoard.xib in Resources */,
 				C263F8011DD40C9F00ED9EC4 /* 个人信息homeright@2x.png in Resources */,
 				C263F8201DD40C9F00ED9EC4 /* 我的收藏@2x.png in Resources */,
+				C239C5551DD49E970017F443 /* GeelyModeViewController.xib in Resources */,
 				C263F7D91DD40C9E00ED9EC4 /* Geely_home_left_funy@2x.png in Resources */,
 				C263F8471DD40C9F00ED9EC4 /* 蓝牙s@2x.png in Resources */,
 				C263F7BD1DD40C9E00ED9EC4 /* 12.3_ts_comfort_audio-text_20160928@2x.png in Resources */,
@@ -2039,6 +2067,7 @@
 				C263F7E21DD40C9E00ED9EC4 /* Geely_right_cell_pages@2x.png in Resources */,
 				C263F7E01DD40C9E00ED9EC4 /* Geely_home_sun@2x.png in Resources */,
 				C263F9721DD40F3100ED9EC4 /* geelycalledlistlist.xib in Resources */,
+				C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */,
 				C263FA2B1DD410C400ED9EC4 /* geelyphonecalled.xib in Resources */,
 				C263F7E41DD40C9E00ED9EC4 /* Geely_right_email@2x.png in Resources */,
 				C263F7FE1DD40C9F00ED9EC4 /* StockSnap_2WUSCGJ1BM-拷贝@2x.png in Resources */,
@@ -2079,6 +2108,7 @@
 				C263F7EE1DD40C9F00ED9EC4 /* GeelyDisplayBackground@2x.png in Resources */,
 				C263FA241DD410C400ED9EC4 /* GeelyCalledListTableViewCell.xib in Resources */,
 				C263F9761DD40F3100ED9EC4 /* geelycallviewdemo.xib in Resources */,
+				C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */,
 				C263F9831DD40F3100ED9EC4 /* GeelyCallAViewController.xib in Resources */,
 				C263F83F1DD40C9F00ED9EC4 /* 箭头-拷贝-4@2x.png in Resources */,
 				C263F8211DD40C9F00ED9EC4 /* 我的收藏musicg@2x.png in Resources */,
@@ -2187,6 +2217,7 @@
 				C263F96F1DD40F3100ED9EC4 /* CallListTableViewCell.m in Sources */,
 				C263F9931DD40F3100ED9EC4 /* GeelyAutoViewController.m in Sources */,
 				C263F8E91DD40D8300ED9EC4 /* AFURLResponseSerialization.m in Sources */,
+				C239C5541DD49E970017F443 /* GeelyModeViewController.m in Sources */,
 				C263F9901DD40F3100ED9EC4 /* UIScrollView+AnimationOffSet.m in Sources */,
 				2C0E97541DD46407002EEC72 /* GeelyPictureShowVC.m in Sources */,
 				C263F8E41DD40D8300ED9EC4 /* GeelyScreenView.m in Sources */,

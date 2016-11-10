@@ -13,6 +13,8 @@
 #import "GeelyPictureShowVC.h"
 #import "GeelyMediaPlayerVC.h"
 
+#import "GeelyModeViewController.h"
+
 @interface GeelySettingAViewController () <UITableViewDelegate,UITableViewDataSource> {
     UITableView *tableView_;
     TableViewProgressView *progress;
@@ -187,6 +189,10 @@
             break;
         case 6:
             //@"驾驶模式";
+        {
+            GeelyModeViewController *vc = [[GeelyModeViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:NO];
+        }
             break;
         case 7:
             //@"能量流";
