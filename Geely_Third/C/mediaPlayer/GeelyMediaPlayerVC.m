@@ -20,6 +20,8 @@
     TableViewProgressView *rightSliderLine;
     UILabel *rightLabel;
     UILabel *tipLabel;
+    UILabel *leftTime;
+    UILabel *rightTime;
     GeelyMusicTransProgress *pro;
     //
     CLAVPlayerView *mplayerView;
@@ -133,6 +135,11 @@
     //清除上一次播放
     [rightPlayerView removeFromSuperview];
     [mplayerView removeFromSuperview];
+    [tipLabel removeFromSuperview];
+    [pro removeFromSuperview];
+    [leftTime removeFromSuperview];
+    [rightTime removeFromSuperview];
+    //
     //
     rightLabel.text = @"釜山行-国语中字2016";
     rightPlayerView = [[UIView alloc] initWithFrame:CGRectMake(rightLabel.frame.origin.x,rightSliderLine.frame.origin.y, rightLabel.frame.size.width, 161.5)];
@@ -141,18 +148,34 @@
     mplayerView.frame = rightPlayerView.frame;
     mplayerView.contrainerViewController = self;
     [self.contentScrollView addSubview:mplayerView];
-    NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"f4v" ofType:@"mp4"]];
-    NSString *urlstring = [URL absoluteString];
-    mplayerView.urlString = urlstring;
-    mplayerView.titleLabel.hidden=YES;
-    mplayerView.bottomView.hidden=YES;
+    //
     tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(rightLabel.frame.origin.x,mplayerView.frame.origin.y+mplayerView.frame.size.height,rightLabel.frame.size.width,56)];
     tipLabel.text= @"正在播放中";
     tipLabel.textAlignment = NSTextAlignmentCenter;
     tipLabel.textColor = RGBAAAABBB(128, 125, 118, 1.0);
     tipLabel.font = [UIFont systemFontOfSize:16];
+    //
+    leftTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x, tipLabel.frame.origin.y+tipLabel.frame.size.height, 35, 30)];
+    leftTime.textColor = [UIColor whiteColor];
+    leftTime.font = [UIFont systemFontOfSize:12];
+    [self.contentScrollView addSubview:leftTime];
+    //
+    rightTime = [[UILabel alloc]initWithFrame:CGRectMake(rightLabel.frame.origin.x+rightLabel.frame.size.width-35, tipLabel.frame.origin.y+tipLabel.frame.size.height, 35, 30)];
+    rightTime.textColor = [UIColor whiteColor];
+    rightTime.font = [UIFont systemFontOfSize:12];
+    [self.contentScrollView addSubview:rightTime];
+    //
+    NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"f4v" ofType:@"mp4"]];
+    NSString *urlstring = [URL absoluteString];
+    mplayerView.urlString = urlstring;
+    mplayerView.leftTime = leftTime;
+    mplayerView.rightTime = rightTime;
+    mplayerView.titleLabel.hidden=YES;
+    mplayerView.bottomView.hidden=YES;
     [self.contentScrollView addSubview:tipLabel];
-    pro = [[GeelyMusicTransProgress alloc] initWithFrame:CGRectMake(tipLabel.frame.origin.x,tipLabel.frame.origin.y+tipLabel.frame.size.height,0,53)];
+    
+    pro = [[GeelyMusicTransProgress alloc] initWithFrame:CGRectMake(tipLabel.frame.origin.x,tipLabel.frame.origin.y+tipLabel.frame.size.height,tipLabel.frame.size.width,53)];
+    pro.clipsToBounds=YES;
     [self.contentScrollView addSubview:pro];
     
 }

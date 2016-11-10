@@ -215,7 +215,8 @@
 {
     NSTimeInterval currentTime = CMTimeGetSeconds(self.player.currentTime);
     NSTimeInterval durationTime = CMTimeGetSeconds(self.player.currentItem.duration);
-    
+    self.leftTime.text = [self timeToStringWithTimeInterval:currentTime];
+    self.rightTime.text = [self timeToStringWithTimeInterval:durationTime];
     self.timeLabel.text = [self timeToStringWithTimeInterval:currentTime];
     self.allTimeLabel.text = [self timeToStringWithTimeInterval:durationTime];
     self.progressSlider.value = CMTimeGetSeconds(self.player.currentTime) / CMTimeGetSeconds(self.player.currentItem.duration);

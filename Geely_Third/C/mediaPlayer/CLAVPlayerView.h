@@ -18,7 +18,8 @@
 /** playerItem */
 @property(nonatomic,strong)AVPlayerItem *playerItem;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
-
+@property (strong, nonatomic) UILabel *leftTime;
+@property (strong, nonatomic) UILabel *rightTime;
 
 /** 需要播放的视频资源 */
 @property(nonatomic,strong)NSString *urlString;
