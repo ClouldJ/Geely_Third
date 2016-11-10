@@ -243,7 +243,11 @@
 #pragma mark - 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle =UIStatusBarStyleDefault;
+    //[UIApplication sharedApplication].statusBarStyle =UIStatusBarStyleDefault;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [mplayerView removeFromSuperview];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
