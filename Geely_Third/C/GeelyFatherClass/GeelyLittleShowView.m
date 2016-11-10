@@ -15,7 +15,7 @@
 #import "GeelyPhoneInputView.h"
 #import "GeelyPhoneCalledView.h"
 #import "GeelyCalledListView.h"
-#import "GeelySettingLittleView.h"
+#import "GeelyLittleSettingAView.h"
 
 @interface GeelyLittleShowView () <GeelyMusicLittleViewDelegate,GeelyPhoneCalledViewDelegate,GeelyPhoneInputViewDelegate> {
     GeelyMusicLittleView *musica;
@@ -81,7 +81,7 @@
     
     //setting
     //setting
-    GeelySettingLittleView *setting = [[GeelySettingLittleView alloc] initWithFrame:CGRectMake(0, 435*5, 340, 435)];
+    GeelyLittleSettingAView *setting = [[GeelyLittleSettingAView alloc] initWithFrame:CGRectMake(0, 435*5, 340, 435)];
     [self.contentScrollView addSubview:setting];
     
 }

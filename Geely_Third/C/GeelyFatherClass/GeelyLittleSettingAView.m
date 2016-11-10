@@ -1,15 +1,16 @@
 //
-//  GeelySettingLittleView.m
+//  GeelyLittleSettingAView.m
 //  Geely_Third
 //
-//  Created by WillyZhao on 16/10/21.
+//  Created by WillyZhao on 16/11/10.
 //  Copyright © 2016年 WillyZhao. All rights reserved.
 //
 
-#import "GeelySettingLittleView.h"
-#import "GeelyLittleSettingTableViewCell.h"
+#import "GeelyLittleSettingAView.h"
 
-@interface  GeelySettingLittleView() <UITableViewDelegate,UITableViewDataSource> {
+#import "GeelyLittleSettingACell.h"
+
+@interface GeelyLittleSettingAView () <UITableViewDataSource,UITableViewDelegate> {
     UITableView *tableView_;
     NSArray *sImageArray;
     NSArray *cImageArray;
@@ -17,7 +18,15 @@
 
 @end
 
-@implementation GeelySettingLittleView
+@implementation GeelyLittleSettingAView
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -28,14 +37,14 @@
         sImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电s"],[UIImage imageNamed:@"环绕声s"],[UIImage imageNamed:@"蓝牙s"],[UIImage imageNamed:@"车载热点s"],[UIImage imageNamed:@"行驶中视频限制s"],[UIImage imageNamed:@"行车记录仪s"], nil];
         cImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电c"],[UIImage imageNamed:@"环绕声c"],[UIImage imageNamed:@"蓝牙c"],[UIImage imageNamed:@"车载热点c"],[UIImage imageNamed:@"行驶中视频限制c"],[UIImage imageNamed:@"行车记录仪c"], nil];
         [SingleModel sharedInstance].cellImages = cImageArray;
-
+        
         tableView_ = (UITableView *)[self viewWithTag:909];
         tableView_.delegate = self;
         tableView_.dataSource = self;
         tableView_.rowHeight = 57;
         tableView_.backgroundColor = [UIColor clearColor];
         
-        [tableView_ registerNib:[UINib nibWithNibName:@"GeelyLittleSettingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"littlesetting"];
+        [tableView_ registerNib:[UINib nibWithNibName:@"GeelyLittleSettingACell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"littlesetting"];
         
     }
     return self;
@@ -46,7 +55,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GeelyLittleSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"littlesetting" forIndexPath:indexPath];
+    GeelyLittleSettingACell *cell = [tableView dequeueReusableCellWithIdentifier:@"littlesetting" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     if (indexPath.row == 5) {
         cell.bottonLine.hidden = YES;
@@ -56,10 +65,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    GeelyLittleSettingTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    GeelyLittleSettingACell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     
-
+    
     [cell viewAddSelectedImage:indexPath cancleImage:sImageArray[indexPath.row]];
     if (cell.Wselected) {
         cell.Wselected = NO;
@@ -79,12 +88,5 @@
     NSLog(@"进入了设置消失时候");
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
