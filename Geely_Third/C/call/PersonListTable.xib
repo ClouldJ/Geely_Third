@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tps-Gk-QvT" customClass="PersonListView">
+            <rect key="frame" x="0.0" y="0.0" width="830" height="372.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-4z-uCj">
+                    <rect key="frame" x="100" y="25" width="63" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="63" id="cKL-Ol-xRv"/>
+                        <constraint firstAttribute="height" constant="19" id="wAb-4y-ryp"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="77M-JB-zKt">
+                    <rect key="frame" x="100" y="14" width="730" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5du-vl-jUf"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-bS-RaD">
+                    <rect key="frame" x="100" y="54" width="730" height="319"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q6S-bS-RaD" firstAttribute="top" secondItem="77M-JB-zKt" secondAttribute="bottom" id="2Z6-O4-4Id"/>
+                <constraint firstItem="77M-JB-zKt" firstAttribute="top" secondItem="tps-Gk-QvT" secondAttribute="top" id="AHX-T4-jdn"/>
+                <constraint firstAttribute="trailing" secondItem="77M-JB-zKt" secondAttribute="trailing" id="DQi-bf-SWy"/>
+                <constraint firstAttribute="trailing" secondItem="Q6S-bS-RaD" secondAttribute="trailing" id="Jmt-vy-OOS"/>
+                <constraint firstItem="77M-JB-zKt" firstAttribute="leading" secondItem="tps-Gk-QvT" secondAttribute="leading" constant="100" id="LSW-AS-56g"/>
+                <constraint firstItem="77M-JB-zKt" firstAttribute="centerY" secondItem="Sdm-4z-uCj" secondAttribute="centerY" id="R2j-hW-WJo"/>
+                <constraint firstAttribute="bottom" secondItem="77M-JB-zKt" secondAttribute="bottom" constant="342.5" id="S6g-IW-F9L"/>
+                <constraint firstItem="77M-JB-zKt" firstAttribute="leading" secondItem="Sdm-4z-uCj" secondAttribute="trailing" id="XuO-de-xRZ"/>
+                <constraint firstItem="Sdm-4z-uCj" firstAttribute="top" secondItem="tps-Gk-QvT" secondAttribute="top" constant="25" id="e2v-xe-7SJ"/>
+                <constraint firstAttribute="bottom" secondItem="Q6S-bS-RaD" secondAttribute="bottom" id="lVf-zm-rn8"/>
+                <constraint firstItem="Q6S-bS-RaD" firstAttribute="leading" secondItem="77M-JB-zKt" secondAttribute="leading" id="oE5-Ie-IKe"/>
+                <constraint firstAttribute="trailing" secondItem="77M-JB-zKt" secondAttribute="trailing" id="spG-aP-wrW"/>
+                <constraint firstItem="Sdm-4z-uCj" firstAttribute="leading" secondItem="tps-Gk-QvT" secondAttribute="leading" constant="100" id="tlZ-02-9uJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="AHX-T4-jdn"/>
+                    <exclude reference="S6g-IW-F9L"/>
+                    <exclude reference="XuO-de-xRZ"/>
+                    <exclude reference="spG-aP-wrW"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="searchImage" destination="Sdm-4z-uCj" id="NyK-iK-gf6"/>
+                <outlet property="searchTextField" destination="77M-JB-zKt" id="krl-rw-3Zl"/>
+                <outlet property="tableView_" destination="Q6S-bS-RaD" id="ThS-RL-6rN"/>
+            </connections>
+            <point key="canvasLocation" x="219" y="260"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search.png" width="63" height="19"/>
+    </resources>
+</document>

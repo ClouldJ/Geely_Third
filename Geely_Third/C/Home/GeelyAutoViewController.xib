@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeelyAutoViewController">
+            <connections>
+                <outlet property="contentImage" destination="ulW-Yu-M0s" id="bT0-pf-YZL"/>
+                <outlet property="leftHidden" destination="Hu9-Qp-7sW" id="5Wo-J9-8KZ"/>
+                <outlet property="leftShow" destination="KPZ-6n-nOt" id="023-gJ-emd"/>
+                <outlet property="rightHidden" destination="WpI-dc-jdK" id="r04-OM-aAf"/>
+                <outlet property="rightShow" destination="feu-TK-PWE" id="Z2J-hb-8Py"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0930-IPAD-底图V2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lvX-Py-Wkw">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epb-hV-nyi">
+                    <rect key="frame" x="28" y="266" width="1310" height="492"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.3_ts_comfort_ac_20160927airairgeely.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
+                            <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpI-dc-jdK">
+                            <rect key="frame" x="980" y="290" width="329.5" height="138"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="329.5" id="uD2-rl-WSY"/>
+                                <constraint firstAttribute="height" constant="138" id="xEy-lU-BCH"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="副驾座椅autoauto.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hu9-Qp-7sW">
+                            <rect key="frame" x="0.0" y="290" width="322.5" height="138"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="138" id="TwD-ct-gSc"/>
+                                <constraint firstAttribute="width" constant="322.5" id="gC9-eN-yO3"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="座椅autoauto.png"/>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPZ-6n-nOt">
+                            <rect key="frame" x="-8" y="290" width="558" height="143.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="143.5" id="UtF-hT-a2h"/>
+                                <constraint firstAttribute="width" constant="558" id="uOk-wI-hE6"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="左侧座椅设置airauto.png"/>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feu-TK-PWE">
+                            <rect key="frame" x="755" y="290" width="559.5" height="143.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="143.5" id="Fyq-aS-HZQ"/>
+                                <constraint firstAttribute="width" constant="559.5" id="uCK-L3-psi"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="右侧座椅设置airauto.png"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ulW-Yu-M0s" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="25L-Of-15m"/>
+                        <constraint firstItem="feu-TK-PWE" firstAttribute="leading" secondItem="WpI-dc-jdK" secondAttribute="leading" id="6ze-fV-bia"/>
+                        <constraint firstAttribute="bottom" secondItem="ulW-Yu-M0s" secondAttribute="bottom" id="FF4-bA-xvb"/>
+                        <constraint firstItem="KPZ-6n-nOt" firstAttribute="top" secondItem="Hu9-Qp-7sW" secondAttribute="top" id="ONJ-19-zu6"/>
+                        <constraint firstItem="feu-TK-PWE" firstAttribute="leading" secondItem="KPZ-6n-nOt" secondAttribute="trailing" constant="205" id="Qcc-Hx-LR4"/>
+                        <constraint firstItem="ulW-Yu-M0s" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" id="SiK-ug-BDj"/>
+                        <constraint firstAttribute="width" constant="1310" id="Wnc-b5-kWS"/>
+                        <constraint firstItem="WpI-dc-jdK" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="290" id="YLi-nT-R9i"/>
+                        <constraint firstItem="Hu9-Qp-7sW" firstAttribute="top" secondItem="WpI-dc-jdK" secondAttribute="top" id="Yjy-iL-8Pp"/>
+                        <constraint firstAttribute="height" constant="492" id="bqc-95-RhG"/>
+                        <constraint firstAttribute="trailing" secondItem="ulW-Yu-M0s" secondAttribute="trailing" id="lpA-lG-c9J"/>
+                        <constraint firstItem="WpI-dc-jdK" firstAttribute="leading" secondItem="KPZ-6n-nOt" secondAttribute="trailing" constant="430" id="qmM-0t-3fu"/>
+                        <constraint firstItem="feu-TK-PWE" firstAttribute="top" secondItem="WpI-dc-jdK" secondAttribute="top" id="qz4-HS-5eS"/>
+                        <constraint firstItem="Hu9-Qp-7sW" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="tQQ-BC-mHy"/>
+                        <constraint firstItem="WpI-dc-jdK" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="980" id="uRa-b8-1xs"/>
+                        <constraint firstItem="KPZ-6n-nOt" firstAttribute="trailing" secondItem="Hu9-Qp-7sW" secondAttribute="trailing" id="vya-CT-CdA"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vya-CT-CdA"/>
+                            <exclude reference="6ze-fV-bia"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lvX-Py-Wkw" secondAttribute="bottom" id="Lp4-Rw-QIA"/>
+                <constraint firstItem="lvX-Py-Wkw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZTZ-Wf-vQW"/>
+                <constraint firstItem="epb-hV-nyi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gYv-tC-QCg"/>
+                <constraint firstItem="epb-hV-nyi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lK8-kV-KpR"/>
+                <constraint firstAttribute="trailing" secondItem="lvX-Py-Wkw" secondAttribute="trailing" id="rru-3a-LjU"/>
+                <constraint firstItem="lvX-Py-Wkw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xee-9Z-C8r"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
+        <image name="12.3_ts_comfort_ac_20160927airairgeely.png" width="1310" height="492"/>
+        <image name="副驾座椅autoauto.png" width="329" height="138"/>
+        <image name="右侧座椅设置airauto.png" width="559" height="143"/>
+        <image name="左侧座椅设置airauto.png" width="558" height="143"/>
+        <image name="座椅autoauto.png" width="322" height="138"/>
+    </resources>
+</document>

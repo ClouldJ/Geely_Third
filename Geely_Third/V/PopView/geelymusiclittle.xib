@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gIG-Kd-CDw" customClass="GeelyMusicLittleView">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="多功能卡片musicmusicarf.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-TY-ko9">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyt-ED-fdJ" customClass="GeelyMusicCDAnimationView">
+                    <rect key="frame" x="66" y="187" width="180" height="180"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="97j-Uo-kDG"/>
+                        <constraint firstAttribute="height" constant="180" id="QBd-Ez-EJe"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etv-IN-JJ1">
+                    <rect key="frame" x="136" y="377" width="41" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="青苹果乐园" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvV-du-bTj">
+                    <rect key="frame" x="103" y="103.5" width="105" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-3i-xcU">
+                    <rect key="frame" x="259" y="104.5" width="25.5" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25.5" id="1vx-ek-Qac"/>
+                        <constraint firstAttribute="height" constant="24" id="D0F-G2-S1K"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="收藏-拷贝music.png"/>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aiusdiasun indndaun  indin  nindias unad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-ed-jJE">
+                    <rect key="frame" x="34" y="139" width="245" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mH0-T0-Ca7">
+                    <rect key="frame" x="294" y="29" width="46" height="37"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ6-Ri-bZm">
+                    <rect key="frame" x="97" y="25" width="112" height="43"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="歌名收藏littlemusicg.png" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-9S-XZU">
+                    <rect key="frame" x="71.5" y="106.5" width="169.5" height="45.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="169.5" id="QjQ-vB-3o0"/>
+                        <constraint firstAttribute="height" constant="45.5" id="a59-hs-m3y"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Nyt-ED-fdJ" firstAttribute="centerX" secondItem="gIG-Kd-CDw" secondAttribute="centerX" constant="-14" id="0ZD-uV-loN"/>
+                <constraint firstItem="Mip-ed-jJE" firstAttribute="top" secondItem="VvV-du-bTj" secondAttribute="bottom" constant="10" id="3Hm-yq-elz"/>
+                <constraint firstAttribute="bottom" secondItem="mH0-T0-Ca7" secondAttribute="bottom" constant="369" id="6CO-nY-WyZ"/>
+                <constraint firstItem="VvV-du-bTj" firstAttribute="top" secondItem="YQ6-Ri-bZm" secondAttribute="bottom" constant="35.5" id="8hS-Ko-pgM"/>
+                <constraint firstItem="nRu-3i-xcU" firstAttribute="centerY" secondItem="VvV-du-bTj" secondAttribute="centerY" id="9GK-nB-yuj"/>
+                <constraint firstItem="mH0-T0-Ca7" firstAttribute="top" secondItem="gIG-Kd-CDw" secondAttribute="top" constant="29" id="BtK-3u-rxB"/>
+                <constraint firstItem="etv-IN-JJ1" firstAttribute="top" secondItem="Nyt-ED-fdJ" secondAttribute="bottom" constant="10" id="D72-dg-E1H"/>
+                <constraint firstAttribute="trailing" secondItem="Y8v-TY-ko9" secondAttribute="trailing" id="DcZ-d1-CVv"/>
+                <constraint firstItem="Y8v-TY-ko9" firstAttribute="top" secondItem="gIG-Kd-CDw" secondAttribute="top" id="I30-yE-VwL"/>
+                <constraint firstItem="nRu-3i-xcU" firstAttribute="leading" secondItem="VvV-du-bTj" secondAttribute="trailing" constant="50" id="NiW-H4-yw5"/>
+                <constraint firstItem="VvV-du-bTj" firstAttribute="centerX" secondItem="Nyt-ED-fdJ" secondAttribute="centerX" id="TCd-3b-TmC"/>
+                <constraint firstItem="Nyt-ED-fdJ" firstAttribute="top" secondItem="k9F-9S-XZU" secondAttribute="bottom" constant="35" id="UdU-B2-2Kq"/>
+                <constraint firstItem="mH0-T0-Ca7" firstAttribute="leading" secondItem="YQ6-Ri-bZm" secondAttribute="trailing" constant="85" id="WcV-X1-uwO"/>
+                <constraint firstItem="etv-IN-JJ1" firstAttribute="centerX" secondItem="Nyt-ED-fdJ" secondAttribute="centerX" id="Xm1-bQ-zWM"/>
+                <constraint firstItem="YQ6-Ri-bZm" firstAttribute="leading" secondItem="gIG-Kd-CDw" secondAttribute="leading" constant="97" id="ZFF-Qw-RsH"/>
+                <constraint firstItem="Y8v-TY-ko9" firstAttribute="leading" secondItem="gIG-Kd-CDw" secondAttribute="leading" id="j3b-Lo-J10"/>
+                <constraint firstItem="Nyt-ED-fdJ" firstAttribute="top" secondItem="VvV-du-bTj" secondAttribute="bottom" constant="58" id="jQs-sp-9mr"/>
+                <constraint firstAttribute="trailing" secondItem="mH0-T0-Ca7" secondAttribute="trailing" id="kz1-fA-JMy"/>
+                <constraint firstItem="Nyt-ED-fdJ" firstAttribute="centerY" secondItem="gIG-Kd-CDw" secondAttribute="centerY" constant="60" id="l1T-DP-Zau"/>
+                <constraint firstItem="mH0-T0-Ca7" firstAttribute="leading" secondItem="gIG-Kd-CDw" secondAttribute="leading" constant="294" id="oW3-Hk-XUD"/>
+                <constraint firstItem="k9F-9S-XZU" firstAttribute="centerX" secondItem="Nyt-ED-fdJ" secondAttribute="centerX" id="pgb-F6-9NO"/>
+                <constraint firstItem="YQ6-Ri-bZm" firstAttribute="top" secondItem="gIG-Kd-CDw" secondAttribute="top" constant="25" id="v0U-sz-qa9"/>
+                <constraint firstItem="Mip-ed-jJE" firstAttribute="centerX" secondItem="Nyt-ED-fdJ" secondAttribute="centerX" id="xgc-XI-P8U"/>
+                <constraint firstAttribute="bottom" secondItem="Y8v-TY-ko9" secondAttribute="bottom" id="y6B-Wl-qkU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="animationImage" destination="Nyt-ED-fdJ" id="ic6-F9-hoi"/>
+                <outlet property="closeBtn" destination="mH0-T0-Ca7" id="qgr-tG-n1m"/>
+                <outlet property="currentTime" destination="etv-IN-JJ1" id="kTE-xV-XHe"/>
+                <outlet property="forBgImage" destination="Y8v-TY-ko9" id="iTE-gT-SRL"/>
+                <outlet property="musicAndMedia" destination="YQ6-Ri-bZm" id="cjg-ju-R2A"/>
+            </connections>
+            <point key="canvasLocation" x="419" y="303.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="多功能卡片musicmusicarf.png" width="340" height="435"/>
+        <image name="收藏-拷贝music.png" width="25" height="24"/>
+        <image name="歌名收藏littlemusicg.png" width="169" height="45"/>
+    </resources>
+</document>

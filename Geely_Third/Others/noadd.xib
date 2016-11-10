@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fjy-uQ-0CI">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0930-IPAD-底图V2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bvj-gO-qGM">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.3_ts_comfort_vr_20160927adf.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-Mp-Sfn">
+                    <rect key="frame" x="28" y="266" width="1310" height="492"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="492" id="Oco-oe-q3I"/>
+                        <constraint firstAttribute="width" constant="1310" id="RGH-Hj-HwH"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Bvj-gO-qGM" secondAttribute="bottom" id="GsT-hp-l7S"/>
+                <constraint firstAttribute="trailing" secondItem="Bvj-gO-qGM" secondAttribute="trailing" id="You-MR-y4q"/>
+                <constraint firstItem="Nmv-Mp-Sfn" firstAttribute="centerY" secondItem="fjy-uQ-0CI" secondAttribute="centerY" id="aAu-m0-uJM"/>
+                <constraint firstItem="Bvj-gO-qGM" firstAttribute="leading" secondItem="fjy-uQ-0CI" secondAttribute="leading" id="gtt-hQ-2CP"/>
+                <constraint firstItem="Bvj-gO-qGM" firstAttribute="top" secondItem="fjy-uQ-0CI" secondAttribute="top" id="jNt-SW-g9T"/>
+                <constraint firstItem="Nmv-Mp-Sfn" firstAttribute="centerX" secondItem="fjy-uQ-0CI" secondAttribute="centerX" id="y7y-gJ-kcg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="327" y="336"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
+        <image name="12.3_ts_comfort_vr_20160927adf.png" width="1310" height="492"/>
+    </resources>
+</document>

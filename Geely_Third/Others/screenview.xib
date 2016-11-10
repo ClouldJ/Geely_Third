@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FAe-7R-vWt">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0930-IPAD-底图V2.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-Z0-1aT">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                </imageView>
+                <view tag="109" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ww2-yY-Azd">
+                    <rect key="frame" x="28" y="266" width="1310" height="492"/>
+                    <subviews>
+                        <imageView tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GeelyDisplayBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="HSx-oU-4Bi">
+                            <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="HSx-oU-4Bi" secondAttribute="bottom" id="0d4-Nh-7FW"/>
+                        <constraint firstAttribute="height" constant="492" id="5FV-92-NDW"/>
+                        <constraint firstAttribute="width" constant="1310" id="9JX-O0-lqV"/>
+                        <constraint firstItem="HSx-oU-4Bi" firstAttribute="leading" secondItem="ww2-yY-Azd" secondAttribute="leading" id="F2C-n7-uXz"/>
+                        <constraint firstAttribute="trailing" secondItem="HSx-oU-4Bi" secondAttribute="trailing" id="TX0-jv-NkK"/>
+                        <constraint firstItem="HSx-oU-4Bi" firstAttribute="top" secondItem="ww2-yY-Azd" secondAttribute="top" id="XVb-Ca-aZY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ww2-yY-Azd" firstAttribute="centerX" secondItem="FAe-7R-vWt" secondAttribute="centerX" id="7Eo-6E-Hsp"/>
+                <constraint firstAttribute="trailing" secondItem="G2r-Z0-1aT" secondAttribute="trailing" id="ElE-9M-dSv"/>
+                <constraint firstAttribute="bottom" secondItem="G2r-Z0-1aT" secondAttribute="bottom" id="gRq-Q2-oHf"/>
+                <constraint firstItem="G2r-Z0-1aT" firstAttribute="top" secondItem="FAe-7R-vWt" secondAttribute="top" id="tJB-nf-cIV"/>
+                <constraint firstItem="G2r-Z0-1aT" firstAttribute="leading" secondItem="FAe-7R-vWt" secondAttribute="leading" id="wBh-J7-V5P"/>
+                <constraint firstItem="ww2-yY-Azd" firstAttribute="centerY" secondItem="FAe-7R-vWt" secondAttribute="centerY" id="zee-UX-hXR"/>
+            </constraints>
+            <point key="canvasLocation" x="-194" y="-96"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
+        <image name="GeelyDisplayBackground.png" width="1310" height="492"/>
+    </resources>
+</document>

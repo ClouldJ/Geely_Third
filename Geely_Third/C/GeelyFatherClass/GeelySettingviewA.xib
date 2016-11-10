@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KLb-Hj-EB0">
+            <rect key="frame" x="0.0" y="0.0" width="1228" height="373.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geely_setting_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="tDl-jR-Qta">
+                    <rect key="frame" x="949" y="-10" width="239" height="332"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="238.5" id="iGY-D8-lm0"/>
+                        <constraint firstAttribute="height" constant="331.5" id="j0V-BW-Ef2"/>
+                    </constraints>
+                </imageView>
+                <view tag="8945" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoy-uf-lTg" customClass="TableViewProgressView">
+                    <rect key="frame" x="880.5" y="7.5" width="24.5" height="297"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24.5" id="fa1-iX-Eyo"/>
+                        <constraint firstAttribute="height" constant="297" id="lcd-ND-XDi"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" tag="67598" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-yZ-hhV">
+                    <rect key="frame" x="50" y="0.0" width="830.5" height="373.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eoy-uf-lTg" firstAttribute="centerY" secondItem="tDl-jR-Qta" secondAttribute="centerY" id="7V7-Tj-Lfd"/>
+                <constraint firstAttribute="trailing" secondItem="tDl-jR-Qta" secondAttribute="trailing" constant="40" id="ZU2-8D-OsM"/>
+                <constraint firstItem="lDC-yZ-hhV" firstAttribute="top" secondItem="KLb-Hj-EB0" secondAttribute="top" id="Zgn-nH-KzN"/>
+                <constraint firstAttribute="bottom" secondItem="lDC-yZ-hhV" secondAttribute="bottom" id="cKg-UE-LzH"/>
+                <constraint firstItem="eoy-uf-lTg" firstAttribute="leading" secondItem="lDC-yZ-hhV" secondAttribute="trailing" id="uC5-S2-9gz"/>
+                <constraint firstItem="tDl-jR-Qta" firstAttribute="leading" secondItem="eoy-uf-lTg" secondAttribute="trailing" constant="44" id="uVQ-Ls-67h"/>
+                <constraint firstItem="tDl-jR-Qta" firstAttribute="top" secondItem="KLb-Hj-EB0" secondAttribute="top" constant="-10" id="vCt-gb-NBl"/>
+                <constraint firstItem="lDC-yZ-hhV" firstAttribute="leading" secondItem="KLb-Hj-EB0" secondAttribute="leading" constant="50" id="x8m-uO-o1M"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="19" y="-38"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Geely_setting_logo.png" width="174" height="242"/>
+    </resources>
+</document>

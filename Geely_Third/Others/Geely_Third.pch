@@ -1,0 +1,31 @@
+///Users/Geely_Third/Geely_Third/Others/Geely_Third.pch
+//  Geely_Third.pch
+//  Geely_Third
+//
+//  Created by WillyZhao on 16/9/27.
+//  Copyright © 2016年 WillyZhao. All rights reserved.
+//
+
+#ifndef Geely_Third_pch
+#define Geely_Third_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Geely_Third_pch */
+#ifdef __OBJC__
+
+
+#import "Geely_Third.h"
+
+#import "GelelyLeftContainsView.h"
+
+#import "GeelyContentContainsView.h"
+
+#import "GeelyRightContainsView.h"
+
+#import "MainRequest.h"
+
+#import "SingleModel.h"
+
+#endif

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellsettingword" id="Nwp-tG-GKh" customClass="GeelySettingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="1228" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nwp-tG-GKh" id="kgz-dw-2M9">
+                <rect key="frame" x="0.0" y="0.0" width="1228" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyF-hE-Pg3">
+                        <rect key="frame" x="0.0" y="0.0" width="1228" height="59.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="矩形-30-拷贝-9setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-sp-rXo">
+                                <rect key="frame" x="0.0" y="58" width="1228" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8pg-Wi-nxF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHb-na-OS4">
+                                <rect key="frame" x="40" y="21" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5is-SC-T2d">
+                                <rect key="frame" x="1186" y="23" width="12" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gHb-na-OS4" firstAttribute="leading" secondItem="WyF-hE-Pg3" secondAttribute="leading" constant="40" id="HX0-5d-lDE"/>
+                            <constraint firstItem="gHb-na-OS4" firstAttribute="centerY" secondItem="WyF-hE-Pg3" secondAttribute="centerY" id="Hmq-PM-8cy"/>
+                            <constraint firstAttribute="bottom" secondItem="a4j-sp-rXo" secondAttribute="bottom" id="JZy-xR-Iyn"/>
+                            <constraint firstItem="5is-SC-T2d" firstAttribute="centerY" secondItem="WyF-hE-Pg3" secondAttribute="centerY" id="RaU-4N-vmB"/>
+                            <constraint firstAttribute="trailing" secondItem="a4j-sp-rXo" secondAttribute="trailing" id="kBy-HG-7l3"/>
+                            <constraint firstAttribute="trailing" secondItem="5is-SC-T2d" secondAttribute="trailing" constant="30" id="yCO-gp-bbI"/>
+                            <constraint firstItem="a4j-sp-rXo" firstAttribute="leading" secondItem="WyF-hE-Pg3" secondAttribute="leading" id="zQ5-kG-0t2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="WyF-hE-Pg3" firstAttribute="leading" secondItem="kgz-dw-2M9" secondAttribute="leading" id="0hz-Aw-gbm"/>
+                    <constraint firstItem="WyF-hE-Pg3" firstAttribute="top" secondItem="kgz-dw-2M9" secondAttribute="top" id="IdD-bu-1ER"/>
+                    <constraint firstAttribute="bottom" secondItem="WyF-hE-Pg3" secondAttribute="bottom" id="LIy-t1-bam"/>
+                    <constraint firstAttribute="trailing" secondItem="WyF-hE-Pg3" secondAttribute="trailing" id="spF-2Z-xGV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="titleLabel" destination="gHb-na-OS4" id="Oda-Zq-OfK"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="矩形-30-拷贝-9setting.png" width="1" height="1"/>
+    </resources>
+</document>

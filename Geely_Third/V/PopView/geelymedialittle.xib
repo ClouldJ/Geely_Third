@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gzz-io-Rf4" customClass="GeelyMediaLittleView">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="多功能卡片media.png" translatesAutoresizingMaskIntoConstraints="NO" id="UgY-4x-CVP">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ult-cE-YMs">
+                    <rect key="frame" x="98" y="27" width="108" height="36"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ult-cE-YMs" firstAttribute="leading" secondItem="gzz-io-Rf4" secondAttribute="leading" constant="98" id="9RB-lE-dfV"/>
+                <constraint firstItem="UgY-4x-CVP" firstAttribute="leading" secondItem="gzz-io-Rf4" secondAttribute="leading" id="BCd-sF-IrH"/>
+                <constraint firstAttribute="bottom" secondItem="UgY-4x-CVP" secondAttribute="bottom" id="JJS-Na-lW7"/>
+                <constraint firstAttribute="trailing" secondItem="ult-cE-YMs" secondAttribute="trailing" constant="134" id="USu-4o-rGd"/>
+                <constraint firstItem="ult-cE-YMs" firstAttribute="top" secondItem="gzz-io-Rf4" secondAttribute="top" constant="27" id="XuL-xX-5ya"/>
+                <constraint firstAttribute="bottom" secondItem="ult-cE-YMs" secondAttribute="bottom" constant="372" id="ZJL-5n-sxq"/>
+                <constraint firstItem="UgY-4x-CVP" firstAttribute="top" secondItem="gzz-io-Rf4" secondAttribute="top" id="Zn5-SH-4hF"/>
+                <constraint firstAttribute="trailing" secondItem="UgY-4x-CVP" secondAttribute="trailing" id="a3R-Lx-CLw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="switchBtn" destination="ult-cE-YMs" id="IwW-qr-UKu"/>
+            </connections>
+            <point key="canvasLocation" x="406" y="291.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="多功能卡片media.png" width="340" height="435"/>
+    </resources>
+</document>

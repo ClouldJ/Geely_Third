@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="b3S-eR-58m" customClass="GeelyCalledListView">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="多功能卡片calledlist.png" translatesAutoresizingMaskIntoConstraints="NO" id="0hd-6o-pS0">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="435"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RFG-9i-nIf">
+                    <rect key="frame" x="0.0" y="135" width="290" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZW-HB-6fQ">
+                    <rect key="frame" x="294" y="25" width="46" height="37"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RFG-9i-nIf" secondAttribute="trailing" constant="50" id="0YR-UG-EGN"/>
+                <constraint firstAttribute="trailing" secondItem="0hd-6o-pS0" secondAttribute="trailing" id="9Pw-OG-FGt"/>
+                <constraint firstItem="0hd-6o-pS0" firstAttribute="leading" secondItem="b3S-eR-58m" secondAttribute="leading" id="FEB-WX-0Uc"/>
+                <constraint firstAttribute="bottom" secondItem="XZW-HB-6fQ" secondAttribute="bottom" constant="373" id="FNY-5G-bly"/>
+                <constraint firstItem="RFG-9i-nIf" firstAttribute="leading" secondItem="b3S-eR-58m" secondAttribute="leading" id="KWd-n7-Kjd"/>
+                <constraint firstAttribute="bottom" secondItem="RFG-9i-nIf" secondAttribute="bottom" id="PWj-VG-3kb"/>
+                <constraint firstItem="0hd-6o-pS0" firstAttribute="top" secondItem="b3S-eR-58m" secondAttribute="top" id="VvN-88-zBH"/>
+                <constraint firstItem="RFG-9i-nIf" firstAttribute="top" secondItem="b3S-eR-58m" secondAttribute="top" constant="135" id="YWa-r5-MqU"/>
+                <constraint firstItem="XZW-HB-6fQ" firstAttribute="top" secondItem="b3S-eR-58m" secondAttribute="top" constant="25" id="gSZ-4q-Gm4"/>
+                <constraint firstAttribute="trailing" secondItem="XZW-HB-6fQ" secondAttribute="trailing" id="pWg-ei-yPF"/>
+                <constraint firstAttribute="bottom" secondItem="0hd-6o-pS0" secondAttribute="bottom" id="tcy-j3-n31"/>
+                <constraint firstItem="XZW-HB-6fQ" firstAttribute="leading" secondItem="b3S-eR-58m" secondAttribute="leading" constant="294" id="vex-eU-Jgf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backBtn" destination="XZW-HB-6fQ" id="jYj-RP-r1b"/>
+                <outlet property="tableView_" destination="RFG-9i-nIf" id="n1r-XZ-FyB"/>
+            </connections>
+            <point key="canvasLocation" x="403" y="276.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="多功能卡片calledlist.png" width="340" height="435"/>
+    </resources>
+</document>
