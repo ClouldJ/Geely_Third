@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,7 +60,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-eR-g3j">
-                            <rect key="frame" x="554" y="0.0" width="50" height="82"/>
+                            <rect key="frame" x="504" y="0.0" width="50" height="82"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="50N-cz-TmU"/>
                             </constraints>
@@ -89,7 +88,7 @@
                         <constraint firstItem="T9a-42-2cR" firstAttribute="height" secondItem="QbT-0n-SAl" secondAttribute="height" id="e2F-QR-f5H"/>
                         <constraint firstItem="QbT-0n-SAl" firstAttribute="height" secondItem="K5O-qF-9hU" secondAttribute="height" id="fWY-dI-2ts"/>
                         <constraint firstItem="QbT-0n-SAl" firstAttribute="centerY" secondItem="K5O-qF-9hU" secondAttribute="centerY" id="fZP-Ia-koD"/>
-                        <constraint firstItem="cNa-Vo-DcD" firstAttribute="leading" secondItem="J5p-eR-g3j" secondAttribute="trailing" constant="20" id="hbb-Cq-o1h"/>
+                        <constraint firstItem="cNa-Vo-DcD" firstAttribute="leading" secondItem="J5p-eR-g3j" secondAttribute="trailing" constant="70" id="hbb-Cq-o1h"/>
                         <constraint firstItem="cNa-Vo-DcD" firstAttribute="centerY" secondItem="T9a-42-2cR" secondAttribute="centerY" id="kQv-qE-uj1"/>
                         <constraint firstItem="J5p-eR-g3j" firstAttribute="height" secondItem="cNa-Vo-DcD" secondAttribute="height" id="pOS-0u-C7N"/>
                         <constraint firstItem="T9a-42-2cR" firstAttribute="leading" secondItem="QbT-0n-SAl" secondAttribute="trailing" id="rr0-oo-UVg"/>

@@ -7,6 +7,7 @@
 //
 
 #import "CLAVPlayerView.h"
+#import "GeelyMusicTransProgress.h"
 
 
 
@@ -95,6 +96,9 @@
     self.playOrPauseBtn.selected = NO;
     //
     self.playOrPauseBtn.selected = YES;
+    //添加滑动条
+    GeelyMusicTransProgress *pro = [[GeelyMusicTransProgress alloc] initWithFrame:CGRectMake(self.timeLabel.frame.origin.x+self.timeLabel.frame.size.width+50, self.timeLabel.frame.origin.y,796, self.timeLabel.frame.size.height)];
+    [self.bottomView addSubview:pro];
 }
 /** layoutSubViews 布局子控件 */
 -(void)layoutSubviews

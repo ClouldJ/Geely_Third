@@ -9,14 +9,18 @@
 #import "GeelyMediaPlayerVC.h"
 #import "GeelyMediaListCell.h"
 #import "CLAVPlayerView.h"
+#import "TableViewProgressView.h"
+#import "GeelyMusicTransProgress.h"
 
 
 @interface GeelyMediaPlayerVC ()<UICollectionViewDelegate,UICollectionViewDataSource,GeelyFatherViewDatasource>
 {
     NSIndexPath *index;
     //列表右侧滑条
-    UIImageView *rightSliderLightLine;
+    TableViewProgressView *rightSliderLine;
     UILabel *rightLabel;
+    UILabel *tipLabel;
+    GeelyMusicTransProgress *pro;
     //
     CLAVPlayerView *mplayerView;
     UIView *rightPlayerView;
@@ -62,7 +66,7 @@
 //[self.contentView addSubview:self.contentView];
     //
     //顶部选择
-    UIImageView *topSelectView = [[UIImageView alloc] initWithFrame:CGRectMake(82, 0, 819,57)];
+    UIImageView *topSelectView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 819,57)];
 //    topSelectView.image = [UIImage imageNamed:@"mediaPlayer_icon_top_select1"];
 //    topSelectView.userInteractionEnabled = YES;
 //    UIButton *topLeftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, topSelectView.bounds.size.width*0.5, topSelectView.bounds.size.height)];
@@ -75,49 +79,54 @@
 //    [topSelectView addSubview:topRightBtn];
     //[self.content addSubview:topSelectView];
     //
-    UIImageView *usbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+80,topSelectView.frame.origin.y+topSelectView.frame.size.height+18,115,53)];
+    UIImageView *usbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+80,0,115,53)];
     usbImgView.image = [UIImage imageNamed:@"mediaPlayer_icon_usb2"];
     usbImgView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.contentView addSubview:usbImgView];
+    [self.contentScrollView addSubview:usbImgView];
     UIButton *editBtn = [[UIButton alloc] initWithFrame:CGRectMake(topSelectView.frame.size.width+topSelectView.frame.origin.x -usbImgView.frame.size.width-80, usbImgView.frame.origin.y, usbImgView.frame.size.width, usbImgView.frame.size.height)];
     [editBtn setTitle:@"编辑" forState:UIControlStateNormal];
     editBtn.titleLabel.font = [UIFont systemFontOfSize:19];
     [editBtn setTitleColor:[UIColor colorWithRed:149.0/255.0 green:149.0/255.0 blue:149.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     editBtn.backgroundColor = [UIColor clearColor];
-    [self.contentView addSubview:editBtn];
+    [self.contentScrollView addSubview:editBtn];
     //列表collectionView
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(198-15,140);
     layout.minimumLineSpacing = 14.5;
     layout.minimumInteritemSpacing = 0;
-    UICollectionView *listView = [[UICollectionView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+40,usbImgView.frame.origin.y+usbImgView.frame.size.height+14,819-60,293) collectionViewLayout:layout];
+    UICollectionView *listView = [[UICollectionView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+40,usbImgView.frame.origin.y+usbImgView.frame.size.height,819-60,293) collectionViewLayout:layout];
     listView.tag = 99;
     listView.delegate = self;
     listView.dataSource = self;
     listView.showsVerticalScrollIndicator = NO;
     listView.showsHorizontalScrollIndicator = NO;
     [listView registerNib:[UINib nibWithNibName:@"GeelyMediaListCell" bundle:nil] forCellWithReuseIdentifier:@"GeelyMediaListCell"];
-    [self.contentView addSubview:listView];
+    [self.contentScrollView addSubview:listView];
     // 右侧滑条
-    UIView *rightSliderLine = [[UIView alloc] initWithFrame:CGRectMake(listView.frame.origin.x+listView.frame.size.width +14.5, listView.frame.origin.y, 4, listView.frame.size.height)];
-    rightSliderLine.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sliderLine_normal_icon"]];
-    [self.contentView addSubview:rightSliderLine];
+    rightSliderLine = [[TableViewProgressView alloc] initWithFrame:CGRectMake(listView.frame.origin.x+listView.frame.size.width +35, listView.frame.origin.y,2, listView.frame.size.height) andBottomSize:CGSizeMake(2, 297) andupBottomSize:CGSizeMake(3, 400)];
+//    rightSliderLine.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"sliderLine_normal_icon"]];
+    rightSliderLine.heightPercent = 0.4;
+    [self.contentScrollView addSubview:rightSliderLine];
     
-    rightSliderLightLine = [[UIImageView alloc] initWithFrame:CGRectMake(rightSliderLine.frame.origin.x-2, rightSliderLine.frame.origin.y,8, rightSliderLine.frame.size.height*0.4)];
-    rightSliderLightLine.image = [UIImage imageNamed:@"sliderLine_light_icon"];
+    // = [[UIImageView alloc] initWithFrame:CGRectMake(rightSliderLine.frame.origin.x-2, rightSliderLine.frame.origin.y,8, rightSliderLine.frame.size.height*0.4)];
+    //rightSliderLightLine.image = [UIImage imageNamed:@"sliderLine_light_icon"];
     //[self.contentView addSubview:leftSliderLightLine];
     
     //右侧播放
-    rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(rightSliderLightLine.frame.origin.x +55, editBtn.frame.origin.y, 287, editBtn.frame.size.height)];
+    rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(rightSliderLine.frame.origin.x +55, editBtn.frame.origin.y, 287, editBtn.frame.size.height)];
     rightLabel.textColor = [UIColor colorWithRed:180.0/255.0 green:156.0/255.0 blue:102.0/255.0 alpha:1];
     rightLabel.font = [UIFont systemFontOfSize:19];
     rightLabel.textAlignment = NSTextAlignmentCenter;
-    [self.contentView addSubview:rightLabel];
+    [self.contentScrollView addSubview:rightLabel];
     //
     
     //
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaPlayerClosed) name:@"mediaPlayerClosed" object:nil];
     
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat xx = (scrollView.contentOffset.y)/(scrollView.contentSize.height) +0.4;
+    rightSliderLine.heightPercent = xx;
 }
 //
 - (void)mediaPlayerClosed{
@@ -126,31 +135,40 @@
     [mplayerView removeFromSuperview];
     //
     rightLabel.text = @"釜山行-国语中字2016";
-    rightPlayerView = [[UIView alloc] initWithFrame:CGRectMake(rightLabel.frame.origin.x,rightSliderLightLine.frame.origin.y, rightLabel.frame.size.width, 161.5)];
+    rightPlayerView = [[UIView alloc] initWithFrame:CGRectMake(rightLabel.frame.origin.x,rightSliderLine.frame.origin.y, rightLabel.frame.size.width, 161.5)];
     //[self.contentView addSubview:rightPlayerView];
     mplayerView = [CLAVPlayerView videoPlayView];
     mplayerView.frame = rightPlayerView.frame;
     mplayerView.contrainerViewController = self;
-    [self.contentView addSubview:mplayerView];
+    [self.contentScrollView addSubview:mplayerView];
     NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"f4v" ofType:@"mp4"]];
     NSString *urlstring = [URL absoluteString];
     mplayerView.urlString = urlstring;
     mplayerView.titleLabel.hidden=YES;
     mplayerView.bottomView.hidden=YES;
+    tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(rightLabel.frame.origin.x,mplayerView.frame.origin.y+mplayerView.frame.size.height,rightLabel.frame.size.width,56)];
+    tipLabel.text= @"正在播放中";
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    tipLabel.textColor = RGBAAAABBB(128, 125, 118, 1.0);
+    tipLabel.font = [UIFont systemFontOfSize:16];
+    [self.contentScrollView addSubview:tipLabel];
+    pro = [[GeelyMusicTransProgress alloc] initWithFrame:CGRectMake(tipLabel.frame.origin.x,tipLabel.frame.origin.y+tipLabel.frame.size.height,0,53)];
+    [self.contentScrollView addSubview:pro];
+    
 }
 //
 #pragma mark -
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if(scrollView.tag == 99){
-        float percent = (scrollView.contentOffset.y/scrollView.contentSize.height) +0.4;
-        percent = percent>=1?1:percent;
-        percent = percent<=0.4?0.4:percent;
-        NSLog(@"%f",percent);
-        CGRect frame = rightSliderLightLine.frame;
-        frame.size.height = scrollView.frame.size.height*percent;
-        rightSliderLightLine.frame = frame;
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    if(scrollView.tag == 99){
+//        float percent = (scrollView.contentOffset.y/scrollView.contentSize.height) +0.4;
+//        percent = percent>=1?1:percent;
+//        percent = percent<=0.4?0.4:percent;
+//        NSLog(@"%f",percent);
+//        CGRect frame = rightSliderLine.frame;
+//        frame.size.height = scrollView.frame.size.height*percent;
+//        rightSliderLightLine.frame = frame;
+//    }
+//}
 #pragma mark - collectionView代理方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -181,7 +199,8 @@
     //
     [mplayerView removeFromSuperview];
     CLAVPlayerView *playerView = [CLAVPlayerView videoPlayView];
-    playerView.frame = self.contentView.frame;
+    playerView.frame = CGRectMake(0, 0,1310,492);
+    playerView.center = self.view.center;
     playerView.contrainerViewController = self;
     [self.view addSubview:playerView];
     NSURL *URL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"f4v" ofType:@"mp4"]];

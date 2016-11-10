@@ -39,7 +39,7 @@
     return view;
 }
 - (void)setupSubViews{
-    UIImageView *topSelectView = [[UIImageView alloc] initWithFrame:CGRectMake(82,0,819,65)];
+    UIImageView *topSelectView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,819,65)];
     topSelectView.image = [UIImage imageNamed:@"picture_top_icon_02"];
 //    topSelectView.userInteractionEnabled = YES;
 //    UIButton *topLeftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, topSelectView.bounds.size.width*0.5, topSelectView.bounds.size.height)];
@@ -52,12 +52,12 @@
 //    [topSelectView addSubview:topRightBtn];
     //[self.contentView addSubview:topSelectView];
     //
-    UIImageView *usbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+80,topSelectView.frame.origin.y+topSelectView.frame.size.height+18,115,53)];
+    UIImageView *usbImgView = [[UIImageView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+80,0,115,53)];
     usbImgView.image = [UIImage imageNamed:@"mediaPlayer_icon_usb2"];
     usbImgView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.contentView addSubview:usbImgView];
+    [self.contentScrollView addSubview:usbImgView];
     //
-    scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+40,topSelectView.frame.origin.y+topSelectView.frame.size.height+5, 819-40,360.5-5)];
+    scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(topSelectView.frame.origin.x+40,0, 819-40,360.5-5)];
     scroll.contentSize = CGSizeMake(scroll.frame.size.width*3,scroll.frame.size.height);
     scroll.pagingEnabled=YES;
     scroll.showsVerticalScrollIndicator=NO;
@@ -69,7 +69,7 @@
         img.image = [UIImage imageNamed:@"picture_bg"];
         [scroll addSubview:img];
     }
-    [self.contentView insertSubview:scroll belowSubview:usbImgView];
+    [self.contentScrollView insertSubview:scroll belowSubview:usbImgView];
     //
     UIImageView *bottomTool = [[UIImageView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x-5, scroll.frame.origin.y+scroll.frame.size.height-62, 829-40,71.5)];
     bottomTool.image = [UIImage imageNamed:@"picture_bottom_toolView"];
@@ -85,11 +85,11 @@
     [rightBtn addTarget:self action:@selector(showNextPic:) forControlEvents:UIControlEventTouchUpInside];
     //rightBtn.backgroundColor = [UIColor redColor];
     [bottomTool addSubview:rightBtn];
-    [self.contentView addSubview:bottomTool];
+    [self.contentScrollView addSubview:bottomTool];
     //
     UIImageView *rightImgs = [[UIImageView alloc] initWithFrame:CGRectMake(scroll.frame.origin.x+scroll.frame.size.width+55, scroll.frame.origin.y, 260, 320)];
     rightImgs.image = [UIImage imageNamed:@"picture_right_imgs_03"];
-    [self.contentView addSubview:rightImgs];
+    [self.contentScrollView addSubview:rightImgs];
     //
     countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rightImgs.frame.origin.x, rightImgs.frame.origin.y+rightImgs.frame.size.height-10, rightImgs.frame.size.width,30)];
     countLabel.text = @"1/10";
@@ -98,7 +98,7 @@
     countLabel.textAlignment = NSTextAlignmentCenter;
     countLabel.textColor = RGB(171, 171, 171);
     //countLabel.contentMode = UIViewContentModeTop;
-    [self.contentView addSubview:countLabel];
+    [self.contentScrollView addSubview:countLabel];
 }
 - (void)showPrecedingPic:(UIButton*)sender{
     if(page>1){
