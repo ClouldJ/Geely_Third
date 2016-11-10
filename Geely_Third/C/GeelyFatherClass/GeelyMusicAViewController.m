@@ -12,8 +12,9 @@
 #import "GeelyMusicAudioManager.h"
 #import "UIScrollView+AnimationOffSet.h"
 #import "GeelyFmAmView.h"
+#import "GeelyMusicTableViewCell.h"
 
-@interface GeelyMusicAViewController () {
+@interface GeelyMusicAViewController () <UITableViewDelegate,UITableViewDataSource> {
     UIImageView *contentImage;
     UIButton *nextMusicBtn;
     UIButton *stopMusicBtn;
@@ -24,6 +25,8 @@
     MainRequest *mainRequest;
     MainRequest *mainRequest1;
     NSMutableArray *buttons_array;
+    UITableView *tableView_;
+    BOOL fmAm;
 }
 
 @end
@@ -35,7 +38,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    fmAm = YES;
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
     [self.view addSubview:button_volume_];
@@ -106,6 +109,18 @@
         fm.backgroundColor = [UIColor clearColor];
         [self.contentScrollView addSubview:fm];
         
+        UIView *view_sec = [[[NSBundle mainBundle] loadNibNamed:@"GeelyMediaView" owner:self options:nil]firstObject];
+        view_sec.frame = CGRectMake(1228*2,0 , 1228, 364.5);
+        view_sec.backgroundColor = [UIColor clearColor];
+        [self.contentScrollView addSubview:view_sec];
+        tableView_ = (UITableView *)[view_sec viewWithTag:103987];
+        tableView_.delegate = self;
+        tableView_.backgroundColor = [UIColor clearColor];
+        tableView_.dataSource = self;
+        tableView_.rowHeight = 45;
+        tableView_.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        [tableView_ registerNib:[UINib nibWithNibName:@"GeelyMusicTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cellmusic"];
         
         view_first.alpha = 0;
         [UIView animateWithDuration:.5f animations:^{
@@ -316,6 +331,7 @@
     switch (index) {
         case 1:
         {
+            fmAm = YES;
             UIButton *btn = buttons_array[3];
             [btn setBackgroundImage:[UIImage imageNamed:@"音频检索"] forState:UIControlStateNormal];
             [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
@@ -323,11 +339,14 @@
             break;
         case 4:
         {
-//            self.
+            if (fmAm) {
+                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228*2, 0)];
+            }
         }
             break;
         case 2:
         {
+            fmAm = NO;
             UIButton *btn = buttons_array[3];
             [btn setBackgroundImage:[UIImage imageNamed:@"电台列表musci"] forState:UIControlStateNormal];
             [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
@@ -357,7 +376,16 @@
 }
 
 
+#pragma mark tableView
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GeelyMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellmusic" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+    return cell;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

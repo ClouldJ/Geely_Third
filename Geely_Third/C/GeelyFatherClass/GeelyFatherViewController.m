@@ -29,6 +29,26 @@
 
 @implementation GeelyFatherViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(littleShowDismiss:) name:DISMISS object:nil];
+}
+
+-(void)littleShowDismiss:(NSNotification *)na {
+        if ([na.userInfo[@"dismiss"] isEqualToString:@"left"]) {
+            CGPoint pp = leftFrameScroll.contentScrollView.contentOffset;
+            [scrollViewContent geelyContentViewDismiss:^{
+                leftFrameScroll.frame = CGRectMake(82, 0, 0, 492-57);
+                leftFrameScroll.show = NO;
+                self.contentImageView.frame = CGRectMake(340-340, 0, 1310, 492);
+                leftFrameScroll.contentScrollView.frame = CGRectMake(0, 0, 0, 435);
+                topView.frame = CGRectMake(topView.frame.origin.x-340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
+            } successful:^{
+                leftFrameScroll.contentScrollView.contentOffset = pp;
+            }];
+        }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
