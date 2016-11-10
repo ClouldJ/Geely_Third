@@ -8,11 +8,22 @@
 
 #import "GeelyLittleSettingACell.h"
 static NSInteger i = 0;
+@interface GeelyLittleSettingACell () {
+    BOOL yyyl;
+}
 
+@end
 @implementation GeelyLittleSettingACell
-
+-(void)dads {
+    
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    if (![SingleModel sharedInstance].isRel) {
+        [SingleModel sharedInstance].isRel = YES;
+        i = 0;
+    }
     
     self.Wselected = NO;
     if (i<=5) {

@@ -220,6 +220,11 @@
 }
 
 
+-(void)dealloc {
+    NSLog(@"父类消失");
+    [SingleModel sharedInstance].isRel = NO;
+}
+
 /*
  #pragma mark - Navigation
  

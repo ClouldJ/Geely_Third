@@ -10,6 +10,7 @@
 
 @interface GeelyLittleSettingACell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *contentCustomView;
+//@property (weak, nonatomic) IBOutlet UIView *contentCustomView;
 @property (weak, nonatomic) IBOutlet UIImageView *bottonLine;
 
 -(void)viewAddSelectedImage:(NSIndexPath *)indexPath cancleImage:(UIImage *)cImage;

@@ -57,7 +57,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="bottonLine" destination="VnT-ry-q3J" id="xQM-8q-jjU"/>
-                <outlet property="contentCustomView" destination="cdX-O0-4sD" id="Cgh-8K-acF"/>
+                <outlet property="contentCustomView" destination="cdX-O0-4sD" id="rHr-wU-g8v"/>
             </connections>
         </tableViewCell>
     </objects>
