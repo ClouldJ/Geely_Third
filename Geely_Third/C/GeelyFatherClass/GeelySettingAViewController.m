@@ -10,6 +10,8 @@
 
 #import "GeelySettingTableViewCell.h"
 #import "TableViewProgressView.h"
+#import "GeelyPictureShowVC.h"
+#import "GeelyMediaPlayerVC.h"
 
 @interface GeelySettingAViewController () <UITableViewDelegate,UITableViewDataSource> {
     UITableView *tableView_;
@@ -159,17 +161,67 @@
     [cell.statusBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [cell.statusBtn setBackgroundImage:[UIImage imageNamed:@"开切换-拷贝setting"] forState:UIControlStateNormal];
     [cell.statusBtn setBackgroundImage:[UIImage imageNamed:@"开切换huanhduanda"] forState:UIControlStateSelected];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            //@"音量随车速调节";
+            break;
+        case 1:
+            //@"车辆故障查看";
+            break;
+        case 2:
+            //@"无线充电";
+            break;
+        case 3:
+            //@"氛围灯";
+            break;
+        case 4:
+            //@"主题颜色";
+            break;
+        case 5:
+            //@"储存空间";
+            break;
+        case 6:
+            //@"驾驶模式";
+            break;
+        case 7:
+            //@"能量流";
+            break;
+        case 8:
+            //@"平衡衰减";
+            break;
+        case 9:
+            //@"视频浏览";
+        {
+            GeelyMediaPlayerVC *vc = [[GeelyMediaPlayerVC alloc] init];
+            [self.navigationController pushViewController:vc animated:NO];
+        }
+            break;
+        case 10:
+            //@"图片浏览";
+        {
+            GeelyPictureShowVC *vc = [[GeelyPictureShowVC alloc] init];
+            [self.navigationController pushViewController:vc animated:NO];
+        }
+            break;
+            
+        default:
+            break;
+    }
 
+}
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat xx = (scrollView.contentOffset.y)/(scrollView.contentSize.height - self.view.bounds.size.height+20);
     progress.heightPercent = xx;
 }
 
--(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
-}
+//-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return NO;
+//}
 
 -(void)btnAction:(UIButton *)btn {
     btn.selected = !btn.selected;
