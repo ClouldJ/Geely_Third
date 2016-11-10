@@ -194,6 +194,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"mediaPlayerClosed" object:nil];
     [self.player pause];
     [self.playerLayer removeFromSuperlayer];
+    [self.player.currentItem cancelPendingSeeks];
+    [self.player.currentItem.asset cancelLoading];
+    self.player=nil;
+    self.playerLayer=nil;
+    self.playerItem=nil;
 }
 
 /** slider定时器添加 */
@@ -264,6 +269,8 @@
     [super removeFromSuperview];
     [self.player pause];
     [self.playerLayer removeFromSuperlayer];
+    [self.player.currentItem cancelPendingSeeks];
+    [self.player.currentItem.asset cancelLoading];
     self.player=nil;
     self.playerLayer=nil;
     self.playerItem=nil;
@@ -277,7 +284,15 @@
     self.coverView.hidden = YES;
     [self playOrPauseBigBtnClick:self.playOrPauseBigBtn];
 }
-
+- (void)dealloc{
+    [self.player pause];
+    [self.playerLayer removeFromSuperlayer];
+    [self.player.currentItem cancelPendingSeeks];
+    [self.player.currentItem.asset cancelLoading];
+    self.player=nil;
+    self.playerLayer=nil;
+    self.playerItem=nil;
+}
 
 
 @end

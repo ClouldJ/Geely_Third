@@ -219,8 +219,15 @@
     cell.edgeImgView.hidden = NO;
     index = indexPath;
     //播放视频
-    //
+    //清除上一次播放
+    [rightPlayerView removeFromSuperview];
     [mplayerView removeFromSuperview];
+    [tipLabel removeFromSuperview];
+    [pro removeFromSuperview];
+    [leftTime removeFromSuperview];
+    [rightTime removeFromSuperview];
+    //
+    
     CLAVPlayerView *playerView = [CLAVPlayerView videoPlayView];
     playerView.frame = CGRectMake(0, 0,1310,492);
     playerView.center = self.view.center;
@@ -247,6 +254,9 @@
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [mplayerView removeFromSuperview];
+}
+- (void)dealloc{
     [mplayerView removeFromSuperview];
 }
 - (void)didReceiveMemoryWarning {
