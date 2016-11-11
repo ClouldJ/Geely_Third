@@ -807,7 +807,7 @@
     [UIView animateWithDuration:.5f animations:^{
         presentScrollView.frame = CGRectMake(leftView.frame.origin.x-340, 0, 340, baseView.frame.size.height - 57);
         rightView.frame = CGRectMake(-340, 0, 340, baseView.frame.size.height - 57);
-        contentView.frame = CGRectMake(contentView.frame.origin.x - 340, 0, contentView.frame.size.width, contentView.frame.size.height);
+        contentView.frame = CGRectMake(0, 0, contentView.frame.size.width, contentView.frame.size.height);
     } completion:^(BOOL finished) {
         rightMoved = YES;
     }];

@@ -8,9 +8,11 @@
 
 #import "GeelyWeatherViewController.h"
 
-#import "GeelyMusciViewController.h"
+#import "GeelyMusicAViewController.h"
 #import "DemoView.h"
-#import "GeelySettingViewController.h"
+#import "GeelySettingAViewController.h"
+#import "GeelyCallAViewController.h"
+
 
 @interface GeelyWeatherViewController () <GeelyLeftContainsDelegate,UIScrollViewDelegate> {
     GelelyLeftContainsView *leftView;
@@ -252,11 +254,16 @@
 
 -(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 1) {
-        GeelyMusciViewController *mu = [[GeelyMusciViewController alloc] init];
+        GeelyMusicAViewController *mu = [[GeelyMusicAViewController alloc] init];
         [self.navigationController pushViewController:mu animated:NO];
     }else if (indexPath.row == 3) {
-        GeelySettingViewController *set = [[GeelySettingViewController alloc] init];
+        GeelySettingAViewController *set = [[GeelySettingAViewController alloc] init];
         [self.navigationController pushViewController:set animated:NO];
+    }else if (indexPath.row == 4) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }else if (indexPath.row == 2) {
+        GeelyCallAViewController *vb = [[GeelyCallAViewController alloc] init];
+        [self.navigationController pushViewController:vb animated:NO];
     }
 }
 
