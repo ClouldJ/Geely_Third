@@ -59,7 +59,13 @@ static NSString *path;
     re.requestRadio.type = @0;
     re.requestVolume.type = @1;
     re.requestCar.state = @1;
-    re.responseCar.notice = [SingleModel sharedInstance].carSingle.notice;
+    
+    if (![SingleModel sharedInstance].carSingle.notice) {
+        re.requestCar.notice = @0;
+    }else{
+        re.requestCar.notice = [SingleModel sharedInstance].carSingle.notice;
+    }
+    
     re.requestMute = [SingleModel sharedInstance].muteSingle;
     
     Class class = NSClassFromString(request);

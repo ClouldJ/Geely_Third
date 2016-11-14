@@ -53,13 +53,13 @@
     vvlioce = [[MPMusicPlayerController alloc] init];
     volume = vvlioce.volume;
     
-    mainRequest = [[MainRequest alloc] init];
-    mainRequest.requestVolume = [[Volume alloc] init];
-    mainRequest.requestVoice = [[Voice alloc] init];
-    mainRequest.requestPhone = [[Phone alloc] init];
-    mainRequest.requestMusic = [[Music alloc] init];
-    mainRequest.requestRadio = [[Radio alloc] init];
-    mainRequest.requestMute = [[Mute alloc] init];
+//    mainRequest = [[MainRequest alloc] init];
+//    mainRequest.requestVolume = [[Volume alloc] init];
+//    mainRequest.requestVoice = [[Voice alloc] init];
+//    mainRequest.requestPhone = [[Phone alloc] init];
+//    mainRequest.requestMusic = [[Music alloc] init];
+//    mainRequest.requestRadio = [[Radio alloc] init];
+//    mainRequest.requestMute = [[Mute alloc] init];
 
     
 //    UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];

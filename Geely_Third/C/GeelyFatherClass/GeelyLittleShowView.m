@@ -31,13 +31,13 @@
 
 -(void)addScrollView {
     
-    mainRequest = [[MainRequest alloc] init];
-    mainRequest.requestVolume = [[Volume alloc] init];
-    mainRequest.requestVoice = [[Voice alloc] init];
-    mainRequest.requestPhone = [[Phone alloc] init];
-    mainRequest.requestMusic = [[Music alloc] init];
-    mainRequest.requestRadio = [[Radio alloc] init];
-    mainRequest.requestMute = [[Mute alloc] init];
+//    mainRequest = [[MainRequest alloc] init];
+//    mainRequest.requestVolume = [[Volume alloc] init];
+//    mainRequest.requestVoice = [[Voice alloc] init];
+//    mainRequest.requestPhone = [[Phone alloc] init];
+//    mainRequest.requestMusic = [[Music alloc] init];
+//    mainRequest.requestRadio = [[Radio alloc] init];
+//    mainRequest.requestMute = [[Mute alloc] init];
     
     listOrNo = YES;
     self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
@@ -57,17 +57,7 @@
     media.block = ^(){
         [acPlayer play];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
-        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-        
-        mainRequest.requestMusic.type = @1;
-        mainRequest.requestPhone.type = @0;
-        mainRequest.requestVoice.type = @0;
-        mainRequest.requestRadio.type = @0;
-        mainRequest.requestVolume.type = @1;
-        mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-        
-        
-        [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+        [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
             [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
         } failure:^(__kindof HGBaseRequest *request, NSError *error) {
             [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -110,15 +100,7 @@
     
     [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 435*3)];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-    mainRequest.requestRadio.type = @0;
-    mainRequest.requestPhone.type = @2;
-    mainRequest.requestMusic.type = @0;
-    mainRequest.requestVoice.type = @0;
-    mainRequest.requestVolume.type = @1;
-    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-    
-    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+    [[[SingleModel sharedInstance] singleMainRequest:@"Phone" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -141,15 +123,7 @@
     
     [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 435*2)];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-    mainRequest.requestRadio.type = @0;
-    mainRequest.requestPhone.type = @0;
-    mainRequest.requestMusic.type = @0;
-    mainRequest.requestVoice.type = @0;
-    mainRequest.requestVolume.type = @1;
-    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-    
-    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+    [[[SingleModel sharedInstance] singleMainRequest:@"dinando" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
