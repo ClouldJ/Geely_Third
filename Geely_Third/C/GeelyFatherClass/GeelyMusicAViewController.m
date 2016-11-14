@@ -62,21 +62,21 @@
     
     manager = [GeelyMusicAudioManager defaultManager];
     music = YES;
-    mainRequest = [[MainRequest alloc] init];
-    mainRequest.requestMusic = [[Music alloc] init];
-    mainRequest.requestVolume = [[Volume alloc] init];
-    mainRequest.requestMute = [[Mute alloc] init];
-    mainRequest.requestPhone = [[Phone alloc] init];
-    mainRequest.requestRadio = [[Radio alloc] init];
-    mainRequest.requestMute = [[Mute alloc] init];
-    
-    mainRequest1 = [[MainRequest alloc] init];
-    mainRequest1.requestMusic = [[Music alloc] init];
-    mainRequest1.requestVolume = [[Volume alloc] init];
-    mainRequest1.requestMute = [[Mute alloc] init];
-    mainRequest1.requestPhone = [[Phone alloc] init];
-    mainRequest1.requestRadio = [[Radio alloc] init];
-    mainRequest1.requestMute = [[Mute alloc] init];
+//    mainRequest = [[MainRequest alloc] init];
+//    mainRequest.requestMusic = [[Music alloc] init];
+//    mainRequest.requestVolume = [[Volume alloc] init];
+//    mainRequest.requestMute = [[Mute alloc] init];
+//    mainRequest.requestPhone = [[Phone alloc] init];
+//    mainRequest.requestRadio = [[Radio alloc] init];
+//    mainRequest.requestMute = [[Mute alloc] init];
+//    
+//    mainRequest1 = [[MainRequest alloc] init];
+//    mainRequest1.requestMusic = [[Music alloc] init];
+//    mainRequest1.requestVolume = [[Volume alloc] init];
+//    mainRequest1.requestMute = [[Mute alloc] init];
+//    mainRequest1.requestPhone = [[Phone alloc] init];
+//    mainRequest1.requestRadio = [[Radio alloc] init];
+//    mainRequest1.requestMute = [[Mute alloc] init];
     
     self.dataSource = self;
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
@@ -138,14 +138,7 @@
 }
 
 -(void)volumeAdd{
-    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-    mainRequest.requestVolume.type = @2;
-    mainRequest.requestPhone.type = @0;
-    mainRequest.requestRadio.type = @0;
-    mainRequest.requestVoice.type = @0;
-    mainRequest.requestMusic.type = @0;
-    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+    [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -164,27 +157,13 @@
         //        [vv_bottom.vv autoMakeViewFrame:vvlioce.volume*2];
         
         if (vvlioce.volume == 0) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            mainRequest.requestVolume.type = @0;
-            mainRequest.requestPhone.type = @0;
-            mainRequest.requestRadio.type = @0;
-            mainRequest.requestVoice.type = @0;
-            mainRequest.requestMusic.type = @0;
-            mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-            [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@0] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             }];
         }else{
-            [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            mainRequest.requestVolume.type = @2;
-            mainRequest.requestPhone.type = @0;
-            mainRequest.requestRadio.type = @0;
-            mainRequest.requestVoice.type = @0;
-            mainRequest.requestMusic.type = @0;
-            mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-            [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -222,14 +201,7 @@
             [manager.player stop];
             [manager playMusic:@"Sam Smith-Writing's On The Wall"];
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            mainRequest.requestMusic.type = @1;
-            mainRequest.requestPhone.type = @0;
-            mainRequest.requestVoice.type = @0;
-            mainRequest.requestVolume.type = @1;
-            mainRequest.requestRadio.type = @0;
-            mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-            [mainRequest startWithBlockSuccess:^(__kindof MainRequest *request) {
+            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -243,15 +215,7 @@
                 
                 [manager.player pause];
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-                mainRequest.requestMusic.type = @0;
-                mainRequest.requestRadio.type = @0;
-                mainRequest.requestPhone.type = @0;
-                mainRequest.requestVoice.type = @0;
-                mainRequest.requestVolume.type = @1;
-                mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-                
-                [mainRequest startWithBlockSuccess:^(__kindof MainRequest *request) {
+                [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@0] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
                 } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -266,15 +230,7 @@
                 }
                 contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-                mainRequest.requestMusic.type = @1;
-                mainRequest.requestPhone.type = @0;
-                mainRequest.requestRadio.type = @0;
-                mainRequest.requestVoice.type = @0;
-                mainRequest.requestVolume.type = @1;
-                mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-                
-                [mainRequest startWithBlockSuccess:^(__kindof MainRequest *request) {
+                [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
                 } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -286,15 +242,7 @@
         {
             [manager.player stop];
             [manager playMusic:@"Sam Smith-Writing's On The Wall"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            mainRequest.requestMusic.type = @1;
-            mainRequest.requestPhone.type = @0;
-            mainRequest.requestVoice.type = @0;
-            mainRequest.requestRadio.type = @0;
-            mainRequest.requestVolume.type = @1;
-            mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-            
-            [mainRequest startWithBlockSuccess:^(__kindof MainRequest *request) {
+            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -362,22 +310,11 @@
             [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
             
 #pragma mark 电台操作
-            [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            
-            mainRequest1.requestMusic.type = @0;
-            mainRequest1.requestPhone.type = @0;
-            mainRequest1.requestVoice.type = @0;
-            mainRequest1.requestRadio.type = @1;
-            mainRequest1.requestVolume.type = @1;
-            mainRequest1.requestMute = [SingleModel sharedInstance].muteSingle;
-            
-            
-            [mainRequest1 startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[[SingleModel sharedInstance] singleMainRequest:@"Radio" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             }];
-            
         }
             break;
         default:
