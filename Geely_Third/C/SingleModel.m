@@ -43,5 +43,40 @@ static NSString *path;
 }
 
 
+-(MainRequest *)singleMainRequest:(NSString *)request type_value:(NSNumber *)value{
+    MainRequest *re = [[MainRequest alloc] init];
+    re.requestVolume = [[Volume alloc] init];
+    re.requestVoice = [[Voice alloc] init];
+    re.requestPhone = [[Phone alloc] init];
+    re.requestMusic = [[Music alloc] init];
+    re.requestRadio = [[Radio alloc] init];
+    re.requestMute = [[Mute alloc] init];
+    re.requestCar = [[Car alloc] init];
+    
+    re.requestVoice.type = @0;
+    re.requestPhone.type = @0;
+    re.requestMusic.type = @0;
+    re.requestRadio.type = @0;
+    re.requestVolume.type = @1;
+    re.requestCar.state = @1;
+    re.responseCar.notice = [SingleModel sharedInstance].carSingle.notice;
+    re.requestMute = [SingleModel sharedInstance].muteSingle;
+    
+    Class class = NSClassFromString(request);
+    if (class == [Volume class]) {
+        re.requestVolume.type = value;
+    }else if (class == [Radio class]) {
+        re.requestRadio.type = value;
+    }else if (class == [Phone class]) {
+        re.requestPhone.type = value;
+    }else if (class == [Voice class]) {
+        re.requestVoice.type = value;
+    }else if (class == [Car class]) {
+        re.requestCar.state = value;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+    return re;
+}
+
 
 @end

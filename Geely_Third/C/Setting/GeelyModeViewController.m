@@ -60,14 +60,29 @@
         NSLog(@"黄");
         [[NSNotificationCenter defaultCenter] postNotificationName:MODE_GOLD object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_yellow"];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Car" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
     }else if (index == 2) {
         NSLog(@"哄");
         [[NSNotificationCenter defaultCenter] postNotificationName:MODE_RED object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_red"];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Car" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
     }else{
         NSLog(@"蓝");
         [[NSNotificationCenter defaultCenter] postNotificationName:MODE_BLUE object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_blue"];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Car" type_value:@3] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
     }
 }
 

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MainRequest.h"
 #import "Mute.h"
 #import "GeelyLeftContainsTableViewCell.h"
+#import "Car.h"
 
 
 typedef enum {
@@ -20,7 +21,15 @@ typedef enum {
 
 @interface SingleModel : NSObject
 
+@property (nonatomic, assign) BOOL isDisplay;
+
 @property (nonatomic, strong) Mute *muteSingle;
+
+@property (nonatomic, strong) Car *carSingle;
+
+@property (nonatomic, strong) MainRequest *currentRequest;
+
+@property (nonatomic , assign) NSInteger carState;
 
 @property (nonatomic, strong) GeelyLeftContainsTableViewCell *oldCell;
 
@@ -54,7 +63,7 @@ typedef enum {
 
 @property (nonatomic ,assign)DisplayType displayType;
 
-
+-(MainRequest *)singleMainRequest:(NSString *)request type_value:(NSNumber *)value;
 
 +(instancetype)sharedInstance;
 

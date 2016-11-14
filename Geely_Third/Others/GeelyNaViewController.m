@@ -51,6 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [SingleModel sharedInstance].index_cellImage = 6;
+    [SingleModel sharedInstance].isDisplay = NO;
     [SingleModel sharedInstance].displayType = GOLD;
     noVolce = [[GeelyNoVoliceView alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
     NONONONO = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
@@ -75,9 +76,9 @@
 //    }
 //    
     [request startWithBlockSuccess:^(MainRequest *request) {
-
+        [SingleModel sharedInstance].currentRequest = request;
         NSDictionary *dic = (NSDictionary *)request.responseJSONObject;
-//        NSLog(@"数据接收状态:%@",dic);
+        NSLog(@"数据接收状态:%@",dic);
         if ([dic[@"data"][@"volume"][@"type"] integerValue] == 0) {
             if (!noVolce.did) {
                 [noVolce showAnimation];
@@ -91,12 +92,32 @@
             [SingleModel sharedInstance].muteSingle = request.responseMute;
         }
         
+        if (request.responseCar) {
+            [SingleModel sharedInstance].carSingle = request.responseCar;
+        }
         
         if ([dic[@"data"][@"voice"][@"type"] integerValue] == 1) {
             [NONONONO sssShowAnimate];
         }else if ([dic[@"data"][@"voice"][@"type"] integerValue] == 0) {
             [NONONONO dismisss];
         }
+        
+        if ([request.responseCar.state integerValue] == 1 && [request.responseCar.state integerValue]!=[SingleModel sharedInstance].carState) {
+            
+            [SingleModel sharedInstance].carState = [request.responseCar.state integerValue];
+            [[NSNotificationCenter defaultCenter] postNotificationName:MODE_GOLD object:nil];
+        }else if ([request.responseCar.state integerValue] == 2 && [request.responseCar.state integerValue]!=[SingleModel sharedInstance].carState) {
+            [SingleModel sharedInstance].carState = [request.responseCar.state integerValue];
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:MODE_RED object:nil];
+        }else if ([request.responseCar.state integerValue] == 3 && [request.responseCar.state integerValue]!=[SingleModel sharedInstance].carState) {
+            [SingleModel sharedInstance].carState = [request.responseCar.state integerValue];
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:MODE_BLUE object:nil];
+        }else{
+            NSLog(@"没有此驾驶模式");
+        }
+        
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         
     }];

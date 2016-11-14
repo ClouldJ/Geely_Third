@@ -36,17 +36,17 @@
 
 -(void)becomeBlue{
     NSLog(@"变换为经济模式");
-    imageView.image = [UIImage imageNamed:@"Geely_home_content_controlBlue"];
+    [imageView animationImage:[UIImage imageNamed:@"Geely_home_content_controlBlue"]];
 }
 
 -(void)becomeRed {
     NSLog(@"变换为运动模式");
-    imageView.image = [UIImage imageNamed:@"Geely_home_content_controlRed"];
+    [imageView animationImage:[UIImage imageNamed:@"Geely_home_content_controlRed"]];
 }
 
 -(void)becomegold{
     NSLog(@"变换为舒适模式");
-    imageView.image = [UIImage imageNamed:@"apphomecontent"];
+    [imageView animationImage:[UIImage imageNamed:@"apphomecontent"]];
 }
 
 /*

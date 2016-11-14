@@ -250,12 +250,6 @@
 		C263F9051DD40D8300ED9EC4 /* HGBaseRequest+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C01DD40D8300ED9EC4 /* HGBaseRequest+Response.m */; };
 		C263F9061DD40D8300ED9EC4 /* InterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */; };
 		C263F9071DD40D8300ED9EC4 /* MainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C41DD40D8300ED9EC4 /* MainRequest.m */; };
-		C263F9081DD40D8300ED9EC4 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C81DD40D8300ED9EC4 /* Music.m */; };
-		C263F9091DD40D8300ED9EC4 /* Mute.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8CB1DD40D8300ED9EC4 /* Mute.m */; };
-		C263F90A1DD40D8300ED9EC4 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8CE1DD40D8300ED9EC4 /* Phone.m */; };
-		C263F90B1DD40D8300ED9EC4 /* Radio.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8D11DD40D8300ED9EC4 /* Radio.m */; };
-		C263F90C1DD40D8300ED9EC4 /* Voice.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8D41DD40D8300ED9EC4 /* Voice.m */; };
-		C263F90D1DD40D8300ED9EC4 /* Volume.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8D71DD40D8300ED9EC4 /* Volume.m */; };
 		C263F90E1DD40D8300ED9EC4 /* noadd.xib in Resources */ = {isa = PBXBuildFile; fileRef = C263F8D81DD40D8300ED9EC4 /* noadd.xib */; };
 		C263F90F1DD40D8300ED9EC4 /* novolice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C263F8D91DD40D8300ED9EC4 /* novolice.xib */; };
 		C263F9101DD40D8300ED9EC4 /* power.xib in Resources */ = {isa = PBXBuildFile; fileRef = C263F8DA1DD40D8300ED9EC4 /* power.xib */; };
@@ -502,6 +496,13 @@
 		C27C02C11DD9F38D00C1A278 /* appdisplay_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C27C02BF1DD9F38D00C1A278 /* appdisplay_red@2x.png */; };
 		C27C02C31DD9F9C200C1A278 /* Geely_displayforred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C27C02C21DD9F9C200C1A278 /* Geely_displayforred@2x.png */; };
 		C27C02C51DD9FA4600C1A278 /* Geely_displayforred1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C27C02C41DD9FA4600C1A278 /* Geely_displayforred1@2x.png */; };
+		C27C02DC1DD9FE5400C1A278 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02C91DD9FE5400C1A278 /* Car.m */; };
+		C27C02DD1DD9FE5400C1A278 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02CC1DD9FE5400C1A278 /* Music.m */; };
+		C27C02DE1DD9FE5400C1A278 /* Mute.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02CF1DD9FE5400C1A278 /* Mute.m */; };
+		C27C02DF1DD9FE5400C1A278 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02D21DD9FE5400C1A278 /* Phone.m */; };
+		C27C02E01DD9FE5400C1A278 /* Radio.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02D51DD9FE5400C1A278 /* Radio.m */; };
+		C27C02E11DD9FE5400C1A278 /* Voice.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02D81DD9FE5400C1A278 /* Voice.m */; };
+		C27C02E21DD9FE5400C1A278 /* Volume.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02DB1DD9FE5400C1A278 /* Volume.m */; };
 		C2917C271DC86501001ECE75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2917C261DC86501001ECE75 /* UIKit.framework */; };
 		C2917C291DC8650C001ECE75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2917C281DC8650C001ECE75 /* Foundation.framework */; };
 		C2DEC4931DD56C8100343E80 /* picture_full_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4921DD56C8100343E80 /* picture_full_bg.png */; };
@@ -838,18 +839,6 @@
 		C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceConfig.m; sourceTree = "<group>"; };
 		C263F8C31DD40D8300ED9EC4 /* MainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRequest.h; sourceTree = "<group>"; };
 		C263F8C41DD40D8300ED9EC4 /* MainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRequest.m; sourceTree = "<group>"; };
-		C263F8C71DD40D8300ED9EC4 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
-		C263F8C81DD40D8300ED9EC4 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
-		C263F8CA1DD40D8300ED9EC4 /* Mute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mute.h; sourceTree = "<group>"; };
-		C263F8CB1DD40D8300ED9EC4 /* Mute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mute.m; sourceTree = "<group>"; };
-		C263F8CD1DD40D8300ED9EC4 /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
-		C263F8CE1DD40D8300ED9EC4 /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
-		C263F8D01DD40D8300ED9EC4 /* Radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radio.h; sourceTree = "<group>"; };
-		C263F8D11DD40D8300ED9EC4 /* Radio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Radio.m; sourceTree = "<group>"; };
-		C263F8D31DD40D8300ED9EC4 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
-		C263F8D41DD40D8300ED9EC4 /* Voice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice.m; sourceTree = "<group>"; };
-		C263F8D61DD40D8300ED9EC4 /* Volume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Volume.h; sourceTree = "<group>"; };
-		C263F8D71DD40D8300ED9EC4 /* Volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Volume.m; sourceTree = "<group>"; };
 		C263F8D81DD40D8300ED9EC4 /* noadd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noadd.xib; sourceTree = "<group>"; };
 		C263F8D91DD40D8300ED9EC4 /* novolice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = novolice.xib; sourceTree = "<group>"; };
 		C263F8DA1DD40D8300ED9EC4 /* power.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = power.xib; sourceTree = "<group>"; };
@@ -1170,6 +1159,20 @@
 		C27C02BF1DD9F38D00C1A278 /* appdisplay_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appdisplay_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/appdisplay_red@2x.png"; sourceTree = "<group>"; };
 		C27C02C21DD9F9C200C1A278 /* Geely_displayforred@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_displayforred@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_displayforred@2x.png"; sourceTree = "<group>"; };
 		C27C02C41DD9FA4600C1A278 /* Geely_displayforred1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_displayforred1@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_displayforred1@2x.png"; sourceTree = "<group>"; };
+		C27C02C81DD9FE5400C1A278 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		C27C02C91DD9FE5400C1A278 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		C27C02CB1DD9FE5400C1A278 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		C27C02CC1DD9FE5400C1A278 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		C27C02CE1DD9FE5400C1A278 /* Mute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mute.h; sourceTree = "<group>"; };
+		C27C02CF1DD9FE5400C1A278 /* Mute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mute.m; sourceTree = "<group>"; };
+		C27C02D11DD9FE5400C1A278 /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		C27C02D21DD9FE5400C1A278 /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
+		C27C02D41DD9FE5400C1A278 /* Radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radio.h; sourceTree = "<group>"; };
+		C27C02D51DD9FE5400C1A278 /* Radio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Radio.m; sourceTree = "<group>"; };
+		C27C02D71DD9FE5400C1A278 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
+		C27C02D81DD9FE5400C1A278 /* Voice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice.m; sourceTree = "<group>"; };
+		C27C02DA1DD9FE5400C1A278 /* Volume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Volume.h; sourceTree = "<group>"; };
+		C27C02DB1DD9FE5400C1A278 /* Volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Volume.m; sourceTree = "<group>"; };
 		C2917C261DC86501001ECE75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2917C281DC8650C001ECE75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2DEC4921DD56C8100343E80 /* picture_full_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picture_full_bg.png; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/C/mediaPlayer/resource/picture_full_bg.png; sourceTree = "<group>"; };
@@ -1483,6 +1486,7 @@
 		C263F85F1DD40D8300ED9EC4 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C27C02C61DD9FE5400C1A278 /* Models */,
 				C263F8601DD40D8300ED9EC4 /* AppDelegate.h */,
 				C263F8611DD40D8300ED9EC4 /* AppDelegate.m */,
 				C263F8621DD40D8300ED9EC4 /* displaypower.xib */,
@@ -1506,7 +1510,6 @@
 				C27C026B1DD9B41400C1A278 /* GeelyCallingActionView.m */,
 				C263F8711DD40D8300ED9EC4 /* HGNetTool */,
 				C263F8BD1DD40D8300ED9EC4 /* Https */,
-				C263F8C51DD40D8300ED9EC4 /* Models */,
 				C263F8D81DD40D8300ED9EC4 /* noadd.xib */,
 				C263F8D91DD40D8300ED9EC4 /* novolice.xib */,
 				C263F8DA1DD40D8300ED9EC4 /* power.xib */,
@@ -1660,73 +1663,6 @@
 				C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */,
 			);
 			path = ImService;
-			sourceTree = "<group>";
-		};
-		C263F8C51DD40D8300ED9EC4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8C61DD40D8300ED9EC4 /* Music */,
-				C263F8C91DD40D8300ED9EC4 /* Mute */,
-				C263F8CC1DD40D8300ED9EC4 /* Phone */,
-				C263F8CF1DD40D8300ED9EC4 /* Radio */,
-				C263F8D21DD40D8300ED9EC4 /* Voice */,
-				C263F8D51DD40D8300ED9EC4 /* Volume */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C263F8C61DD40D8300ED9EC4 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8C71DD40D8300ED9EC4 /* Music.h */,
-				C263F8C81DD40D8300ED9EC4 /* Music.m */,
-			);
-			path = Music;
-			sourceTree = "<group>";
-		};
-		C263F8C91DD40D8300ED9EC4 /* Mute */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8CA1DD40D8300ED9EC4 /* Mute.h */,
-				C263F8CB1DD40D8300ED9EC4 /* Mute.m */,
-			);
-			path = Mute;
-			sourceTree = "<group>";
-		};
-		C263F8CC1DD40D8300ED9EC4 /* Phone */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8CD1DD40D8300ED9EC4 /* Phone.h */,
-				C263F8CE1DD40D8300ED9EC4 /* Phone.m */,
-			);
-			path = Phone;
-			sourceTree = "<group>";
-		};
-		C263F8CF1DD40D8300ED9EC4 /* Radio */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8D01DD40D8300ED9EC4 /* Radio.h */,
-				C263F8D11DD40D8300ED9EC4 /* Radio.m */,
-			);
-			path = Radio;
-			sourceTree = "<group>";
-		};
-		C263F8D21DD40D8300ED9EC4 /* Voice */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8D31DD40D8300ED9EC4 /* Voice.h */,
-				C263F8D41DD40D8300ED9EC4 /* Voice.m */,
-			);
-			path = Voice;
-			sourceTree = "<group>";
-		};
-		C263F8D51DD40D8300ED9EC4 /* Volume */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8D61DD40D8300ED9EC4 /* Volume.h */,
-				C263F8D71DD40D8300ED9EC4 /* Volume.m */,
-			);
-			path = Volume;
 			sourceTree = "<group>";
 		};
 		C263F9171DD40F3100ED9EC4 /* C */ = {
@@ -2267,6 +2203,84 @@
 			path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/GeelySettingCotroller;
 			sourceTree = "<group>";
 		};
+		C27C02C61DD9FE5400C1A278 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02C71DD9FE5400C1A278 /* Car */,
+				C27C02CA1DD9FE5400C1A278 /* Music */,
+				C27C02CD1DD9FE5400C1A278 /* Mute */,
+				C27C02D01DD9FE5400C1A278 /* Phone */,
+				C27C02D31DD9FE5400C1A278 /* Radio */,
+				C27C02D61DD9FE5400C1A278 /* Voice */,
+				C27C02D91DD9FE5400C1A278 /* Volume */,
+			);
+			name = Models;
+			path = ../../../../WillyZhao/Geely_Third/Geely_Third/Others/Models;
+			sourceTree = "<group>";
+		};
+		C27C02C71DD9FE5400C1A278 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02C81DD9FE5400C1A278 /* Car.h */,
+				C27C02C91DD9FE5400C1A278 /* Car.m */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		C27C02CA1DD9FE5400C1A278 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02CB1DD9FE5400C1A278 /* Music.h */,
+				C27C02CC1DD9FE5400C1A278 /* Music.m */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		C27C02CD1DD9FE5400C1A278 /* Mute */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02CE1DD9FE5400C1A278 /* Mute.h */,
+				C27C02CF1DD9FE5400C1A278 /* Mute.m */,
+			);
+			path = Mute;
+			sourceTree = "<group>";
+		};
+		C27C02D01DD9FE5400C1A278 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02D11DD9FE5400C1A278 /* Phone.h */,
+				C27C02D21DD9FE5400C1A278 /* Phone.m */,
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		C27C02D31DD9FE5400C1A278 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02D41DD9FE5400C1A278 /* Radio.h */,
+				C27C02D51DD9FE5400C1A278 /* Radio.m */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		C27C02D61DD9FE5400C1A278 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02D71DD9FE5400C1A278 /* Voice.h */,
+				C27C02D81DD9FE5400C1A278 /* Voice.m */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		C27C02D91DD9FE5400C1A278 /* Volume */ = {
+			isa = PBXGroup;
+			children = (
+				C27C02DA1DD9FE5400C1A278 /* Volume.h */,
+				C27C02DB1DD9FE5400C1A278 /* Volume.m */,
+			);
+			path = Volume;
+			sourceTree = "<group>";
+		};
 		C2917C251DC86501001ECE75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2785,6 +2799,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C263F8EA1DD40D8300ED9EC4 /* AFURLSessionManager.m in Sources */,
+				C27C02E01DD9FE5400C1A278 /* Radio.m in Sources */,
+				C27C02E11DD9FE5400C1A278 /* Voice.m in Sources */,
 				C263FA2C1DD410C400ED9EC4 /* GeelyPhoneCalledView.m in Sources */,
 				C263F9041DD40D8300ED9EC4 /* YYClassInfo.m in Sources */,
 				C263FA091DD410C400ED9EC4 /* GeelyContentBottomView.m in Sources */,
@@ -2812,9 +2828,9 @@
 				C263F97A1DD40F3100ED9EC4 /* GeelyKeyBoardCustom.m in Sources */,
 				C27C02691DD9B3B300C1A278 /* UIImageView+ImageSequence.m in Sources */,
 				2C0E976A1DD4645B002EEC72 /* GeelyLittleSettingAView.m in Sources */,
-				C263F9081DD40D8300ED9EC4 /* Music.m in Sources */,
 				C263FA191DD410C400ED9EC4 /* GeelyRightContainsView.m in Sources */,
 				C263FA351DD410C400ED9EC4 /* GeelySettingTableViewCell.m in Sources */,
+				C27C02DC1DD9FE5400C1A278 /* Car.m in Sources */,
 				C263F9741DD40F3100ED9EC4 /* GeelyCallViewController.m in Sources */,
 				C263F8F01DD40D8300ED9EC4 /* UIImageView+AFNetworking.m in Sources */,
 				C263F9861DD40F3100ED9EC4 /* GeelyFatherViewController.m in Sources */,
@@ -2824,7 +2840,7 @@
 				C263FA0E1DD410C400ED9EC4 /* GeelyContentListView.m in Sources */,
 				C263F9A01DD40F3100ED9EC4 /* GeelyPublicViewController.m in Sources */,
 				C263FA321DD410C400ED9EC4 /* GeelyMusicTransProgress.m in Sources */,
-				C263F90C1DD40D8300ED9EC4 /* Voice.m in Sources */,
+				C27C02DE1DD9FE5400C1A278 /* Mute.m in Sources */,
 				C263F9791DD40F3100ED9EC4 /* GeelyCallViewToInput.m in Sources */,
 				C263FA181DD410C400ED9EC4 /* GeelyRightContainBottom.m in Sources */,
 				C263F96E1DD40F3100ED9EC4 /* CalledListTableViewCell.m in Sources */,
@@ -2860,12 +2876,12 @@
 				C263FA411DD4110400ED9EC4 /* ZXPAutoLayout.m in Sources */,
 				C263F8F91DD40D8300ED9EC4 /* MJExtensionConst.m in Sources */,
 				C263F8F51DD40D8300ED9EC4 /* HGNetworkAgent.m in Sources */,
-				C263F90B1DD40D8300ED9EC4 /* Radio.m in Sources */,
 				C263F99C1DD40F3100ED9EC4 /* GeelySettingViewController.m in Sources */,
 				C263F9A21DD40F3100ED9EC4 /* GeelyWeatherViewController.m in Sources */,
 				C263F8F71DD40D8300ED9EC4 /* HGNetworkPrivate.m in Sources */,
 				C263F8DF1DD40D8300ED9EC4 /* GeelyDisplayPowerView.m in Sources */,
 				C27514D61DD951B700A76DB9 /* UIImageView+ImageAnimation.m in Sources */,
+				C27C02DF1DD9FE5400C1A278 /* Phone.m in Sources */,
 				2C0E976E1DD464D9002EEC72 /* GeelyLittleSettingACell.m in Sources */,
 				C263F8F21DD40D8300ED9EC4 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C263F9961DD40F3100ED9EC4 /* GeelyFmAmView.m in Sources */,
@@ -2877,28 +2893,27 @@
 				C263F97C1DD40F3100ED9EC4 /* GeelyPopPersionList.m in Sources */,
 				C263F8EB1DD40D8300ED9EC4 /* AFAutoPurgingImageCache.m in Sources */,
 				C263FA231DD410C400ED9EC4 /* GeelyCalledListTableViewCell.m in Sources */,
-				C263F90A1DD40D8300ED9EC4 /* Phone.m in Sources */,
 				C263F99A1DD40F3100ED9EC4 /* GeelyMusciViewController.m in Sources */,
 				C263FA261DD410C400ED9EC4 /* GeelyCalledListView.m in Sources */,
 				C263F8E21DD40D8300ED9EC4 /* GeelyNoVoliceView.m in Sources */,
+				C27C02DD1DD9FE5400C1A278 /* Music.m in Sources */,
 				C263F9011DD40D8300ED9EC4 /* NSObject+MJProperty.m in Sources */,
 				C263F8E81DD40D8300ED9EC4 /* AFURLRequestSerialization.m in Sources */,
 				C263F8FB1DD40D8300ED9EC4 /* MJProperty.m in Sources */,
 				C263FA061DD410C400ED9EC4 /* GeelyBottomAirAutoView.m in Sources */,
 				C263F8E51DD40D8300ED9EC4 /* AFHTTPSessionManager.m in Sources */,
 				C263F9A11DD40F3100ED9EC4 /* SingleModel.m in Sources */,
-				C263F9091DD40D8300ED9EC4 /* Mute.m in Sources */,
 				C27232CB1D9A23520070F431 /* main.m in Sources */,
 				C263F9951DD40F3100ED9EC4 /* GeelyAutoViewController1.m in Sources */,
 				C263FA1F1DD410C400ED9EC4 /* GeelyRightTableViewCell.m in Sources */,
 				C27C02661DD9B28F00C1A278 /* GeelyOnCallView.m in Sources */,
 				C263F9731DD40F3100ED9EC4 /* GeelyCalledListlistView.m in Sources */,
-				C263F90D1DD40D8300ED9EC4 /* Volume.m in Sources */,
 				C263FA211DD410C400ED9EC4 /* GeelyMusicTableViewCell.m in Sources */,
 				C263F8E11DD40D8300ED9EC4 /* GeelyNo.m in Sources */,
 				C263FA281DD410C400ED9EC4 /* GeelyMediaLittleView.m in Sources */,
 				C263F8EE1DD40D8300ED9EC4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C263F8E31DD40D8300ED9EC4 /* GeelyPowerDisplayView.m in Sources */,
+				C27C02E21DD9FE5400C1A278 /* Volume.m in Sources */,
 				C263F98F1DD40F3100ED9EC4 /* UIImageView+LevelAnimation.m in Sources */,
 				C263FA401DD4110400ED9EC4 /* UIView+StrBounds.m in Sources */,
 				C263FA071DD410C400ED9EC4 /* GeelyControllCollectionViewCell.m in Sources */,

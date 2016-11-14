@@ -18,14 +18,17 @@
  5上
  6下
  
- 
- 
  */
 @interface Mute : NSObject
 
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSNumber *type;
 @property (nonatomic, strong) NSNumber *index;
+
+//0 正常 1 仪表  2 菜单
 @property (nonatomic, strong) NSNumber *state;
+//0 无 1打开
+@property (nonatomic, strong) NSNumber *menuState;
+@property (nonatomic, strong) NSNumber *menuIndex;
 
 @end

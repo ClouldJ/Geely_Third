@@ -46,6 +46,10 @@
     if (self.requestVoice) {
         urlString = [HGNetworkPrivate anotherUrlStringWithOriginUrlString:urlString appendParameters:[self.requestVoice mj_keyValues] keyString:@"voice"];
     }
+    if (self.requestCar) {
+        
+        urlString = [HGNetworkPrivate anotherUrlStringWithOriginUrlString:urlString appendParameters:[self.requestCar mj_keyValues] keyString:@"car"];
+    }
     
     return urlString;
 }
@@ -94,6 +98,13 @@
 - (Volume *)responseVolume {
     if ([[self.data allKeys] containsObject:@"volume"]) {
         return [Volume yy_modelWithJSON:self.data[@"volume"]];
+    }
+    return nil;
+}
+
+- (Car *)responseCar {
+    if ([[self.data allKeys] containsObject:@"car"]) {
+        return [Car yy_modelWithJSON:self.data[@"car"]];
     }
     return nil;
 }

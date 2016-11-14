@@ -41,7 +41,42 @@
     return self;
 }
 
+-(void)becomeBlue{
+    if ([SingleModel sharedInstance].isDisplay) {
+        [imageView animationImage:[UIImage imageNamed:@"时间display_red"]];
+        [sunImageView animationImage:[UIImage imageNamed:@"天气信息geelydisplay"]];
+        [app_ImageView animationImage:[UIImage imageNamed:@"appdisplay_red"]];
+        [bigBG animationImage:[UIImage imageNamed:@"Geely_displayforred1"]];
+    }
+}
+
+-(void)becomeRed {
+    if ([SingleModel sharedInstance].isDisplay) {
+        [imageView animationImage:[UIImage imageNamed:@"时间display_red"]];
+        [sunImageView animationImage:[UIImage imageNamed:@"天气信息geelydisplay"]];
+        [app_ImageView animationImage:[UIImage imageNamed:@"appdisplay_red"]];
+        [bigBG animationImage:[UIImage imageNamed:@"Geely_displayforred1"]];
+    }
+    
+}
+
+-(void)becomegold{
+    if ([SingleModel sharedInstance].isDisplay) {
+        [imageView animationImage:[UIImage imageNamed:@"时间geelydisplay"]];
+        [sunImageView animationImage:[UIImage imageNamed:@"天气信息geelydisplay"]];
+        [app_ImageView animationImage:[UIImage imageNamed:@"语音助手geelydisspaly"]];
+        [bigBG animationImage:[UIImage imageNamed:@"GeelyDisplayBackground"]];
+    }
+    
+}
+
 -(void)loadSubview {
+    [SingleModel sharedInstance].isDisplay = YES;;
+
+    //添加驾驶模式转换通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
     
     imageView = [[UIImageView alloc] init];
     imageView.userInteractionEnabled = YES;
@@ -79,12 +114,18 @@
             imageView.image = [UIImage imageNamed:@"时间geelydisplay"];
             sunImageView.image = [UIImage imageNamed:@"天气信息geelydisplay"];
             app_ImageView.image = [UIImage imageNamed:@"语音助手geelydisspaly"];
+            bigBG.image = [UIImage imageNamed:@"GeelyDisplayBackground"];
         }
             break;
         default:
             break;
     }
     
+}
+
+-(void)dealloc {
+    [SingleModel sharedInstance].isDisplay = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)showAnimate {

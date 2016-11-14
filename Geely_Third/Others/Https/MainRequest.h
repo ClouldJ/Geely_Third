@@ -14,6 +14,7 @@
 #import "Voice.h"
 #import "Volume.h"
 #import "Mute.h"
+#import "Car.h"
 
 /*
  eg:
@@ -56,6 +57,10 @@
 
 @property (nonatomic, strong) Volume *requestVolume;
 @property (nonatomic, strong) Volume *responseVolume;
+
+@property (nonatomic, strong) Car *requestCar;
+@property (nonatomic, strong) Car *responseCar;
+
 
 
 @end
