@@ -9,9 +9,15 @@
 #import "GeelyCallViewToInput.h"
 
 #import "GeelyCallViewTableViewCell.h"
+#import "GeelyPhoneCalledView.h"
+#import "GeelyCallingActionView.h"
 
-@interface GeelyCallViewToInput () <UITableViewDelegate,UITableViewDataSource> {
+@interface GeelyCallViewToInput () <UITableViewDelegate,UITableViewDataSource,GeelyPhoneCalledViewDelegate> {
     NSMutableArray *buttons;
+    MainRequest *mainRequest;
+    UIView *callInputView;
+    UIScrollView *scrollView;
+    GeelyPhoneCalledView *vc;
 }
 
 @end
@@ -22,11 +28,21 @@
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"geelycallviewdemo" owner:self options:nil]firstObject];
         self.frame = frame;
+        
+//        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,340, 435)];
+//        scrollView.scrollEnabled=NO;
+//        [self addSubview:scrollView];
+//        [scrollView addSubview:callInputView];
         [self actionButtons];
     }
     return self;
 }
 
+- (IBAction)ONCALL:(id)sender {
+    NSLog(@"进来了呢");
+    GeelyCallingActionView *vb = [[GeelyCallingActionView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [vb showAnimation];
+}
 
 -(void)actionButtons {
     buttons = [NSMutableArray array];
@@ -77,6 +93,34 @@
 }
 
 -(void)callBtnAction:(UIButton *)btn {
+    NSLog(@"call call call");
+    vc = [[GeelyPhoneCalledView alloc] initWithFrame:CGRectMake(-20,0, 340,self.frame.size.height) andPhone:self.phoneTextField.text];
+    vc.delegate = self;
+    [vc.backbtn removeFromSuperview];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self addSubview:vc];
+        self.bgImageView.hidden=YES;
+        self.phoneTextField.hidden=YES;
+    }];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+    mainRequest.requestRadio.type = @0;
+    mainRequest.requestPhone.type = @2;
+    mainRequest.requestMusic.type = @0;
+    mainRequest.requestVoice.type = @0;
+    mainRequest.requestVolume.type = @1;
+    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
+    
+    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+    } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+    }];
+}
+- (void)calledEnd{
+    self.bgImageView.hidden=NO;
+    self.phoneTextField.hidden=NO;
+    [vc removeFromSuperview];
     
 }
 

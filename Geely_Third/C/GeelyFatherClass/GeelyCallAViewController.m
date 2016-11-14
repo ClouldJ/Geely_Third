@@ -15,6 +15,8 @@
 #import "GeelyPowerDisplayView.h"
 #import "GeelyScreenView.h"
 
+#import "GeelyCallingActionView.h"
+
 @interface GeelyCallAViewController () {
     UIImageView *imageView;
 }
@@ -38,11 +40,18 @@
     UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
     home.backgroundColor = [UIColor clearColor];
     [self.view addSubview:home];
-    [home addTarget:self action:@selector(btnAction1:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoRootVC)];
+    
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction1)];
+    
+    [tapGR requireGestureRecognizerToFail:longPressGR];
+    
+    [home addGestureRecognizer:tapGR];
+    [home addGestureRecognizer:longPressGR];
     
     self.dataSource = self;
     self.contentScrollView.delegate = self;
-    self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
+    self.contentImageView.image = [UIImage imageNamed:@"Geely_father_bg_effert"];
     [self addFixedView];
     
     __block __weak GeelyCallAViewController *weakself = self;
@@ -144,14 +153,18 @@
 }
 
 
--(void)btnAction1:(UIButton *)btn {
+-(void)btnAction1{
     [self showPopAnimation];
+}
+- (void)gotoRootVC{
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 #pragma mark GeelyDisplayPowerViewDelegate
 -(void)showDisplayView:(GeelyDisplayPowerView *)view {
     GeelyScreenView *screenView = [[GeelyScreenView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [screenView showAnimate];
 }
+
 
 -(void)showPowerView:(GeelyDisplayPowerView *)view  {
     GeelyPowerDisplayView *vb = [[GeelyPowerDisplayView alloc] initWithFrame:[UIScreen mainScreen].bounds];

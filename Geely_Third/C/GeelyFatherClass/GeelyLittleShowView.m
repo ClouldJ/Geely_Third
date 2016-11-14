@@ -9,7 +9,6 @@
 #import "GeelyLittleShowView.h"
 
 #import "GeelyMusicLittleView.h"
-#import "GeelyMediaLittleView.h"
 #import "UIScrollView+AnimationOffSet.h"
 
 #import "GeelyPhoneInputView.h"
@@ -31,6 +30,15 @@
 
 
 -(void)addScrollView {
+    
+    mainRequest = [[MainRequest alloc] init];
+    mainRequest.requestVolume = [[Volume alloc] init];
+    mainRequest.requestVoice = [[Voice alloc] init];
+    mainRequest.requestPhone = [[Phone alloc] init];
+    mainRequest.requestMusic = [[Music alloc] init];
+    mainRequest.requestRadio = [[Radio alloc] init];
+    mainRequest.requestMute = [[Mute alloc] init];
+    
     listOrNo = YES;
     self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
     self.contentScrollView.backgroundColor = [UIColor clearColor];
@@ -45,7 +53,7 @@
     [self.contentScrollView addSubview:musica];
     
     //media
-    GeelyMediaLittleView *media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(0, 435, 340, 435)];
+    media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(0, 435, 340, 435)];
     media.block = ^(){
         [acPlayer play];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
@@ -91,6 +99,7 @@
 -(void)didSwitch:(GeelyMusicLittleView *)view {
     NSLog(@"点击了选择音乐");
     [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 435)];
+    [media startAnimation];
 }
 
 #pragma mark GeelyPhoneInputViewDelegate

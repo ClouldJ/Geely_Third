@@ -16,6 +16,12 @@
 
 #define URLSTOP @"geelyurlrequeststop"
 
+#define MODE_RED @"carmodered"
+
+#define MODE_BLUE @"carmodeblue"
+
+#define MODE_GOLD @"carmodegold"
+
 #define urlstart @"geelyurlrequeststart"
 
 #define HHHHHHHHHHH [UIScreen mainScreen].bounds.size.height

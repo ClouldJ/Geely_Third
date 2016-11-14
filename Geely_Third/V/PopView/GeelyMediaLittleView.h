@@ -11,5 +11,8 @@ typedef void(^MediaBlock)();
 @interface GeelyMediaLittleView : UIView
 @property (nonatomic, strong) MediaBlock block;
 @property (weak, nonatomic) IBOutlet UIButton *switchBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *animationImage;
+
+-(void)startAnimation;
 
 @end

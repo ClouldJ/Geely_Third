@@ -8,6 +8,12 @@
 
 #import "GeelyMediaLittleView.h"
 
+@interface GeelyMediaLittleView () {
+    NSMutableArray *images;
+}
+
+@end
+
 @implementation GeelyMediaLittleView
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -21,7 +27,24 @@
     return self;
 }
 
+-(void)startAnimation {
+    images = [NSMutableArray array];
+    for (int i = 0; i<34; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_0000%d",i]];
+            [images addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_000%d",i]];
+            [images addObject:image];
+        }
+    }
+    
+    [self.animationImage startImageSequenceWithArray:images repeatCount:MAXFLOAT duration:1];
+    
+}
+
 -(void)switchbtn {
+    [self.animationImage stopAnimating];
     if (self.block) {
         self.block();
     }

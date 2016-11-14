@@ -25,10 +25,12 @@ typedef void(^TopViewAnimationSuccessful)();
 
 @end
 
-@interface GeelyFatherViewController : GeelyPublicViewController <GeelyFatherViewDatasource,UIScrollViewDelegate,GeelyDisplayPowerViewDelegate>{
+@interface GeelyFatherViewController : GeelyPublicViewController <GeelyLeftContainsDelegate,GeelyFatherViewDatasource,UIScrollViewDelegate,GeelyDisplayPowerViewDelegate>{
     MainRequest *mainRequest;
     MPMusicPlayerController *vvlioce;
     CGFloat volume;
+    GelelyLeftContainsView *leftView;
+    UIView *scrollViewContent;
 }
 @property (nonatomic, strong) UIImageView *contentImageView;
 @property (nonatomic, strong) UIView *contentView;

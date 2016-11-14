@@ -14,6 +14,8 @@
 #import "GeelyMediaPlayerVC.h"
 
 #import "GeelyModeViewController.h"
+#import "GeelyPViewController.h"
+#import "GeelyLightViewController.h"
 
 @interface GeelySettingAViewController () <UITableViewDelegate,UITableViewDataSource> {
     UITableView *tableView_;
@@ -27,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
     [self.view addSubview:button_volume_];
@@ -39,11 +42,19 @@
     UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
     home.backgroundColor = [UIColor clearColor];
     [self.view addSubview:home];
-    [home addTarget:self action:@selector(btnAction1:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoRootVC)];
+    
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction1)];
+    
+    [tapGR requireGestureRecognizerToFail:longPressGR];
+    
+    [home addGestureRecognizer:tapGR];
+    [home addGestureRecognizer:longPressGR];
+    
     
     
     self.dataSource = self;
-    self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
+    self.contentImageView.image = [UIImage imageNamed:@"Geely_father_bg_effert"];
     [self addFixedView];
     
     __block __weak GeelySettingAViewController *weakself = self;
@@ -146,8 +157,11 @@
 }
 
 
--(void)btnAction1:(UIButton *)btn {
+-(void)btnAction1{
     [self showPopAnimation];
+}
+- (void)gotoRootVC{
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 
@@ -196,9 +210,17 @@
             break;
         case 7:
             //@"能量流";
+        {
+            GeelyLightViewController *ad = [[GeelyLightViewController alloc] init];
+            [self.navigationController pushViewController:ad animated:NO];
+        }
             break;
         case 8:
             //@"平衡衰减";
+        {
+            GeelyPViewController *na = [[GeelyPViewController alloc] init];
+            [self.navigationController pushViewController:na animated:NO];
+        }
             break;
         case 9:
             //@"视频浏览";

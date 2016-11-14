@@ -16,9 +16,7 @@
 #import "GeelyMusicAViewController.h"
 
 
-@interface GeelyFatherViewController () <GeelyLeftContainsDelegate> {
-    GelelyLeftContainsView *leftView;
-    UIView *scrollViewContent;
+@interface GeelyFatherViewController ()  {
     GeelyLittleShowView *leftFrameScroll;
     UIView *topView;
     NSIndexPath *indexPathLast;
@@ -90,6 +88,7 @@
     self.contentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1310, 492)];
     self.contentImageView.userInteractionEnabled = YES;
     self.contentImageView.backgroundColor = [UIColor clearColor];
+    self.contentImageView.image = [UIImage imageNamed:@"Geely_father_bg_effert"];
     [self.contentView addSubview:self.contentImageView];
     
     

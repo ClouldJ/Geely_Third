@@ -15,11 +15,17 @@
     UIImageView *sunImageView;
     UIView *btnView;
     UIView *contentView;
+    
+    UIImageView *app_ImageView;
+    UIImageView *bigBG;
 }
+
+
 
 @end
 
 @implementation GeelyScreenView
+
 
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -27,7 +33,7 @@
         screenView = [[[NSBundle mainBundle] loadNibNamed:@"screenview" owner:self options:nil]firstObject];
         screenView.frame = frame;
         [self addSubview:screenView];
-        
+        bigBG = (UIImageView *)[screenView viewWithTag:10187];
         contentView = (UIView *)[screenView viewWithTag:109];
         
         [self loadSubview];
@@ -36,12 +42,13 @@
 }
 
 -(void)loadSubview {
-    imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"时间geelydisplay"]];
+    
+    imageView = [[UIImageView alloc] init];
     imageView.userInteractionEnabled = YES;
     imageView.frame = CGRectMake(845+36, 123+257, 660/2, 434/2);
     [screenView addSubview:imageView];
     
-    sunImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"天气信息geelydisplay"]];
+    sunImageView = [[UIImageView alloc] init];
     sunImageView.userInteractionEnabled = YES;
     sunImageView.frame = CGRectMake(160, 123+250, 697/2, 236/2);
     [screenView addSubview:sunImageView];
@@ -49,6 +56,34 @@
     btnView = [[[NSBundle mainBundle] loadNibNamed:@"screenbottombtn" owner:self options:nil]firstObject];
     btnView.frame = CGRectMake(35, 123+465, 1295/2, 357/2);
     [screenView addSubview:btnView];
+    app_ImageView = (UIImageView *)[btnView viewWithTag:7896];
+    
+    switch ([SingleModel sharedInstance].displayType) {
+        case RED:
+        {
+            imageView.image = [UIImage imageNamed:@"时间display_red"];
+            sunImageView.image = [UIImage imageNamed:@"天气信息geelydisplay"];
+            app_ImageView.image = [UIImage imageNamed:@"appdisplay_red"];
+            bigBG.image = [UIImage imageNamed:@"Geely_displayforred1"];
+        }
+            break;
+        case BLUE:
+        {
+            imageView.image = [UIImage imageNamed:@"时间geelydisplay"];
+            sunImageView.image = [UIImage imageNamed:@"天气信息geelydisplay"];
+            app_ImageView.image = [UIImage imageNamed:@"语音助手geelydisspaly"];
+        }
+            break;
+        case GOLD:
+        {
+            imageView.image = [UIImage imageNamed:@"时间geelydisplay"];
+            sunImageView.image = [UIImage imageNamed:@"天气信息geelydisplay"];
+            app_ImageView.image = [UIImage imageNamed:@"语音助手geelydisspaly"];
+        }
+            break;
+        default:
+            break;
+    }
     
 }
 

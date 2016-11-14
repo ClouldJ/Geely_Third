@@ -20,7 +20,7 @@
                 <view tag="109" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ww2-yY-Azd">
                     <rect key="frame" x="28" y="266" width="1310" height="492"/>
                     <subviews>
-                        <imageView tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GeelyDisplayBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="HSx-oU-4Bi">
+                        <imageView tag="10187" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GeelyDisplayBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="HSx-oU-4Bi">
                             <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
                         </imageView>
                     </subviews>

@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GeelyMediaLittleView.h"
 
-@interface GeelyLittleShowView : UIView
+
+@interface GeelyLittleShowView : UIView {
+    GeelyMediaLittleView *media;
+}
 
 @property (nonatomic ,assign) BOOL show;
 

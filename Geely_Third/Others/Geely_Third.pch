@@ -28,4 +28,8 @@
 
 #import "SingleModel.h"
 
+#import "UIImageView+ImageAnimation.h"
+
+#import "UIImageView+ImageSequence.h"
+
 #endif

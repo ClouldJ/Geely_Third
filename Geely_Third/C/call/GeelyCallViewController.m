@@ -76,7 +76,7 @@
         swipeG.direction = UISwipeGestureRecognizerDirectionRight;
         [self.view addGestureRecognizer:swipeG];
         
-        GeelyCallViewToInput *callView = [[GeelyCallViewToInput alloc] initWithFrame:CGRectMake(0,-30, 830, 372.5)];
+        GeelyCallViewToInput *callView = [[GeelyCallViewToInput alloc] initWithFrame:CGRectMake(0,-30,830, 372.5)];
         //    callView.backgroundColor = [UIColor redColor];
         callView.delegate = self;
         [self.contentScrollView addSubview:callView];

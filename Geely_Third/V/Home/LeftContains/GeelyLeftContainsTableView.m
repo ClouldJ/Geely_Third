@@ -34,9 +34,39 @@
     return self;
 }
 
-
+//- (void)changeGeelyHomeLeftHomeToGold{
+//    //    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+//    GeelyLeftContainsTableViewCell *cell = [self.tableView_ cellForRowAtIndexPath:indexPath];
+//    
+//    [cell.imageView_ animationImage:[UIImage imageNamed:@"Geely_home_left_home"]];
+//    //    }
+//    
+//}
+//- (void)changeGeelyHomeLeftHomeToBlue{
+//    //    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+//    GeelyLeftContainsTableViewCell *cell = [self.tableView_ cellForRowAtIndexPath:indexPath];
+//    [cell.imageView_ animationImage:[UIImage imageNamed:@"Geely_homeBtn_blue"]];
+//    //    }
+//    
+//}
+//- (void)changeGeelyHomeLeftHomeToRed{
+//    //    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+//    GeelyLeftContainsTableViewCell *cell = [self.tableView_ cellForRowAtIndexPath:indexPath];
+//    [cell.imageView_ animationImage:[UIImage imageNamed:@"Geely_home_red"]];
+//    //    }
+//    
+//}
 
 -(void)loadVVVViews {
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToGold) name:MODE_GOLD object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToBlue) name:MODE_BLUE object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToRed) name:MODE_RED object:nil];
+    
     self.backgroundColor = [UIColor clearColor];
     self.tableView_two = [[UITableView alloc] initWithFrame:self.frame];
     self.tableView_two.scrollEnabled = NO;

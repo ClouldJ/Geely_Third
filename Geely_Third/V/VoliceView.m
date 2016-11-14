@@ -62,8 +62,32 @@
     
     vvlioce = [[MPMusicPlayerController alloc] init];
     [self btnAction:btn];
+    //
+//    [btn setBackgroundImage:[UIImage imageNamed:@"音量blue"] forState:UIControlStateNormal];
+//    image_down.image =[UIImage imageNamed:@"底blue"];
+//    image_gesture.image =[UIImage imageNamed:@"亮光blue"];
+    //
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImgToGold) name:MODE_GOLD object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImgToBlue) name:MODE_BLUE object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImgToRed) name:MODE_RED object:nil];
+    
 }
-
+- (void)changeImgToGold{
+    [btn setBackgroundImage:[UIImage imageNamed:@"音量auto"] forState:UIControlStateNormal];
+    image_down.image =[UIImage imageNamed:@"底auto"];
+    image_gesture.image =[UIImage imageNamed:@"亮光auto"];
+}
+- (void)changeImgToBlue{
+    [btn setBackgroundImage:[UIImage imageNamed:@"音量blue"] forState:UIControlStateNormal];
+    image_down.image =[UIImage imageNamed:@"底blue"];
+    image_gesture.image =[UIImage imageNamed:@"亮光blue"];
+    
+}
+- (void)changeImgToRed{
+    [btn setBackgroundImage:[UIImage imageNamed:@"音量red"] forState:UIControlStateNormal];
+    image_down.image =[UIImage imageNamed:@"底red"];
+    image_gesture.image =[UIImage imageNamed:@"亮光red"];
+}
 -(void)panGestureAction:(UIPanGestureRecognizer *)pan {
     CGFloat transX =[pan locationInView:self].x;
     UIImageView *image = (UIImageView *)[pan view];

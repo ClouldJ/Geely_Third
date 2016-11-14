@@ -50,6 +50,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [SingleModel sharedInstance].index_cellImage = 6;
+    [SingleModel sharedInstance].displayType = GOLD;
     noVolce = [[GeelyNoVoliceView alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
     NONONONO = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
     request = [[MainRequest alloc] init];
@@ -75,7 +77,7 @@
     [request startWithBlockSuccess:^(MainRequest *request) {
 
         NSDictionary *dic = (NSDictionary *)request.responseJSONObject;
-        
+//        NSLog(@"数据接收状态:%@",dic);
         if ([dic[@"data"][@"volume"][@"type"] integerValue] == 0) {
             if (!noVolce.did) {
                 [noVolce showAnimation];

@@ -51,7 +51,15 @@
     UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
     home.backgroundColor = [UIColor clearColor];
     [self.view addSubview:home];
-    [home addTarget:self action:@selector(btnAction1:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoRootVC)];
+    
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction1)];
+    
+    [tapGR requireGestureRecognizerToFail:longPressGR];
+    
+    [home addGestureRecognizer:tapGR];
+    [home addGestureRecognizer:longPressGR];
+    
     manager = [GeelyMusicAudioManager defaultManager];
     music = YES;
     mainRequest = [[MainRequest alloc] init];
@@ -197,10 +205,12 @@
 }
 
 
--(void)btnAction1:(UIButton *)btn {
+-(void)btnAction1{
     [self showPopAnimation];
 }
-
+- (void)gotoRootVC{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
 
 -(void)musicControl:(UIButton *)btn {
     switch (btn.tag) {

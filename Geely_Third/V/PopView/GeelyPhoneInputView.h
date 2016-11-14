@@ -36,5 +36,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *listBtn;
 
 @property (nonatomic ,assign) id<GeelyPhoneInputViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end

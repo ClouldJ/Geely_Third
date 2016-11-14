@@ -58,12 +58,15 @@
     NSInteger index = btn.tag;
     if (index == 1) {
         NSLog(@"黄");
+        [[NSNotificationCenter defaultCenter] postNotificationName:MODE_GOLD object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_yellow"];
     }else if (index == 2) {
         NSLog(@"哄");
+        [[NSNotificationCenter defaultCenter] postNotificationName:MODE_RED object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_red"];
     }else{
         NSLog(@"蓝");
+        [[NSNotificationCenter defaultCenter] postNotificationName:MODE_BLUE object:nil];
         imageView_contentBG.image = [UIImage imageNamed:@"Geely_mode_blue"];
     }
 }

@@ -42,7 +42,31 @@ static NSInteger i = 0;
     
     [self.tap_one requireGestureRecognizerToFail:tap_sec];
     i+=1;
+    //
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToGold) name:MODE_GOLD object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToBlue) name:MODE_BLUE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeGeelyHomeLeftHomeToRed) name:MODE_RED object:nil];
 }
+- (void)changeGeelyHomeLeftHomeToGold{
+//    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//        [self.imageView_ animationImage:[UIImage imageNamed:@"Geely_home_left_home"]];
+//    }
+    [SingleModel sharedInstance].index_cellImage = 6;
+
+}
+- (void)changeGeelyHomeLeftHomeToBlue{
+//    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//    }
+    [SingleModel sharedInstance].index_cellImage = 5;
+
+}
+- (void)changeGeelyHomeLeftHomeToRed{
+//    if ([SingleModel sharedInstance].indexPathHome.row == 4) {
+//    }
+    [SingleModel sharedInstance].index_cellImage = 4;
+    
+}
+
 
 -(void)oneAction:(UITapGestureRecognizer *)tap {
     
@@ -89,7 +113,16 @@ static NSInteger i = 0;
                     self.imageView_.image = [UIImage imageNamed:@"设置sGeely"];
                     break;
                 case 4:
-                    self.imageView_.image = [UIImage imageNamed:@"Geely_home_left_home"];
+                {
+                    if ([SingleModel sharedInstance].index_cellImage == 6) {
+                        self.imageView_.image = [UIImage imageNamed:@"Geely_home_left_home"];
+                    }else if ([SingleModel sharedInstance].index_cellImage == 5) {
+                        [self.imageView_ animationImage:[UIImage imageNamed:@"Geely_homeBtn_blue"]];
+                    }else if ([SingleModel sharedInstance].index_cellImage == 4) {
+                        [self.imageView_ animationImage:[UIImage imageNamed:@"Geely_home_red"]];
+                    }
+                }
+//                    self.imageView_ animationImage:<#(UIImage *)#>
                     break;
                 default:
                     break;
@@ -130,7 +163,15 @@ static NSInteger i = 0;
                 self.imageView_.image = [UIImage imageNamed:@"Geely_home_left_setting"];
                 break;
             case 4:
-                self.imageView_.image = [UIImage imageNamed:@"Geely_home_left_home"];
+            {
+                if ([SingleModel sharedInstance].index_cellImage == 6) {
+                    self.imageView_.image = [UIImage imageNamed:@"Geely_home_left_home"];
+                }else if ([SingleModel sharedInstance].index_cellImage == 5) {
+                    [self.imageView_ animationImage:[UIImage imageNamed:@"Geely_homeBtn_blue"]];
+                }else if ([SingleModel sharedInstance].index_cellImage == 4) {
+                    [self.imageView_ animationImage:[UIImage imageNamed:@"Geely_home_red"]];
+                }
+            }
                 break;
             default:
                 break;

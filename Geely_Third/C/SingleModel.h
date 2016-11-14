@@ -11,6 +11,13 @@
 #import "Mute.h"
 #import "GeelyLeftContainsTableViewCell.h"
 
+
+typedef enum {
+    RED,
+    BLUE,
+    GOLD
+}DisplayType;
+
 @interface SingleModel : NSObject
 
 @property (nonatomic, strong) Mute *muteSingle;
@@ -43,7 +50,9 @@
 
 @property (nonatomic, assign) NSInteger dataCount;
 
+@property (nonatomic, assign) NSInteger index_cellImage;
 
+@property (nonatomic ,assign)DisplayType displayType;
 
 
 

@@ -105,6 +105,32 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPresentView:) name:DISMISS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dididididdididi) name:@"geelyfin" object:nil];
+    
+    //添加驾驶模式转换通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
+}
+
+-(void)becomeBlue{
+    NSLog(@"变换为经济模式");
+//    imageViewContentBG.image = [UIImage imageNamed:@"Geely_home_bg_blue"];
+    [imageViewContentBG animationImage:[UIImage imageNamed:@"Geely_home_bg_blue"]];
+    [SingleModel sharedInstance].displayType = BLUE;
+}
+
+-(void)becomeRed {
+    NSLog(@"变换为运动模式");
+//    imageViewContentBG.image = ;
+    [imageViewContentBG animationImage:[UIImage imageNamed:@"Geely_home_bg_red"]];
+    [SingleModel sharedInstance].displayType = RED;
+}
+
+-(void)becomegold{
+    NSLog(@"变换为舒适模式");
+//    imageViewContentBG.image =;
+    [imageViewContentBG animationImage:[UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"]];
+    [SingleModel sharedInstance].displayType = GOLD;
 }
 
 -(void)dididididdididi {
@@ -120,7 +146,8 @@
 }
 
 -(void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:DISMISS object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:DISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -248,8 +275,29 @@
     UIButton *homeBtn = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
     homeBtn.backgroundColor = [UIColor clearColor];
     [self.view addSubview:homeBtn];
-    [homeBtn addTarget:self action:@selector(homeViewShow:) forControlEvents:UIControlEventTouchUpInside];
     
+    UITapGestureRecognizer *home_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeAction:)];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longAction:)];
+    
+    [home_tap requireGestureRecognizerToFail:longPress];
+    
+    [homeBtn addGestureRecognizer:home_tap];
+    [homeBtn addGestureRecognizer:longPress];
+    
+//    [homeBtn addTarget:self action:@selector(homeViewShow:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+-(void)homeAction:(UITapGestureRecognizer *)tap {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    window.rootViewController = [[GeelyHomeViewController alloc] init];
+}
+
+-(void)longAction:(UILongPressGestureRecognizer *)longpres {
+    GeelyDisplayPowerView *cc = [[GeelyDisplayPowerView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    cc.delegate = self;
+    [cc showAnimation];
 }
 
 -(void)homeViewShow:(UIButton *)btn {

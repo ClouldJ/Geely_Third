@@ -32,5 +32,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 @property (weak, nonatomic) IBOutlet UITableView *tableView_;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 
 @end
