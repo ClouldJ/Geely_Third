@@ -27,7 +27,7 @@
         
         sImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电s"],[UIImage imageNamed:@"环绕声s"],[UIImage imageNamed:@"蓝牙s"],[UIImage imageNamed:@"车载热点s"],[UIImage imageNamed:@"行驶中视频限制s"],[UIImage imageNamed:@"行车记录仪s"], nil];
         cImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电c"],[UIImage imageNamed:@"环绕声c"],[UIImage imageNamed:@"蓝牙c"],[UIImage imageNamed:@"车载热点c"],[UIImage imageNamed:@"行驶中视频限制c"],[UIImage imageNamed:@"行车记录仪c"], nil];
-        [SingleModel sharedInstance].cellImages = cImageArray;
+        [SingleModel sharedInstance].cellImages = [cImageArray copy];
 
         tableView_ = (UITableView *)[self viewWithTag:909];
         tableView_.delegate = self;
@@ -42,7 +42,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(![SingleModel sharedInstance].cellImages.count){
+        sImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电s"],[UIImage imageNamed:@"环绕声s"],[UIImage imageNamed:@"蓝牙s"],[UIImage imageNamed:@"车载热点s"],[UIImage imageNamed:@"行驶中视频限制s"],[UIImage imageNamed:@"行车记录仪s"], nil];
+        cImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电c"],[UIImage imageNamed:@"环绕声c"],[UIImage imageNamed:@"蓝牙c"],[UIImage imageNamed:@"车载热点c"],[UIImage imageNamed:@"行驶中视频限制c"],[UIImage imageNamed:@"行车记录仪c"], nil];
+        [SingleModel sharedInstance].cellImages = [cImageArray copy];
+    }
     return 6;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

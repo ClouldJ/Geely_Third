@@ -105,7 +105,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPresentView:) name:DISMISS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dididididdididi) name:@"geelyfin" object:nil];
-    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"left" forKey:@"dismiss"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DISMISS object:nil userInfo:dic];
     //添加驾驶模式转换通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
