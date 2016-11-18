@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "GeelyLeftContainsTableView.h"
+#import "GeelyLeftFrameDynamicView.h"
 
 @interface GelelyLeftContainsView : UIView
 
@@ -23,6 +24,8 @@
 @property (nonatomic, strong) UIView *keyBoardView;
 
 @property (nonatomic ,strong) UITextField *textField;
+
+@property (nonatomic , strong) GeelyLeftFrameDynamicView *dynamicView;
 
 
 /**

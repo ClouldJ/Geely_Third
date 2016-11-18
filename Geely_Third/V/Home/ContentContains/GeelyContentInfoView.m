@@ -71,6 +71,9 @@
     imageView_btn.userInteractionEnabled = YES;
     [self addSubview:imageView_btn];
     
+//    UIButton *btn1 = [UIButton alloc] initWithFrame:cgr
+    
+    
 }
 
 -(void)tapAction:(UITapGestureRecognizer *)tap {

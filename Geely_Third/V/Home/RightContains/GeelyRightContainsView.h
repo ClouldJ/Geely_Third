@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GeelyRightContainsViewMoveDelegate <NSObject>
+
+-(void)rightContainsViewMoved:(UIButton *)btn;
+
+@end
+
 @interface GeelyRightContainsView : UIView
+
+@property (nonatomic, assign) id<GeelyRightContainsViewMoveDelegate> delegate;
 
 @end

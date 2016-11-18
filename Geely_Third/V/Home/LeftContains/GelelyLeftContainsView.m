@@ -32,6 +32,8 @@
     return self;
 }
 
+
+
 -(void)loadByADecoder {
     NSMutableArray *arr = [NSMutableArray array];
     stringArray = [NSMutableArray array];
@@ -67,13 +69,17 @@
     imageView.backgroundColor = [UIColor clearColor];
     imageView.image = [UIImage imageNamed:@"Geely_home_leftBG"];
     [self addSubview:imageView];
-//    imageView.hidden = YES;
     
     
     self.tableView_ = [[GeelyLeftContainsTableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.tableView_.dataSource_ = arr;
     self.tableView_.backgroundColor = [UIColor clearColor];
     [self addSubview:self.tableView_];
+    
+//    UIView *view_dy = [UIView alloc] initWithFrame:<#(CGRect)#>
+//    
+//    self.dynamicView = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
+    
 }
 
 -(void)reloadViewDirection:(BOOL)direction {

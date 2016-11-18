@@ -37,6 +37,9 @@
 		2C0E976F1DD464D9002EEC72 /* GeelyLittleSettingACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C0E976D1DD464D9002EEC72 /* GeelyLittleSettingACell.xib */; };
 		2C0E97721DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E97711DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m */; };
 		C20279AE1DB773AA00B5ACA3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20279AD1DB773AA00B5ACA3 /* AVFoundation.framework */; };
+		C21D94321DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C21D94311DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png */; };
+		C21D94351DDDA9940035A173 /* GeelyLeftFrameDynamicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D94341DDDA9940035A173 /* GeelyLeftFrameDynamicView.m */; };
+		C2253C261DDD493A00AAD667 /* Geely_handwrittenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2253C251DDD493A00AAD667 /* Geely_handwrittenBG@2x.png */; };
 		C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */; };
 		C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */; };
 		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
@@ -247,8 +250,6 @@
 		C263F9021DD40D8300ED9EC4 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8B51DD40D8300ED9EC4 /* NSString+MJExtension.m */; };
 		C263F9031DD40D8300ED9EC4 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8B91DD40D8300ED9EC4 /* NSObject+YYModel.m */; };
 		C263F9041DD40D8300ED9EC4 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8BB1DD40D8300ED9EC4 /* YYClassInfo.m */; };
-		C263F9051DD40D8300ED9EC4 /* HGBaseRequest+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C01DD40D8300ED9EC4 /* HGBaseRequest+Response.m */; };
-		C263F9061DD40D8300ED9EC4 /* InterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */; };
 		C263F9071DD40D8300ED9EC4 /* MainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8C41DD40D8300ED9EC4 /* MainRequest.m */; };
 		C263F90E1DD40D8300ED9EC4 /* noadd.xib in Resources */ = {isa = PBXBuildFile; fileRef = C263F8D81DD40D8300ED9EC4 /* noadd.xib */; };
 		C263F90F1DD40D8300ED9EC4 /* novolice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C263F8D91DD40D8300ED9EC4 /* novolice.xib */; };
@@ -505,6 +506,7 @@
 		C27C02E21DD9FE5400C1A278 /* Volume.m in Sources */ = {isa = PBXBuildFile; fileRef = C27C02DB1DD9FE5400C1A278 /* Volume.m */; };
 		C2917C271DC86501001ECE75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2917C261DC86501001ECE75 /* UIKit.framework */; };
 		C2917C291DC8650C001ECE75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2917C281DC8650C001ECE75 /* Foundation.framework */; };
+		C2A8EBDC1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2A8EBDB1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png */; };
 		C2DEC4931DD56C8100343E80 /* picture_full_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4921DD56C8100343E80 /* picture_full_bg.png */; };
 		C2DEC4E61DD5B0CA00343E80 /* Geely_blue_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4D91DD5B0CA00343E80 /* Geely_blue_info@2x.png */; };
 		C2DEC4E71DD5B0CA00343E80 /* Geely_call_oncall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4DA1DD5B0CA00343E80 /* Geely_call_oncall@2x.png */; };
@@ -519,6 +521,8 @@
 		C2DEC4F01DD5B0CA00343E80 /* Geely_home_right_downred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E31DD5B0CA00343E80 /* Geely_home_right_downred@2x.png */; };
 		C2DEC4F11DD5B0CA00343E80 /* Geely_music_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */; };
 		C2DEC4F21DD5B0CA00343E80 /* Geely_red_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */; };
+		C2F9224D1DDC47E40061B04F /* HGBaseRequest+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */; };
+		C2F9224E1DDC47E40061B04F /* InterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224C1DDC47E40061B04F /* InterfaceConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -576,6 +580,10 @@
 		2C0E97701DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeelyFatherViewController+PopAnimation.h"; sourceTree = "<group>"; };
 		2C0E97711DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GeelyFatherViewController+PopAnimation.m"; sourceTree = "<group>"; };
 		C20279AD1DB773AA00B5ACA3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C21D94311DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_11-17home_bgLeft@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_11-17home_bgLeft@2x.png"; sourceTree = "<group>"; };
+		C21D94331DDDA9940035A173 /* GeelyLeftFrameDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyLeftFrameDynamicView.h; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/V/Home/LeftContains/GeelyLeftFrameDynamicView.h; sourceTree = "<group>"; };
+		C21D94341DDDA9940035A173 /* GeelyLeftFrameDynamicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeelyLeftFrameDynamicView.m; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/V/Home/LeftContains/GeelyLeftFrameDynamicView.m; sourceTree = "<group>"; };
+		C2253C251DDD493A00AAD667 /* Geely_handwrittenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_handwrittenBG@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_handwrittenBG@2x.png"; sourceTree = "<group>"; };
 		C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_blue@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_blue@2x.png"; sourceTree = "<group>"; };
 		C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_red@2x.png"; sourceTree = "<group>"; };
 		C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_yellow@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_yellow@2x.png"; sourceTree = "<group>"; };
@@ -833,10 +841,6 @@
 		C263F8BA1DD40D8300ED9EC4 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		C263F8BB1DD40D8300ED9EC4 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		C263F8BC1DD40D8300ED9EC4 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
-		C263F8BF1DD40D8300ED9EC4 /* HGBaseRequest+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HGBaseRequest+Response.h"; sourceTree = "<group>"; };
-		C263F8C01DD40D8300ED9EC4 /* HGBaseRequest+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HGBaseRequest+Response.m"; sourceTree = "<group>"; };
-		C263F8C11DD40D8300ED9EC4 /* InterfaceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceConfig.h; sourceTree = "<group>"; };
-		C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceConfig.m; sourceTree = "<group>"; };
 		C263F8C31DD40D8300ED9EC4 /* MainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRequest.h; sourceTree = "<group>"; };
 		C263F8C41DD40D8300ED9EC4 /* MainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRequest.m; sourceTree = "<group>"; };
 		C263F8D81DD40D8300ED9EC4 /* noadd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = noadd.xib; sourceTree = "<group>"; };
@@ -1175,6 +1179,7 @@
 		C27C02DB1DD9FE5400C1A278 /* Volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Volume.m; sourceTree = "<group>"; };
 		C2917C261DC86501001ECE75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2917C281DC8650C001ECE75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C2A8EBDB1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_11-17home_bg@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_11-17home_bg@2x.png"; sourceTree = "<group>"; };
 		C2DEC4921DD56C8100343E80 /* picture_full_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picture_full_bg.png; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/C/mediaPlayer/resource/picture_full_bg.png; sourceTree = "<group>"; };
 		C2DEC4D91DD5B0CA00343E80 /* Geely_blue_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_blue_info@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_blue_info@2x.png"; sourceTree = "<group>"; };
 		C2DEC4DA1DD5B0CA00343E80 /* Geely_call_oncall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_call_oncall@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_call_oncall@2x.png"; sourceTree = "<group>"; };
@@ -1189,6 +1194,10 @@
 		C2DEC4E31DD5B0CA00343E80 /* Geely_home_right_downred@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_home_right_downred@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_home_right_downred@2x.png"; sourceTree = "<group>"; };
 		C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_music_logo@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_music_logo@2x.png"; sourceTree = "<group>"; };
 		C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_red_info@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_red_info@2x.png"; sourceTree = "<group>"; };
+		C2F922491DDC47E40061B04F /* HGBaseRequest+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HGBaseRequest+Response.h"; sourceTree = "<group>"; };
+		C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HGBaseRequest+Response.m"; sourceTree = "<group>"; };
+		C2F9224B1DDC47E40061B04F /* InterfaceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceConfig.h; sourceTree = "<group>"; };
+		C2F9224C1DDC47E40061B04F /* InterfaceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1284,7 +1293,10 @@
 				C27C01E01DD9AC8F00C1A278 /* phone sos */,
 				C27C019D1DD99C6C00C1A278 /* 音量blue.png */,
 				C27C02C41DD9FA4600C1A278 /* Geely_displayforred1@2x.png */,
+				C2A8EBDB1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png */,
+				C21D94311DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png */,
 				C27C02C21DD9F9C200C1A278 /* Geely_displayforred@2x.png */,
+				C2253C251DDD493A00AAD667 /* Geely_handwrittenBG@2x.png */,
 				C27C02BE1DD9F38D00C1A278 /* 时间display_red@2x.png */,
 				C27C02BF1DD9F38D00C1A278 /* appdisplay_red@2x.png */,
 				C27C02BC1DD9E99900C1A278 /* GeelyMediameida@2x.png */,
@@ -1647,22 +1659,11 @@
 		C263F8BD1DD40D8300ED9EC4 /* Https */ = {
 			isa = PBXGroup;
 			children = (
-				C263F8BE1DD40D8300ED9EC4 /* ImService */,
+				C2F922481DDC47E40061B04F /* ImService */,
 				C263F8C31DD40D8300ED9EC4 /* MainRequest.h */,
 				C263F8C41DD40D8300ED9EC4 /* MainRequest.m */,
 			);
 			path = Https;
-			sourceTree = "<group>";
-		};
-		C263F8BE1DD40D8300ED9EC4 /* ImService */ = {
-			isa = PBXGroup;
-			children = (
-				C263F8BF1DD40D8300ED9EC4 /* HGBaseRequest+Response.h */,
-				C263F8C01DD40D8300ED9EC4 /* HGBaseRequest+Response.m */,
-				C263F8C11DD40D8300ED9EC4 /* InterfaceConfig.h */,
-				C263F8C21DD40D8300ED9EC4 /* InterfaceConfig.m */,
-			);
-			path = ImService;
 			sourceTree = "<group>";
 		};
 		C263F9171DD40F3100ED9EC4 /* C */ = {
@@ -1876,6 +1877,8 @@
 				C263F9C61DD410C400ED9EC4 /* GeelyMusicCDAnimationView.m */,
 				C263F9C71DD410C400ED9EC4 /* GelelyLeftContainsView.h */,
 				C263F9C81DD410C400ED9EC4 /* GelelyLeftContainsView.m */,
+				C21D94331DDDA9940035A173 /* GeelyLeftFrameDynamicView.h */,
+				C21D94341DDDA9940035A173 /* GeelyLeftFrameDynamicView.m */,
 				C263F9C91DD410C400ED9EC4 /* nsdnanodoasdin.xib */,
 			);
 			path = LeftContains;
@@ -2290,6 +2293,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2F922481DDC47E40061B04F /* ImService */ = {
+			isa = PBXGroup;
+			children = (
+				C2F922491DDC47E40061B04F /* HGBaseRequest+Response.h */,
+				C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */,
+				C2F9224B1DDC47E40061B04F /* InterfaceConfig.h */,
+				C2F9224C1DDC47E40061B04F /* InterfaceConfig.m */,
+			);
+			name = ImService;
+			path = ../../../../../WillyZhao/Geely_Third/Geely_Third/Others/Https/ImService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2491,8 +2506,10 @@
 				C27C02581DD9AC8F00C1A278 /* phone sos_00027.png in Resources */,
 				C27C02471DD9AC8F00C1A278 /* phone sos_00010.png in Resources */,
 				C263FA221DD410C400ED9EC4 /* GeelyMusicTableViewCell.xib in Resources */,
+				C2A8EBDC1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png in Resources */,
 				C263F7E11DD40C9E00ED9EC4 /* Geely_right_cell_cloud@2x.png in Resources */,
 				2C0E97621DD46407002EEC72 /* picture_right_imgs_03.png in Resources */,
+				C21D94321DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png in Resources */,
 				C263FA4D1DD4127C00ED9EC4 /* Zki & Dobre-Listen To The Talk.mp3 in Resources */,
 				C27C02511DD9AC8F00C1A278 /* phone sos_00020.png in Resources */,
 				C263F90E1DD40D8300ED9EC4 /* noadd.xib in Resources */,
@@ -2631,6 +2648,7 @@
 				C2DEC4931DD56C8100343E80 /* picture_full_bg.png in Resources */,
 				C263F7F51DD40C9F00ED9EC4 /* munemusicmdaadskad@2x.png in Resources */,
 				C27C02251DD9AC8F00C1A278 /* phone on call_00005.png in Resources */,
+				C2253C261DDD493A00AAD667 /* Geely_handwrittenBG@2x.png in Resources */,
 				C263F8171DD40C9F00ED9EC4 /* 导航栏setting@2x.png in Resources */,
 				C2DEC4E71DD5B0CA00343E80 /* Geely_call_oncall@2x.png in Resources */,
 				2C0E975E1DD46407002EEC72 /* pause_icon.png in Resources */,
@@ -2839,6 +2857,7 @@
 				C263F97F1DD40F3100ED9EC4 /* PersonListTableViewCell.m in Sources */,
 				C263FA0E1DD410C400ED9EC4 /* GeelyContentListView.m in Sources */,
 				C263F9A01DD40F3100ED9EC4 /* GeelyPublicViewController.m in Sources */,
+				C2F9224D1DDC47E40061B04F /* HGBaseRequest+Response.m in Sources */,
 				C263FA321DD410C400ED9EC4 /* GeelyMusicTransProgress.m in Sources */,
 				C27C02DE1DD9FE5400C1A278 /* Mute.m in Sources */,
 				C263F9791DD40F3100ED9EC4 /* GeelyCallViewToInput.m in Sources */,
@@ -2846,7 +2865,9 @@
 				C263F96E1DD40F3100ED9EC4 /* CalledListTableViewCell.m in Sources */,
 				C263F9911DD40F3100ED9EC4 /* UIView+LevelAnimation.m in Sources */,
 				C263FA0C1DD410C400ED9EC4 /* GeelyContentControllView.m in Sources */,
+				C2F9224E1DDC47E40061B04F /* InterfaceConfig.m in Sources */,
 				2C0E97721DD46502002EEC72 /* GeelyFatherViewController+PopAnimation.m in Sources */,
+				C21D94351DDDA9940035A173 /* GeelyLeftFrameDynamicView.m in Sources */,
 				C263F8F11DD40D8300ED9EC4 /* UIProgressView+AFNetworking.m in Sources */,
 				C263FA341DD410C400ED9EC4 /* TableViewProgressView.m in Sources */,
 				C263FA051DD410C400ED9EC4 /* DemoView.m in Sources */,
@@ -2856,7 +2877,6 @@
 				2C0E97511DD46407002EEC72 /* GeelyMediaListCell.m in Sources */,
 				C263FA0B1DD410C400ED9EC4 /* GeelyContentContainsView.m in Sources */,
 				C27C027B1DD9C50D00C1A278 /* GeelyLightViewController.m in Sources */,
-				C263F9051DD40D8300ED9EC4 /* HGBaseRequest+Response.m in Sources */,
 				C263F9771DD40F3100ED9EC4 /* GeelyCallViewTableViewCell.m in Sources */,
 				C263FA391DD410C400ED9EC4 /* VoliceView.m in Sources */,
 				C27C02761DD9C03F00C1A278 /* GeelyPViewController.m in Sources */,
@@ -2870,7 +2890,6 @@
 				C263F8EC1DD40D8300ED9EC4 /* AFImageDownloader.m in Sources */,
 				C263FA1D1DD410C400ED9EC4 /* GeelyLittleSettingTableViewCell.m in Sources */,
 				C263F9891DD40F3100ED9EC4 /* GeelyMusicAViewController.m in Sources */,
-				C263F9061DD40D8300ED9EC4 /* InterfaceConfig.m in Sources */,
 				C263F8E61DD40D8300ED9EC4 /* AFNetworkReachabilityManager.m in Sources */,
 				C263F8F81DD40D8300ED9EC4 /* HGRequest.m in Sources */,
 				C263FA411DD4110400ED9EC4 /* ZXPAutoLayout.m in Sources */,

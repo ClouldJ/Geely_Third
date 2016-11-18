@@ -39,7 +39,7 @@
 #define DEV_W [UIScreen mainScreen].bounds.size.width
 #define BASEHEIGHT ((2732*720)/1920)/2
 
-@interface GeelyHomeViewController () <GeelyLeftContainsDelegate,GeelyMusicCDAnimationViewDelegate,GeelyPhoneInputViewDelegate,GeelyDisplayPowerViewDelegate,GeelyPhoneCalledViewDelegate,GeelyContentInfoViewDelegate,GeelyMusicLittleViewDelegate,UIGestureRecognizerDelegate> {
+@interface GeelyHomeViewController () <GeelyLeftContainsDelegate,GeelyMusicCDAnimationViewDelegate,GeelyPhoneInputViewDelegate,GeelyDisplayPowerViewDelegate,GeelyPhoneCalledViewDelegate,GeelyContentInfoViewDelegate,GeelyMusicLittleViewDelegate,UIGestureRecognizerDelegate,GeelyRightContainsViewMoveDelegate> {
     /**
      **leftView    左侧视图容器**
      **contentView 中间视图容器**
@@ -90,6 +90,10 @@
     MainRequest *mainRequest;
     
     UIImageView *imageViewContentBG;
+    
+    GeelyLeftFrameDynamicView *dynamicView;
+    
+    UIView *dynamicCurrentView;
 
 }
 
@@ -115,23 +119,20 @@
 }
 
 -(void)becomeBlue{
-    NSLog(@"变换为经济模式");
-//    imageViewContentBG.image = [UIImage imageNamed:@"Geely_home_bg_blue"];
+
     [imageViewContentBG animationImage:[UIImage imageNamed:@"Geely_home_bg_blue"]];
     [SingleModel sharedInstance].displayType = BLUE;
 }
 
 -(void)becomeRed {
-    NSLog(@"变换为运动模式");
-//    imageViewContentBG.image = ;
+
     [imageViewContentBG animationImage:[UIImage imageNamed:@"Geely_home_bg_red"]];
     [SingleModel sharedInstance].displayType = RED;
 }
 
 -(void)becomegold{
-    NSLog(@"变换为舒适模式");
-//    imageViewContentBG.image =;
-    [imageViewContentBG animationImage:[UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"]];
+
+    [imageViewContentBG animationImage:[UIImage imageNamed:@"Geely_11-17home_bg"]];
     [SingleModel sharedInstance].displayType = GOLD;
 }
 
@@ -148,7 +149,6 @@
 }
 
 -(void)dealloc {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:DISMISS object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -157,14 +157,6 @@
     
     vvlioce = [[MPMusicPlayerController alloc] init];
     volume = vvlioce.volume;
-    
-//    mainRequest = [[MainRequest alloc] init];
-//    mainRequest.requestVolume = [[Volume alloc] init];
-//    mainRequest.requestVoice = [[Voice alloc] init];
-//    mainRequest.requestPhone = [[Phone alloc] init];
-//    mainRequest.requestMusic = [[Music alloc] init];
-//    mainRequest.requestRadio = [[Radio alloc] init];
-//    mainRequest.requestMute = [[Mute alloc] init];
     
     isShowing = NO;
     music = NO;
@@ -185,7 +177,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     imageViewContentBG = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, baseView.frame.size.width, baseView.frame.size.height)];
-    imageViewContentBG.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
+    imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bg"];
     [baseView addSubview:imageViewContentBG];
     
     
@@ -194,6 +186,8 @@
     imageView_bottom.backgroundColor = [UIColor clearColor];
     imageView_bottom.userInteractionEnabled = YES;
 //    [baseView addSubview:imageView_bottom];
+    
+    
     vv_bottom = [[GeelyBottomAirAutoView alloc] initWithFrame:CGRectMake(0, baseView.frame.size.height - 57, 1310, 57)];
     vv_bottom.backgroundColor = [UIColor clearColor];
     [baseView addSubview:vv_bottom];
@@ -202,11 +196,6 @@
     air_button.backgroundColor = [UIColor clearColor];
     [air_button addTarget:self action:@selector(buttonAUTOAction:) forControlEvents:UIControlEventTouchUpInside];
     [vv_bottom addSubview:air_button];
-//    bottomView.backgroundColor = [UIColor clearColor];
-//    [baseView addSubview:bottomView];
-    
-//    UIButton *buttonAUTO = (UIButton *)[bottomView viewWithTag:101];
-//    [buttonAUTO addTarget:self action:@selector(buttonAUTOAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self loadleftView:leftView contentView:contentView rightView:rightView];
     
@@ -287,6 +276,11 @@
     [homeBtn addGestureRecognizer:home_tap];
     [homeBtn addGestureRecognizer:longPress];
     
+    dynamicView = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(82, 0, 0, 435)];
+    dynamicView.backgroundColor = [UIColor lightGrayColor];
+    [baseView addSubview:dynamicView];
+    dynamicCurrentView = [[UIView alloc] init];
+    
 //    [homeBtn addTarget:self action:@selector(homeViewShow:) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -320,18 +314,6 @@
 }
 
 -(void)volumeAdd{
-//    [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-//    mainRequest.requestVolume.type = @2;
-//    mainRequest.requestPhone.type = @0;
-//    mainRequest.requestRadio.type = @0;
-//    mainRequest.requestVoice.type = @0;
-//    mainRequest.requestMusic.type = @0;
-//    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-//    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//    } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//    }];
     [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
@@ -376,14 +358,13 @@
 #pragma mark public views
 -(void)loadleftView:(GelelyLeftContainsView *)lView contentView:(GeelyContentContainsView *)cView rightView:(GeelyRightContainsView *)rView {
     for (int i = 0; i<3; i++) {
-        panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+//        panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
         panGesture.delegate = self;
         if (i == 0) {
             lView = [[GelelyLeftContainsView alloc] initWithFrame:CGRectMake(0, 0, 82, baseView.frame.size.height - 57)];
             lView.backgroundColor = [UIColor clearColor];
-//            leftView.tableView_.delegate = self;
             [baseView addSubview:lView];
-            [lView addGestureRecognizer:panGesture];
+//            [lView addGestureRecognizer:panGesture];
             leftView = lView;
             leftView.tableView_.delegate = self;
             leftPoint = lView.center;
@@ -392,15 +373,16 @@
             cView.backgroundColor = [UIColor clearColor];
             cView.view_ddd.delegate = self;
             [baseView addSubview:cView];
-            [cView addGestureRecognizer:panGesture];
+//            [cView addGestureRecognizer:panGesture];
             contentView = cView;
             contentPoint = cView.center;
         }else{
             rView = [[GeelyRightContainsView alloc] initWithFrame:CGRectMake(cView.frame.origin.x+cView.frame.size.width, 0, 340, baseView.frame.size.height - 57)];
             rView.backgroundColor = [UIColor clearColor];
             [baseView addSubview:rView];
-            [rView addGestureRecognizer:panGesture];
+//            [rView addGestureRecognizer:panGesture];
             rightView = rView;
+            rightView.delegate = self;
             rightPoint = rView.center;
         }
     }
@@ -414,7 +396,6 @@
 
 -(void)swipeGesture:(UIPanGestureRecognizer *)gesture {
     UIView *responsView = gesture.view;
-//    CGFloat trans = [gesture translationInView:baseView].x;
     [self.view bringSubviewToFront:responsView];
         if (gesture.state == UIGestureRecognizerStateBegan) {
         
@@ -438,7 +419,6 @@
         }else if (responsView ==contentView) {
         }else{
             responsView.center = [gesture locationInView:baseView];
-//            CGFloat trans = [gesture translationInView:self.view].x;1
             
             if (!isRightMove) {
                 if (rightView.frame.origin.x<=82) {
@@ -541,101 +521,151 @@
 #pragma mark GeelyLeftContainsDelegate
 
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"首页单击");
+//    NSLog(@"首页单击");
+//
+//    
+//    switch (indexPath.row) {
+//        case 0:
+//        {
+////            if (!isLeftBtn) {
+////                [self leftHiden];
+////            }else{
+////                [self rightHiden];
+////            }
+////            
+////
+////            
+////            GeelyNo *geely = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
+////            [geely sssShowAnimate];
 
-    
+
     switch (indexPath.row) {
         case 0:
         {
-            if (!isLeftBtn) {
-                [self leftHiden];
-            }else{
-                [self rightHiden];
-            }
-            
+            [self leftShow];
 
-            
-            GeelyNo *geely = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
-            [geely sssShowAnimate];
-
+            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+                NSLog(@"隐藏成功");
+            }];
         }
             break;
         case 1:
         {
-            if (![SingleModel sharedInstance].isMusic) {
-                [SingleModel sharedInstance].isMusic = YES;
-                viewScroll.contentOffset = CGPointMake(340*2, 0);
-                [musica startMusicAnimation];
-                GeelyMusicAudioManager *manager = [GeelyMusicAudioManager defaultManager];
-                acPlayer = [manager playMusic:@"Zki & Dobre-Listen To The Talk"];
-                musica.animationImage.delegate = self;
-                singTime = (float)acPlayer.duration;
-                
-                [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-                } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-                }];
-            }else{
-                viewScroll.contentOffset = CGPointMake(340*2, 0);
-                [musica startMusicAnimation];
-                musica.animationImage.delegate = self;
-                singTime = 230;
-            }
-            
+            [self leftShow];
+
+            [dynamicView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                dynamicCurrentView = amicView;
+            }];
         }
             break;
         case 2:
         {
-            [UIView animateWithDuration:.3f animations:^{
-                viewScroll.contentOffset =CGPointMake(0, 0);
+            [self leftShow];
+
+            [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                dynamicCurrentView = amicView;
             }];
         }
             break;
         case 3:
-            viewScroll.contentOffset = CGPointMake(340, 0);
+        {
+            [self leftShow];
+            [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
+                dynamicCurrentView = amicView;
+            }];
+        }
             break;
         case 4:
-            //回到主菜单
         {
-                if (!isLeftBtn) {
-                    [self leftHiden];
-                }else{
-                    [self rightHiden];
-                }
+            [self leftHiden];
+            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+                NSLog(@"隐藏成功");
+            }];
         }
-            return;
+            break;
+        case 5:
             break;
         default:
             break;
     }
-    
-    [SingleModel sharedInstance].isRel = isLeftBtn;
-    
-    if ([checkShowArray containsObject:indexPath]) {
-        [checkShowArray removeObject:indexPath];
-        
-        if (!isLeftBtn) {
-            [self leftHiden];
-        }else{
-            [self rightHiden];
-        }
-    }else{
-        for (NSIndexPath *index in checkShowArray) {
-            if (index == indexPath) {
-                [checkShowArray addObject:indexPath];
-            }else{
-                [checkShowArray removeObject:index];
-            }
-        }
-        
-        if (!isLeftBtn) {
-            [self leftShow];
-        }else{
-            [self rightShow];
-        }
-    }
 
+//        }
+//            break;
+//        case 1:
+//        {
+//            if (![SingleModel sharedInstance].isMusic) {
+//                [SingleModel sharedInstance].isMusic = YES;
+//                viewScroll.contentOffset = CGPointMake(340*2, 0);
+//                [musica startMusicAnimation];
+//                GeelyMusicAudioManager *manager = [GeelyMusicAudioManager defaultManager];
+//                acPlayer = [manager playMusic:@"Zki & Dobre-Listen To The Talk"];
+//                musica.animationImage.delegate = self;
+//                singTime = (float)acPlayer.duration;
+//                
+//                [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+//                } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+//                }];
+//            }else{
+//                viewScroll.contentOffset = CGPointMake(340*2, 0);
+//                [musica startMusicAnimation];
+//                musica.animationImage.delegate = self;
+//                singTime = 230;
+//            }
+//            
+//        }
+//            break;
+//        case 2:
+//        {
+//            [UIView animateWithDuration:.3f animations:^{
+//                viewScroll.contentOffset =CGPointMake(0, 0);
+//            }];
+//        }
+//            break;
+//        case 3:
+//            viewScroll.contentOffset = CGPointMake(340, 0);
+//            break;
+//        case 4:
+//            //回到主菜单
+//        {
+//                if (!isLeftBtn) {
+//                    [self leftHiden];
+//                }else{
+//                    [self rightHiden];
+//                }
+//        }
+//            return;
+//            break;
+//        default:
+//            break;
+//    }
+//    
+////    [SingleModel sharedInstance].isRel = isLeftBtn;
+////    
+////    if ([checkShowArray containsObject:indexPath]) {
+////        [checkShowArray removeObject:indexPath];
+////        
+////        if (!isLeftBtn) {
+////            [self leftHiden];
+////        }else{
+////            [self rightHiden];
+////        }
+////    }else{
+////        for (NSIndexPath *index in checkShowArray) {
+////            if (index == indexPath) {
+////                [checkShowArray addObject:indexPath];
+////            }else{
+////                [checkShowArray removeObject:index];
+////            }
+////        }
+////        
+////        if (!isLeftBtn) {
+////        }else{
+////            [self rightShow];
+////        }
+////    }
+//
 
 }
 
@@ -668,6 +698,13 @@
         }
             break;
         case 4:
+        {
+            if (!isLeftBtn) {
+                [self leftHiden];
+            }else{
+                [self rightHiden];
+            }
+        }
             break;
         default:
             break;
@@ -759,7 +796,6 @@
 
 -(void)leftShow {
     [UIView animateWithDuration:.5f animations:^{
-        presentScrollView.frame = CGRectMake(82, 0, 340, 435);
         contentView.frame = CGRectMake(82+340, 0, contentView.frame.size.width, baseView.frame.size.height - 57);
         rightView.frame = CGRectMake(contentView.frame.origin.x+contentView.frame.size.width, 0, rightView.frame.size.width, rightView.frame.size.height);
         
@@ -771,7 +807,6 @@
 
 -(void)leftHiden {
     [UIView animateWithDuration:.5f animations:^{
-        presentScrollView.frame = CGRectMake(82, 0, 0, 435);
         contentView.frame = CGRectMake(leftView.frame.origin.x+leftView.frame.size.width, 0, contentView.frame.size.width, baseView.frame.size.height - 57);
         rightView.frame = CGRectMake(contentView.frame.origin.x+contentView.frame.size.width, 0, rightView.frame.size.width, rightView.frame.size.height);
         imageViewContentBG.frame = CGRectMake(0, imageViewContentBG.frame.origin.y, imageViewContentBG.frame.size.width, imageViewContentBG.frame.size.height);
@@ -803,8 +838,7 @@
         contentPoint = contentView.center;
 
         presentScrollView.frame = CGRectMake(leftView.frame.origin.x, 0, 0, 435);
-//        leftPoint = responsView.center;
-        [self.view sendSubviewToBack:leftView];
+//        [self.view sendSubviewToBack:leftView];
     }];
 }
 
@@ -813,12 +847,10 @@
     
     [UIView animateWithDuration:.3f animations:^{
         isLeftBtn = YES;
-//        rightPoint = rightView.center;
         contentView.frame = CGRectMake(340, 0, contentView.frame.size.width, baseView.frame.size.height - 57);
-//        contentPoint = contentView.center;
         leftView.frame = CGRectMake(contentView.frame.origin.x+contentView.frame.size.width, 0, leftView.frame.size.width, baseView.frame.size.height - 57);
         presentScrollView.frame = CGRectMake(leftView.frame.origin.x, 0, 0, 435);
-//        leftPoint = leftView.center;
+        rightView.frame = CGRectMake(0, 0, rightView.frame.size.width, rightView.frame.size.height);
     }];
 }
 
@@ -826,12 +858,9 @@
     [UIView animateWithDuration:.3f animations:^{
         isLeftBtn = NO;
         leftView.frame = CGRectMake(0, 0, leftView.frame.size.width, baseView.frame.size.height - 40);
-//        leftPoint = leftView.center;
         contentView.frame = CGRectMake(leftView.frame.origin.x+leftView.frame.size.width, 0, contentView.frame.size.width, baseView.frame.size.height - 57);
-//        contentPoint = contentView.center;
-
+        rightView.frame = CGRectMake(contentView.frame.origin.x+contentView.frame.size.width, 0, rightView.frame.size.width, rightView.frame.size.height);
         presentScrollView.frame = CGRectMake(82, 0, 0, 435);
-//        rightPoint = rightView.center;
     }];
 }
 
@@ -872,15 +901,17 @@
         vc.delegate = self;
         [viewScroll addSubview:vc];
         viewScroll.contentOffset = CGPointMake(0, 435*2);
-    
     //todo
     
     [[[SingleModel sharedInstance] singleMainRequest:@"Phone" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+
     }];
-    
+
+     
     
 //    }
 }
@@ -968,6 +999,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark GeelyRightContainsViewMoveDelegate
+-(void)rightContainsViewMoved:(UIButton *)btn {
+    NSLog(@"回到首页移动");
+    if (!isLeftBtn) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:TOLEFT object:nil];
+        imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bgLeft"];
+        [self rightViewMoveToLeft];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:TORIGHT object:nil];
+        imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bg"];
+        [self rightViewMoveToRight];
+    }
 }
 
 /*

@@ -78,7 +78,7 @@
     [request startWithBlockSuccess:^(MainRequest *request) {
         [SingleModel sharedInstance].currentRequest = request;
         NSDictionary *dic = (NSDictionary *)request.responseJSONObject;
-        NSLog(@"数据接收状态:%@",dic);
+//        NSLog(@"数据接收状态:%@",dic);
         if ([dic[@"data"][@"volume"][@"type"] integerValue] == 0) {
             if (!noVolce.did) {
                 [noVolce showAnimation];

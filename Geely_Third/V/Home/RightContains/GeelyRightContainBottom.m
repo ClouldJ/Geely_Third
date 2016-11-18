@@ -13,6 +13,8 @@
 @interface GeelyRightContainBottom () <UITableViewDelegate,UITableViewDataSource> {
     UITableView *tableView_;
     UIImageView *badgeView;
+    UILabel *label_b;
+    UILabel *label_prompt;
 }
 
 @end
@@ -21,9 +23,45 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toLeft) name:TOLEFT object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toRight) name:TORIGHT object:nil];
+        
         [self loadSubViews];
     }
     return self;
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)toLeft{
+    
+    for (GeelyRightTableViewCell *cell in [tableView_ visibleCells]) {
+        cell.imageToRight.constant = 0;
+        cell.headImageToLeft.constant = 55;
+        cell.labelToHeadImage.constant = 10;
+    }
+    
+    badgeView.frame = CGRectMake(2+55, 2, 24, 18);
+    label_b.frame = CGRectMake(35/2+55, 0, 12, 12);
+    label_prompt.frame = CGRectMake(badgeView.frame.origin.x+badgeView.frame.size.width+12, badgeView.frame.origin.y, 300, 20);
+    
+}
+
+-(void)toRight {
+    for (GeelyRightTableViewCell *cell in [tableView_ visibleCells]) {
+        cell.imageToRight.constant = 55;
+        cell.headImageToLeft.constant = 0;
+        cell.labelToHeadImage.constant = 10;
+    }
+    
+    badgeView.frame = CGRectMake(2, 2, 24, 18);
+    label_b.frame = CGRectMake(35/2, 0, 12, 12);
+    label_prompt.frame = CGRectMake(badgeView.frame.origin.x+badgeView.frame.size.width+12, badgeView.frame.origin.y, 300, 20);
+    
 }
 
 -(void)loadSubViews {
@@ -32,7 +70,7 @@
     badgeView.image = [UIImage imageNamed:@"Geely_right_email"];
     [self addSubview:badgeView];
     
-    UILabel *label_b = [[UILabel alloc] initWithFrame:CGRectMake(35/2, 0, 12, 12)];
+    label_b = [[UILabel alloc] initWithFrame:CGRectMake(35/2, 0, 12, 12)];
     label_b.textColor = [UIColor whiteColor];
     label_b.backgroundColor = [UIColor redColor];
     label_b.text = @"1";
@@ -42,7 +80,7 @@
     label_b.layer.cornerRadius = 6;
     [self addSubview:label_b];
     
-    UILabel *label_prompt = [[UILabel alloc] initWithFrame:CGRectMake(badgeView.frame.origin.x+badgeView.frame.size.width+12, badgeView.frame.origin.y, 300, 20)];
+    label_prompt = [[UILabel alloc] initWithFrame:CGRectMake(badgeView.frame.origin.x+badgeView.frame.size.width+12, badgeView.frame.origin.y, 300, 20)];
     label_prompt.textColor = [UIColor whiteColor];
     label_prompt.text = @"信息中心";
     [self addSubview:label_prompt];

@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionGesture:)];
-    swipe.direction = UISwipeGestureRecognizerDirectionUp;
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
 //    UIPanGestureRecognizer
     [self.contentImage addGestureRecognizer:swipe];
     
@@ -106,7 +106,7 @@
 }
 
 -(void)actionGesture:(UISwipeGestureRecognizer *)gesture {
-    if (gesture.direction == UISwipeGestureRecognizerDirectionUp) {
+    if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
 //        NSLog(@"向上");
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
