@@ -277,7 +277,7 @@
     [homeBtn addGestureRecognizer:longPress];
     
     dynamicView = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(82, 0, 0, 435)];
-    dynamicView.backgroundColor = [UIColor lightGrayColor];
+    dynamicView.backgroundColor = [UIColor clearColor];
     [baseView addSubview:dynamicView];
     dynamicCurrentView = [[UIView alloc] init];
     
@@ -351,7 +351,6 @@
 
 -(void)buttonAUTOAction:(UIButton *)btn {
     GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
-//    NSLog(@"进来了");
     [self.navigationController pushViewController:va animated:NO];
 }
 

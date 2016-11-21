@@ -14,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="1228" height="364"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonqwewq.png" translatesAutoresizingMaskIntoConstraints="NO" id="zaF-4e-BM2">
-                    <rect key="frame" x="932" y="311" width="174" height="45"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放列表_suiji.png" translatesAutoresizingMaskIntoConstraints="NO" id="zaF-4e-BM2">
+                    <rect key="frame" x="932" y="291" width="254" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44.5" id="q76-kF-a4Y"/>
-                        <constraint firstAttribute="width" constant="174" id="xtJ-SH-HBh"/>
+                        <constraint firstAttribute="height" constant="38" id="7YZ-0t-n7s"/>
+                        <constraint firstAttribute="width" constant="254.5" id="I1X-Si-6Qd"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-pr-XUe">
@@ -48,7 +48,7 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cdqweqwewqe.png" translatesAutoresizingMaskIntoConstraints="NO" id="sOC-Gj-CTg">
-                    <rect key="frame" x="922" y="39" width="256" height="302"/>
+                    <rect key="frame" x="922" y="19" width="256" height="302"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="256" id="WAr-Cr-3PV"/>
                         <constraint firstAttribute="height" constant="302" id="Ywl-Lz-2tR"/>
@@ -62,13 +62,16 @@
                     </constraints>
                     <state key="normal" backgroundImage="音源.png"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-Pn-GsG">
+                <button opaque="NO" tag="9527" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-Pn-GsG">
                     <rect key="frame" x="600" y="15.5" width="26.5" height="24.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="26.5" id="Alt-ag-hYi"/>
                         <constraint firstAttribute="height" constant="24.5" id="CTx-9o-VG3"/>
                     </constraints>
-                    <state key="normal" backgroundImage="收藏-拷贝-2.png"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" backgroundImage="收藏-拷贝-2.png">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
                 <button opaque="NO" tag="2011" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-Od-vJ4">
                     <rect key="frame" x="436" y="191" width="50" height="50"/>
@@ -108,7 +111,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="sOC-Gj-CTg" firstAttribute="top" secondItem="tsH-3A-oxf" secondAttribute="top" constant="39" id="2dd-8p-qUC"/>
+                <constraint firstItem="sOC-Gj-CTg" firstAttribute="top" secondItem="tsH-3A-oxf" secondAttribute="top" constant="19" id="2dd-8p-qUC"/>
                 <constraint firstItem="eVa-Bv-TpG" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="298" id="4zi-bW-IJE"/>
                 <constraint firstItem="HXI-pv-VLm" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="85" id="6yC-Qw-YJZ"/>
                 <constraint firstItem="JVg-pr-XUe" firstAttribute="top" secondItem="eiq-4h-1F2" secondAttribute="bottom" constant="-45" id="7xt-Ig-UZT"/>
@@ -147,10 +150,10 @@
         </view>
     </objects>
     <resources>
-        <image name="buttonqwewq.png" width="174" height="44"/>
         <image name="cdqweqwewqe.png" width="256" height="302"/>
         <image name="icon213123iundoinadoin1.png" width="852" height="189"/>
         <image name="nameofmusic.png" width="233" height="95"/>
+        <image name="播放列表_suiji.png" width="254" height="38"/>
         <image name="收藏-拷贝-2.png" width="19" height="18"/>
         <image name="音源.png" width="123" height="54"/>
     </resources>

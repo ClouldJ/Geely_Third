@@ -8,6 +8,8 @@
 
 #import "GeelyLeftFrameDynamicView.h"
 
+#import "GeelySildeBarView.h"
+
 @interface GeelyLeftFrameDynamicView () <UITableViewDelegate,UITableViewDataSource> {
     
 }
@@ -30,10 +32,9 @@
         case DYNAMIC_MUSIC:
         {
             //音乐
-            UIView *vc = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
-            vc.backgroundColor = [UIColor redColor];
+            GeelySildeBarView *vc = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_MUSIC];
             [self addSubview:vc];
-            [self animationView:vc finish:finish];
+            [self animationView:vc finish:finish style:DYNAMIC_MUSIC];
             
         }
             break;
@@ -45,10 +46,9 @@
         case DYNAMIC_CALLZ:
         {
             //输入电话
-            UIView *vd = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
-            vd.backgroundColor = [UIColor greenColor];
+            GeelySildeBarView *vd = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_CALLZ];
             [self addSubview:vd];
-            [self animationView:vd finish:finish];
+            [self animationView:vd finish:finish style:DYNAMIC_CALLZ];
         }
             break;
         case DYNAMIC_CALLD:
@@ -64,10 +64,9 @@
         case DYNAMIC_SETTZ:
         {
             //设置
-            UIView *vf = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
-            vf.backgroundColor = [UIColor blueColor];
+            GeelySildeBarView *vf = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_SETTZ];
             [self addSubview:vf];
-            [self animationView:vf finish:finish];
+            [self animationView:vf finish:finish style:DYNAMIC_SETTZ];
         }
             break;
         default:
@@ -76,11 +75,32 @@
     
 }
 
--(void)animationView:(UIView *)view finish:(GeelyDynamicFinishView)finish{
+-(void)animationView:(GeelySildeBarView *)view finish:(GeelyDynamicFinishView)finish style:(GeelyDynamicViewStyle)style{
+    NSLog(@"1111------------------------:%@",NSStringFromClass([view class]));
+    self.currentView.hidden = YES;
     [UIView animateWithDuration:.5f animations:^{
         //todo
         view.frame = CGRectMake(0, 0, 340, 435);
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 340, 435);
+        view.bg_imageView.frame = CGRectMake(0, 0, 340, 435);
+        switch (style) {
+            case DYNAMIC_SETTZ:
+            {
+                //设置动画
+                view.setting_tableView.frame = CGRectMake(view.setting_tableView.frame.origin.x, view.setting_tableView.frame.origin.y, 340, view.setting_tableView.frame.size.height);
+            }
+                break;
+            case DYNAMIC_MUSIC:
+            {
+                view.image_musciTitle.frame = CGRectMake((340-169)/2-20, 100, 169, 45);
+                view.store_btn.frame = CGRectMake((340-169)/2+160, 97.5, 26.5, 24.5);
+                view.animaeCD.frame = CGRectMake((340-180)/2-15, 170, 180, 180);
+                view.animaeCD.alpha = 1;
+            }
+                break;
+            default:
+                break;
+        }
     } completion:^(BOOL finished) {
         if (self.currentView) {
             [self.currentView removeFromSuperview];

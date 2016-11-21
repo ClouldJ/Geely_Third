@@ -76,6 +76,11 @@
         view_first.frame = CGRectMake(0, 0, weakself.contentScrollView.bounds.size.width, weakself.contentScrollView.bounds.size.height);
         [weakself.contentScrollView addSubview:view_first];
         
+        UIButton *storeBtn = (UIButton *)[view_first viewWithTag:9527];
+        [storeBtn setBackgroundImage:[UIImage imageNamed:@"收藏-拷贝-2"] forState:UIControlStateNormal];
+        [storeBtn setBackgroundImage:[UIImage imageNamed:@"收藏-拷贝-2_music"] forState:UIControlStateSelected];
+        [storeBtn addTarget:weakself action:@selector(storeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
         UILabel *label_eq = (UILabel *)[view_first viewWithTag:71771];
         label_eq.textColor = RGBAAAABBB(219, 191, 126, 1);
         contentImage = (UIImageView *)[view_first viewWithTag:20998];
@@ -117,10 +122,15 @@
         [tableView_ registerNib:[UINib nibWithNibName:@"GeelyMusicTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cellmusic"];
         
         view_first.alpha = 0;
-        [UIView animateWithDuration:.5f animations:^{
+        [UIView animateWithDuration:.2f animations:^{
             view_first.alpha = 1;
         }];
     }];
+}
+
+-(void)storeBtnAction:(UIButton *)btn {
+    NSLog(@"搜藏按钮");
+    btn.selected = !btn.selected;
 }
 
 -(void)volumeAdd{
@@ -275,24 +285,54 @@
     switch (index) {
         case 1:
         {
+            [btn setBackgroundImage:[UIImage imageNamed:@"music_hui_s"] forState:UIControlStateNormal];
+
+            UIButton *radio_btn = buttons_array[1];
+            [radio_btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui"] forState:UIControlStateNormal];
+            
             fmAm = YES;
             UIButton *btn = buttons_array[3];
-            [btn setBackgroundImage:[UIImage imageNamed:@"音频检索"] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
             [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
+            
+            UIButton *btn3 = buttons_array[2];
+            UIButton *btn4 = buttons_array[4];
+            [btn3 setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
+            [btn4 setBackgroundImage:[UIImage imageNamed:@"wdsc_hui"] forState:UIControlStateNormal];
+            
         }
             break;
         case 4:
         {
+            
+            UIButton *rightNow = buttons_array[2];
+            [rightNow setBackgroundImage:[UIImage imageNamed:@"rightNowPlaying"] forState:UIControlStateNormal];
             if (fmAm) {
+                [btn setBackgroundImage:[UIImage imageNamed:@"ypjs_dianjis"] forState:UIControlStateNormal];
                 [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228*2, 0)];
+            }else{
+                [btn setBackgroundImage:[UIImage imageNamed:@"diantai_dianji_lists"] forState:UIControlStateNormal];
             }
+            
+            UIButton *btn_4 = buttons_array[4];
+            [btn_4 setBackgroundImage:[UIImage imageNamed:@"wdsc_hui"] forState:UIControlStateNormal];
         }
             break;
         case 2:
         {
+            UIButton *music_btn = buttons_array[0];
+            [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui"] forState:UIControlStateNormal];
+            
+            UIButton *btn3 = buttons_array[2];
+            UIButton *btn4 = buttons_array[4];
+            [btn3 setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
+            [btn4 setBackgroundImage:[UIImage imageNamed:@"wdsc_hui"] forState:UIControlStateNormal];
+            //TODO,改变电台颜色
+            [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui_s"] forState:UIControlStateNormal];
+            
             fmAm = NO;
-            UIButton *btn = buttons_array[3];
-            [btn setBackgroundImage:[UIImage imageNamed:@"电台列表musci"] forState:UIControlStateNormal];
+            UIButton *btn1 = buttons_array[3];
+            [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
             [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
             
 #pragma mark 电台操作
@@ -301,6 +341,37 @@
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             }];
+        }
+            break;
+        case 3:
+        {
+            if (fmAm) {
+                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
+            }else{
+                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
+            }
+            [btn setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
+            UIButton *btn_3 = buttons_array[3];
+            if (fmAm) {
+                [btn_3 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
+            }else{
+                [btn_3 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
+            }
+            UIButton *btn_4 = buttons_array[4];
+            [btn_4 setBackgroundImage:[UIImage imageNamed:@"wdsc_hui"] forState:UIControlStateNormal];
+        }
+            break;
+        case 5:
+        {
+            [btn setBackgroundImage:[UIImage imageNamed:@"wdsc_dianji"] forState:UIControlStateNormal];
+            UIButton *btn2 = buttons_array[2];
+            UIButton *btn3 = buttons_array[3];
+            [btn2 setBackgroundImage:[UIImage imageNamed:@"rightNowPlaying"] forState:UIControlStateNormal];
+            if (fmAm) {
+                [btn3 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
+            }else{
+                [btn3 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
+            }
         }
             break;
         default:

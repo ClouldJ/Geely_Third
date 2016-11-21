@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad12_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="991.5" height="61"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="导航栏setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-Fq-U0Y">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="导航栏settingselected.png" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-Fq-U0Y">
                     <rect key="frame" x="0.0" y="0.0" width="991.5" height="61"/>
                 </imageView>
             </subviews>
@@ -30,6 +30,6 @@
         </view>
     </objects>
     <resources>
-        <image name="导航栏setting.png" width="725" height="45"/>
+        <image name="导航栏settingselected.png" width="990" height="62"/>
     </resources>
 </document>

@@ -51,7 +51,7 @@
                         <constraint firstAttribute="width" constant="46" id="9O3-TT-2uc"/>
                         <constraint firstAttribute="height" constant="26.5" id="M43-rA-Pys"/>
                     </constraints>
-                    <state key="normal" backgroundImage="music_hui.png"/>
+                    <state key="normal" backgroundImage="music_hui_s.png"/>
                 </button>
                 <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gG-wC-2eQ">
                     <rect key="frame" x="156" y="24.5" width="46" height="26.5"/>
@@ -86,7 +86,7 @@
     <resources>
         <image name="diantai_hui.png" width="51" height="29"/>
         <image name="dqbf_dianji.png" width="172" height="50"/>
-        <image name="music_hui.png" width="51" height="29"/>
+        <image name="music_hui_s.png" width="51" height="29"/>
         <image name="qwuheiuwqenu.png" width="857" height="61"/>
         <image name="wdsc_hui.png" width="172" height="50"/>
         <image name="ypjs_hui.png" width="172" height="50"/>

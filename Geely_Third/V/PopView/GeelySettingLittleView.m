@@ -21,15 +21,17 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"geelysettinglittle" owner:self options:nil]firstObject];
-        self.frame = frame;
+        self.conttView = [[[NSBundle mainBundle] loadNibNamed:@"geelysettinglittle" owner:self options:nil]firstObject];
+        self.conttView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        self.conttView.backgroundColor = [UIColor redColor];
+        [self addSubview:self.conttView];
         [self.closebtn addTarget:self action:@selector(dismissAction) forControlEvents:UIControlEventTouchUpInside];
         
         sImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电s"],[UIImage imageNamed:@"环绕声s"],[UIImage imageNamed:@"蓝牙s"],[UIImage imageNamed:@"车载热点s"],[UIImage imageNamed:@"行驶中视频限制s"],[UIImage imageNamed:@"行车记录仪s"], nil];
         cImageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"无线充电c"],[UIImage imageNamed:@"环绕声c"],[UIImage imageNamed:@"蓝牙c"],[UIImage imageNamed:@"车载热点c"],[UIImage imageNamed:@"行驶中视频限制c"],[UIImage imageNamed:@"行车记录仪c"], nil];
         [SingleModel sharedInstance].cellImages = [cImageArray copy];
 
-        tableView_ = (UITableView *)[self viewWithTag:909];
+        tableView_ = (UITableView *)[self.conttView viewWithTag:909];
         tableView_.delegate = self;
         tableView_.dataSource = self;
         tableView_.rowHeight = 57;

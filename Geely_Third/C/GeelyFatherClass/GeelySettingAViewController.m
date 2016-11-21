@@ -79,7 +79,7 @@
         [tableView_ registerNib:[UINib nibWithNibName:@"GeelySettingTableViewCellwordi" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cellsettingwordi"];
         
         view_setting.alpha = 0;
-        [UIView animateWithDuration:.5f animations:^{
+        [UIView animateWithDuration:.2f animations:^{
             view_setting.alpha = 1;
         }];
         

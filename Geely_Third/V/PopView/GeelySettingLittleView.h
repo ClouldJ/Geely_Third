@@ -10,5 +10,6 @@
 
 @interface GeelySettingLittleView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *closebtn;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightContains;
+@property (nonatomic, strong) UIView *conttView;
 @end

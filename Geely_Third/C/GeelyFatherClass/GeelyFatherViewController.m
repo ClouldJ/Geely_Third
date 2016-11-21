@@ -14,6 +14,7 @@
 #import "UIScrollView+AnimationOffSet.h"
 #import "GeelyCallAViewController.h"
 #import "GeelyMusicAViewController.h"
+#import "GeelyAutoViewController.h"
 
 
 @interface GeelyFatherViewController ()  {
@@ -104,7 +105,7 @@
     self.contentScrollView.backgroundColor = [UIColor clearColor];
     [scrollViewContent addSubview:self.contentScrollView];
     dynamicView = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(82, 0, 0, 435)];
-    dynamicView.backgroundColor = [UIColor lightGrayColor];
+    dynamicView.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:dynamicView];
     
     // Do any additional setup after loading the view.
@@ -126,7 +127,16 @@
     
     DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
     demo.backgroundColor = [UIColor clearColor];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [demo addGestureRecognizer:tap];
+    
     [self.contentView addSubview:demo];
+}
+
+-(void)tapAction:(UITapGestureRecognizer *)tap {
+    GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
+    [self.navigationController pushViewController:va animated:NO];
 }
 
 -(void)addImageViewAnimate:(TopViewAnimationSuccessful)animation {
@@ -227,9 +237,7 @@
             }
     
     
-    
-//            indexPathLast =[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-    if (!dynamicView.show) {
+        if (!dynamicView.show) {
         [scrollViewContent geelyContentViewFrameAnimation:^{
             
             self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);

@@ -16,6 +16,7 @@
 #import "GeelyScreenView.h"
 
 #import "GeelyCallingActionView.h"
+#import "UIScrollView+AnimationOffSet.h"
 
 @interface GeelyCallAViewController () {
     UIImageView *imageView;
@@ -87,7 +88,7 @@
         weakself.contentScrollView.contentSize = CGSizeMake(1228*3, 0);
         
          view_input.alpha = 0;
-        [UIView animateWithDuration:.5f animations:^{
+        [UIView animateWithDuration:.2f animations:^{
             view_input.alpha = 1;
         }];
         
@@ -171,18 +172,47 @@
     [vb showAnimation];
 }
 
-
+#pragma mark DataSource
 -(UIView *)geelyTopAnimateView {
     UIView *vb = [[[NSBundle mainBundle] loadNibNamed:@"callTopview" owner:self options:nil]firstObject];
     vb.frame = CGRectMake(2, 0, 991.5, 61.5);
     vb.backgroundColor = [UIColor clearColor];
+    
+    UIButton *BTN_1 = (UIButton *)[vb viewWithTag:567];
+    UIButton *BTN_2 = (UIButton *)[vb viewWithTag:568];
+    UIButton *BTN_3 = (UIButton *)[vb viewWithTag:569];
+    
+    NSArray *arr = [NSArray arrayWithObjects:BTN_1,BTN_2,BTN_3, nil];
+    for (int i = 0; i<arr.count; i++) {
+        UIButton *bb = arr[i];
+        bb.tag = i+1;
+        [bb addTarget:self action:@selector(topBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
     
     imageView = (UIImageView *)[vb viewWithTag:972];
     
     return vb;
 }
 
+#pragma mark TOP栏切换逻辑
+-(void)topBtnAction:(UIButton *)btn {
+    if (btn.tag == 1) {
+        NSLog(@"拨号盘");
+        imageView.image = [UIImage imageNamed:@"topcallgeely"];
+        [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
+    }else if (btn.tag == 2) {
+        NSLog(@"通话记录");
+        imageView.image = [UIImage imageNamed:@"123123123123toptop"];
+        [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
+    }else if (btn.tag == 3) {
+        NSLog(@"通讯录");
+        imageView.image = [UIImage imageNamed:@"top_0dasdaadio13i"];
+        [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228*2, 0)];
+    }
+}
+
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    scrollView scrollan
     if (scrollView.contentOffset.x == 0) {
         imageView.image = [UIImage imageNamed:@"topcallgeely"];
     }else if (scrollView.contentOffset.x == 1228) {
