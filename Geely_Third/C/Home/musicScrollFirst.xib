@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -55,7 +55,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXI-pv-VLm">
-                    <rect key="frame" x="58" y="20" width="103" height="55"/>
+                    <rect key="frame" x="85" y="0.0" width="103" height="55"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="103" id="AIF-sv-crn"/>
                         <constraint firstAttribute="height" constant="54.5" id="lXL-Nw-3Vu"/>
@@ -63,10 +63,10 @@
                     <state key="normal" backgroundImage="音源.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-Pn-GsG">
-                    <rect key="frame" x="600" y="38" width="20" height="18"/>
+                    <rect key="frame" x="600" y="15.5" width="26.5" height="24.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="19.5" id="AZ2-6G-6nY"/>
-                        <constraint firstAttribute="height" constant="18" id="Xt2-wH-ZDR"/>
+                        <constraint firstAttribute="width" constant="26.5" id="Alt-ag-hYi"/>
+                        <constraint firstAttribute="height" constant="24.5" id="CTx-9o-VG3"/>
                     </constraints>
                     <state key="normal" backgroundImage="收藏-拷贝-2.png"/>
                 </button>
@@ -99,7 +99,7 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nameofmusic.png" translatesAutoresizingMaskIntoConstraints="NO" id="voL-QL-4B0">
-                    <rect key="frame" x="344.5" y="35" width="233" height="95.5"/>
+                    <rect key="frame" x="345" y="14.5" width="233" height="96"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="233" id="Jlr-BB-Gn3"/>
                         <constraint firstAttribute="height" constant="95.5" id="PuI-2a-Ish"/>
@@ -110,7 +110,7 @@
             <constraints>
                 <constraint firstItem="sOC-Gj-CTg" firstAttribute="top" secondItem="tsH-3A-oxf" secondAttribute="top" constant="39" id="2dd-8p-qUC"/>
                 <constraint firstItem="eVa-Bv-TpG" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="298" id="4zi-bW-IJE"/>
-                <constraint firstItem="HXI-pv-VLm" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="58" id="6yC-Qw-YJZ"/>
+                <constraint firstItem="HXI-pv-VLm" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="85" id="6yC-Qw-YJZ"/>
                 <constraint firstItem="JVg-pr-XUe" firstAttribute="top" secondItem="eiq-4h-1F2" secondAttribute="bottom" constant="-45" id="7xt-Ig-UZT"/>
                 <constraint firstItem="JVg-pr-XUe" firstAttribute="top" secondItem="qQs-oK-BSN" secondAttribute="bottom" constant="70" id="9q4-50-RfM"/>
                 <constraint firstItem="JVg-pr-XUe" firstAttribute="top" secondItem="eVa-Bv-TpG" secondAttribute="bottom" constant="71" id="Asj-5v-xJt"/>
@@ -132,7 +132,7 @@
                 <constraint firstAttribute="bottom" secondItem="4wJ-wo-zXE" secondAttribute="bottom" constant="-10" id="lue-P3-WTX"/>
                 <constraint firstItem="a5U-Al-7Xz" firstAttribute="centerY" secondItem="HXI-pv-VLm" secondAttribute="centerY" id="mph-9U-L9h"/>
                 <constraint firstItem="sOC-Gj-CTg" firstAttribute="leading" secondItem="vJL-Od-vJ4" secondAttribute="trailing" constant="436" id="n7s-52-G9X"/>
-                <constraint firstItem="HXI-pv-VLm" firstAttribute="top" secondItem="tsH-3A-oxf" secondAttribute="top" constant="20" id="roX-XE-tmc"/>
+                <constraint firstItem="HXI-pv-VLm" firstAttribute="top" secondItem="tsH-3A-oxf" secondAttribute="top" id="roX-XE-tmc"/>
                 <constraint firstItem="eiq-4h-1F2" firstAttribute="centerX" secondItem="JVg-pr-XUe" secondAttribute="centerX" constant="-16" id="xdA-5U-MeU"/>
                 <constraint firstItem="voL-QL-4B0" firstAttribute="centerX" secondItem="vJL-Od-vJ4" secondAttribute="centerX" id="yki-wd-Btx"/>
                 <constraint firstItem="JVg-pr-XUe" firstAttribute="leading" secondItem="tsH-3A-oxf" secondAttribute="leading" constant="158" id="zYB-C6-YAu"/>

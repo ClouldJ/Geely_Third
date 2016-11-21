@@ -62,21 +62,7 @@
     
     manager = [GeelyMusicAudioManager defaultManager];
     music = YES;
-//    mainRequest = [[MainRequest alloc] init];
-//    mainRequest.requestMusic = [[Music alloc] init];
-//    mainRequest.requestVolume = [[Volume alloc] init];
-//    mainRequest.requestMute = [[Mute alloc] init];
-//    mainRequest.requestPhone = [[Phone alloc] init];
-//    mainRequest.requestRadio = [[Radio alloc] init];
-//    mainRequest.requestMute = [[Mute alloc] init];
-//    
-//    mainRequest1 = [[MainRequest alloc] init];
-//    mainRequest1.requestMusic = [[Music alloc] init];
-//    mainRequest1.requestVolume = [[Volume alloc] init];
-//    mainRequest1.requestMute = [[Mute alloc] init];
-//    mainRequest1.requestPhone = [[Phone alloc] init];
-//    mainRequest1.requestRadio = [[Radio alloc] init];
-//    mainRequest1.requestMute = [[Mute alloc] init];
+
     
     self.dataSource = self;
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
@@ -269,7 +255,7 @@
 
 -(UIView *)geelyTopAnimateView {
     UIView *topView = [[[NSBundle mainBundle] loadNibNamed:@"forshow" owner:self options:nil]firstObject];
-    topView.frame = CGRectMake(82+50, 0, 857.5, 61.5);
+    topView.frame = CGRectMake(82+20, 0, 857.5, 61.5);
     topView.backgroundColor = [UIColor clearColor];
     
     buttons_array = [NSMutableArray array];

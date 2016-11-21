@@ -119,10 +119,10 @@
     leftView.tableView_.delegate = self;
     [self.contentView addSubview:leftView];
     
-    leftFrameScroll = [[GeelyLittleShowView alloc] initWithFrame:CGRectMake(82, 0, 0, 492-57)];
-    leftFrameScroll.backgroundColor = [UIColor clearColor];
-    [leftFrameScroll addScrollView];
-    [self.contentView addSubview:leftFrameScroll];
+//    leftFrameScroll = [[GeelyLittleShowView alloc] initWithFrame:CGRectMake(82, 0, 0, 492-57)];
+//    leftFrameScroll.backgroundColor = [UIColor clearColor];
+//    [leftFrameScroll addScrollView];
+//    [self.contentView addSubview:leftFrameScroll];
     
     DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
     demo.backgroundColor = [UIColor clearColor];

@@ -42,11 +42,12 @@
 }
 
 -(void)geelyAirborneViewAnimation:(AnimationBlock)block {
-    CGRect frameOld = self.frame;
-    self.frame = CGRectMake(frameOld.origin.x, -frameOld.size.height, frameOld.size.width, frameOld.size.height);
-    
+//    CGRect frameOld = self.frame;
+//    self.frame = CGRectMake(frameOld.origin.x, -frameOld.size.height, frameOld.size.width, frameOld.size.height);
+    self.alpha = 0;
     [UIView animateWithDuration:.5f animations:^{
-        self.frame = CGRectMake(frameOld.origin.x, frameOld.origin.y, frameOld.size.width, frameOld.size.height);
+//        self.frame = CGRectMake(frameOld.origin.x, frameOld.origin.y, frameOld.size.width, frameOld.size.height);
+        self.alpha = 1;
     } completion:^(BOOL finished) {
         block();
     }];

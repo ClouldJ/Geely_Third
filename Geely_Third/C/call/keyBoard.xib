@@ -14,14 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0930-IPAD-底图V2.png" translatesAutoresizingMaskIntoConstraints="NO" id="5yC-fc-ZqA">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yC-fc-ZqA">
                     <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIw-Hs-0QK">
                     <rect key="frame" x="28" y="266" width="1310" height="492"/>
                     <subviews>
-                        <imageView tag="977" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboardKEY.png" translatesAutoresizingMaskIntoConstraints="NO" id="fJA-NL-fbw">
-                            <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
+                        <imageView tag="977" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="键盘_forkeyboard@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="fJA-NL-fbw">
+                            <rect key="frame" x="0.0" y="134" width="1310" height="358"/>
                         </imageView>
                         <button opaque="NO" tag="845" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1l-hK-KSW">
                             <rect key="frame" x="916" y="134" width="49" height="66"/>
@@ -29,17 +29,17 @@
                         <button opaque="NO" tag="976" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-5L-HwF">
                             <rect key="frame" x="201" y="439" width="126" height="45"/>
                         </button>
-                        <imageView tag="978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Geely_handwrittenBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-1D-0Ks">
-                            <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
+                        <imageView tag="978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="区域划分keyboardformfinger.png" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-1D-0Ks">
+                            <rect key="frame" x="0.0" y="97" width="1310" height="395"/>
                         </imageView>
                         <button opaque="NO" tag="945" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-MN-XMZ">
                             <rect key="frame" x="147" y="433" width="96" height="59"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="r1l-hK-KSW" secondAttribute="bottom" constant="292" id="0Ih-bi-UAz"/>
-                        <constraint firstItem="fJA-NL-fbw" firstAttribute="top" secondItem="TIw-Hs-0QK" secondAttribute="top" id="4cS-NO-dy0"/>
+                        <constraint firstItem="fJA-NL-fbw" firstAttribute="top" secondItem="TIw-Hs-0QK" secondAttribute="top" constant="134" id="4cS-NO-dy0"/>
                         <constraint firstItem="r1l-hK-KSW" firstAttribute="leading" secondItem="TIw-Hs-0QK" secondAttribute="leading" constant="916" id="7EC-ae-SwA"/>
                         <constraint firstAttribute="width" constant="1310" id="Ai0-nF-Asf"/>
                         <constraint firstItem="VZq-1D-0Ks" firstAttribute="leading" secondItem="TIw-Hs-0QK" secondAttribute="leading" id="CL5-C3-RQe"/>
@@ -50,7 +50,7 @@
                         <constraint firstAttribute="height" constant="492" id="SG2-0A-zXF"/>
                         <constraint firstItem="1nw-5L-HwF" firstAttribute="top" secondItem="TIw-Hs-0QK" secondAttribute="top" constant="439" id="a4E-HB-awa"/>
                         <constraint firstAttribute="bottom" secondItem="CWO-MN-XMZ" secondAttribute="bottom" id="aG2-PC-1P7"/>
-                        <constraint firstItem="VZq-1D-0Ks" firstAttribute="top" secondItem="TIw-Hs-0QK" secondAttribute="top" id="bCU-uG-fGd"/>
+                        <constraint firstItem="VZq-1D-0Ks" firstAttribute="top" secondItem="TIw-Hs-0QK" secondAttribute="top" constant="97" id="bCU-uG-fGd"/>
                         <constraint firstAttribute="trailing" secondItem="r1l-hK-KSW" secondAttribute="trailing" constant="345" id="d8x-XR-TbF"/>
                         <constraint firstAttribute="trailing" secondItem="fJA-NL-fbw" secondAttribute="trailing" id="hi4-OW-hAJ"/>
                         <constraint firstAttribute="bottom" secondItem="VZq-1D-0Ks" secondAttribute="bottom" id="lck-Jr-0mD"/>
@@ -63,7 +63,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="5yC-fc-ZqA" firstAttribute="leading" secondItem="KPM-0v-NNA" secondAttribute="leading" id="4eP-dR-xeT"/>
                 <constraint firstAttribute="trailing" secondItem="5yC-fc-ZqA" secondAttribute="trailing" id="Cbm-YN-d9M"/>
@@ -76,8 +76,7 @@
         </view>
     </objects>
     <resources>
-        <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
-        <image name="Geely_handwrittenBG.png" width="1310" height="492"/>
-        <image name="keyboardKEY.png" width="1310" height="492"/>
+        <image name="区域划分keyboardformfinger.png" width="1310" height="395"/>
+        <image name="键盘_forkeyboard@2x.png" width="1366" height="1024"/>
     </resources>
 </document>

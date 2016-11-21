@@ -174,7 +174,7 @@
 
 -(UIView *)geelyTopAnimateView {
     UIView *vb = [[[NSBundle mainBundle] loadNibNamed:@"callTopview" owner:self options:nil]firstObject];
-    vb.frame = CGRectMake(82, 0, 991.5, 61.5);
+    vb.frame = CGRectMake(2, 0, 991.5, 61.5);
     vb.backgroundColor = [UIColor clearColor];
     
     imageView = (UIImageView *)[vb viewWithTag:972];
