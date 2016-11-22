@@ -65,6 +65,11 @@
 
     
     self.dataSource = self;
+    self.contentScrollView.delegate = self;
+    self.contentScrollView.pagingEnabled = YES;
+    self.contentScrollView.scrollEnabled = YES;
+    self.contentScrollView.contentSize = CGSizeMake(1228*2, 0);
+    self.contentScrollView.bounces = NO;
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
     [self addFixedView];
     
@@ -379,6 +384,30 @@
     }
 }
 
+#pragma mark scrollViewDelegate
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    NSLog(@"移动的距离:%f",scrollView.contentOffset.x);
+    if (scrollView.contentOffset.x == 1228) {
+        UIButton *music_btn = buttons_array[0];
+        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui"] forState:UIControlStateNormal];
+        UIButton *btn = buttons_array[1];
+        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui_s"] forState:UIControlStateNormal];
+        
+        fmAm = NO;
+        UIButton *btn1 = buttons_array[3];
+        [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
+    }else{
+        UIButton *music_btn = buttons_array[0];
+        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui_s"] forState:UIControlStateNormal];
+        UIButton *btn = buttons_array[1];
+        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui"] forState:UIControlStateNormal];
+        
+        fmAm = YES;
+        UIButton *btn1 = buttons_array[3];
+        [btn1 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
+    }
+}
 
 #pragma mark tableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

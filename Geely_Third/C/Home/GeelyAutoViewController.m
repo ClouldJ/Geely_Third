@@ -8,12 +8,21 @@
 
 #import "GeelyAutoViewController.h"
 
-@interface GeelyAutoViewController ()
+@interface GeelyAutoViewController () {
+    UIImageView *wenduji_right;
+    UIImageView *wenduji;
+}
 @property (weak, nonatomic) IBOutlet UIButton *rightShow;
 @property (weak, nonatomic) IBOutlet UIButton *leftShow;
 @property (weak, nonatomic) IBOutlet UIButton *leftHidden;
 @property (weak, nonatomic) IBOutlet UIButton *rightHidden;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
+@property (weak, nonatomic) IBOutlet UIImageView *rightBig;
+@property (weak, nonatomic) IBOutlet UIImageView *rightSmall;
+@property (weak, nonatomic) IBOutlet UIImageView *leftBig;
+@property (weak, nonatomic) IBOutlet UIImageView *leftSmall;
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 
 @end
 
@@ -36,15 +45,16 @@
     [self.rightHidden addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    UIImageView *wenduji = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
+    wenduji = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
     wenduji.frame = CGRectMake(16.5, 395, 121/2, 121/2);
     wenduji.userInteractionEnabled = YES;
     [self.contentImage addSubview:wenduji];
     
+    
     UIPanGestureRecognizer *pan_left = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(leftPanGesture:)];
     [wenduji addGestureRecognizer:pan_left];
     
-    UIImageView *wenduji_right = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
+    wenduji_right = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
     wenduji_right.frame = CGRectMake((D_W-116-18), 395, 121/2, 121/2);
     wenduji_right.userInteractionEnabled = YES;
     [self.contentImage addSubview:wenduji_right];
@@ -52,14 +62,29 @@
     UIPanGestureRecognizer *pan_right = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(rightGesture:)];
     [wenduji_right addGestureRecognizer:pan_right];
     
+    self.rightSmall.hidden = NO;
+    self.rightBig.hidden = YES;
+    self.rightSmall.userInteractionEnabled = YES;
+    self.rightBig.userInteractionEnabled = YES;
+    
+    self.leftBig.hidden = YES;
+    self.leftSmall.hidden = NO;
+    
+    self.leftLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:55];
+    self.rightLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:55];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 }
 
 -(void)rightGesture:(UIPanGestureRecognizer *)pan {
     CGFloat ffl = [pan locationInView:self.contentImage].y;
     UIImageView *imageView = (UIImageView *)[pan view];
     
-
+    [self.view bringSubviewToFront:imageView];
     
     if (pan.state == UIGestureRecognizerStateBegan) {
         imageView.transform = CGAffineTransformScale(imageView.transform, 1.3f, 1.3f);
@@ -68,6 +93,7 @@
     }else if (pan.state == UIGestureRecognizerStateChanged) {
         if (ffl>=81.5&&ffl<=395) {
             imageView.frame = CGRectMake(imageView.frame.origin.x, ffl, imageView.frame.size.width, imageView.frame.size.height);
+            self.rightLabel.text = [NSString stringWithFormat:@"%.1f",40-ffl/20];
         }
     }
 }
@@ -76,7 +102,7 @@
     CGFloat ffl = [pan locationInView:self.contentImage].y;
     UIImageView *imageView = (UIImageView *)[pan view];
     UIImageView *imaaa = (UIImageView *)[pan view];
-    
+    [self.view bringSubviewToFront:imageView];
     if (pan.state == UIGestureRecognizerStateBegan) {
         imaaa.transform = CGAffineTransformScale(imaaa.transform, 1.3f, 1.3f);
     }else if (pan.state == UIGestureRecognizerStateEnded) {
@@ -84,6 +110,11 @@
     }else if (pan.state == UIGestureRecognizerStateChanged) {
         if (ffl>=81.5&&ffl<=395) {
             imageView.frame = CGRectMake(imageView.frame.origin.x, ffl, imageView.frame.size.width, imageView.frame.size.height);
+            
+            if (imageView == wenduji) {
+                self.leftLabel.text = [NSString stringWithFormat:@"%.1f",40-ffl/20];
+            }else if(imageView == wenduji_right){
+            }
         }
     }
 
@@ -111,11 +142,20 @@
         [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
+- (IBAction)rightAirControl:(id)sender {
+    self.rightBig.hidden = !self.rightBig.hidden;
+    self.rightSmall.hidden = !self.rightSmall.hidden;
+}
+- (IBAction)leftAirControll:(id)sender {
+    self.leftSmall.hidden = !self.leftSmall.hidden;
+    self.leftBig.hidden = !self.leftBig.hidden;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

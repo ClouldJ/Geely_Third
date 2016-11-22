@@ -31,6 +31,7 @@
 	<array>
 		<string>NotoSansCJKsc-Regular.otf</string>
 		<string>GEELY Light 20151114.otf</string>
+		<string>GEELY Narrow regular 20151114.otf</string>
 	</array>
 	<key>UIInterfaceOrientation</key>
 	<string>UIInterfaceOrientationLandscapeRight</string>

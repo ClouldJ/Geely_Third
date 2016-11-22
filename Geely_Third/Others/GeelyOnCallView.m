@@ -33,7 +33,7 @@
         }
     }
     NSLog(@"数组的数量:%ld",arr.count);
-    [imageView startImageSequenceWithArray:arr repeatCount:MAXFLOAT duration:1];
+    [imageView startImageSequenceWithArray:arr repeatCount:1000000 duration:1];
     
 }
 

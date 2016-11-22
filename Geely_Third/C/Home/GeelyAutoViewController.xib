@@ -11,10 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeelyAutoViewController">
             <connections>
                 <outlet property="contentImage" destination="ulW-Yu-M0s" id="bT0-pf-YZL"/>
-                <outlet property="leftHidden" destination="Hu9-Qp-7sW" id="5Wo-J9-8KZ"/>
-                <outlet property="leftShow" destination="KPZ-6n-nOt" id="023-gJ-emd"/>
-                <outlet property="rightHidden" destination="WpI-dc-jdK" id="r04-OM-aAf"/>
-                <outlet property="rightShow" destination="feu-TK-PWE" id="Z2J-hb-8Py"/>
+                <outlet property="leftBig" destination="5dW-j3-ktT" id="NwV-1q-6PG"/>
+                <outlet property="leftLabel" destination="4iT-GQ-fMI" id="FMW-0K-IS0"/>
+                <outlet property="leftSmall" destination="ZiZ-gg-sZN" id="IeK-sU-BU7"/>
+                <outlet property="rightBig" destination="1tz-sA-BkN" id="tEp-fL-QVk"/>
+                <outlet property="rightLabel" destination="nsy-zY-U3e" id="niW-t0-vYe"/>
+                <outlet property="rightSmall" destination="1P2-P3-wcC" id="oDp-xo-Qwr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,67 +31,91 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epb-hV-nyi">
                     <rect key="frame" x="28" y="266" width="1310" height="492"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.3_ts_comfort_ac_20160927airairgeely.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geely_autoair_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
                             <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpI-dc-jdK">
-                            <rect key="frame" x="980" y="290" width="330" height="138"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="副驾座椅autoauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-P3-wcC">
+                            <rect key="frame" x="980" y="290" width="329.5" height="138"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="329.5" id="uD2-rl-WSY"/>
-                                <constraint firstAttribute="height" constant="138" id="xEy-lU-BCH"/>
+                                <constraint firstAttribute="height" constant="138" id="76g-ab-CgR"/>
+                                <constraint firstAttribute="width" constant="329.5" id="sgk-6o-0DO"/>
                             </constraints>
-                            <state key="normal" backgroundImage="副驾座椅autoauto.png"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hu9-Qp-7sW">
-                            <rect key="frame" x="0.0" y="290" width="323" height="138"/>
+                        </imageView>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="右侧座椅设置airauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="1tz-sA-BkN">
+                            <rect key="frame" x="751" y="290" width="559" height="143"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="138" id="TwD-ct-gSc"/>
-                                <constraint firstAttribute="width" constant="322.5" id="gC9-eN-yO3"/>
+                                <constraint firstAttribute="height" constant="143.5" id="3Z0-Wc-7Fg"/>
+                                <constraint firstAttribute="width" constant="559.5" id="pHj-Du-I7u"/>
                             </constraints>
-                            <state key="normal" backgroundImage="座椅autoauto.png"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noz-7t-8Ju">
+                            <rect key="frame" x="1007" y="283" width="169" height="85"/>
+                            <connections>
+                                <action selector="rightAirControl:" destination="-1" eventType="touchUpInside" id="dtV-22-J5w"/>
+                            </connections>
                         </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPZ-6n-nOt">
-                            <rect key="frame" x="-8" y="290" width="558" height="144"/>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="座椅autoauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-gg-sZN">
+                            <rect key="frame" x="0.0" y="290" width="322.5" height="138"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="143.5" id="UtF-hT-a2h"/>
-                                <constraint firstAttribute="width" constant="558" id="uOk-wI-hE6"/>
+                                <constraint firstAttribute="width" constant="322.5" id="09M-ne-vra"/>
+                                <constraint firstAttribute="height" constant="138" id="qWi-sG-sf8"/>
                             </constraints>
-                            <state key="normal" backgroundImage="左侧座椅设置airauto.png"/>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feu-TK-PWE">
-                            <rect key="frame" x="755" y="290" width="560" height="144"/>
+                        </imageView>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="左侧座椅设置airauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="5dW-j3-ktT">
+                            <rect key="frame" x="0.0" y="290" width="558" height="143.5"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="143.5" id="Fyq-aS-HZQ"/>
-                                <constraint firstAttribute="width" constant="559.5" id="uCK-L3-psi"/>
+                                <constraint firstAttribute="width" constant="558" id="Gxv-lY-1N8"/>
+                                <constraint firstAttribute="height" constant="143.5" id="csv-2h-8F2"/>
                             </constraints>
-                            <state key="normal" backgroundImage="右侧座椅设置airauto.png"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Of-O4-ts0">
+                            <rect key="frame" x="138" y="277" width="164" height="102"/>
+                            <connections>
+                                <action selector="leftAirControll:" destination="-1" eventType="touchUpInside" id="Jei-zg-WrV"/>
+                            </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iT-GQ-fMI">
+                            <rect key="frame" x="148" y="97" width="112" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsy-zY-U3e">
+                            <rect key="frame" x="1072" y="97" width="58" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="ulW-Yu-M0s" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="25L-Of-15m"/>
-                        <constraint firstItem="feu-TK-PWE" firstAttribute="leading" secondItem="WpI-dc-jdK" secondAttribute="leading" id="6ze-fV-bia"/>
+                        <constraint firstItem="5dW-j3-ktT" firstAttribute="top" secondItem="ZiZ-gg-sZN" secondAttribute="top" id="AJO-m2-OGJ"/>
+                        <constraint firstItem="1tz-sA-BkN" firstAttribute="top" secondItem="1P2-P3-wcC" secondAttribute="top" id="BId-pv-7KD"/>
                         <constraint firstAttribute="bottom" secondItem="ulW-Yu-M0s" secondAttribute="bottom" id="FF4-bA-xvb"/>
-                        <constraint firstItem="KPZ-6n-nOt" firstAttribute="top" secondItem="Hu9-Qp-7sW" secondAttribute="top" id="ONJ-19-zu6"/>
-                        <constraint firstItem="feu-TK-PWE" firstAttribute="leading" secondItem="KPZ-6n-nOt" secondAttribute="trailing" constant="205" id="Qcc-Hx-LR4"/>
+                        <constraint firstItem="1tz-sA-BkN" firstAttribute="leading" secondItem="3Of-O4-ts0" secondAttribute="trailing" constant="449" id="FTg-ce-uvc"/>
+                        <constraint firstAttribute="bottom" secondItem="3Of-O4-ts0" secondAttribute="bottom" constant="113" id="FeM-Np-hfv"/>
+                        <constraint firstItem="5dW-j3-ktT" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="H7J-dr-viO"/>
+                        <constraint firstItem="1P2-P3-wcC" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="980" id="ITM-Cy-E3W"/>
+                        <constraint firstAttribute="bottom" secondItem="Noz-7t-8Ju" secondAttribute="bottom" constant="124" id="OuZ-35-rnJ"/>
+                        <constraint firstItem="nsy-zY-U3e" firstAttribute="top" secondItem="4iT-GQ-fMI" secondAttribute="top" id="PFD-Dv-9PI"/>
+                        <constraint firstItem="1P2-P3-wcC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="290" id="PgP-hg-f9p"/>
                         <constraint firstItem="ulW-Yu-M0s" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" id="SiK-ug-BDj"/>
+                        <constraint firstItem="ZiZ-gg-sZN" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="UTR-b8-Iua"/>
                         <constraint firstAttribute="width" constant="1310" id="Wnc-b5-kWS"/>
-                        <constraint firstItem="WpI-dc-jdK" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="290" id="YLi-nT-R9i"/>
-                        <constraint firstItem="Hu9-Qp-7sW" firstAttribute="top" secondItem="WpI-dc-jdK" secondAttribute="top" id="Yjy-iL-8Pp"/>
+                        <constraint firstAttribute="trailing" secondItem="Noz-7t-8Ju" secondAttribute="trailing" constant="134" id="ZyW-2q-DIN"/>
+                        <constraint firstItem="Noz-7t-8Ju" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="1007" id="aCY-sU-ri8"/>
                         <constraint firstAttribute="height" constant="492" id="bqc-95-RhG"/>
+                        <constraint firstItem="3Of-O4-ts0" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="277" id="e0l-Eb-bH5"/>
+                        <constraint firstAttribute="trailing" secondItem="nsy-zY-U3e" secondAttribute="trailing" constant="180" id="gEf-54-ctE"/>
+                        <constraint firstItem="ZiZ-gg-sZN" firstAttribute="top" secondItem="1tz-sA-BkN" secondAttribute="top" id="goV-us-B3j"/>
                         <constraint firstAttribute="trailing" secondItem="ulW-Yu-M0s" secondAttribute="trailing" id="lpA-lG-c9J"/>
-                        <constraint firstItem="WpI-dc-jdK" firstAttribute="leading" secondItem="KPZ-6n-nOt" secondAttribute="trailing" constant="430" id="qmM-0t-3fu"/>
-                        <constraint firstItem="feu-TK-PWE" firstAttribute="top" secondItem="WpI-dc-jdK" secondAttribute="top" id="qz4-HS-5eS"/>
-                        <constraint firstItem="Hu9-Qp-7sW" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="tQQ-BC-mHy"/>
-                        <constraint firstItem="WpI-dc-jdK" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="980" id="uRa-b8-1xs"/>
-                        <constraint firstItem="KPZ-6n-nOt" firstAttribute="trailing" secondItem="Hu9-Qp-7sW" secondAttribute="trailing" id="vya-CT-CdA"/>
+                        <constraint firstAttribute="trailing" secondItem="1tz-sA-BkN" secondAttribute="trailing" id="qoW-3i-nzc"/>
+                        <constraint firstItem="4iT-GQ-fMI" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="97" id="rxp-bb-Fta"/>
+                        <constraint firstItem="Noz-7t-8Ju" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="283" id="wqr-gB-jzc"/>
+                        <constraint firstItem="3Of-O4-ts0" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="138" id="x4S-Pl-g7I"/>
+                        <constraint firstAttribute="trailing" secondItem="4iT-GQ-fMI" secondAttribute="trailing" constant="1050" id="y8u-hk-RX3"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="vya-CT-CdA"/>
-                            <exclude reference="6ze-fV-bia"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,7 +132,7 @@
     </objects>
     <resources>
         <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
-        <image name="12.3_ts_comfort_ac_20160927airairgeely.png" width="1310" height="492"/>
+        <image name="geely_autoair_bg.png" width="1310" height="492"/>
         <image name="副驾座椅autoauto.png" width="329" height="138"/>
         <image name="右侧座椅设置airauto.png" width="559" height="143"/>
         <image name="左侧座椅设置airauto.png" width="558" height="143"/>

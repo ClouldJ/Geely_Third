@@ -23,8 +23,14 @@
         vdd.frame = frame;
         [self addSubview:vdd];
         image = (UIImageView *)[vdd viewWithTag:101];
+        UIButton *btn = (UIButton *)[vdd viewWithTag:1986];
+        [btn addTarget:self action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+-(void)dismiss:(UIButton *)btn {
+    [self removeFromSuperview];
 }
 
 -(void)showAnimation {
@@ -36,9 +42,9 @@
     }];
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self removeFromSuperview];
-}
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self removeFromSuperview];
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

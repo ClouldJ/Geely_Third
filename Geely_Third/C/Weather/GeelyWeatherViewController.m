@@ -14,7 +14,7 @@
 #import "GeelyCallAViewController.h"
 
 
-@interface GeelyWeatherViewController () <GeelyLeftContainsDelegate,UIScrollViewDelegate> {
+@interface GeelyWeatherViewController () <GeelyLeftContainsDelegate,GeelyDisplayPowerViewDelegate,UIScrollViewDelegate> {
     GelelyLeftContainsView *leftView;
     UIScrollView *scrollView_;
     UIImageView *top;
@@ -42,40 +42,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
     currentIndex =1;
-    leftView = [[GelelyLeftContainsView alloc] initWithFrame:CGRectMake(0, 0, 82, 492-57)];
-    leftView.backgroundColor = [UIColor clearColor];
-    leftView.tableView_.delegate = self;
-    [self.contentView addSubview:leftView];
     
-    self.contentView.backgroundColor = [UIColor clearColor];
-    DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
-    demo.backgroundColor = [UIColor clearColor];
-    [self.contentView addSubview:demo];
+    UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
+    button_volume_.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:button_volume_];
+    [button_volume_ addTarget:self action:@selector(volumeLes) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView_ = [[UIScrollView alloc] initWithFrame:CGRectMake(82, 0, 1310-82, 492-57)];
-    scrollView_.delegate = self;
-    scrollView_.pagingEnabled = YES;
-    scrollView_.backgroundColor = [UIColor clearColor];
-//    scrollView_.scrollEnabled = NO;
-    [self.contentView addSubview:scrollView_];
+    UIButton *button_vo = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+280, button_volume_.frame.origin.y, 60, 60)];
+    button_vo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:button_vo];
     
-//    UISwipeGestureRecognizer *ss = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
-//    ss.direction = UISwipeGestureRecognizerDirectionRight;
-//    [scrollView_ addGestureRecognizer:ss];
-//    
-//    UISwipeGestureRecognizer *se = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
-//    se.direction = UISwipeGestureRecognizerDirectionLeft;
-//    [scrollView_ addGestureRecognizer:se];
+    UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
+    home.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:home];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoRootVC)];
     
-    scrollView_.contentSize = CGSizeMake((1310-82)*3, 492-57);
-    scrollView_.showsHorizontalScrollIndicator = NO;
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction1)];
+    
+    [tapGR requireGestureRecognizerToFail:longPressGR];
+    
+    [home addGestureRecognizer:tapGR];
+    [home addGestureRecognizer:longPressGR];
+    
+    self.scrollView_.contentSize = CGSizeMake((1310-82)*3, 492-57);
+    self.scrollView_.showsHorizontalScrollIndicator = NO;
+    self.scrollView_.delegate = self;
+    self.scrollView_.pagingEnabled = YES;
     
     [self add];
     [self addTwo];
     [self addThree];
     
     [self viewAnimation];
+    
+    [self.view bringSubviewToFront:self.volumeLes];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -84,7 +86,7 @@
     imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1310-82, 492-57)];
     imageView.image = [UIImage imageNamed:@"Geely_weather_bg_white"];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [scrollView_ addSubview:imageView];
+    [self.scrollView_ addSubview:imageView];
     imageView.userInteractionEnabled = YES;
     //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     //    [imageView addGestureRecognizer:tap];
@@ -111,7 +113,7 @@
     imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake((1310-82), 0, 1310-82, 492-57)];
     imageView1.image = [UIImage imageNamed:@"Geely_weather_bg_white"];
     imageView1.contentMode = UIViewContentModeScaleAspectFill;
-    [scrollView_ addSubview:imageView1];
+    [self.scrollView_ addSubview:imageView1];
     imageView1.userInteractionEnabled = YES;
     
     top1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"天气信息固定位置"]];
@@ -131,7 +133,7 @@
     imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake((1310-82)*2, 0, 1310-82, 492-57)];
     imageView2.image = [UIImage imageNamed:@"Geely_weather_bg_black"];
     imageView2.contentMode = UIViewContentModeScaleAspectFill;
-    [scrollView_ addSubview:imageView2];
+    [self.scrollView_ addSubview:imageView2];
     imageView2.userInteractionEnabled = YES;
     
     top2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"天气信息固定位置"]];
@@ -190,6 +192,13 @@
     
 }
 
+-(void)btnAction1{
+    [self showPopAnimation];
+}
+- (void)gotoRootVC{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
 -(void)tapAction {
     [UIView animateWithDuration:.5f animations:^{
         right.frame = CGRectMake(1310-82-683/2+50, -617/2, 464/2, 617/2);
@@ -246,26 +255,26 @@
     
 }
 
--(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 4) {
-        [self.navigationController popToRootViewControllerAnimated:NO];
-    }
-}
-
--(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1) {
-        GeelyMusicAViewController *mu = [[GeelyMusicAViewController alloc] init];
-        [self.navigationController pushViewController:mu animated:NO];
-    }else if (indexPath.row == 3) {
-        GeelySettingAViewController *set = [[GeelySettingAViewController alloc] init];
-        [self.navigationController pushViewController:set animated:NO];
-    }else if (indexPath.row == 4) {
-        [self.navigationController popToRootViewControllerAnimated:NO];
-    }else if (indexPath.row == 2) {
-        GeelyCallAViewController *vb = [[GeelyCallAViewController alloc] init];
-        [self.navigationController pushViewController:vb animated:NO];
-    }
-}
+//-(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 4) {
+//        [self.navigationController popToRootViewControllerAnimated:NO];
+//    }
+//}
+//
+//-(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 1) {
+//        GeelyMusicAViewController *mu = [[GeelyMusicAViewController alloc] init];
+//        [self.navigationController pushViewController:mu animated:NO];
+//    }else if (indexPath.row == 3) {
+//        GeelySettingAViewController *set = [[GeelySettingAViewController alloc] init];
+//        [self.navigationController pushViewController:set animated:NO];
+//    }else if (indexPath.row == 4) {
+//        [self.navigationController popToRootViewControllerAnimated:NO];
+//    }else if (indexPath.row == 2) {
+//        GeelyCallAViewController *vb = [[GeelyCallAViewController alloc] init];
+//        [self.navigationController pushViewController:vb animated:NO];
+//    }
+//}
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if (scrollView.contentOffset.x == 0) {
@@ -275,6 +284,17 @@
     }else if(scrollView.contentOffset.x == (1310-82)*2) {
         progressImageView.image = [UIImage imageNamed:@"天气进度3"];
     }
+}
+
+#pragma mark GeelyDisplayPowerViewDelegate
+-(void)showDisplayView:(GeelyDisplayPowerView *)view {
+    GeelyScreenView *screenView = [[GeelyScreenView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [screenView showAnimate];
+}
+
+-(void)showPowerView:(GeelyDisplayPowerView *)view  {
+    GeelyPowerDisplayView *vb = [[GeelyPowerDisplayView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [vb showAnimation];
 }
 
 - (void)didReceiveMemoryWarning {

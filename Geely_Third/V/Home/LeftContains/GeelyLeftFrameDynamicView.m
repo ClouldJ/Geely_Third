@@ -114,6 +114,7 @@
 
 
 -(void)dismissAnimationView:(UIView *)animaView animationFinish:(GeelyDynamicFinish)finish {
+    animaView.hidden = YES;
     [UIView animateWithDuration:.5f animations:^{
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 0, 435);
         animaView.frame = CGRectMake(0, 0, 0, 435);

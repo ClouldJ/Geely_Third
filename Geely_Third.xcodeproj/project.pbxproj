@@ -40,6 +40,10 @@
 		C21D94321DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C21D94311DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png */; };
 		C21D94351DDDA9940035A173 /* GeelyLeftFrameDynamicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D94341DDDA9940035A173 /* GeelyLeftFrameDynamicView.m */; };
 		C2253C261DDD493A00AAD667 /* Geely_handwrittenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2253C251DDD493A00AAD667 /* Geely_handwrittenBG@2x.png */; };
+		C22F2AC31DE3E8F50094626E /* geely_autoair_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AC21DE3E8F50094626E /* geely_autoair_bg@2x.png */; };
+		C22F2AC51DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AC41DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf */; };
+		C22F2AC91DE41F3B0094626E /* GeelyThirdPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */; };
+		C22F2ACA1DE41F3B0094626E /* GeelyThirdPublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */; };
 		C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */; };
 		C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */; };
 		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
@@ -622,6 +626,11 @@
 		C21D94331DDDA9940035A173 /* GeelyLeftFrameDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyLeftFrameDynamicView.h; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/V/Home/LeftContains/GeelyLeftFrameDynamicView.h; sourceTree = "<group>"; };
 		C21D94341DDDA9940035A173 /* GeelyLeftFrameDynamicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeelyLeftFrameDynamicView.m; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/V/Home/LeftContains/GeelyLeftFrameDynamicView.m; sourceTree = "<group>"; };
 		C2253C251DDD493A00AAD667 /* Geely_handwrittenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_handwrittenBG@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_handwrittenBG@2x.png"; sourceTree = "<group>"; };
+		C22F2AC21DE3E8F50094626E /* geely_autoair_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "geely_autoair_bg@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/geely_autoair_bg@2x.png"; sourceTree = "<group>"; };
+		C22F2AC41DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GEELY Narrow regular 20151114.otf"; path = "../../../WillyZhao/Geely_Third/Geely_Third/GEELY Narrow regular 20151114.otf"; sourceTree = "<group>"; };
+		C22F2AC61DE41F3B0094626E /* GeelyThirdPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyThirdPublicViewController.h; sourceTree = "<group>"; };
+		C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyThirdPublicViewController.m; sourceTree = "<group>"; };
+		C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeelyThirdPublicViewController.xib; sourceTree = "<group>"; };
 		C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_blue@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_blue@2x.png"; sourceTree = "<group>"; };
 		C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_red@2x.png"; sourceTree = "<group>"; };
 		C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_yellow@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_yellow@2x.png"; sourceTree = "<group>"; };
@@ -1359,6 +1368,9 @@
 				C239C5511DD49E970017F443 /* GeelyModeViewController.h */,
 				C239C5521DD49E970017F443 /* GeelyModeViewController.m */,
 				C239C5531DD49E970017F443 /* GeelyModeViewController.xib */,
+				C22F2AC61DE41F3B0094626E /* GeelyThirdPublicViewController.h */,
+				C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */,
+				C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */,
 			);
 			name = Setting;
 			path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/Setting;
@@ -1389,6 +1401,7 @@
 				C27C019D1DD99C6C00C1A278 /* 音量blue.png */,
 				C23DB1C71DE314C300665D6A /* 歌名收藏radio_selected@2x.png */,
 				C2549E391DE2C81100A97188 /* rightNowPlaying@2x.png */,
+				C22F2AC21DE3E8F50094626E /* geely_autoair_bg@2x.png */,
 				C2549E4F1DE2F3FA00A97188 /* dianji_01@2x.png */,
 				C2549E501DE2F3FA00A97188 /* dianji_02@2x.png */,
 				C2549E511DE2F3FA00A97188 /* dianji_03@2x.png */,
@@ -2161,6 +2174,7 @@
 				C263FA4E1DD412F900ED9EC4 /* Info.plist */,
 				C263FA441DD4127C00ED9EC4 /* GEELY Light 20151114.otf */,
 				C263FA451DD4127C00ED9EC4 /* NotoSansCJKsc-Regular.otf */,
+				C22F2AC41DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf */,
 				C263FA461DD4127C00ED9EC4 /* Sam Smith-Writing's On The Wall.mp3 */,
 				C263FA471DD4127C00ED9EC4 /* Zki & Dobre-Listen To The Talk.mp3 */,
 				C263F9A41DD410C400ED9EC4 /* V */,
@@ -2574,6 +2588,7 @@
 				2C0E97551DD46407002EEC72 /* bottom_bg_icon_03.png in Resources */,
 				C263F7F61DD40C9F00ED9EC4 /* nameofmusic@2x.png in Resources */,
 				C263F98D1DD40F3100ED9EC4 /* GeelySettingAViewController.xib in Resources */,
+				C22F2AC51DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf in Resources */,
 				C263F81E1DD40C9F00ED9EC4 /* 当前播放musicg@2x.png in Resources */,
 				C263F7C51DD40C9E00ED9EC4 /* apphomecontent@2x.png in Resources */,
 				C26EFA321DD9677E0033559F /* Geely_homeBtn_blue.png in Resources */,
@@ -2588,6 +2603,7 @@
 				C263F7D41DD40C9E00ED9EC4 /* Geely_home_content_headImg@2x.png in Resources */,
 				C2962E471DDEF5680038446E /* 区域划分keyboardformfinger@2x.png in Resources */,
 				C263F7F71DD40C9F00ED9EC4 /* personlistTableGeely@2x.png in Resources */,
+				C22F2AC31DE3E8F50094626E /* geely_autoair_bg@2x.png in Resources */,
 				C263F7BB1DD40C9E00ED9EC4 /* 0930-IPAD-底图V2@2x.png in Resources */,
 				C263F7D51DD40C9E00ED9EC4 /* Geely_home_content_music@2x.png in Resources */,
 				C263F8521DD40C9F00ED9EC4 /* 进度条右边@2x.png in Resources */,
@@ -2659,6 +2675,7 @@
 				C263F99D1DD40F3100ED9EC4 /* GeelySettingViewController.xib in Resources */,
 				C263F7D21DD40C9E00ED9EC4 /* Geely_home_content_cayplay@2x.png in Resources */,
 				C2549E5E1DE2F3FA00A97188 /* dianji_04@2x.png in Resources */,
+				C22F2ACA1DE41F3B0094626E /* GeelyThirdPublicViewController.xib in Resources */,
 				C263F8051DD40C9F00ED9EC4 /* 光@2x.png in Resources */,
 				C27C02081DD9AC8F00C1A278 /* 中控-电台_00010.png in Resources */,
 				C263F7F81DD40C9F00ED9EC4 /* PHONEcallback@2x.png in Resources */,
@@ -2989,6 +3006,7 @@
 				C263F8E01DD40D8300ED9EC4 /* GeelyNaViewController.m in Sources */,
 				C263F8EF1DD40D8300ED9EC4 /* UIButton+AFNetworking.m in Sources */,
 				C263F8FD1DD40D8300ED9EC4 /* MJPropertyType.m in Sources */,
+				C22F2AC91DE41F3B0094626E /* GeelyThirdPublicViewController.m in Sources */,
 				2C0E97531DD46407002EEC72 /* GeelyMediaPlayerVC.m in Sources */,
 				C263F9821DD40F3100ED9EC4 /* GeelyCallAViewController.m in Sources */,
 				C263F9031DD40D8300ED9EC4 /* NSObject+YYModel.m in Sources */,

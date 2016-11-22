@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeelyThirdPublicViewController">
+            <connections>
+                <outlet property="contentView" destination="xWL-iV-ci4" id="HkH-kO-GUM"/>
+                <outlet property="homeBtn" destination="G8A-5C-dv9" id="LJI-vS-sfk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="volumeAdd" destination="eVh-fx-WjN" id="ken-sI-9nI"/>
+                <outlet property="volumeLes" destination="DjW-oX-czP" id="xjL-uy-5aZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0930-IPAD-底图V2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-Ct-MHJ">
+                    <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-iV-ci4">
+                    <rect key="frame" x="28" y="266" width="1310" height="492"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="492" id="LbY-w7-mpM"/>
+                        <constraint firstAttribute="width" constant="1310" id="bEY-GQ-mTK"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8A-5C-dv9">
+                    <rect key="frame" x="620" y="831" width="127" height="69"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-fx-WjN">
+                    <rect key="frame" x="797" y="848" width="46" height="41"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjW-oX-czP">
+                    <rect key="frame" x="514" y="847" width="46" height="41"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eVh-fx-WjN" secondAttribute="trailing" constant="523" id="1jk-es-JZ8"/>
+                <constraint firstItem="eVh-fx-WjN" firstAttribute="leading" secondItem="G8A-5C-dv9" secondAttribute="trailing" constant="50" id="AU3-s6-9Zt"/>
+                <constraint firstItem="eVh-fx-WjN" firstAttribute="top" secondItem="xWL-iV-ci4" secondAttribute="bottom" constant="90" id="CIZ-7P-A2f"/>
+                <constraint firstAttribute="bottom" secondItem="eVh-fx-WjN" secondAttribute="bottom" constant="135" id="GcG-tv-B2v"/>
+                <constraint firstItem="bqm-Ct-MHJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jbk-xP-7oo"/>
+                <constraint firstItem="G8A-5C-dv9" firstAttribute="top" secondItem="xWL-iV-ci4" secondAttribute="bottom" constant="73" id="NEq-L4-LoK"/>
+                <constraint firstAttribute="bottom" secondItem="bqm-Ct-MHJ" secondAttribute="bottom" id="Vbb-mu-Ybk"/>
+                <constraint firstAttribute="bottom" secondItem="G8A-5C-dv9" secondAttribute="bottom" constant="124" id="WjB-Ws-1bg"/>
+                <constraint firstItem="bqm-Ct-MHJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xrw-aQ-LK7"/>
+                <constraint firstItem="xWL-iV-ci4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aMU-3u-qlo"/>
+                <constraint firstAttribute="bottom" secondItem="DjW-oX-czP" secondAttribute="bottom" constant="136" id="flL-bm-9QV"/>
+                <constraint firstAttribute="trailing" secondItem="G8A-5C-dv9" secondAttribute="trailing" constant="619" id="hFX-Sb-dLm"/>
+                <constraint firstItem="DjW-oX-czP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="514" id="jAb-A4-12Q"/>
+                <constraint firstItem="DjW-oX-czP" firstAttribute="top" secondItem="xWL-iV-ci4" secondAttribute="bottom" constant="89" id="rTx-Nm-AGr"/>
+                <constraint firstItem="G8A-5C-dv9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="620" id="slf-j0-vn9"/>
+                <constraint firstItem="G8A-5C-dv9" firstAttribute="leading" secondItem="DjW-oX-czP" secondAttribute="trailing" constant="60" id="uOe-Mx-LDV"/>
+                <constraint firstAttribute="trailing" secondItem="bqm-Ct-MHJ" secondAttribute="trailing" id="xJS-th-1HX"/>
+                <constraint firstItem="xWL-iV-ci4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xMn-xr-dNf"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
+    </resources>
+</document>
