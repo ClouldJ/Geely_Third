@@ -9,6 +9,7 @@
 #import "GeelyLeftFrameDynamicView.h"
 
 #import "GeelySildeBarView.h"
+#import "CellPhoneView.h"
 
 @interface GeelyLeftFrameDynamicView () <UITableViewDelegate,UITableViewDataSource> {
     
@@ -41,6 +42,9 @@
         case DYNAMIC_RADIO:
         {
             //电台
+            GeelySildeBarView *df = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_RADIO];
+            [self addSubview:df];
+            [self animationView:df finish:finish style:DYNAMIC_RADIO];
         }
             break;
         case DYNAMIC_CALLZ:

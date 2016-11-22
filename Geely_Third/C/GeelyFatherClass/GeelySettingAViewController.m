@@ -16,6 +16,7 @@
 #import "GeelyModeViewController.h"
 #import "GeelyPViewController.h"
 #import "GeelyLightViewController.h"
+#import "GeelyDriveModeViewController.h"
 
 @interface GeelySettingAViewController () <UITableViewDelegate,UITableViewDataSource> {
     UITableView *tableView_;
@@ -204,7 +205,8 @@
         case 6:
             //@"驾驶模式";
         {
-            GeelyModeViewController *vc = [[GeelyModeViewController alloc] init];
+//            GeelyModeViewController *vc = [[GeelyModeViewController alloc] init];
+            GeelyDriveModeViewController *vc = [[GeelyDriveModeViewController alloc] init];
             [self.navigationController pushViewController:vc animated:NO];
         }
             break;

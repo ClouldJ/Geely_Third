@@ -34,7 +34,7 @@
     UIImageView *bottom2;
     UIImageView *right2;
 }
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+//@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 

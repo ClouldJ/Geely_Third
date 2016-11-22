@@ -24,5 +24,5 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *volumeAdd;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-
+-(void)addFixedView;
 @end

@@ -44,6 +44,32 @@
 		C22F2AC51DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AC41DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf */; };
 		C22F2AC91DE41F3B0094626E /* GeelyThirdPublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */; };
 		C22F2ACA1DE41F3B0094626E /* GeelyThirdPublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */; };
+		C22F2AF31DE463BE0094626E /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AD61DE463BE0094626E /* Address.m */; };
+		C22F2AF41DE463BE0094626E /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AD81DE463BE0094626E /* AddressCell.m */; };
+		C22F2AF51DE463BE0094626E /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2ADA1DE463BE0094626E /* AddressView.m */; };
+		C22F2AF61DE463BE0094626E /* calledView@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2ADB1DE463BE0094626E /* calledView@2x.jpg */; };
+		C22F2AF71DE463BE0094626E /* callinglist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22F2ADC1DE463BE0094626E /* callinglist@2x.png */; };
+		C22F2AF81DE463BE0094626E /* CallingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2ADE1DE463BE0094626E /* CallingView.m */; };
+		C22F2AF91DE463BE0094626E /* CallingView@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2ADF1DE463BE0094626E /* CallingView@2x.jpg */; };
+		C22F2AFA1DE463BE0094626E /* CallWillView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AE11DE463BE0094626E /* CallWillView.m */; };
+		C22F2AFB1DE463BE0094626E /* CellPhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2AE31DE463BE0094626E /* CellPhoneView.m */; };
+		C22F2AFC1DE463BE0094626E /* keyboard_10_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE41DE463BE0094626E /* keyboard_10_selected@2x.jpg */; };
+		C22F2AFD1DE463BE0094626E /* keyboard_11_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE51DE463BE0094626E /* keyboard_11_selected@2x.jpg */; };
+		C22F2AFE1DE463BE0094626E /* keyboard_12_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE61DE463BE0094626E /* keyboard_12_selected@2x.jpg */; };
+		C22F2AFF1DE463BE0094626E /* keyboard_1_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE71DE463BE0094626E /* keyboard_1_selected@2x.jpg */; };
+		C22F2B001DE463BE0094626E /* keyboard_2_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE81DE463BE0094626E /* keyboard_2_selected@2x.jpg */; };
+		C22F2B011DE463BE0094626E /* keyboard_3_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AE91DE463BE0094626E /* keyboard_3_selected@2x.jpg */; };
+		C22F2B021DE463BE0094626E /* keyboard_4_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AEA1DE463BE0094626E /* keyboard_4_selected@2x.jpg */; };
+		C22F2B031DE463BE0094626E /* keyboard_5_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AEB1DE463BE0094626E /* keyboard_5_selected@2x.jpg */; };
+		C22F2B041DE463BE0094626E /* keyboard_6_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AEC1DE463BE0094626E /* keyboard_6_selected@2x.jpg */; };
+		C22F2B051DE463BE0094626E /* keyboard_7_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AED1DE463BE0094626E /* keyboard_7_selected@2x.jpg */; };
+		C22F2B061DE463BE0094626E /* keyboard_8_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AEE1DE463BE0094626E /* keyboard_8_selected@2x.jpg */; };
+		C22F2B071DE463BE0094626E /* keyboard_9_selected@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AEF1DE463BE0094626E /* keyboard_9_selected@2x.jpg */; };
+		C22F2B081DE463BE0094626E /* keyboard_back@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AF01DE463BE0094626E /* keyboard_back@2x.jpg */; };
+		C22F2B091DE463BE0094626E /* keyboard_call@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AF11DE463BE0094626E /* keyboard_call@2x.jpg */; };
+		C22F2B0A1DE463BE0094626E /* menu_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AF21DE463BE0094626E /* menu_background@2x.jpg */; };
+		C22F2B0E1DE465B30094626E /* GeelyDriveModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2B0C1DE465B30094626E /* GeelyDriveModeViewController.m */; };
+		C22F2B0F1DE465B30094626E /* GeelyDriveModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22F2B0D1DE465B30094626E /* GeelyDriveModeViewController.xib */; };
 		C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */; };
 		C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */; };
 		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
@@ -631,6 +657,39 @@
 		C22F2AC61DE41F3B0094626E /* GeelyThirdPublicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyThirdPublicViewController.h; sourceTree = "<group>"; };
 		C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyThirdPublicViewController.m; sourceTree = "<group>"; };
 		C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeelyThirdPublicViewController.xib; sourceTree = "<group>"; };
+		C22F2AD51DE463BE0094626E /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		C22F2AD61DE463BE0094626E /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		C22F2AD71DE463BE0094626E /* AddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
+		C22F2AD81DE463BE0094626E /* AddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
+		C22F2AD91DE463BE0094626E /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
+		C22F2ADA1DE463BE0094626E /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
+		C22F2ADB1DE463BE0094626E /* calledView@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "calledView@2x.jpg"; sourceTree = "<group>"; };
+		C22F2ADC1DE463BE0094626E /* callinglist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callinglist@2x.png"; sourceTree = "<group>"; };
+		C22F2ADD1DE463BE0094626E /* CallingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallingView.h; sourceTree = "<group>"; };
+		C22F2ADE1DE463BE0094626E /* CallingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallingView.m; sourceTree = "<group>"; };
+		C22F2ADF1DE463BE0094626E /* CallingView@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "CallingView@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE01DE463BE0094626E /* CallWillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallWillView.h; sourceTree = "<group>"; };
+		C22F2AE11DE463BE0094626E /* CallWillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallWillView.m; sourceTree = "<group>"; };
+		C22F2AE21DE463BE0094626E /* CellPhoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellPhoneView.h; sourceTree = "<group>"; };
+		C22F2AE31DE463BE0094626E /* CellPhoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellPhoneView.m; sourceTree = "<group>"; };
+		C22F2AE41DE463BE0094626E /* keyboard_10_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_10_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE51DE463BE0094626E /* keyboard_11_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_11_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE61DE463BE0094626E /* keyboard_12_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_12_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE71DE463BE0094626E /* keyboard_1_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_1_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE81DE463BE0094626E /* keyboard_2_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_2_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AE91DE463BE0094626E /* keyboard_3_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_3_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AEA1DE463BE0094626E /* keyboard_4_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_4_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AEB1DE463BE0094626E /* keyboard_5_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_5_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AEC1DE463BE0094626E /* keyboard_6_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_6_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AED1DE463BE0094626E /* keyboard_7_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_7_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AEE1DE463BE0094626E /* keyboard_8_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_8_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AEF1DE463BE0094626E /* keyboard_9_selected@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_9_selected@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AF01DE463BE0094626E /* keyboard_back@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_back@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AF11DE463BE0094626E /* keyboard_call@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "keyboard_call@2x.jpg"; sourceTree = "<group>"; };
+		C22F2AF21DE463BE0094626E /* menu_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menu_background@2x.jpg"; sourceTree = "<group>"; };
+		C22F2B0B1DE465B30094626E /* GeelyDriveModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyDriveModeViewController.h; sourceTree = "<group>"; };
+		C22F2B0C1DE465B30094626E /* GeelyDriveModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyDriveModeViewController.m; sourceTree = "<group>"; };
+		C22F2B0D1DE465B30094626E /* GeelyDriveModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeelyDriveModeViewController.xib; sourceTree = "<group>"; };
 		C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_blue@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_blue@2x.png"; sourceTree = "<group>"; };
 		C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_red@2x.png"; sourceTree = "<group>"; };
 		C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_yellow@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_yellow@2x.png"; sourceTree = "<group>"; };
@@ -1362,6 +1421,44 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
+		C22F2AD41DE463BE0094626E /* GeelyCallSlide */ = {
+			isa = PBXGroup;
+			children = (
+				C22F2AD51DE463BE0094626E /* Address.h */,
+				C22F2AD61DE463BE0094626E /* Address.m */,
+				C22F2AD71DE463BE0094626E /* AddressCell.h */,
+				C22F2AD81DE463BE0094626E /* AddressCell.m */,
+				C22F2AD91DE463BE0094626E /* AddressView.h */,
+				C22F2ADA1DE463BE0094626E /* AddressView.m */,
+				C22F2ADB1DE463BE0094626E /* calledView@2x.jpg */,
+				C22F2ADC1DE463BE0094626E /* callinglist@2x.png */,
+				C22F2ADD1DE463BE0094626E /* CallingView.h */,
+				C22F2ADE1DE463BE0094626E /* CallingView.m */,
+				C22F2ADF1DE463BE0094626E /* CallingView@2x.jpg */,
+				C22F2AE01DE463BE0094626E /* CallWillView.h */,
+				C22F2AE11DE463BE0094626E /* CallWillView.m */,
+				C22F2AE21DE463BE0094626E /* CellPhoneView.h */,
+				C22F2AE31DE463BE0094626E /* CellPhoneView.m */,
+				C22F2AE41DE463BE0094626E /* keyboard_10_selected@2x.jpg */,
+				C22F2AE51DE463BE0094626E /* keyboard_11_selected@2x.jpg */,
+				C22F2AE61DE463BE0094626E /* keyboard_12_selected@2x.jpg */,
+				C22F2AE71DE463BE0094626E /* keyboard_1_selected@2x.jpg */,
+				C22F2AE81DE463BE0094626E /* keyboard_2_selected@2x.jpg */,
+				C22F2AE91DE463BE0094626E /* keyboard_3_selected@2x.jpg */,
+				C22F2AEA1DE463BE0094626E /* keyboard_4_selected@2x.jpg */,
+				C22F2AEB1DE463BE0094626E /* keyboard_5_selected@2x.jpg */,
+				C22F2AEC1DE463BE0094626E /* keyboard_6_selected@2x.jpg */,
+				C22F2AED1DE463BE0094626E /* keyboard_7_selected@2x.jpg */,
+				C22F2AEE1DE463BE0094626E /* keyboard_8_selected@2x.jpg */,
+				C22F2AEF1DE463BE0094626E /* keyboard_9_selected@2x.jpg */,
+				C22F2AF01DE463BE0094626E /* keyboard_back@2x.jpg */,
+				C22F2AF11DE463BE0094626E /* keyboard_call@2x.jpg */,
+				C22F2AF21DE463BE0094626E /* menu_background@2x.jpg */,
+			);
+			name = GeelyCallSlide;
+			path = ../../../../WillyZhao/Geely_Third/Geely_Third/V/GeelyCallSlide;
+			sourceTree = "<group>";
+		};
 		C239C54B1DD49E140017F443 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1371,6 +1468,9 @@
 				C22F2AC61DE41F3B0094626E /* GeelyThirdPublicViewController.h */,
 				C22F2AC71DE41F3B0094626E /* GeelyThirdPublicViewController.m */,
 				C22F2AC81DE41F3B0094626E /* GeelyThirdPublicViewController.xib */,
+				C22F2B0B1DE465B30094626E /* GeelyDriveModeViewController.h */,
+				C22F2B0C1DE465B30094626E /* GeelyDriveModeViewController.m */,
+				C22F2B0D1DE465B30094626E /* GeelyDriveModeViewController.xib */,
 			);
 			name = Setting;
 			path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/Setting;
@@ -1947,6 +2047,7 @@
 		C263F9A41DD410C400ED9EC4 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				C22F2AD41DE463BE0094626E /* GeelyCallSlide */,
 				C263F9A51DD410C400ED9EC4 /* DemoView.h */,
 				C263F9A61DD410C400ED9EC4 /* DemoView.m */,
 				C263F9A71DD410C400ED9EC4 /* GeelyBottomAirAutoView.h */,
@@ -2556,6 +2657,7 @@
 				C263FA311DD410C400ED9EC4 /* presentPhoneView.xib in Resources */,
 				C2549E361DE2C72700A97188 /* diantai_hui_list@2x.png in Resources */,
 				C263FA1E1DD410C400ED9EC4 /* GeelyLittleSettingTableViewCell.xib in Resources */,
+				C22F2B011DE463BE0094626E /* keyboard_3_selected@2x.jpg in Resources */,
 				2C0E975A1DD46407002EEC72 /* mediaPlayer_icon_cell_selected.png in Resources */,
 				C263F9A31DD40F3100ED9EC4 /* GeelyWeatherViewController.xib in Resources */,
 				C2549E681DE2FC7800A97188 /* bg_sliderBar_music@2x.png in Resources */,
@@ -2617,6 +2719,7 @@
 				C2DEC4ED1DD5B0CA00343E80 /* Geely_home_contentGblue@2x.png in Resources */,
 				C263F7F31DD40C9F00ED9EC4 /* keyboardgesture@2x.png in Resources */,
 				C27C023C1DD9AC8F00C1A278 /* phone on call_00028.png in Resources */,
+				C22F2AFE1DE463BE0094626E /* keyboard_12_selected@2x.jpg in Resources */,
 				C263FA201DD410C400ED9EC4 /* GeelyRightTableViewCell.xib in Resources */,
 				C2DEC4EA1DD5B0CA00343E80 /* Geely_home_bg_red@2x.png in Resources */,
 				C27C025F1DD9AEE700C1A278 /* 12.3_ts_comfort_setting-sound_balance-attenuation_20161012_01@2x.png in Resources */,
@@ -2681,10 +2784,12 @@
 				C263F7F81DD40C9F00ED9EC4 /* PHONEcallback@2x.png in Resources */,
 				C2549E381DE2C72700A97188 /* ypjs_dianjis@2x.png in Resources */,
 				C2DEC4E81DD5B0CA00343E80 /* Geely_father_bg_effert@2x.png in Resources */,
+				C22F2B001DE463BE0094626E /* keyboard_2_selected@2x.jpg in Resources */,
 				C27C01FE1DD9AC8F00C1A278 /* 中控-电台_00000.png in Resources */,
 				C2549E5C1DE2F3FA00A97188 /* dianji_02@2x.png in Resources */,
 				C263F81F1DD40C9F00ED9EC4 /* 快捷设置setting@2x.png in Resources */,
 				C27C024F1DD9AC8F00C1A278 /* phone sos_00018.png in Resources */,
+				C22F2B071DE463BE0094626E /* keyboard_9_selected@2x.jpg in Resources */,
 				C263F9991DD40F3100ED9EC4 /* GeelyMediaView.xib in Resources */,
 				C263F9101DD40D8300ED9EC4 /* power.xib in Resources */,
 				C27C01941DD99BA100C1A278 /* 底red.png in Resources */,
@@ -2712,15 +2817,20 @@
 				C27C022F1DD9AC8F00C1A278 /* phone on call_00015.png in Resources */,
 				C263FA371DD410C400ED9EC4 /* GeelySettingTableViewCellWord.xib in Resources */,
 				C263F83D1DD40C9F00ED9EC4 /* 矩形-30-拷贝-9setting@2x.png in Resources */,
+				C22F2AF91DE463BE0094626E /* CallingView@2x.jpg in Resources */,
 				C263F7FF1DD40C9F00ED9EC4 /* top_0dasdaadio13i@2x.png in Resources */,
 				C263F8581DD40C9F00ED9EC4 /* 音源fmam@2x.png in Resources */,
 				C263F8361DD40C9F00ED9EC4 /* 环绕声s@2x.png in Resources */,
 				C263F8501DD40C9F00ED9EC4 /* 车载热点c@2x.png in Resources */,
 				C263F80B1DD40C9F00ED9EC4 /* 多功能卡片calledlist@2x.png in Resources */,
 				C263F9851DD40F3100ED9EC4 /* GeelyCallToInputA.xib in Resources */,
+				C22F2AF71DE463BE0094626E /* callinglist@2x.png in Resources */,
+				C22F2AFD1DE463BE0094626E /* keyboard_11_selected@2x.jpg in Resources */,
 				C263F8491DD40C9F00ED9EC4 /* 行车记录仪c@2x.png in Resources */,
 				C263F80A1DD40C9F00ED9EC4 /* 多功能卡片bohao@2x.png in Resources */,
+				C22F2AF61DE463BE0094626E /* calledView@2x.jpg in Resources */,
 				C27C022E1DD9AC8F00C1A278 /* phone on call_00014.png in Resources */,
+				C22F2B031DE463BE0094626E /* keyboard_5_selected@2x.jpg in Resources */,
 				C263F82F1DD40C9F00ED9EC4 /* 歌名收藏littlemusicg@2x.png in Resources */,
 				C263FA2D1DD410C400ED9EC4 /* geelyphoneinput.xib in Resources */,
 				C27C02C31DD9F9C200C1A278 /* Geely_displayforred@2x.png in Resources */,
@@ -2745,6 +2855,7 @@
 				C27C019A1DD99C2D00C1A278 /* 亮光red.png in Resources */,
 				C2549E651DE2F3FA00A97188 /* hui_05@2x.png in Resources */,
 				C23DB1C81DE314C300665D6A /* 歌名收藏radio_selected@2x.png in Resources */,
+				C22F2B081DE463BE0094626E /* keyboard_back@2x.jpg in Resources */,
 				C2549E641DE2F3FA00A97188 /* hui_04@2x.png in Resources */,
 				C263F85D1DD40C9F00ED9EC4 /* 频道切换fm@2x.png in Resources */,
 				C263F80E1DD40C9F00ED9EC4 /* 多功能卡片settinglittle@2x.png in Resources */,
@@ -2759,16 +2870,19 @@
 				C263FA331DD410C400ED9EC4 /* progressbackground@2x.png in Resources */,
 				C263F84F1DD40C9F00ED9EC4 /* 语音助手geelydisspaly@2x.png in Resources */,
 				C263F8251DD40C9F00ED9EC4 /* 收藏-拷贝music@2x.png in Resources */,
+				C22F2B021DE463BE0094626E /* keyboard_4_selected@2x.jpg in Resources */,
 				C263F8571DD40C9F00ED9EC4 /* 音源@2x.png in Resources */,
 				C263F7FA1DD40C9F00ED9EC4 /* qwuheiuwqenu@2x.png in Resources */,
 				C263F8271DD40C9F00ED9EC4 /* 无线充电s@2x.png in Resources */,
 				C263F8551DD40C9F00ED9EC4 /* 音乐@2x.png in Resources */,
+				C22F2AFF1DE463BE0094626E /* keyboard_1_selected@2x.jpg in Resources */,
 				C27C02451DD9AC8F00C1A278 /* phone sos_00008.png in Resources */,
 				C263F7C41DD40C9E00ED9EC4 /* AM切换musiclittle@2x.png in Resources */,
 				C263F98E1DD40F3100ED9EC4 /* GeelySettingviewA.xib in Resources */,
 				C263F7DA1DD40C9E00ED9EC4 /* Geely_home_left_home@2x.png in Resources */,
 				C263F84A1DD40C9F00ED9EC4 /* 行车记录仪s@2x.png in Resources */,
 				C263FA4C1DD4127C00ED9EC4 /* Sam Smith-Writing's On The Wall.mp3 in Resources */,
+				C22F2B0A1DE463BE0094626E /* menu_background@2x.jpg in Resources */,
 				C27C02281DD9AC8F00C1A278 /* phone on call_00008.png in Resources */,
 				C263F7F21DD40C9F00ED9EC4 /* jumptoyourbottom@2x.png in Resources */,
 				C263FA0A1DD410C400ED9EC4 /* GeelyContentBottomView.xib in Resources */,
@@ -2808,6 +2922,7 @@
 				C263FA361DD410C400ED9EC4 /* GeelySettingTableViewCell.xib in Resources */,
 				C263F9801DD40F3100ED9EC4 /* PersonListTableViewCell.xib in Resources */,
 				C2962E4D1DE28FD90038446E /* music_hui@2x.png in Resources */,
+				C22F2B051DE463BE0094626E /* keyboard_7_selected@2x.jpg in Resources */,
 				C2549E351DE2C72700A97188 /* diantai_dianji_lists@2x.png in Resources */,
 				C27C02271DD9AC8F00C1A278 /* phone on call_00007.png in Resources */,
 				C263F7CE1DD40C9E00ED9EC4 /* Geely_Custom_btnprompt@2x.png in Resources */,
@@ -2830,6 +2945,7 @@
 				C263F8431DD40C9F00ED9EC4 /* 组-2147-拷贝-4_01dasdads@2x.png in Resources */,
 				C263F7CB1DD40C9E00ED9EC4 /* cdqweqwewqe@2x.png in Resources */,
 				C27232D71D9A23520070F431 /* Main.storyboard in Resources */,
+				C22F2B091DE463BE0094626E /* keyboard_call@2x.jpg in Resources */,
 				C263F7EB1DD40C9F00ED9EC4 /* Geely_weather_bg_white@2x.png in Resources */,
 				C263FA081DD410C400ED9EC4 /* GeelyControllCollectionViewCell.xib in Resources */,
 				C27C02591DD9AC8F00C1A278 /* phone sos_00028.png in Resources */,
@@ -2923,6 +3039,7 @@
 				C263F8391DD40C9F00ED9EC4 /* 电台musicg@2x.png in Resources */,
 				C263F8291DD40C9F00ED9EC4 /* 时间geelydisplay@2x.png in Resources */,
 				C27C021F1DD9AC8F00C1A278 /* 中控-电台_00033.png in Resources */,
+				C22F2B0F1DE465B30094626E /* GeelyDriveModeViewController.xib in Resources */,
 				2C0E97661DD46407002EEC72 /* right_icon.png in Resources */,
 				C263F8591DD40C9F00ED9EC4 /* 音量auto@2x.png in Resources */,
 				C263F99E1DD40F3100ED9EC4 /* musicScrollFirst.xib in Resources */,
@@ -2931,7 +3048,9 @@
 				C263F8121DD40C9F00ED9EC4 /* 天气信息固定位置@2x.png in Resources */,
 				C263F98A1DD40F3100ED9EC4 /* GeelyMusicAViewController.xib in Resources */,
 				C263F7F11DD40C9F00ED9EC4 /* icon213123iundoinadoin1@2x.png in Resources */,
+				C22F2B061DE463BE0094626E /* keyboard_8_selected@2x.jpg in Resources */,
 				C27C02571DD9AC8F00C1A278 /* phone sos_00026.png in Resources */,
+				C22F2B041DE463BE0094626E /* keyboard_6_selected@2x.jpg in Resources */,
 				C263F85A1DD40C9F00ED9EC4 /* 音频检索@2x.png in Resources */,
 				C27C019C1DD99C6600C1A278 /* 音量red.png in Resources */,
 				C27C01FF1DD9AC8F00C1A278 /* 中控-电台_00001.png in Resources */,
@@ -2960,6 +3079,7 @@
 				C27C023D1DD9AC8F00C1A278 /* phone sos_00000.png in Resources */,
 				C263F7D11DD40C9E00ED9EC4 /* Geely_home_conten_siri@2x.png in Resources */,
 				C27C02061DD9AC8F00C1A278 /* 中控-电台_00008.png in Resources */,
+				C22F2AFC1DE463BE0094626E /* keyboard_10_selected@2x.jpg in Resources */,
 				C263F83B1DD40C9F00ED9EC4 /* 电话didselected@2x.png in Resources */,
 				C263F90F1DD40D8300ED9EC4 /* novolice.xib in Resources */,
 				C263F7FD1DD40C9F00ED9EC4 /* search@2x.png in Resources */,
@@ -3020,6 +3140,7 @@
 				C263F9901DD40F3100ED9EC4 /* UIScrollView+AnimationOffSet.m in Sources */,
 				2C0E97541DD46407002EEC72 /* GeelyPictureShowVC.m in Sources */,
 				C263F8E41DD40D8300ED9EC4 /* GeelyScreenView.m in Sources */,
+				C22F2AF81DE463BE0094626E /* CallingView.m in Sources */,
 				C263F9881DD40F3100ED9EC4 /* GeelyLittleShowView.m in Sources */,
 				C263FA151DD410C400ED9EC4 /* GeelyMusicCDAnimationView.m in Sources */,
 				C263FA141DD410C400ED9EC4 /* GeelyMusicAudioManager.m in Sources */,
@@ -3039,6 +3160,7 @@
 				C263FA1B1DD410C400ED9EC4 /* GeelyLeftContainsTableViewCell.m in Sources */,
 				C263F97F1DD40F3100ED9EC4 /* PersonListTableViewCell.m in Sources */,
 				C263FA0E1DD410C400ED9EC4 /* GeelyContentListView.m in Sources */,
+				C22F2B0E1DE465B30094626E /* GeelyDriveModeViewController.m in Sources */,
 				C263F9A01DD40F3100ED9EC4 /* GeelyPublicViewController.m in Sources */,
 				C2F9224D1DDC47E40061B04F /* HGBaseRequest+Response.m in Sources */,
 				C263FA321DD410C400ED9EC4 /* GeelyMusicTransProgress.m in Sources */,
@@ -3065,6 +3187,7 @@
 				C263FA391DD410C400ED9EC4 /* VoliceView.m in Sources */,
 				C27C02761DD9C03F00C1A278 /* GeelyPViewController.m in Sources */,
 				C263F8DD1DD40D8300ED9EC4 /* AppDelegate.m in Sources */,
+				C22F2AF41DE463BE0094626E /* AddressCell.m in Sources */,
 				C263F8FE1DD40D8300ED9EC4 /* NSObject+MJClass.m in Sources */,
 				C263FA131DD410C400ED9EC4 /* GeelyLeftContainsTableView.m in Sources */,
 				C263FA0D1DD410C400ED9EC4 /* GeelyContentInfoView.m in Sources */,
@@ -3081,12 +3204,15 @@
 				C263F8F51DD40D8300ED9EC4 /* HGNetworkAgent.m in Sources */,
 				C263F99C1DD40F3100ED9EC4 /* GeelySettingViewController.m in Sources */,
 				C263F9A21DD40F3100ED9EC4 /* GeelyWeatherViewController.m in Sources */,
+				C22F2AF51DE463BE0094626E /* AddressView.m in Sources */,
 				C263F8F71DD40D8300ED9EC4 /* HGNetworkPrivate.m in Sources */,
 				C263F8DF1DD40D8300ED9EC4 /* GeelyDisplayPowerView.m in Sources */,
 				C27514D61DD951B700A76DB9 /* UIImageView+ImageAnimation.m in Sources */,
 				C27C02DF1DD9FE5400C1A278 /* Phone.m in Sources */,
+				C22F2AFB1DE463BE0094626E /* CellPhoneView.m in Sources */,
 				2C0E976E1DD464D9002EEC72 /* GeelyLittleSettingACell.m in Sources */,
 				C263F8F21DD40D8300ED9EC4 /* UIRefreshControl+AFNetworking.m in Sources */,
+				C22F2AF31DE463BE0094626E /* Address.m in Sources */,
 				C263F9961DD40F3100ED9EC4 /* GeelyFmAmView.m in Sources */,
 				C263FA301DD410C400ED9EC4 /* GeelySettingLittleView.m in Sources */,
 				C263F9071DD40D8300ED9EC4 /* MainRequest.m in Sources */,
@@ -3121,6 +3247,7 @@
 				C263F98F1DD40F3100ED9EC4 /* UIImageView+LevelAnimation.m in Sources */,
 				C263FA401DD4110400ED9EC4 /* UIView+StrBounds.m in Sources */,
 				C263FA071DD410C400ED9EC4 /* GeelyControllCollectionViewCell.m in Sources */,
+				C22F2AFA1DE463BE0094626E /* CallWillView.m in Sources */,
 				C263F9021DD40D8300ED9EC4 /* NSString+MJExtension.m in Sources */,
 				C263F8FA1DD40D8300ED9EC4 /* MJFoundation.m in Sources */,
 				C263F8ED1DD40D8300ED9EC4 /* AFNetworkActivityIndicatorManager.m in Sources */,
