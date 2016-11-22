@@ -6,8 +6,8 @@
 //  Copyright © 2016年 WillyZhao. All rights reserved.
 //
 
-#import "GeelyFatherViewController.h"
+#import "GeelyThirdPublicViewController.h"
 
-@interface GeelyModeViewController : GeelyFatherViewController
+@interface GeelyModeViewController : GeelyThirdPublicViewController
 
 @end

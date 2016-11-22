@@ -19,7 +19,7 @@ typedef void(^Finish)(void);
 @interface GeelyThirdPublicViewController () <GeelyLeftContainsDelegate> {
     
 }
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+//@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 

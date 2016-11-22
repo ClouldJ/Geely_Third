@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *volumeAdd;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
