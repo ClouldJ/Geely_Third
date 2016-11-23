@@ -11,11 +11,11 @@
 @implementation UIImageView (ImageAnimation)
 
 -(void)animationImage:(UIImage *)image {
-    [UIView animateWithDuration:.5f animations:^{
+    [UIView animateWithDuration:1.0f animations:^{
         self.alpha = 0;
     } completion:^(BOOL finished) {
         self.image = image;
-        [UIView animateWithDuration:.5f animations:^{
+        [UIView animateWithDuration:1.0f animations:^{
             self.alpha = 1;
         }];
     }];

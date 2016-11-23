@@ -156,9 +156,7 @@
 
 #pragma mark 返回按钮事件
 -(void)backAction:(UIButton *)btn {
-//    [[NSNotificationCenter defaultCenter] postNotificationName:DISMISS object:nil];
-    
-    //TODO, 接收按钮返回事件
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDEDISMISS object:nil];
 }
 
 #pragma mark 设置的代理

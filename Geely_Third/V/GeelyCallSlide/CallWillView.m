@@ -131,8 +131,15 @@
     btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2, width1, height1);
     [btn setBackgroundImage:rightImage forState:UIControlStateNormal];
     [self.callWillContentView addSubview:btn];
+    [btn addTarget:self action:@selector(gotoFrequentContacts:) forControlEvents:UIControlEventTouchUpInside];
     
-    
+}
+
+#pragma mark 切换到常用联系人
+-(void)gotoFrequentContacts:(UIButton *)btn {
+    if ([self.delegate respondsToSelector:@selector(frequentContactsButtonClicked:)]&&self.delegate) {
+        [self.delegate frequentContactsButtonClicked:btn];
+    }
 }
 
 - (void)backgroundConfig {

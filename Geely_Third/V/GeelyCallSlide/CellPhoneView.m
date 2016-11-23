@@ -118,6 +118,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
     
     if (indexPath.row == AddressRow) {
         AddressView *addressView = [tableView dequeueReusableCellWithIdentifier:AddressViewIdentifier forIndexPath:indexPath];
+        addressView.backgroundColor = [UIColor clearColor];
         addressView.delegate = self;
         return addressView;
     }
@@ -154,6 +155,10 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 
 #pragma mark - event response
 
+-(void)frequentContactsButtonClicked:(UIButton *)button {
+    [self scrollToAddressView];
+}
+
 - (void)addressViewCellSelected:(Address *)address {
     [self.delegate addressSelected];
 }
@@ -164,6 +169,10 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 
 - (void)cellPhoneViewButtonClicked:(UIButton *)button {
     [self.delegate callingOffButtonClicked];
+}
+
+-(void)gotoCallWillView:(UIButton *)btn {
+    [self scrollToCallWillView];
 }
 
 #pragma mark - setter and getter

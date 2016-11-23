@@ -25,28 +25,27 @@
     //添加背景图片
     [self bg_imageInit];
     
-    // Do any additional setup after loading the view from its nib.
 }
 
 -(void)bg_imageInit {
     imageView_contentBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Geely_mode_yellow"]];
     imageView_contentBG.frame = CGRectMake(82, 0, 1228, 435);
     imageView_contentBG.userInteractionEnabled = YES;
-    [self.contentView addSubview: imageView_contentBG];
+    [self.scrollView_ addSubview: imageView_contentBG];
     
-    UIButton *btn_yellow = [[UIButton alloc] initWithFrame:CGRectMake(52, 320, 170/2, 170/2)];
-    btn_yellow.backgroundColor = [UIColor redColor];
+    UIButton *btn_yellow = [[UIButton alloc] initWithFrame:CGRectMake(52+82, 320, 170/2, 170/2)];
+    btn_yellow.backgroundColor = [UIColor clearColor];
     btn_yellow.tag = 1;
     [self.scrollView_ addSubview:btn_yellow];
     
     UIButton *btn_red = [[UIButton alloc] initWithFrame:CGRectMake(btn_yellow.frame.origin.x+170/2+58, 320, 170/2, 170/2)];
-    btn_red.backgroundColor = [UIColor redColor];
+    btn_red.backgroundColor = [UIColor clearColor];
     btn_red.tag = 2;
     [self.scrollView_ addSubview:btn_red];
     
     UIButton *btn_blue = [[UIButton alloc] initWithFrame:CGRectMake(btn_red.frame.origin.x+170/2+68, 320, 170/2, 170/2)];
     btn_blue.tag = 3;
-    btn_blue.backgroundColor = [UIColor redColor];
+    btn_blue.backgroundColor = [UIColor clearColor];
     [self.scrollView_ addSubview:btn_blue];
     
     [btn_yellow addTarget:self action:@selector(modeBtnAction:) forControlEvents:UIControlEventTouchUpInside];

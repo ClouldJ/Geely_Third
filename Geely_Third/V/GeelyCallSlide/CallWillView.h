@@ -12,7 +12,7 @@
 
 @optional
 
-- (void)cellPhoneViewButtonClicked:(UIButton *)button;
+- (void)frequentContactsButtonClicked:(UIButton *)button;
 
 @end
 

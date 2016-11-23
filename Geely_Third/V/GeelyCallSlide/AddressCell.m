@@ -49,6 +49,12 @@
     self.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:self.calledView];
     [self.contentView addSubview:self.nameLabel];
+    
+    
+    UIImageView *IMAGE = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"矩形-30-拷贝-12lineconstract"]];
+    IMAGE.frame = CGRectMake((340-553/2)/2, ((290/5)-(3/2)), 553/2, 3/2);
+    [self.contentView addSubview:IMAGE];
+    
 }
 
 - (void)setAddress:(Address *)address {
@@ -60,7 +66,7 @@
     if (!_calledView) {
         _calledView = [[UIImageView alloc] init];
         _calledView.image = [UIImage imageNamed:@"calledView@2x.jpg"];
-        _calledView.frame = CGRectMake(10, 20, 25, 20);
+        _calledView.frame = CGRectMake(15, 15, 25, 20);
 
     }
     return _calledView;
@@ -69,9 +75,10 @@
 - (UILabel *)nameLabel {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.frame = CGRectMake(50, 0, 300, 60);
+        _nameLabel.frame = CGRectMake(45, 0, 300, 60);
         _nameLabel.textColor = [UIColor whiteColor];
-        _nameLabel.font = [UIFont systemFontOfSize:18.0f];
+//        _nameLabel.font = [UIFont systemFontOfSize:18.0f];
+        _nameLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:19];
 //        _nameLabel.backgroundColor = [UIColor redColor];
     }
     return _nameLabel;

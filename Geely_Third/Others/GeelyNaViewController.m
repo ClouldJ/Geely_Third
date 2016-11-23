@@ -115,7 +115,7 @@
 
             [[NSNotificationCenter defaultCenter] postNotificationName:MODE_BLUE object:nil];
         }else{
-            NSLog(@"没有此驾驶模式");
+//            NSLog(@"没有此驾驶模式");
         }
         
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {

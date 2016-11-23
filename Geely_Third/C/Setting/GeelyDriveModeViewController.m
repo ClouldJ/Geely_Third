@@ -20,7 +20,7 @@
 //    self.view.backgroundColor = [UIColor ]
 //    self.scrollView_.backgroundColor = [UIColor whiteColor];
 //    self.contentView.backgroundColor = [UIColor redColor];
-    [self addFixedView];
+//    [self addFixedView];
     // Do any additional setup after loading the view from its nib.
 }
 

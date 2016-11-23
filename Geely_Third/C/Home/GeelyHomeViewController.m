@@ -116,6 +116,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+}
+
+#pragma mark 首页返回事件处理
+-(void)backDynamicView{
+    
+    [self leftHiden];
+    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+        NSLog(@"收到通知并做出了处理");
+    }];
+    
 }
 
 -(void)becomeBlue{

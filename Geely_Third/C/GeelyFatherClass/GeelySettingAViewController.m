@@ -205,8 +205,8 @@
         case 6:
             //@"驾驶模式";
         {
-//            GeelyModeViewController *vc = [[GeelyModeViewController alloc] init];
-            GeelyDriveModeViewController *vc = [[GeelyDriveModeViewController alloc] init];
+            GeelyModeViewController *vc = [[GeelyModeViewController alloc] init];
+//            GeelyDriveModeViewController *vc = [[GeelyDriveModeViewController alloc] init];
             [self.navigationController pushViewController:vc animated:NO];
         }
             break;

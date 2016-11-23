@@ -6,8 +6,8 @@
 //  Copyright © 2016年 WillyZhao. All rights reserved.
 //
 
-#import "GeelySettingCustomViewController.h"
+#import "GeelyThirdPublicViewController.h"
 
-@interface GeelyPViewController : GeelySettingCustomViewController
+@interface GeelyPViewController : GeelyThirdPublicViewController
 
 @end

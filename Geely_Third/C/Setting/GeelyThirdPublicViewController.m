@@ -25,6 +25,23 @@ typedef void(^Finish)(void);
 
 @implementation GeelyThirdPublicViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+    
+    NSLog(@"%@ will Appear", NSStringFromClass([self class]));
+}
+
+#pragma mark 接收返回事件通知
+-(void)backDynamicView {
+    [self.slideView dismissAnimationView:self.slideView.currentView animationFinish:^{
+        NSLog(@"隐藏成功");
+    }];
+    [self contentViewDismiss:^{
+        NSLog(@"消失");
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
@@ -34,8 +51,24 @@ typedef void(^Finish)(void);
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)dealloc {
+    NSLog(@"%@ will dealloc", NSStringFromClass([self class]));
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark 添加归固定的View
 -(void)addFixedView {
+    
+    self.imageViewBGBBG = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"0930-IPAD-底图V2"]];
+    self.imageViewBGBBG.userInteractionEnabled = YES;
+    self.imageViewBGBBG.frame = [UIScreen mainScreen].bounds;
+    [self.view addSubview:self.imageViewBGBBG];
+    
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake((1366-1310)/2, (1024-492)/2, 1310, 492)];
+    self.contentView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.contentView];
+    
     self.leftViewContains = [[GelelyLeftContainsView alloc] initWithFrame:CGRectMake(0, 0, 82, 492-57)];
     self.leftViewContains.backgroundColor = [UIColor clearColor];
     self.leftViewContains.tableView_.delegate = self;

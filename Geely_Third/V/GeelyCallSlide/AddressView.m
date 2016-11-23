@@ -57,12 +57,12 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     AddressCell *cell = [tableView dequeueReusableCellWithIdentifier:AddressCellIdentifier forIndexPath:indexPath];
     
     cell.address = self.addressArray[indexPath.row];
-    
+//    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0f;
+    return _maintableView.frame.size.height/5;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,8 +75,21 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
 - (void)initialize {
     [self backgroundConfig];
     [self.contentView addSubview:self.maintableView];
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(340-45, (435-60)/2-10, 30, 60);
+    btn.backgroundColor = [UIColor clearColor];
+    [self.contentView addSubview:btn];
+    
+    [btn addTarget:self action:@selector(gotoCallWill:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void)gotoCallWill:(UIButton *)btn {
+    if ([self.delegate respondsToSelector:@selector(gotoCallWillView:)]&&self.delegate) {
+        [self.delegate gotoCallWillView:btn];
+    }
+}
 
 
 #pragma mark - setter and getter
@@ -89,6 +102,7 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
         _maintableView.delegate = self;
         _maintableView.dataSource = self;
         _maintableView.backgroundColor = [UIColor clearColor];
+        _maintableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_maintableView registerClass:[AddressCell class] forCellReuseIdentifier:AddressCellIdentifier];
         
     }

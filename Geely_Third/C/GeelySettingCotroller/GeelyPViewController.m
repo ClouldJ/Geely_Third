@@ -17,7 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.childContentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_setting-sound_balance-attenuation_20161012_01"];
+    UIImageView *im = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"12.3_ts_comfort_setting-sound_balance-attenuation_20161012_01"]];
+    im.frame = CGRectMake(0, 0, 1228, 435);
+    [self.scrollView_ addSubview:im];
+    
     
     // Do any additional setup after loading the view from its nib.
 }

@@ -153,6 +153,9 @@
     }
 }
 
+-(void)dealloc {
+    NSLog(@"%@ child will dealloc",NSStringFromClass([self class]));
+}
 
 -(void)btnAction1{
     [self showPopAnimation];

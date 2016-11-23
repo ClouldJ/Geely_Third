@@ -13,6 +13,8 @@
 
 - (void)addressViewCellSelected:(Address *)address;
 
+-(void)gotoCallWillView:(UIButton *)btn;
+
 @end
 
 @interface AddressView : UITableViewCell

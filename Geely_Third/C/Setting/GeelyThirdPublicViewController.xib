@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeelyThirdPublicViewController">
             <connections>
-                <outlet property="contentView" destination="xWL-iV-ci4" id="O7m-Z2-xFV"/>
                 <outlet property="homeBtn" destination="G8A-5C-dv9" id="LJI-vS-sfk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="volumeAdd" destination="eVh-fx-WjN" id="ken-sI-9nI"/>
