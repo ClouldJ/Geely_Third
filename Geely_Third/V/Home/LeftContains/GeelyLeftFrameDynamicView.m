@@ -102,6 +102,12 @@
                 view.animaeCD.alpha = 1;
             }
                 break;
+            case DYNAMIC_CALLZ:
+            {
+                view.phoneView.frame = CGRectMake(0, 0, 340, 435);
+                view.phoneView.cellPhoneTableView.frame = CGRectMake(0, 0, 340, 435);
+            }
+                break;
             default:
                 break;
         }

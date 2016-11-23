@@ -9,7 +9,6 @@
 #import "GeelySildeBarView.h"
 
 #import "GeelySlideSettingCell.h"
-#import "CellPhoneView.h"
 
 
 @interface GeelySildeBarView () <UITableViewDelegate,UITableViewDataSource,GeelyMusicCDAnimationViewDelegate> {
@@ -116,8 +115,11 @@
         case DYNAMIC_CALLZ:
         {
             self.backgroundColor = [UIColor clearColor];
-            CellPhoneView *phone = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 340, self.frame.size.height)];
-            [self.bg_imageView addSubview:phone];
+            self.bg_imageView.image = [UIImage imageNamed:@"geely_slidebar_callingbg"];
+            
+            self.phoneView = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
+            [self.phoneView scrollToCallWillView];
+            [self.bg_imageView addSubview:self.phoneView];
         }
             break;
         default:

@@ -30,6 +30,9 @@
 - (void)scrollToAddressView;
 - (void)scrollToCallWillView;
 
+@property (nonatomic, strong) UITableView *cellPhoneTableView;
+
+
 @property (nonatomic, weak) id<CellPhoneViewDelegate> delegate;
 
 

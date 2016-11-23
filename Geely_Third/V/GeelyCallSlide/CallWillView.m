@@ -11,17 +11,28 @@
 #define NUMBER_FONT [UIFont systemFontOfSize:14.0f]
 #define backgroundImage [UIImage imageNamed:@"menu_background@2x.jpg"]
 
-@interface CallWillView ()
+@interface CallWillView () {
+    UILabel *label_num;
+    BOOL check;
+}
 
 @property (nonatomic, strong) UIImageView *keyboardImageView;
 
 @property (nonatomic, strong) UIImageView *backgroundImageView;
+
+@property (nonatomic, strong) UIImageView *backgroundImageView1;
+
 
 
 
 @property (nonatomic, strong) UIButton *callButton;
 @property (nonatomic, strong) UILabel *numberLabel;
 @property (nonatomic, strong) UIButton *backButton;
+
+@property (nonatomic, strong) UIView *callWillContentView;
+
+@property (nonatomic, strong) UIView *callingContentView;
+@property (nonatomic, strong) UIButton *fooButton;
 
 
 @end
@@ -41,6 +52,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        check = YES;
         self.frame = CGRectMake(0, 0, 340, 435);
         [self backgroundConfig];
         [self backButtonConfig];
@@ -48,7 +60,9 @@
         [self callButtonConfig];
         [self keyboardConfig];
         
-        
+        [self backgroundConfigCalling];
+        [self numberLabeladd];
+        [self fooButtonConfig];
         self.backgroundColor = [UIColor clearColor];
         self.userInteractionEnabled = YES;
         self.contentView.userInteractionEnabled = YES;
@@ -63,9 +77,9 @@
     CGSize size = keyboardImage.size;
     _keyboardImageView = [[UIImageView alloc] init];
     _keyboardImageView.image = [UIImage imageNamed:@"keyboard_5_selected@2x.jpg"];
-    _keyboardImageView.frame = CGRectMake(0, 435 - size.height - self.callButton.frame.size.height - 30, size.width, size.height);
+    _keyboardImageView.frame = CGRectMake(-25, 435 - size.height - self.callButton.frame.size.height - 10, size.width, size.height);
     _keyboardImageView.userInteractionEnabled = YES;
-    [self.contentView addSubview:_keyboardImageView];
+    [self.callWillContentView addSubview:_keyboardImageView];
     
     CGFloat distance = 30;
     CGFloat length = (self.keyboardImageView.frame.size.width - distance) / 3;
@@ -90,12 +104,13 @@
 
 - (void)numberLabelConfig {
     self.numberLabel = [[UILabel alloc] init];
-    self.numberLabel.frame = CGRectMake(10, self.backButton.frame.origin.y - 10, self.contentView.bounds.size.width - self.backButton.bounds.size.width - 20,self.backButton.frame.size.height + 20);
+    self.numberLabel.frame = CGRectMake(10, self.backButton.frame.origin.y - 10, self.contentView.bounds.size.width - self.backButton.bounds.size.width - 45,self.backButton.frame.size.height + 20);
 //    self.numberLabel.backgroundColor = [UIColor redColor];
     self.numberLabel.textColor = [UIColor whiteColor];
+    self.numberLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:21];
     self.numberLabel.textAlignment = NSTextAlignmentRight;
     self.numberLabel.text = @"";
-    [self.contentView addSubview:self.numberLabel];
+    [self.callWillContentView addSubview:self.numberLabel];
 }
 
 - (void)backButtonConfig {
@@ -103,19 +118,34 @@
     CGFloat width = backImage.size.width;
     CGFloat height = backImage.size.height;
     self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.backButton.frame = CGRectMake(self.contentView.bounds.size.width - width, 80, width, height);
+    self.backButton.frame = CGRectMake(self.contentView.bounds.size.width - width-25 , 100, width, height);
     [self.backButton setBackgroundImage:backImage forState:UIControlStateNormal];
     [self.backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:self.backButton];
+    [self.callWillContentView addSubview:self.backButton];
+    
+    UIImage *rightImage = [UIImage imageNamed:@"组-2123geelyslidecallwillright"];
+    CGFloat width1 = rightImage.size.width;
+    CGFloat height1 = rightImage.size.height;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2, width1, height1);
+    [btn setBackgroundImage:rightImage forState:UIControlStateNormal];
+    [self.callWillContentView addSubview:btn];
     
     
 }
 
 - (void)backgroundConfig {
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    self.backgroundImageView.image = backgroundImage;
-    self.backgroundImageView.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.backgroundImageView];
+    
+    self.callingContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
+    self.callingContentView.backgroundColor = [UIColor clearColor];
+    [self.contentView addSubview:self.callingContentView];
+    self.callingContentView.hidden = YES;
+    
+    self.callWillContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
+    self.callWillContentView.backgroundColor = [UIColor clearColor];
+    [self.contentView addSubview:self.callWillContentView];
+    self.callWillContentView.hidden = NO;
 }
 
 
@@ -133,11 +163,11 @@
 //    CGFloat height = 50;
     CGFloat height = callImage.size.height;
     self.callButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.callButton.frame = CGRectMake((self.frame.size.width - width) / 2, self.frame.size.height - height - 20, width, height);
+    self.callButton.frame = CGRectMake((self.frame.size.width - width) / 2-15, self.frame.size.height - height - 10, width, height);
     
     [self.callButton setBackgroundImage:callImage forState:UIControlStateNormal];
     [self.callButton addTarget:self action:@selector(callButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:self.callButton];
+    [self.callWillContentView addSubview:self.callButton];
 }
 
 - (void)buttonClicked:(UIButton *)sender {
@@ -156,14 +186,25 @@
         indexString = [NSString stringWithFormat:@"%lu", index + 1];
     }
     
-    self.numberLabel.text = [NSString stringWithFormat:@"%@%@", self.numberLabel.text, indexString];
+    if ([self.numberLabel.text length] %5==0 && [self.numberLabel.text length]>2) {
+        self.numberLabel.text = [NSString stringWithFormat:@"%@%@ ", self.numberLabel.text, indexString];
+    }else{
+        self.numberLabel.text = [NSString stringWithFormat:@"%@%@", self.numberLabel.text, indexString];
+    }
     
+    label_num.text = self.numberLabel.text;
 }
 
 
 - (void)callButtonClicked:(UIButton *)sender {
-    NSLog(@"拨号");
-    [self.delegate cellPhoneViewButtonClicked:self.callButton];
+//    NSLog(@"拨号");
+//    [self.delegate cellPhoneViewButtonClicked:self.callButton];
+    
+    if (check) {
+        self.callWillContentView.hidden = YES;
+        self.callingContentView.hidden = NO;
+        check =!check;
+    }
 }
 
 - (void)backButtonClicked:(UIButton *)sender {
@@ -176,5 +217,46 @@
     self.numberLabel.text = string;
     
 }
+
+
+#pragma mark 正在拨号
+- (void)backgroundConfigCalling {
+    self.backgroundImageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(-15, 0, 340, 435)];
+    self.backgroundImageView1.image = [UIImage imageNamed:@"多功能卡片calling_bg"];
+    self.backgroundImageView1.userInteractionEnabled = YES;
+    [self.callingContentView addSubview:self.backgroundImageView1];
+}
+
+- (void)fooButtonClicked:(UIButton *)sender {
+    NSLog(@"挂断");
+//    [self.delegate callingViewButtonClicked:sender];
+    if (!check) {
+        self.callingContentView.hidden = YES;
+        self.callWillContentView.hidden = NO;
+        check = !check;
+    }
+}
+
+- (void)numberLabeladd {
+   
+    label_num = [[UILabel alloc] init];
+    label_num.frame = CGRectMake(-15, 130, self.bounds.size.width, 50);
+    label_num.textAlignment = NSTextAlignmentCenter;
+    label_num.textColor = [UIColor whiteColor];
+    label_num.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:21];
+
+    [self.callingContentView addSubview:label_num];
+}
+
+- (void)fooButtonConfig {
+    self.fooButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.fooButton.frame = CGRectMake(0, 435 - 60, 340, 60);
+    [self.fooButton addTarget:self action:@selector(fooButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.fooButton.backgroundColor = [UIColor clearColor];
+    
+    [self.callingContentView addSubview:self.fooButton];
+    
+}
+
 
 @end

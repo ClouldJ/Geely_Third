@@ -575,6 +575,9 @@
 		C2962E4C1DE28FD90038446E /* diantai_hui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2962E4A1DE28FD90038446E /* diantai_hui@2x.png */; };
 		C2962E4D1DE28FD90038446E /* music_hui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2962E4B1DE28FD90038446E /* music_hui@2x.png */; };
 		C2A8EBDC1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2A8EBDB1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png */; };
+		C2B505171DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B505161DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png */; };
+		C2B505191DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B505181DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png */; };
+		C2B5051B1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B5051A1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png */; };
 		C2DEC4931DD56C8100343E80 /* picture_full_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4921DD56C8100343E80 /* picture_full_bg.png */; };
 		C2DEC4E61DD5B0CA00343E80 /* Geely_blue_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4D91DD5B0CA00343E80 /* Geely_blue_info@2x.png */; };
 		C2DEC4E71DD5B0CA00343E80 /* Geely_call_oncall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4DA1DD5B0CA00343E80 /* Geely_call_oncall@2x.png */; };
@@ -1327,6 +1330,9 @@
 		C2962E4A1DE28FD90038446E /* diantai_hui@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "diantai_hui@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/diantai_hui@2x.png"; sourceTree = "<group>"; };
 		C2962E4B1DE28FD90038446E /* music_hui@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music_hui@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/music_hui@2x.png"; sourceTree = "<group>"; };
 		C2A8EBDB1DDD4C01007C6BAD /* Geely_11-17home_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_11-17home_bg@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_11-17home_bg@2x.png"; sourceTree = "<group>"; };
+		C2B505161DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "geely_slidebar_callingbg@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/geely_slidebar_callingbg@2x.png"; sourceTree = "<group>"; };
+		C2B505181DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "组-2123geelyslidecallwillright@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/组-2123geelyslidecallwillright@2x.png"; sourceTree = "<group>"; };
+		C2B5051A1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "多功能卡片calling_bg@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/多功能卡片calling_bg@2x.png"; sourceTree = "<group>"; };
 		C2DEC4921DD56C8100343E80 /* picture_full_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picture_full_bg.png; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/C/mediaPlayer/resource/picture_full_bg.png; sourceTree = "<group>"; };
 		C2DEC4D91DD5B0CA00343E80 /* Geely_blue_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_blue_info@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_blue_info@2x.png"; sourceTree = "<group>"; };
 		C2DEC4DA1DD5B0CA00343E80 /* Geely_call_oncall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_call_oncall@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_call_oncall@2x.png"; sourceTree = "<group>"; };
@@ -1500,6 +1506,9 @@
 				C27C01E01DD9AC8F00C1A278 /* phone sos */,
 				C27C019D1DD99C6C00C1A278 /* 音量blue.png */,
 				C23DB1C71DE314C300665D6A /* 歌名收藏radio_selected@2x.png */,
+				C2B505161DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png */,
+				C2B5051A1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png */,
+				C2B505181DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png */,
 				C2549E391DE2C81100A97188 /* rightNowPlaying@2x.png */,
 				C22F2AC21DE3E8F50094626E /* geely_autoair_bg@2x.png */,
 				C2549E4F1DE2F3FA00A97188 /* dianji_01@2x.png */,
@@ -2718,6 +2727,7 @@
 				C27C022A1DD9AC8F00C1A278 /* phone on call_00010.png in Resources */,
 				C2DEC4ED1DD5B0CA00343E80 /* Geely_home_contentGblue@2x.png in Resources */,
 				C263F7F31DD40C9F00ED9EC4 /* keyboardgesture@2x.png in Resources */,
+				C2B5051B1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png in Resources */,
 				C27C023C1DD9AC8F00C1A278 /* phone on call_00028.png in Resources */,
 				C22F2AFE1DE463BE0094626E /* keyboard_12_selected@2x.jpg in Resources */,
 				C263FA201DD410C400ED9EC4 /* GeelyRightTableViewCell.xib in Resources */,
@@ -2825,6 +2835,7 @@
 				C263F80B1DD40C9F00ED9EC4 /* 多功能卡片calledlist@2x.png in Resources */,
 				C263F9851DD40F3100ED9EC4 /* GeelyCallToInputA.xib in Resources */,
 				C22F2AF71DE463BE0094626E /* callinglist@2x.png in Resources */,
+				C2B505171DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png in Resources */,
 				C22F2AFD1DE463BE0094626E /* keyboard_11_selected@2x.jpg in Resources */,
 				C263F8491DD40C9F00ED9EC4 /* 行车记录仪c@2x.png in Resources */,
 				C263F80A1DD40C9F00ED9EC4 /* 多功能卡片bohao@2x.png in Resources */,
@@ -2905,6 +2916,7 @@
 				C27C02601DD9AEE700C1A278 /* 序列帧救助中心@2x.png in Resources */,
 				C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */,
 				C27C02211DD9AC8F00C1A278 /* phone on call_00001.png in Resources */,
+				C2B505191DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png in Resources */,
 				C263FA2B1DD410C400ED9EC4 /* geelyphonecalled.xib in Resources */,
 				C263F7E41DD40C9E00ED9EC4 /* Geely_right_email@2x.png in Resources */,
 				C263F7FE1DD40C9F00ED9EC4 /* StockSnap_2WUSCGJ1BM-拷贝@2x.png in Resources */,

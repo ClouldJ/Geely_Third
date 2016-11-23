@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CellPhoneView.h"
 #import "GeelyMusicCDAnimationView.h"
 
 @class GeelyLeftFrameDynamicView;
@@ -22,6 +23,8 @@
 @property (nonatomic, strong) GeelyMusicCDAnimationView *animaeCD;  //CD旋转View
 @property (nonatomic, strong) UILabel *timeLabel;                   //音乐进度时间
 @property (nonatomic, strong) UIImageView *imageViewradio;          //电台操作
+
+@property (nonatomic, strong) CellPhoneView *phoneView;
 
 -(instancetype)initWithFrame:(CGRect)frame customStyle:(GeelyDynamicViewStyle)style;
 

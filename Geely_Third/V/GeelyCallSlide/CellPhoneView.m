@@ -33,7 +33,6 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 
 @property (nonatomic, strong) UIButton *callButton;
 
-@property (nonatomic, strong) UITableView *cellPhoneTableView;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -48,7 +47,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 #pragma mark - init
 
 - (instancetype)init {
-    if (self = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)]) {
+    if (self = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)]) {
 
 
     }
@@ -90,7 +89,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 }
 
 - (void)cellPhoneTableViewConfig {
-    self.cellPhoneTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) style:UITableViewStylePlain];
+    self.cellPhoneTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) style:UITableViewStylePlain];
     self.cellPhoneTableView.showsHorizontalScrollIndicator = NO;
     self.cellPhoneTableView.showsVerticalScrollIndicator = NO;
     self.cellPhoneTableView.delegate = self;
