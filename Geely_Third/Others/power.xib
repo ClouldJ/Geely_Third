@@ -23,7 +23,7 @@
                         <imageView tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12.3_ts_comfort_power-off_20160713.png" translatesAutoresizingMaskIntoConstraints="NO" id="bu3-2y-WXz">
                             <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
                         </imageView>
-                        <button opaque="NO" tag="1986" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lde-1L-Q3K">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lde-1L-Q3K">
                             <rect key="frame" x="502" y="164" width="310" height="150"/>
                         </button>
                     </subviews>
@@ -41,15 +41,22 @@
                         <constraint firstItem="lde-1L-Q3K" firstAttribute="top" secondItem="HLq-BO-xo4" secondAttribute="top" constant="164" id="wbp-ZW-x1g"/>
                     </constraints>
                 </view>
+                <button opaque="NO" tag="1986" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-HA-h5g">
+                    <rect key="frame" x="622" y="834" width="123" height="60"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VYe-Zn-VOh" secondAttribute="trailing" id="1KC-LW-Emk"/>
                 <constraint firstItem="VYe-Zn-VOh" firstAttribute="top" secondItem="trO-cX-TeH" secondAttribute="top" id="BEa-7Z-wqj"/>
                 <constraint firstItem="HLq-BO-xo4" firstAttribute="centerX" secondItem="trO-cX-TeH" secondAttribute="centerX" id="J3U-e8-1Bp"/>
+                <constraint firstAttribute="bottom" secondItem="4yg-HA-h5g" secondAttribute="bottom" constant="130" id="Pdv-t5-NZI"/>
                 <constraint firstItem="HLq-BO-xo4" firstAttribute="centerY" secondItem="trO-cX-TeH" secondAttribute="centerY" id="R1k-jI-5lt"/>
                 <constraint firstAttribute="bottom" secondItem="VYe-Zn-VOh" secondAttribute="bottom" id="eqv-3L-3GT"/>
+                <constraint firstAttribute="trailing" secondItem="4yg-HA-h5g" secondAttribute="trailing" constant="621" id="iIT-tH-5Sz"/>
                 <constraint firstItem="VYe-Zn-VOh" firstAttribute="leading" secondItem="trO-cX-TeH" secondAttribute="leading" id="nHI-DD-xwm"/>
+                <constraint firstItem="4yg-HA-h5g" firstAttribute="top" secondItem="HLq-BO-xo4" secondAttribute="bottom" constant="76" id="nX8-Cy-a6b"/>
+                <constraint firstItem="4yg-HA-h5g" firstAttribute="leading" secondItem="trO-cX-TeH" secondAttribute="leading" constant="622" id="xJc-VM-l33"/>
             </constraints>
             <point key="canvasLocation" x="-194" y="-96"/>
         </view>

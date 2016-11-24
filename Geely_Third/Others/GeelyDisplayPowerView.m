@@ -18,6 +18,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeAction) name:POWERDISMISS object:nil];
         dis = [[[NSBundle mainBundle] loadNibNamed:@"displaypower" owner:self options:nil]firstObject];
         dis.frame = frame;
         [self addSubview:dis];
@@ -34,6 +36,11 @@
         [backBtn addTarget:self action:@selector(backBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+-(void)removeAction {
+    [self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:POWERDISMISS object:nil];
 }
 
 -(void)showAnimation {

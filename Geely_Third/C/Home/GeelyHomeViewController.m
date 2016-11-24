@@ -164,6 +164,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     //TODO
+    [self leftHiden];
 }
 
 -(void)dealloc {
@@ -213,64 +214,72 @@
     
     UIButton *air_button = [[UIButton alloc] initWithFrame:CGRectMake(1180/2-212, 0, 552, 57)];
     air_button.backgroundColor = [UIColor clearColor];
-    [air_button addTarget:self action:@selector(buttonAUTOAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [air_button addTarget:self action:@selector(buttonAUTOAction:) forControlEvents:UIControlEventTouchUpInside];
     [vv_bottom addSubview:air_button];
+    
+    UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
+    sw_air.direction = UISwipeGestureRecognizerDirectionUp;
+    UITapGestureRecognizer *tap_air = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAir:)];
+    
+    [air_button addGestureRecognizer:sw_air];
+    [air_button addGestureRecognizer:tap_air];
+    [tap_air requireGestureRecognizerToFail:sw_air];
     
     [self loadleftView:leftView contentView:contentView rightView:rightView];
     
-    presentScrollView = [[[NSBundle mainBundle] loadNibNamed:@"presentPhoneView" owner:self options:nil]firstObject];
-    presentScrollView.backgroundColor = [UIColor clearColor];
-    presentScrollView.frame = CGRectMake(82, 0, 0, 0);
-    [baseView addSubview:presentScrollView];
-    
-    [SingleModel sharedInstance].didView = presentScrollView;
-    
-    viewScroll = (UIScrollView *)[presentScrollView viewWithTag:20160129];
-    viewScroll.pagingEnabled = YES;
-    viewScroll.scrollEnabled = NO;
-    viewScroll.contentSize = CGSizeMake(340*3, 435*3);
+//    presentScrollView = [[[NSBundle mainBundle] loadNibNamed:@"presentPhoneView" owner:self options:nil]firstObject];
+//    presentScrollView.backgroundColor = [UIColor clearColor];
+//    presentScrollView.frame = CGRectMake(82, 0, 0, 0);
+//    [baseView addSubview:presentScrollView];
+//    
+//    [SingleModel sharedInstance].didView = presentScrollView;
+//    
+//    viewScroll = (UIScrollView *)[presentScrollView viewWithTag:20160129];
+//    viewScroll.pagingEnabled = YES;
+//    viewScroll.scrollEnabled = NO;
+//    viewScroll.contentSize = CGSizeMake(340*3, 435*3);
 
     
-    //给侧面弹出视图添加view
-    GeelyPhoneInputView *phoneInputView = [[GeelyPhoneInputView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
-    phoneInputView.backgroundColor = [UIColor clearColor];
-    phoneInputView.delegate = self;
-    [viewScroll addSubview:phoneInputView];
+//    //给侧面弹出视图添加view
+//    GeelyPhoneInputView *phoneInputView = [[GeelyPhoneInputView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
+//    phoneInputView.backgroundColor = [UIColor clearColor];
+//    phoneInputView.delegate = self;
+//    [viewScroll addSubview:phoneInputView];
+//    
+//    //setting
+//    GeelySettingLittleView *setting = [[GeelySettingLittleView alloc] initWithFrame:CGRectMake(340, 0, 340, 435)];
+//    [viewScroll addSubview:setting];
+//    
+//    //music
+//    musica = [[GeelyMusicLittleView alloc] initWithFrame:CGRectMake(340*2, 0, 340, 435)];
+//    musica.delegate = self;
+//    [viewScroll addSubview:musica];
     
-    //setting
-    GeelySettingLittleView *setting = [[GeelySettingLittleView alloc] initWithFrame:CGRectMake(340, 0, 340, 435)];
-    [viewScroll addSubview:setting];
+//    GeelyMediaLittleView *media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(340*3, 0, 340, 435)];
+//    media.block = ^(){
+//        [acPlayer play];
+//        viewScroll.contentOffset = CGPointMake(340*2, 0);
+//        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+//        
+//        mainRequest.requestMusic.type = @1;
+//        mainRequest.requestPhone.type = @0;
+//        mainRequest.requestVoice.type = @0;
+//        mainRequest.requestRadio.type = @0;
+//        mainRequest.requestVolume.type = @1;
+//        mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
+//        
+//        
+//        [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+//        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+//        }];
+//
+//    };
+//    [viewScroll addSubview:media];
     
-    //music
-    musica = [[GeelyMusicLittleView alloc] initWithFrame:CGRectMake(340*2, 0, 340, 435)];
-    musica.delegate = self;
-    [viewScroll addSubview:musica];
-    
-    GeelyMediaLittleView *media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(340*3, 0, 340, 435)];
-    media.block = ^(){
-        [acPlayer play];
-        viewScroll.contentOffset = CGPointMake(340*2, 0);
-        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-        
-        mainRequest.requestMusic.type = @1;
-        mainRequest.requestPhone.type = @0;
-        mainRequest.requestVoice.type = @0;
-        mainRequest.requestRadio.type = @0;
-        mainRequest.requestVolume.type = @1;
-        mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-        
-        
-        [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-        }];
-
-    };
-    [viewScroll addSubview:media];
-    
-    GeelyCalledListView *calledList = [[GeelyCalledListView alloc] initWithFrame:CGRectMake(340*4, 0, 340, 435)];
-    [viewScroll addSubview:calledList];
+//    GeelyCalledListView *calledList = [[GeelyCalledListView alloc] initWithFrame:CGRectMake(340*4, 0, 340, 435)];
+//    [viewScroll addSubview:calledList];
     
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
@@ -302,6 +311,19 @@
     
 //    [homeBtn addTarget:self action:@selector(homeViewShow:) forControlEvents:UIControlEventTouchUpInside];
     
+}
+
+-(void)swipeGestureAir:(UISwipeGestureRecognizer *)ss {
+
+    if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
+        GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
+        [self.navigationController pushViewController:va animated:NO];
+    }
+}
+
+-(void)tapGestureAir:(UITapGestureRecognizer *)tap {
+    GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
+    [self.navigationController pushViewController:va animated:NO];
 }
 
 -(void)homeAction:(UITapGestureRecognizer *)tap {
@@ -560,11 +582,7 @@
     switch (indexPath.row) {
         case 0:
         {
-            [self leftShow];
-
-            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                NSLog(@"隐藏成功");
-            }];
+            NSLog(@"右边侧边栏应该显示什么呢");
         }
             break;
         case 1:
@@ -693,8 +711,7 @@
     switch (indexPath.row) {
         case 0:
         {
-            GeelyMusicAViewController *vc = [[GeelyMusicAViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:NO];
+            NSLog(@"点击的第一个图表，不做任何反应");
         }
             break;
         case 1:
@@ -722,6 +739,9 @@
             }else{
                 [self rightHiden];
             }
+            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+                NSLog(@"隐藏成功");
+            }];
         }
             break;
         default:

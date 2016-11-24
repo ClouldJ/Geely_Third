@@ -39,7 +39,7 @@
     
 
     UIButton *btn_btn = [[UIButton alloc] initWithFrame:CGRectMake(340-47, 32, 30, 30)];
-    btn_btn.backgroundColor = [UIColor redColor];
+    btn_btn.backgroundColor = [UIColor clearColor];
     [btn_btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn_btn];
     

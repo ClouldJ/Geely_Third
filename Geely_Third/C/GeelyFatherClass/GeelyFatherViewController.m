@@ -129,11 +129,23 @@
     
     DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
     demo.backgroundColor = [UIColor clearColor];
-    
+    UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
+    sw_air.direction = UISwipeGestureRecognizerDirectionUp;
+    [demo addGestureRecognizer:sw_air];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     [demo addGestureRecognizer:tap];
     
     [self.contentView addSubview:demo];
+    [tap requireGestureRecognizerToFail:sw_air];
+
+}
+
+-(void)swipeGestureAir:(UISwipeGestureRecognizer *)ss {
+    
+    if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
+        GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
+        [self.navigationController pushViewController:va animated:NO];
+    }
 }
 
 -(void)tapAction:(UITapGestureRecognizer *)tap {
@@ -193,10 +205,10 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    
-                    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                        NSLog(@"隐藏成功");
-                    }];
+                    NSLog(@"双击点击了第一个图标");
+//                    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+//                        NSLog(@"隐藏成功");
+//                    }];
                 }
                     break;
                 case 1:
@@ -287,7 +299,8 @@
 -(void)dealloc {
     NSLog(@"父类消失");
     [SingleModel sharedInstance].isRel = NO;
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"%@ will dealloc",NSStringFromClass([self class]));
 }
 

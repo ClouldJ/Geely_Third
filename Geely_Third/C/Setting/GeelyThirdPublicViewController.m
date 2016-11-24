@@ -53,7 +53,7 @@ typedef void(^Finish)(void);
 
 -(void)dealloc {
     NSLog(@"%@ will dealloc", NSStringFromClass([self class]));
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDEDISMISS object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -76,9 +76,14 @@ typedef void(^Finish)(void);
     
     DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
     demo.backgroundColor = [UIColor clearColor];
-    
+    UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
+    sw_air.direction = UISwipeGestureRecognizerDirectionUp;
+    [demo addGestureRecognizer:sw_air];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     [demo addGestureRecognizer:tap];
+    [tap requireGestureRecognizerToFail:sw_air];
+    
+    
     
     [self.contentView addSubview:demo];
     
@@ -96,6 +101,14 @@ typedef void(^Finish)(void);
     [self.homeBtn addTarget:self action:@selector(homeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void)swipeGestureAir:(UISwipeGestureRecognizer *)ss {
+    
+    if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
+        GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
+        [self.navigationController pushViewController:va animated:NO];
+    }
+}
+
 -(void)tapAction:(UITapGestureRecognizer *)tap {
     GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
     [self.navigationController pushViewController:va animated:NO];
@@ -108,12 +121,8 @@ typedef void(^Finish)(void);
         case 0:
         {
             
-            [self.slideView dismissAnimationView:self.slideView.currentView animationFinish:^{
-                NSLog(@"隐藏成功");
-            }];
-            [self contentViewAnimation:^{
-                NSLog(@"scrollView移动成功");
-            }];
+            NSLog(@"双击点击了第一个图标");
+
         }
             break;
         case 1:

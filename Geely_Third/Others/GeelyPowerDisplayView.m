@@ -31,6 +31,7 @@
 
 -(void)dismiss:(UIButton *)btn {
     [self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:POWERDISMISS object:nil];
 }
 
 -(void)showAnimation {
