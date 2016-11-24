@@ -23,6 +23,7 @@
 -(instancetype)initWithFrame:(CGRect)frame customStyle:(GeelyDynamicViewStyle)style {
     if (self = [super initWithFrame:frame]) {
         [self loadSubViewStyle:style];
+        self.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -36,8 +37,9 @@
     self.bg_imageView.userInteractionEnabled = YES;
     [self addSubview:self.bg_imageView];
     
+
     UIButton *btn_btn = [[UIButton alloc] initWithFrame:CGRectMake(340-47, 32, 30, 30)];
-    btn_btn.backgroundColor = [UIColor clearColor];
+    btn_btn.backgroundColor = [UIColor redColor];
     [btn_btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btn_btn];
     
@@ -118,6 +120,7 @@
             self.bg_imageView.image = [UIImage imageNamed:@"geely_slidebar_callingbg"];
             
             self.phoneView = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
+            self.phoneView.backgroundColor = [UIColor clearColor];
             [self.phoneView scrollToCallWillView];
             [self.bg_imageView addSubview:self.phoneView];
         }
@@ -167,6 +170,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GeelySlideSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cella" forIndexPath:indexPath];
     [cell cellModel:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 

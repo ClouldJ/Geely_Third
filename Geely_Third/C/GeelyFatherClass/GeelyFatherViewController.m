@@ -107,6 +107,7 @@
     [scrollViewContent addSubview:self.contentScrollView];
     dynamicView = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(82, 0, 0, 435)];
     dynamicView.backgroundColor = [UIColor clearColor];
+    dynamicView.userInteractionEnabled = YES;
     [self.contentView addSubview:dynamicView];
     
     // Do any additional setup after loading the view.

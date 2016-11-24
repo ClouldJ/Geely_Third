@@ -30,7 +30,7 @@
 
     
     [NSThread detachNewThreadWithBlock:^{
-        for (int i = 0; i<29; i++) {
+        for (int i = 0; i<=73; i++) {
             if (i<10) {
                 UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"能量流动_0000%d",i]];
                 [arr addObject:image];
@@ -39,7 +39,7 @@
                 [arr addObject:image];
             }
         }
-        [im startImageSequenceWithArray:arr repeatCount:1000000 duration:1];
+        [im startImageSequenceWithArray:arr repeatCount:1000000 duration:1.5];
     }];
 
     

@@ -271,7 +271,7 @@
 -(UIView *)geelyTopAnimateView {
     UIView *topView = [[[NSBundle mainBundle] loadNibNamed:@"forshow" owner:self options:nil]firstObject];
     topView.frame = CGRectMake(82+20, 0, 857.5, 61.5);
-    topView.backgroundColor = [UIColor clearColor];
+    topView.backgroundColor = [UIColor greenColor];
     
     buttons_array = [NSMutableArray array];
     for (int i = 101; i<106; i++) {

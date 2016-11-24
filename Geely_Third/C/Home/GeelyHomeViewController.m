@@ -106,7 +106,6 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPresentView:) name:DISMISS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dididididdididi) name:@"geelyfin" object:nil];
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
@@ -119,6 +118,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
 }
+
+
 
 #pragma mark 首页返回事件处理
 -(void)backDynamicView{
@@ -160,8 +161,14 @@
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    //TODO
+}
+
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"进来了");
 }
 
 - (void)viewDidLoad {

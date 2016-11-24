@@ -98,6 +98,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
     self.cellPhoneTableView.backgroundColor = [UIColor clearColor];
     self.cellPhoneTableView.userInteractionEnabled = YES;
     self.cellPhoneTableView.scrollEnabled = NO;
+    self.cellPhoneTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.cellPhoneTableView registerClass:[AddressView class] forCellReuseIdentifier:AddressViewIdentifier];
     [self.cellPhoneTableView registerClass:[CallingView class] forCellReuseIdentifier:CallingViewIdentifier];
@@ -125,12 +126,14 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
     
     if (indexPath.row == CallWillRow) {
         CallWillView *callWillView = [tableView dequeueReusableCellWithIdentifier:CallWillViewIdentifier forIndexPath:indexPath];
+        callWillView.backgroundColor = [UIColor clearColor];
         callWillView.delegate = self;
         return callWillView;
     }
     
     if (indexPath.row == CallingRow) {
         CallingView *callingView = [tableView dequeueReusableCellWithIdentifier:CallingViewIdentifier forIndexPath:indexPath];
+        callingView.backgroundColor = [UIColor clearColor];
         callingView.delegate = self;
         return callingView;
     }
