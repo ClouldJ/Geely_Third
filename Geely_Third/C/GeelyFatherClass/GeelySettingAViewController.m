@@ -163,6 +163,8 @@
 }
 - (void)gotoRootVC{
     [self.navigationController popToRootViewControllerAnimated:NO];
+    [SingleModel sharedInstance].indexPathHome = nil;
+
 }
 
 
@@ -176,7 +178,7 @@
     cell.backgroundColor = [UIColor clearColor];
     [cell cellForRowWith:indexPath];
     [cell.statusBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.statusBtn setBackgroundImage:[UIImage imageNamed:@"开切换-拷贝setting"] forState:UIControlStateNormal];
+    [cell.statusBtn setBackgroundImage:[UIImage imageNamed:@"开切换"] forState:UIControlStateNormal];
     [cell.statusBtn setBackgroundImage:[UIImage imageNamed:@"开切换huanhduanda"] forState:UIControlStateSelected];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

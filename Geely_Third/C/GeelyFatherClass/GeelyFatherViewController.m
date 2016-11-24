@@ -197,86 +197,66 @@
 
 #pragma mark GeelyLeftContainsDelegate
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeMediaPlayer" object:nil];
-//    if (indexPath.row == 4) {
-//        [self.navigationController popToRootViewControllerAnimated:NO];
-//    }else {
-//        if (!dynamicView.show) {
-            switch (indexPath.row) {
-                case 0:
-                {
-                    NSLog(@"双击点击了第一个图标");
-//                    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-//                        NSLog(@"隐藏成功");
-//                    }];
-                }
-                    break;
-                case 1:
-                {
-                    
-                    [dynamicView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
-                    }];
-                }
-                    break;
-                case 2:
-                {
-                    
-                    [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
-                    }];
-                }
-                    break;
-                case 3:
-                {
-                    [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
-                    }];
-                }
-                    break;
-                case 4:
-                {
-                    [scrollViewContent geelyContentViewDismiss:^{
-                        self.contentImageView.frame = CGRectMake(0, 0, 1310, 492);
-                        topView.frame = CGRectMake(topView.frame.origin.x-340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
-                    } successful:^{
-                        
-                    }];
-                    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                        dynamicView.show = NO;
-                    }];
-                }
-                    break;
-                case 5:
-                    break;
-                default:
-                    break;
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"closeMediaPlayer" object:nil];
+//    if (!dynamicView.show) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                NSLog(@"双击点击了第一个图标");
             }
-    
-    
+                break;
+            case 1:
+            {
+                
+                [dynamicView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                }];
+            }
+                break;
+            case 2:
+            {
+                
+                [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                }];
+            }
+                break;
+            case 3:
+            {
+                [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
+                }];
+            }
+                break;
+            case 4:
+            {
+                [scrollViewContent geelyContentViewDismiss:^{
+                    self.contentImageView.frame = CGRectMake(0, 0, 1310, 492);
+                    topView.frame = CGRectMake(topView.frame.origin.x-340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
+                } successful:^{
+                    
+                }];
+                [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+                    dynamicView.show = NO;
+                }];
+            }
+                break;
+            case 5:
+                break;
+            default:
+                break;
+        }
+        
+        
         if (!dynamicView.show) {
-        [scrollViewContent geelyContentViewFrameAnimation:^{
-            
-            self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
-            topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
-        } successful:^{
-            //TODO   侧边栏完全显示后
-            dynamicView.show = YES;
-            
-            
-        }];
-    }
-
-//        }else{
-////            if ((indexPathLast.row !=indexPath.row) && (indexPath.row!=[SingleModel sharedInstance].indexPathHome.row)) {
-////                if (indexPath.row == 1) {
-////                    [leftFrameScroll.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
-////                }else if (indexPath.row == 2) {
-////                    [leftFrameScroll.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 435*2)];
-////                }else if (indexPath.row == 3) {
-////                    [leftFrameScroll.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 435*5)];
-////                }
-////                indexPathLast =[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
-////            }
-//        }
+            [scrollViewContent geelyContentViewFrameAnimation:^{
+                
+                self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
+                topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
+            } successful:^{
+                //TODO   侧边栏完全显示后
+                dynamicView.show = YES;
+            }];
+        }
 //    }
+
 }
 
 -(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {

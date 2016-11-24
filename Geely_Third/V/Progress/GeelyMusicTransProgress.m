@@ -34,7 +34,7 @@
 -(void)subViewLoad {
     imageView_left = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度条左边"]];
     imageView_left.userInteractionEnabled = YES;
-    imageView_left.frame = CGRectMake(0, (self.frame.size.height - 7/2)/2, 721/2, 7/2);
+    imageView_left.frame = CGRectMake(0, ((self.frame.size.height - 7/2)/2)-10, 721/2, 7/2);
     [self addSubview:imageView_left];
     
     imageView_right = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度条右边"]];
@@ -42,9 +42,9 @@
     imageView_right.frame = CGRectMake(721/2-100, -1, 689/2, 5);
     [imageView_left addSubview:imageView_right];
     
-    UIImageView *imageLeft = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"光"]];
+    UIImageView *imageLeft = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"musicprogressLight1"]];
     imageLeft.userInteractionEnabled = YES;
-    imageLeft.frame = CGRectMake(487/2-8, (self.frame.size.height - 7/2)/2-25, 50, 50);
+    imageLeft.frame = CGRectMake(-65, (self.frame.size.height - 7/2)/2-48, 1435/2, 189/2);
     [self addSubview:imageLeft];
     
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(imageXpointChanged:)];
@@ -59,7 +59,7 @@
         CGFloat trans = [pan locationInView:self].x;
         if (trans>=50&&trans<=515) {
             im.center = CGPointMake(trans, im.center.y);
-            imageView_left.frame = CGRectMake(0, (self.frame.size.height - 7/2)/2, 721/2+trans-487/2+8, 7/2);
+            imageView_left.frame = CGRectMake(0, ((self.frame.size.height - 7/2)/2)-10, 721/2+trans-487/2+8, 7/2);
             imageView_right.frame = CGRectMake(721/2-100+trans-487/2+8-25, -1, 689/2-trans+487/2-8+25, 5);
         }
 

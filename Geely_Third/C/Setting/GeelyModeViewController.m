@@ -25,6 +25,49 @@
     //添加背景图片
     [self bg_imageInit];
     
+    
+    UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
+    button_volume_.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:button_volume_];
+    [button_volume_ addTarget:self action:@selector(volumeLes) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *button_vo = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+280, button_volume_.frame.origin.y, 60, 60)];
+    button_vo.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:button_vo];
+    
+    UIButton *home = [[UIButton alloc] initWithFrame:CGRectMake(button_volume_.frame.origin.x+60+40, HHHHHHHHHHH-180, 120, 70)];
+    home.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:home];
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoRootVC)];
+    
+    UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction1)];
+    
+    [tapGR requireGestureRecognizerToFail:longPressGR];
+    
+    [home addGestureRecognizer:tapGR];
+    [home addGestureRecognizer:longPressGR];
+    
+}
+
+-(void)btnAction1{
+    GeelyDisplayPowerView *cc = [[GeelyDisplayPowerView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    cc.delegate = self;
+    [cc showAnimation];
+}
+- (void)gotoRootVC{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [SingleModel sharedInstance].indexPathHome = nil;
+}
+
+#pragma mark GeelyDisplayPowerViewDelegate
+-(void)showDisplayView:(GeelyDisplayPowerView *)view {
+    GeelyScreenView *screenView = [[GeelyScreenView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [screenView showAnimate];
+}
+
+-(void)showPowerView:(GeelyDisplayPowerView *)view  {
+    GeelyPowerDisplayView *vb = [[GeelyPowerDisplayView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [vb showAnimation];
 }
 
 -(void)bg_imageInit {

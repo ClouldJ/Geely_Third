@@ -197,6 +197,7 @@
 }
 - (void)gotoRootVC{
     [self.navigationController popToRootViewControllerAnimated:NO];
+    [SingleModel sharedInstance].indexPathHome = nil;
 }
 
 -(void)tapAction {

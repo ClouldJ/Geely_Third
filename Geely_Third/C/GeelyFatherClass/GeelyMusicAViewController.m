@@ -190,14 +190,13 @@
 }
 - (void)gotoRootVC{
     [self.navigationController popToRootViewControllerAnimated:NO];
+    [SingleModel sharedInstance].indexPathHome = nil;
 }
 
 -(void)musicControl:(UIButton *)btn {
     switch (btn.tag) {
         case 0:
         {
-            
-            
             
             [manager.player stop];
             [manager playMusic:@"Sam Smith-Writing's On The Wall"];
@@ -271,7 +270,7 @@
 -(UIView *)geelyTopAnimateView {
     UIView *topView = [[[NSBundle mainBundle] loadNibNamed:@"forshow" owner:self options:nil]firstObject];
     topView.frame = CGRectMake(82+20, 0, 857.5, 61.5);
-    topView.backgroundColor = [UIColor greenColor];
+    topView.backgroundColor = [UIColor clearColor];
     
     buttons_array = [NSMutableArray array];
     for (int i = 101; i<106; i++) {

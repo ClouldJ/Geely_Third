@@ -147,14 +147,7 @@
 -(void)cellSecTapGesture:(UITapGestureRecognizer *)tap touchCell:(GeelyLeftContainsTableViewCell *)cell {
     NSIndexPath *indexPath = [self.tableView_ indexPathForCell:cell];
     [self.tableView_ deselectRowAtIndexPath:indexPath animated:YES];
-//    if (indexPath.row == 1) {
-//        cell.imageView_.image = [UIImage imageNamed:@"娱乐sGeely"];
-//    }else if (indexPath.row == 3){
-//        cell.imageView_.image = [UIImage imageNamed:@"设置sGeely"];
-//        
-//    }else if (indexPath.row == 2) {
-//        cell.imageView_.image = [UIImage imageNamed:@"电话sGeely"];
-//    }
+
     
     [SingleModel sharedInstance].indexPathHome = [self.tableView_ indexPathForCell:cell];
     
@@ -195,7 +188,9 @@
         }
     }else{
         //TODO;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"geelyfin" object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"geelyfin" object:nil];
+        
+        NSLog(@"未知情况");
 //        return;
     }
 

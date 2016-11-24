@@ -106,11 +106,11 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.progress.heightPercent = 0;
     if (scrollView.contentOffset.x == 0) {
-        self.topGeelyView.image = [UIImage imageNamed:@"topcallgeely"];
+        self.topGeelyView.image = [UIImage imageNamed:@"1callinput"];
     }else if (scrollView.contentOffset.x == 830.5) {
-        self.topGeelyView.image = [UIImage imageNamed:@"123123123123toptop"];
+        self.topGeelyView.image = [UIImage imageNamed:@"2calllist"];
     }else if (scrollView.contentOffset.x == 1659.5) {
-        self.topGeelyView.image = [UIImage imageNamed:@"top_0dasdaadio13i"];
+        self.topGeelyView.image = [UIImage imageNamed:@"3callconstract"];
     }
 }
 

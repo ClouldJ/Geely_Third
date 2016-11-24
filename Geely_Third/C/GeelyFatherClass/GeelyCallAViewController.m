@@ -161,6 +161,7 @@
     [self showPopAnimation];
 }
 - (void)gotoRootVC{
+    [SingleModel sharedInstance].indexPathHome = nil;
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 #pragma mark GeelyDisplayPowerViewDelegate
@@ -178,8 +179,8 @@
 #pragma mark DataSource
 -(UIView *)geelyTopAnimateView {
     UIView *vb = [[[NSBundle mainBundle] loadNibNamed:@"callTopview" owner:self options:nil]firstObject];
-    vb.frame = CGRectMake(2, 0, 991.5, 61.5);
-    vb.backgroundColor = [UIColor blueColor];
+    vb.frame = CGRectMake(82, 0, 1860/2, 62.5);
+    vb.backgroundColor = [UIColor clearColor];
     
     UIButton *BTN_1 = (UIButton *)[vb viewWithTag:567];
     UIButton *BTN_2 = (UIButton *)[vb viewWithTag:568];
@@ -193,6 +194,7 @@
     }
     
     imageView = (UIImageView *)[vb viewWithTag:972];
+    imageView.image = [UIImage imageNamed:@"1callinput"];
     
     return vb;
 }
@@ -201,15 +203,15 @@
 -(void)topBtnAction:(UIButton *)btn {
     if (btn.tag == 1) {
         NSLog(@"拨号盘");
-        imageView.image = [UIImage imageNamed:@"topcallgeely"];
+        imageView.image = [UIImage imageNamed:@"1callinput"];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
     }else if (btn.tag == 2) {
         NSLog(@"通话记录");
-        imageView.image = [UIImage imageNamed:@"123123123123toptop"];
+        imageView.image = [UIImage imageNamed:@"2calllist"];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
     }else if (btn.tag == 3) {
         NSLog(@"通讯录");
-        imageView.image = [UIImage imageNamed:@"top_0dasdaadio13i"];
+        imageView.image = [UIImage imageNamed:@"3callconstract"];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228*2, 0)];
     }
 }

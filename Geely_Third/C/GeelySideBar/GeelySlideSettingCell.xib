@@ -23,12 +23,21 @@
                             <constraint firstAttribute="width" constant="313" id="zPU-yR-nwG"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="him-RY-wCa">
+                        <rect key="frame" x="31.5" y="58" width="277" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="277" id="GDv-zt-qaI"/>
+                            <constraint firstAttribute="height" constant="1" id="uUN-0h-fLA"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dQf-iI-8vc" secondAttribute="bottom" id="6eS-Oh-Aeo"/>
                     <constraint firstItem="dQf-iI-8vc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Cz6-FQ-Txj"/>
                     <constraint firstItem="dQf-iI-8vc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iKW-rX-sPN"/>
+                    <constraint firstAttribute="bottom" secondItem="him-RY-wCa" secondAttribute="bottom" id="lqT-D9-wet"/>
+                    <constraint firstItem="him-RY-wCa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="vv6-oa-rEr"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

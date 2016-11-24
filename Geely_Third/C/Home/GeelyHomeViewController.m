@@ -164,7 +164,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     //TODO
-    [self leftHiden];
+//    [self leftHiden];
 }
 
 -(void)dealloc {
@@ -327,8 +327,13 @@
 }
 
 -(void)homeAction:(UITapGestureRecognizer *)tap {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    window.rootViewController = [[GeelyHomeViewController alloc] init];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    window.rootViewController = [[GeelyHomeViewController alloc] init];
+    NSLog(@"单击处理");
+    [self leftHiden];
+    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
+        NSLog(@"首页home建单击处理");
+    }];
 }
 
 -(void)longAction:(UILongPressGestureRecognizer *)longpres {
