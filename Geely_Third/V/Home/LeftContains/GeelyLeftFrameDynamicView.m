@@ -121,7 +121,49 @@
     }];
 }
 
+-(void)showAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish {
+//    if (self.currentView) {
+//        self.currentView.hidden = YES;
+//        [self.currentView removeFromSuperview];
+//        self.currentView = nil;
+//    }
+    switch (style) {
+        case DYNAMIC_MUSIC:
+        {
+            GeelySildeBarView *na = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_MUSIC];
+            na.backgroundColor = [UIColor clearColor];
+            [self addSubview:na];
+            self.currentView = na;
+        }
+            break;
+        case DYNAMIC_CALLZ:
+        {
+            GeelySildeBarView *na1 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_CALLZ];
+            na1.backgroundColor = [UIColor clearColor];
+            [self addSubview:na1];
+            self.currentView = na1;
+        }
+            break;
+        case DYNAMIC_SETTZ:
+        {
+            GeelySildeBarView *na2 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_SETTZ];
+            na2.backgroundColor = [UIColor clearColor];
+            [self addSubview:na2];
+            self.currentView = na2;
+        }
+            break;
+        default:
+            break;
+    }
+}
 
+//-(void)showAnimationView:(GeelySildeBarView *)slideView finishBlock:(GeelyDynamicFinishView)finish {
+//    [UIView animateWithDuration:.5f animations:^{
+//        slideView.frame =
+//    } completion:^(BOOL finished) {
+//        finish(self);
+//    }];
+//}
 
 -(void)dismissAnimationView:(UIView *)animaView animationFinish:(GeelyDynamicFinish)finish {
     animaView.hidden = YES;

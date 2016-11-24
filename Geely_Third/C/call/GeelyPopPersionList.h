@@ -10,6 +10,8 @@
 
 @interface GeelyPopPersionList : UIView
 
+@property (nonatomic, assign) BOOL show;
+
 -(void)showAnimation;
 
 @end

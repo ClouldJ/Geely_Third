@@ -93,6 +93,13 @@
     
     GeelyLeftFrameDynamicView *dynamicView;
     
+    GeelyLeftFrameDynamicView *dynamicViewMusic;
+
+    GeelyLeftFrameDynamicView *dynamicViewCall;
+
+    GeelyLeftFrameDynamicView *dynamicViewSet;
+
+    
     UIView *dynamicCurrentView;
 
 }
@@ -194,17 +201,36 @@
     baseView.center = self.view.center;
     [self.view addSubview:baseView];
     
+#pragma mark 首页逻辑需调整位置
+    //TODO 先加载需要推出的视图，再加载那张背景图，接着加载左右按钮
+//    dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_MUSIC];
+//    dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_CALLZ];
+//    dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_SETTZ];
+
     
     self.view.backgroundColor = [UIColor whiteColor];
     imageViewContentBG = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, baseView.frame.size.width, baseView.frame.size.height)];
     imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bg"];
     [baseView addSubview:imageViewContentBG];
     
+    dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [baseView addSubview:dynamicViewMusic];
     
-    UIImageView *imageView_bottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"空调wqqweqw"]];
-    imageView_bottom.frame = CGRectMake(0, baseView.frame.size.height - 57, 1310, 57);
-    imageView_bottom.backgroundColor = [UIColor clearColor];
-    imageView_bottom.userInteractionEnabled = YES;
+    dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [baseView addSubview:dynamicViewSet];
+    
+    dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [baseView addSubview:dynamicViewCall];
+    
+    UIImageView *imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
+    imageNewBg.userInteractionEnabled = YES;
+    imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
+    [baseView addSubview:imageNewBg];
+    
+//    UIImageView *imageView_bottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"空调wqqweqw"]];
+//    imageView_bottom.frame = CGRectMake(0, baseView.frame.size.height - 57, 1310, 57);
+//    imageView_bottom.backgroundColor = [UIColor clearColor];
+//    imageView_bottom.userInteractionEnabled = YES;
 //    [baseView addSubview:imageView_bottom];
     
     
@@ -411,6 +437,7 @@
             [baseView addSubview:lView];
 //            [lView addGestureRecognizer:panGesture];
             leftView = lView;
+//            [self.view bringSubviewToFront:leftView];
             leftView.tableView_.delegate = self;
             leftPoint = lView.center;
         }else if (i == 1) {
@@ -593,26 +620,49 @@
         case 1:
         {
             [self leftShow];
-
-            [dynamicView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
-                dynamicCurrentView = amicView;
+            
+            [dynamicViewMusic showAnimationStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                NSLog(@"音乐移动完成");
             }];
+            
+            
+            [UIView animateWithDuration:.5f animations:^{
+                dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
+            } completion:^(BOOL finished) {
+                
+            }];
+            
         }
             break;
         case 2:
         {
             [self leftShow];
 
-            [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
-                dynamicCurrentView = amicView;
+//            [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+//                dynamicCurrentView = amicView;
+//            }];
+            
+            [dynamicViewCall showAnimationStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                NSLog(@"新动画执行完成");
             }];
+            
+            [UIView animateWithDuration:.5f animations:^{
+                dynamicViewCall.frame = CGRectMake(82, 0, 340, 435);
+            }];
+            
         }
             break;
         case 3:
         {
             [self leftShow];
-            [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
-                dynamicCurrentView = amicView;
+//            [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
+//                dynamicCurrentView = amicView;
+//            }];
+            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:nil];
+//            dynamicViewSet.backgroundColor = [UIColor orangeColor];
+
+            [UIView animateWithDuration:.5f animations:^{
+                dynamicViewSet.frame = CGRectMake(82, 0, 340, 435);
             }];
         }
             break;

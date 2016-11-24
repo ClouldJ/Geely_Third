@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "GeelySildeBarView.h"
 
 typedef enum {
     DYNAMIC_MUSIC,                                  //音乐小侧边
@@ -26,6 +27,8 @@ typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 
 -(instancetype)initWithFrame:(CGRect)frame;
 
+-(instancetype)initWithFrame:(CGRect)frame animateStyle:(GeelyDynamicViewStyle)style;
+
 @property (nonatomic, strong) UITableView *tableView_;
 
 @property (nonatomic, assign) GeelyDynamicViewStyle style;
@@ -37,5 +40,9 @@ typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 -(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
 
 -(void)dismissAnimationView:(UIView *)animaView animationFinish:(GeelyDynamicFinish)finish;
+
+-(void)showAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
+-(void)dismissAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
+
 
 @end

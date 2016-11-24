@@ -8,6 +8,8 @@
 
 #import "PersonListTableViewCell.h"
 #import "GeelyPopPersionList.h"
+
+
 @implementation PersonListTableViewCell
 
 - (void)awakeFromNib {

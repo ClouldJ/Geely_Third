@@ -89,7 +89,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 }
 
 - (void)cellPhoneTableViewConfig {
-    self.cellPhoneTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) style:UITableViewStylePlain];
+    self.cellPhoneTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) style:UITableViewStylePlain];
     self.cellPhoneTableView.showsHorizontalScrollIndicator = NO;
     self.cellPhoneTableView.showsVerticalScrollIndicator = NO;
     self.cellPhoneTableView.delegate = self;

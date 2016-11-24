@@ -96,7 +96,7 @@
 
 -(void)becomegold{
     NSLog(@"变换为舒适模式");
-    [imageView animationImage:[UIImage imageNamed:@"apphomecontent"]];
+    [imageView animationImage:[UIImage imageNamed:@"app1newbg"]];
 }
 
 /*

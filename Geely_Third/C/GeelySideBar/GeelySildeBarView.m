@@ -32,7 +32,7 @@
     
     FMAM = NO;
     
-    self.bg_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 435)];
+    self.bg_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
     self.bg_imageView.backgroundColor = [UIColor clearColor];
     self.bg_imageView.userInteractionEnabled = YES;
     [self addSubview:self.bg_imageView];
@@ -49,7 +49,7 @@
             self.backgroundColor = [UIColor clearColor];
             self.bg_imageView.image = [UIImage imageNamed:@"bg_sildeBar_setting"];
             //设置
-            self.setting_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 435-357.5, 0, 357.5)];
+            self.setting_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 435-357.5, 340, 357.5)];
             self.setting_tableView.delegate = self;
             self.setting_tableView.dataSource = self;
             self.setting_tableView.scrollEnabled = NO;
@@ -68,12 +68,12 @@
             self.bg_imageView.image = [UIImage imageNamed:@"bg_sliderBar_music"];
             //音乐
             
-            self.image_musciTitle = [[UIImageView alloc] initWithFrame:CGRectMake((340-169)/2-20, 100, 0, 45)];
+            self.image_musciTitle = [[UIImageView alloc] initWithFrame:CGRectMake((340-169)/2-20, 100, 169, 45)];
             self.image_musciTitle.image = [UIImage imageNamed:@"歌名收藏littlemusicg"];
             self.image_musciTitle.contentMode = UIViewContentModeScaleAspectFit;
             [self.bg_imageView addSubview:self.image_musciTitle];
             
-            self.store_btn = [[UIButton alloc] initWithFrame:CGRectMake((340-169)/2+160, 97.5, 0, 24.5)];
+            self.store_btn = [[UIButton alloc] initWithFrame:CGRectMake((340-169)/2+160, 97.5, 26.5, 24.5)];
             self.store_btn.backgroundColor = [UIColor clearColor];
             [self.store_btn setBackgroundImage:[UIImage imageNamed:@"收藏-拷贝-2"] forState:UIControlStateNormal];
             [self.store_btn setBackgroundImage:[UIImage imageNamed:@"收藏-拷贝-2_music"] forState:UIControlStateSelected];
@@ -82,7 +82,7 @@
             
             self.animaeCD = [[GeelyMusicCDAnimationView alloc] initWithFrame:CGRectMake((340-180)/2-15, 170, 180, 180)];
             self.animaeCD.delegate = self;
-            self.animaeCD.alpha = 0;
+//            self.animaeCD.alpha = 0;
             [self.bg_imageView addSubview:self.animaeCD];
             
             images = [NSMutableArray array];
@@ -119,7 +119,7 @@
             self.backgroundColor = [UIColor clearColor];
             self.bg_imageView.image = [UIImage imageNamed:@"geely_slidebar_callingbg"];
             
-            self.phoneView = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
+            self.phoneView = [[CellPhoneView alloc] initWithFrame:CGRectMake(0, 0, 340, self.frame.size.height)];
             self.phoneView.backgroundColor = [UIColor clearColor];
             [self.phoneView scrollToCallWillView];
             [self.bg_imageView addSubview:self.phoneView];

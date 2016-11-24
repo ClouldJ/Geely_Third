@@ -8,6 +8,12 @@
 
 #import "GeelyPopPersionList.h"
 
+@interface GeelyPopPersionList () {
+    
+}
+
+@end
+
 @implementation GeelyPopPersionList
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -15,7 +21,7 @@
         UIView *vb = [[[NSBundle mainBundle] loadNibNamed:@"Geelypersonlll" owner:self options:nil]firstObject];
         vb.frame = frame;
         [self addSubview:vb];
-        
+        self.backgroundColor = [UIColor clearColor];
         UIButton *btn = (UIButton *)[vb viewWithTag:272];
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -23,13 +29,17 @@
 }
 
 -(void)btnAction:(UIButton *)btn {
+    self.show = NO;
     [self removeFromSuperview];
 }
 
 
 -(void)showAnimation {
-    UIWindow *win = [[UIApplication sharedApplication] keyWindow];
-    [win addSubview:self];
+    if (!self.show) {
+        UIWindow *win = [[UIApplication sharedApplication] keyWindow];
+        [win addSubview:self];
+        self.show = YES;
+    }
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

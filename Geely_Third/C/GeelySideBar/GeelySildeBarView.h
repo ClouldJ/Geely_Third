@@ -10,7 +10,7 @@
 
 #import "CellPhoneView.h"
 #import "GeelyMusicCDAnimationView.h"
-
+#import "GeelyLeftFrameDynamicView.h"
 @class GeelyLeftFrameDynamicView;
 
 @interface GeelySildeBarView : UIView

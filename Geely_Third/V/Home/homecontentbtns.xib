@@ -31,7 +31,7 @@
                 <button opaque="NO" tag="6105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd2-Dn-4yr">
                     <rect key="frame" x="577.5" y="13" width="133.5" height="73"/>
                 </button>
-                <imageView tag="98789" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apphomecontent.png" translatesAutoresizingMaskIntoConstraints="NO" id="iaQ-zF-mvM">
+                <imageView tag="98789" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app1newbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="iaQ-zF-mvM">
                     <rect key="frame" x="0.0" y="0.0" width="802.5" height="178"/>
                 </imageView>
             </subviews>
@@ -67,6 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="apphomecontent.png" width="802" height="178"/>
+        <image name="app1newbg.png" width="802" height="175"/>
     </resources>
 </document>
