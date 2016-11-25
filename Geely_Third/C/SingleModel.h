@@ -11,7 +11,7 @@
 #import "Mute.h"
 #import "GeelyLeftContainsTableViewCell.h"
 #import "Car.h"
-
+//#import "GeelySildeBarView.h"
 
 typedef enum {
     RED,
@@ -24,6 +24,8 @@ typedef enum {
 @property (nonatomic, assign) BOOL isDisplay;
 
 @property (nonatomic, strong) Mute *muteSingle;
+
+//@property (nonatomic, strong) GeelySildeBarView *dynamicSingleView;
 
 @property (nonatomic, strong) Car *carSingle;
 
@@ -66,5 +68,9 @@ typedef enum {
 -(MainRequest *)singleMainRequest:(NSString *)request type_value:(NSNumber *)value;
 
 +(instancetype)sharedInstance;
+
+@property (nonatomic, strong) NSMutableArray *dynamicViews;
+
+//-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 
 @end

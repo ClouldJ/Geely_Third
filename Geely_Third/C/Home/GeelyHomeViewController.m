@@ -132,10 +132,8 @@
 -(void)backDynamicView{
     
     [self leftHiden];
-    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-        NSLog(@"收到通知并做出了处理");
-    }];
-    
+    [self dynamicdismissView];
+
 }
 
 -(void)becomeBlue{
@@ -221,6 +219,8 @@
     
     dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
     [baseView addSubview:dynamicViewCall];
+#pragma mark 初始化单例中的数据源，用来保存显示的view
+    [SingleModel sharedInstance].dynamicViews = [NSMutableArray arrayWithObjects:dynamicViewMusic,dynamicViewCall,dynamicViewSet, nil];
     
     UIImageView *imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
     imageNewBg.userInteractionEnabled = YES;
@@ -589,28 +589,44 @@
 
 }
 
+-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)frameDynamic {
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews) {
+        if (viewSingle.showSingle) {
+            if (viewSingle  == frameDynamic) {
+                NSLog(@"显示的就是当前view，不需要再次进行推出操作");
+            }else{
+                viewSingle.showSingle = NO;
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+                [UIView animateWithDuration:.5f animations:^{
+                    frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+                } completion:^(BOOL finished) {
+                    frameDynamic.showSingle = YES;
+                }];
+            }
+        }else{
+            [UIView animateWithDuration:.5f animations:^{
+                frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+            } completion:^(BOOL finished) {
+                frameDynamic.showSingle = YES;
+            }];
+        }
+    }
+}
+
+-(void)dynamicdismissView{
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews) {
+        if (viewSingle.showSingle) {
+            viewSingle.showSingle = NO;
+            [UIView animateWithDuration:.5f animations:^{
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+            }];
+        }
+    }
+}
 
 #pragma mark GeelyLeftContainsDelegate
 
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"首页单击");
-//
-//    
-//    switch (indexPath.row) {
-//        case 0:
-//        {
-////            if (!isLeftBtn) {
-////                [self leftHiden];
-////            }else{
-////                [self rightHiden];
-////            }
-////            
-////
-////            
-////            GeelyNo *geely = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
-////            [geely sssShowAnimate];
-
-
     switch (indexPath.row) {
         case 0:
         {
@@ -625,12 +641,31 @@
                 NSLog(@"音乐移动完成");
             }];
             
+//            for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews) {
+//                if (viewSingle.showSingle) {
+//                    if (viewSingle  == dynamicViewMusic) {
+//                        NSLog(@"显示的就是当前view，不需要再次进行推出操作");
+//                    }else{
+//                        viewSingle.showSingle = NO;
+//                        viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+//                        [UIView animateWithDuration:.5f animations:^{
+//                            dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
+//                        } completion:^(BOOL finished) {
+//                            dynamicViewMusic.showSingle = YES;
+//                        }];
+//                    }
+//                }else{
+//                    [UIView animateWithDuration:.5f animations:^{
+//                        dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
+//                    } completion:^(BOOL finished) {
+//                        dynamicViewMusic.showSingle = YES;
+//                    }];
+//                }
+//            }
             
-            [UIView animateWithDuration:.5f animations:^{
-                dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
-            } completion:^(BOOL finished) {
-                
-            }];
+            [self dynamicAnimationView:dynamicViewMusic];
+            
+
             
         }
             break;
@@ -638,40 +673,38 @@
         {
             [self leftShow];
 
-//            [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
-//                dynamicCurrentView = amicView;
-//            }];
             
             [dynamicViewCall showAnimationStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
                 NSLog(@"新动画执行完成");
             }];
-            
-            [UIView animateWithDuration:.5f animations:^{
-                dynamicViewCall.frame = CGRectMake(82, 0, 340, 435);
-            }];
+            [self dynamicAnimationView:dynamicViewCall];
+//            dynamicViewCall.showSingle = YES;
+//
+//            
+//            [UIView animateWithDuration:.5f animations:^{
+//                dynamicViewCall.frame = CGRectMake(82, 0, 340, 435);
+//            }];
             
         }
             break;
         case 3:
         {
             [self leftShow];
-//            [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
-//                dynamicCurrentView = amicView;
-//            }];
-            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:nil];
-//            dynamicViewSet.backgroundColor = [UIColor orangeColor];
-
-            [UIView animateWithDuration:.5f animations:^{
-                dynamicViewSet.frame = CGRectMake(82, 0, 340, 435);
+            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
             }];
+//            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:nil];
+            [self dynamicAnimationView:dynamicViewSet];
+//            dynamicViewSet.showSingle = YES;
+//
+//            [UIView animateWithDuration:.5f animations:^{
+//                dynamicViewSet.frame = CGRectMake(82, 0, 340, 435);
+//            }];
         }
             break;
         case 4:
         {
             [self leftHiden];
-            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                NSLog(@"隐藏成功");
-            }];
+            [self dynamicdismissView];
         }
             break;
         case 5:

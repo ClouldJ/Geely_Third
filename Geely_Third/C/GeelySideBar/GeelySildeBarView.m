@@ -86,15 +86,8 @@
             [self.bg_imageView addSubview:self.animaeCD];
             
             images = [NSMutableArray array];
-            for (int i = 0; i<34; i++) {
-                if (i<10) {
-                    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_0000%d",i]];
-                    [images addObject:image];
-                }else{
-                    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_000%d",i]];
-                    [images addObject:image];
-                }
-            }
+
+            [NSThread detachNewThreadSelector:@selector(asyncinitArray) toTarget:self withObject:nil];
             
             self.imageViewradio = [[UIImageView alloc] initWithFrame:CGRectMake((340-180)/2-35, 170, 220, 220)];
             self.imageViewradio.hidden = YES;
@@ -127,6 +120,18 @@
             break;
         default:
             break;
+    }
+}
+
+-(void)asyncinitArray {
+    for (int i = 0; i<34; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_0000%d",i]];
+            [images addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"中控-电台_000%d",i]];
+            [images addObject:image];
+        }
     }
 }
 

@@ -37,6 +37,8 @@ typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 
 @property (nonatomic, assign) BOOL show;
 
+@property (nonatomic, assign) BOOL showSingle;
+
 -(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
 
 -(void)dismissAnimationView:(UIView *)animaView animationFinish:(GeelyDynamicFinish)finish;
