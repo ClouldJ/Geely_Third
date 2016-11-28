@@ -24,6 +24,14 @@
     GeelyScreenView *screenView;
     GeelyLeftFrameDynamicView *dynamicView;
     ;
+    
+    GeelyLeftFrameDynamicView *dynamicViewMusic;
+    
+    GeelyLeftFrameDynamicView *dynamicViewCall;
+    
+    GeelyLeftFrameDynamicView *dynamicViewSet;
+    
+    BOOL showED;
 }
 
 @end
@@ -44,9 +52,8 @@
     } successful:^{
         
     }];
-    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-        dynamicView.show = NO;
-    }];
+    [self dynamicdismissView];
+    showED = NO;
 }
 
 
@@ -56,6 +63,8 @@
     
     vvlioce = [[MPMusicPlayerController alloc] init];
     volume = vvlioce.volume;
+    
+    showED = NO;
     
 //    mainRequest = [[MainRequest alloc] init];
 //    mainRequest.requestVolume = [[Volume alloc] init];
@@ -94,6 +103,25 @@
     self.contentImageView.backgroundColor = [UIColor clearColor];
     self.contentImageView.image = [UIImage imageNamed:@"Geely_father_bg_effert"];
     [self.contentView addSubview:self.contentImageView];
+    
+#pragma mark 初始化需要侧滑弹出的view
+    dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewMusic];
+    
+    dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewSet];
+    
+    dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewCall];
+    
+    //将初始化出来的侧滑视图加载到单例数据源中
+    [SingleModel sharedInstance].dynamicViews1 = [NSMutableArray arrayWithObjects:dynamicViewMusic,dynamicViewCall,dynamicViewSet, nil];
+    
+    
+    UIImageView *imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
+    imageNewBg.userInteractionEnabled = YES;
+    imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
+    [self.contentView addSubview:imageNewBg];
     
     
     
@@ -193,7 +221,29 @@
 - (IBAction)less:(id)sender {
 }
 
-
+-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)frameDynamic {
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews1) {
+        if (viewSingle.showSingle) {
+            if (viewSingle  == frameDynamic) {
+                NSLog(@"显示的就是当前view，不需要再次进行推出操作");
+            }else{
+                viewSingle.showSingle = NO;
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+                [UIView animateWithDuration:.5f animations:^{
+                    frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+                } completion:^(BOOL finished) {
+                    frameDynamic.showSingle = YES;
+                }];
+            }
+        }else{
+            [UIView animateWithDuration:.5f animations:^{
+                frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+            } completion:^(BOOL finished) {
+                frameDynamic.showSingle = YES;
+            }];
+        }
+    }
+}
 
 #pragma mark GeelyLeftContainsDelegate
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
@@ -208,21 +258,26 @@
             case 1:
             {
                 
-                [dynamicView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                [dynamicViewMusic showAnimationStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                    NSLog(@"音乐移动完成");
                 }];
+                [self dynamicAnimationView:dynamicViewMusic];
             }
                 break;
             case 2:
             {
                 
-                [dynamicView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                [dynamicViewCall showAnimationStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                    NSLog(@"新动画执行完成");
                 }];
+                [self dynamicAnimationView:dynamicViewCall];
             }
                 break;
             case 3:
             {
-                [dynamicView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
+                [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
                 }];
+                [self dynamicAnimationView:dynamicViewSet];
             }
                 break;
             case 4:
@@ -233,9 +288,7 @@
                 } successful:^{
                     
                 }];
-                [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                    dynamicView.show = NO;
-                }];
+                [self dynamicdismissView];
             }
                 break;
             case 5:
@@ -245,18 +298,31 @@
         }
         
         
-        if (!dynamicView.show) {
+        if (!showED) {
             [scrollViewContent geelyContentViewFrameAnimation:^{
                 
                 self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
                 topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
             } successful:^{
                 //TODO   侧边栏完全显示后
-                dynamicView.show = YES;
+                showED = YES;
             }];
         }
 //    }
 
+}
+
+-(void)dynamicdismissView{
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews1) {
+        if (viewSingle.showSingle) {
+            viewSingle.showSingle = NO;
+            [UIView animateWithDuration:.5f animations:^{
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+            }];
+        }
+    }
+    
+    showED = NO;
 }
 
 -(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {

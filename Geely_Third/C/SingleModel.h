@@ -71,6 +71,12 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableArray *dynamicViews;
 
+@property (nonatomic, strong) NSMutableArray *dynamicViews1;
+
+
+@property (nonatomic, strong) NSMutableArray *dynamicViews2;
+
+
 //-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 
 @end

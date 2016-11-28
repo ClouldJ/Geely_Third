@@ -61,6 +61,8 @@
     
     AVAudioPlayer *acPlayer;
     
+    UIImageView *imageNewBg;
+    
     /**
      **
      **/
@@ -170,6 +172,7 @@
     [super viewDidDisappear:animated];
     //TODO
 //    [self leftHiden];
+    
 }
 
 -(void)dealloc {
@@ -222,7 +225,7 @@
 #pragma mark 初始化单例中的数据源，用来保存显示的view
     [SingleModel sharedInstance].dynamicViews = [NSMutableArray arrayWithObjects:dynamicViewMusic,dynamicViewCall,dynamicViewSet, nil];
     
-    UIImageView *imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
+    imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
     imageNewBg.userInteractionEnabled = YES;
     imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
     [baseView addSubview:imageNewBg];
@@ -692,7 +695,6 @@
             [self leftShow];
             [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
             }];
-//            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:nil];
             [self dynamicAnimationView:dynamicViewSet];
 //            dynamicViewSet.showSingle = YES;
 //
@@ -1134,10 +1136,12 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:TOLEFT object:nil];
         imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bgLeft"];
         [self rightViewMoveToLeft];
+        imageNewBg.hidden = YES;
     }else{
         [[NSNotificationCenter defaultCenter] postNotificationName:TORIGHT object:nil];
         imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bg"];
         [self rightViewMoveToRight];
+        imageNewBg.hidden = NO;
     }
 }
 

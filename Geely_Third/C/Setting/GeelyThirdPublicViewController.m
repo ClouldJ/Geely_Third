@@ -17,7 +17,11 @@
 typedef void(^Finish)(void);
 
 @interface GeelyThirdPublicViewController () <GeelyLeftContainsDelegate> {
+    GeelyLeftFrameDynamicView *dynamicViewMusic;
     
+    GeelyLeftFrameDynamicView *dynamicViewCall;
+    
+    GeelyLeftFrameDynamicView *dynamicViewSet;
 }
 //@property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -34,9 +38,7 @@ typedef void(^Finish)(void);
 
 #pragma mark 接收返回事件通知
 -(void)backDynamicView {
-    [self.slideView dismissAnimationView:self.slideView.currentView animationFinish:^{
-        NSLog(@"隐藏成功");
-    }];
+    [self dynamicdismissView];
     [self contentViewDismiss:^{
         NSLog(@"消失");
     }];
@@ -47,6 +49,7 @@ typedef void(^Finish)(void);
     self.view.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = [UIColor clearColor];
     [self addFixedView];
+    
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -68,6 +71,25 @@ typedef void(^Finish)(void);
     self.contentView = [[UIView alloc] initWithFrame:CGRectMake((1366-1310)/2, (1024-492)/2, 1310, 492)];
     self.contentView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.contentView];
+    
+#pragma mark 初始化需要侧滑弹出的view
+    dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewMusic];
+    
+    dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewSet];
+    
+    dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    [self.contentView addSubview:dynamicViewCall];
+    
+    //将初始化出来的侧滑视图加载到单例数据源中
+    [SingleModel sharedInstance].dynamicViews2 = [NSMutableArray arrayWithObjects:dynamicViewMusic,dynamicViewCall,dynamicViewSet, nil];
+
+    
+    UIImageView *imageNewBg = [[UIImageView alloc] initWithFrame:CGRectMake(82-110, 0, 110, 870/2)];
+    imageNewBg.userInteractionEnabled = YES;
+    imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
+    [self.contentView addSubview:imageNewBg];
     
     self.leftViewContains = [[GelelyLeftContainsView alloc] initWithFrame:CGRectMake(0, 0, 82, 492-57)];
     self.leftViewContains.backgroundColor = [UIColor clearColor];
@@ -128,8 +150,11 @@ typedef void(^Finish)(void);
         case 1:
         {
             
-            [self.slideView startAnimationViewStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+            [dynamicViewMusic showAnimationStyle:DYNAMIC_MUSIC finish:^(UIView *amicView) {
+                NSLog(@"音乐移动完成");
             }];
+            [self dynamicAnimationView:dynamicViewMusic];
+
             [self contentViewAnimation:^{
                 NSLog(@"scrollView移动成功");
             }];
@@ -138,8 +163,10 @@ typedef void(^Finish)(void);
         case 2:
         {
             
-            [self.slideView startAnimationViewStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+            [dynamicViewCall showAnimationStyle:DYNAMIC_CALLZ finish:^(UIView *amicView) {
+                NSLog(@"新动画执行完成");
             }];
+            [self dynamicAnimationView:dynamicViewCall];
             [self contentViewAnimation:^{
                 NSLog(@"scrollView移动成功");
             }];
@@ -147,8 +174,9 @@ typedef void(^Finish)(void);
             break;
         case 3:
         {
-            [self.slideView startAnimationViewStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
+            [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
             }];
+            [self dynamicAnimationView:dynamicViewSet];
             [self contentViewAnimation:^{
                 NSLog(@"scrollView移动成功");
             }];
@@ -156,9 +184,7 @@ typedef void(^Finish)(void);
             break;
         case 4:
         {
-            [self.slideView dismissAnimationView:self.slideView.currentView animationFinish:^{
-                self.slideView.show = NO;
-            }];
+            [self dynamicdismissView];
             [self contentViewDismiss:^{
                 NSLog(@"消失");
             }];
@@ -170,6 +196,31 @@ typedef void(^Finish)(void);
             break;
     }
 }
+
+-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)frameDynamic {
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews2) {
+        if (viewSingle.showSingle) {
+            if (viewSingle  == frameDynamic) {
+                NSLog(@"显示的就是当前view，不需要再次进行推出操作");
+            }else{
+                viewSingle.showSingle = NO;
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+                [UIView animateWithDuration:.5f animations:^{
+                    frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+                } completion:^(BOOL finished) {
+                    frameDynamic.showSingle = YES;
+                }];
+            }
+        }else{
+            [UIView animateWithDuration:.5f animations:^{
+                frameDynamic.frame = CGRectMake(82, 0, 340, 435);
+            } completion:^(BOOL finished) {
+                frameDynamic.showSingle = YES;
+            }];
+        }
+    }
+}
+
 
 -(void)contentViewAnimation:(Finish)finish{
     [UIView animateWithDuration:.5f animations:^{
@@ -197,6 +248,17 @@ typedef void(^Finish)(void);
 
 -(void)homeBtnAction:(UIButton *)btn {
     NSLog(@"首页");
+}
+
+-(void)dynamicdismissView{
+    for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews2) {
+        if (viewSingle.showSingle) {
+            viewSingle.showSingle = NO;
+            [UIView animateWithDuration:.5f animations:^{
+                viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
+            }];
+        }
+    }
 }
 
 #pragma mark 单击
