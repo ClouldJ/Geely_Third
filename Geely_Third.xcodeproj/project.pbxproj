@@ -79,6 +79,13 @@
 		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
 		C239C5541DD49E970017F443 /* GeelyModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C239C5521DD49E970017F443 /* GeelyModeViewController.m */; };
 		C23DB1C81DE314C300665D6A /* 歌名收藏radio_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C23DB1C71DE314C300665D6A /* 歌名收藏radio_selected@2x.png */; };
+		C24BF6631DEC0127005008E5 /* 环绕声icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF65C1DEC0127005008E5 /* 环绕声icon@2x.png */; };
+		C24BF6641DEC0127005008E5 /* 手机电量icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF65D1DEC0127005008E5 /* 手机电量icon@2x.png */; };
+		C24BF6651DEC0127005008E5 /* 手机信号icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF65E1DEC0127005008E5 /* 手机信号icon@2x.png */; };
+		C24BF6661DEC0127005008E5 /* 无线充电icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF65F1DEC0127005008E5 /* 无线充电icon@2x.png */; };
+		C24BF6671DEC0127005008E5 /* 行车记录仪icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF6601DEC0127005008E5 /* 行车记录仪icon@2x.png */; };
+		C24BF6681DEC0127005008E5 /* 行驶中视频限制icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF6611DEC0127005008E5 /* 行驶中视频限制icon@2x.png */; };
+		C24BF6691DEC0127005008E5 /* WIFIicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C24BF6621DEC0127005008E5 /* WIFIicon@2x.png */; };
 		C24F91C01DBF386600CBE76F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24F91BF1DBF386600CBE76F /* MediaPlayer.framework */; };
 		C2549E261DE29F5700A97188 /* dqbf_dianji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2549E231DE29F5700A97188 /* dqbf_dianji@2x.png */; };
 		C2549E271DE29F5700A97188 /* wdsc_hui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2549E241DE29F5700A97188 /* wdsc_hui@2x.png */; };
@@ -788,6 +795,13 @@
 		C239C5511DD49E970017F443 /* GeelyModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyModeViewController.h; sourceTree = "<group>"; };
 		C239C5521DD49E970017F443 /* GeelyModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyModeViewController.m; sourceTree = "<group>"; };
 		C23DB1C71DE314C300665D6A /* 歌名收藏radio_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "歌名收藏radio_selected@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/歌名收藏radio_selected@2x.png"; sourceTree = "<group>"; };
+		C24BF65C1DEC0127005008E5 /* 环绕声icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "环绕声icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/环绕声icon@2x.png"; sourceTree = "<group>"; };
+		C24BF65D1DEC0127005008E5 /* 手机电量icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "手机电量icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/手机电量icon@2x.png"; sourceTree = "<group>"; };
+		C24BF65E1DEC0127005008E5 /* 手机信号icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "手机信号icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/手机信号icon@2x.png"; sourceTree = "<group>"; };
+		C24BF65F1DEC0127005008E5 /* 无线充电icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "无线充电icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/无线充电icon@2x.png"; sourceTree = "<group>"; };
+		C24BF6601DEC0127005008E5 /* 行车记录仪icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "行车记录仪icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/行车记录仪icon@2x.png"; sourceTree = "<group>"; };
+		C24BF6611DEC0127005008E5 /* 行驶中视频限制icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "行驶中视频限制icon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/行驶中视频限制icon@2x.png"; sourceTree = "<group>"; };
+		C24BF6621DEC0127005008E5 /* WIFIicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WIFIicon@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/WIFIicon@2x.png"; sourceTree = "<group>"; };
 		C24F91BF1DBF386600CBE76F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C2549E231DE29F5700A97188 /* dqbf_dianji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dqbf_dianji@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/dqbf_dianji@2x.png"; sourceTree = "<group>"; };
 		C2549E241DE29F5700A97188 /* wdsc_hui@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wdsc_hui@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/wdsc_hui@2x.png"; sourceTree = "<group>"; };
@@ -1670,6 +1684,13 @@
 		C263F7161DD40C9E00ED9EC4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C24BF65C1DEC0127005008E5 /* 环绕声icon@2x.png */,
+				C24BF65D1DEC0127005008E5 /* 手机电量icon@2x.png */,
+				C24BF65E1DEC0127005008E5 /* 手机信号icon@2x.png */,
+				C24BF65F1DEC0127005008E5 /* 无线充电icon@2x.png */,
+				C24BF6601DEC0127005008E5 /* 行车记录仪icon@2x.png */,
+				C24BF6611DEC0127005008E5 /* 行驶中视频限制icon@2x.png */,
+				C24BF6621DEC0127005008E5 /* WIFIicon@2x.png */,
 				C2B1EC151DE59017002C5121 /* png-compressed */,
 				C27C019F1DD9AC8E00C1A278 /* 中控-电台 */,
 				C27C01C21DD9AC8E00C1A278 /* phone on call */,
@@ -2966,6 +2987,7 @@
 				C263F8071DD40C9F00ED9EC4 /* 列表编辑foram@2x.png in Resources */,
 				2C0E97551DD46407002EEC72 /* bottom_bg_icon_03.png in Resources */,
 				C263F7F61DD40C9F00ED9EC4 /* nameofmusic@2x.png in Resources */,
+				C24BF6681DEC0127005008E5 /* 行驶中视频限制icon@2x.png in Resources */,
 				C263F98D1DD40F3100ED9EC4 /* GeelySettingAViewController.xib in Resources */,
 				C22F2AC51DE3EFDF0094626E /* GEELY Narrow regular 20151114.otf in Resources */,
 				C2B1EC791DE59017002C5121 /* 能量流动_00025.png in Resources */,
@@ -3064,6 +3086,7 @@
 				C263F7E11DD40C9E00ED9EC4 /* Geely_right_cell_cloud@2x.png in Resources */,
 				2C0E97621DD46407002EEC72 /* picture_right_imgs_03.png in Resources */,
 				C21D94321DDDA7C90035A173 /* Geely_11-17home_bgLeft@2x.png in Resources */,
+				C24BF6691DEC0127005008E5 /* WIFIicon@2x.png in Resources */,
 				C263FA4D1DD4127C00ED9EC4 /* Zki & Dobre-Listen To The Talk.mp3 in Resources */,
 				C27C02511DD9AC8F00C1A278 /* phone sos_00020.png in Resources */,
 				C2B1EC901DE59017002C5121 /* 能量流动_00048.png in Resources */,
@@ -3130,6 +3153,7 @@
 				C263F8501DD40C9F00ED9EC4 /* 车载热点c@2x.png in Resources */,
 				C263F80B1DD40C9F00ED9EC4 /* 多功能卡片calledlist@2x.png in Resources */,
 				C263F9851DD40F3100ED9EC4 /* GeelyCallToInputA.xib in Resources */,
+				C24BF6651DEC0127005008E5 /* 手机信号icon@2x.png in Resources */,
 				C22F2AF71DE463BE0094626E /* callinglist@2x.png in Resources */,
 				C2B505171DE5341700E90EB6 /* geely_slidebar_callingbg@2x.png in Resources */,
 				C22F2AFD1DE463BE0094626E /* keyboard_11_selected@2x.jpg in Resources */,
@@ -3223,6 +3247,7 @@
 				C263F9721DD40F3100ED9EC4 /* geelycalledlistlist.xib in Resources */,
 				C27C02601DD9AEE700C1A278 /* 序列帧救助中心@2x.png in Resources */,
 				C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */,
+				C24BF6631DEC0127005008E5 /* 环绕声icon@2x.png in Resources */,
 				C27C02211DD9AC8F00C1A278 /* phone on call_00001.png in Resources */,
 				C2B505191DE5386200E90EB6 /* 组-2123geelyslidecallwillright@2x.png in Resources */,
 				C263FA2B1DD410C400ED9EC4 /* geelyphonecalled.xib in Resources */,
@@ -3297,6 +3322,7 @@
 				C263F7EF1DD40C9F00ED9EC4 /* geelyhomeapp@2x.png in Resources */,
 				C263F7C01DD40C9E00ED9EC4 /* 12.3_ts_comfort_power-off_20160713@2x.png in Resources */,
 				C263F7EE1DD40C9F00ED9EC4 /* GeelyDisplayBackground@2x.png in Resources */,
+				C24BF6671DEC0127005008E5 /* 行车记录仪icon@2x.png in Resources */,
 				C27C02551DD9AC8F00C1A278 /* phone sos_00024.png in Resources */,
 				C263FA241DD410C400ED9EC4 /* GeelyCalledListTableViewCell.xib in Resources */,
 				C2B1ECA21DE59017002C5121 /* 能量流动_00066.png in Resources */,
@@ -3323,6 +3349,7 @@
 				C2B1EC891DE59017002C5121 /* 能量流动_00041.png in Resources */,
 				C27C020A1DD9AC8F00C1A278 /* 中控-电台_00012.png in Resources */,
 				C263F8181DD40C9F00ED9EC4 /* 左侧座椅设置airauto@2x.png in Resources */,
+				C24BF6641DEC0127005008E5 /* 手机电量icon@2x.png in Resources */,
 				C263F8541DD40C9F00ED9EC4 /* 选择icon@2x.png in Resources */,
 				C2549E5D1DE2F3FA00A97188 /* dianji_03@2x.png in Resources */,
 				C2B1EC631DE59017002C5121 /* 能量流动_00003.png in Resources */,
@@ -3385,6 +3412,7 @@
 				C263F9781DD40F3100ED9EC4 /* GeelyCallViewTableViewCell.xib in Resources */,
 				C263F7DF1DD40C9E00ED9EC4 /* Geely_home_status_left@2x.png in Resources */,
 				C27C022D1DD9AC8F00C1A278 /* phone on call_00013.png in Resources */,
+				C24BF6661DEC0127005008E5 /* 无线充电icon@2x.png in Resources */,
 				C2B1EC981DE59017002C5121 /* 能量流动_00056.png in Resources */,
 				C263F8391DD40C9F00ED9EC4 /* 电台musicg@2x.png in Resources */,
 				C263F8291DD40C9F00ED9EC4 /* 时间geelydisplay@2x.png in Resources */,

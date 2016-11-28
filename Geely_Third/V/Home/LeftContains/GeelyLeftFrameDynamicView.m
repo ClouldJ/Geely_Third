@@ -21,8 +21,18 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+        UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(frameDynamicViewSwipe:)];
+        swipe.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self addGestureRecognizer:swipe];
+        
     }
     return self;
+}
+
+#pragma mark 推出的SlideView添加返回手势
+-(void)frameDynamicViewSwipe:(UISwipeGestureRecognizer *)swipe {
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDEDISMISS object:nil];
 }
 
 

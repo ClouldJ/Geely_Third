@@ -346,13 +346,14 @@
 
     if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
         GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
-        [self.navigationController pushViewController:va animated:NO];
+        [self.navigationController presentViewController:va animated:YES completion:nil];
     }
 }
 
 -(void)tapGestureAir:(UITapGestureRecognizer *)tap {
     GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
-    [self.navigationController pushViewController:va animated:NO];
+//    [self.navigationController pushViewController:va animated:YES];
+    [self.navigationController presentViewController:va animated:YES completion:nil];
 }
 
 -(void)homeAction:(UITapGestureRecognizer *)tap {
@@ -360,9 +361,7 @@
 //    window.rootViewController = [[GeelyHomeViewController alloc] init];
     NSLog(@"单击处理");
     [self leftHiden];
-    [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-        NSLog(@"首页home建单击处理");
-    }];
+    [self dynamicdismissView];
 }
 
 -(void)longAction:(UILongPressGestureRecognizer *)longpres {

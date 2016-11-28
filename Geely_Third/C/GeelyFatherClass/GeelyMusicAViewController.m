@@ -297,7 +297,7 @@
             fmAm = YES;
             UIButton *btn = buttons_array[3];
             [btn setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
-            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
+            [self.contentScrollView scollAnimationAlphaOffSet:CGPointMake(0, 0)];
             
             UIButton *btn3 = buttons_array[2];
             UIButton *btn4 = buttons_array[4];
@@ -337,7 +337,8 @@
             fmAm = NO;
             UIButton *btn1 = buttons_array[3];
             [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
-            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
+            [self.contentScrollView scollAnimationAlphaOffSet:CGPointMake(1228, 0)];
+//            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
             
 #pragma mark 电台操作
             [[[SingleModel sharedInstance] singleMainRequest:@"Radio" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {

@@ -172,13 +172,13 @@
     
     if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
         GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
-        [self.navigationController pushViewController:va animated:NO];
+        [self.navigationController presentViewController:va animated:YES completion:nil];
     }
 }
 
 -(void)tapAction:(UITapGestureRecognizer *)tap {
     GeelyAutoViewController *va = [[GeelyAutoViewController alloc] init];
-    [self.navigationController pushViewController:va animated:NO];
+    [self.navigationController presentViewController:va animated:YES completion:nil];
 }
 
 -(void)addImageViewAnimate:(TopViewAnimationSuccessful)animation {

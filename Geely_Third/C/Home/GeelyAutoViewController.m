@@ -139,7 +139,8 @@
 -(void)actionGesture:(UISwipeGestureRecognizer *)gesture {
     if (gesture.direction == UISwipeGestureRecognizerDirectionDown) {
 //        NSLog(@"向上");
-        [self.navigationController popViewControllerAnimated:NO];
+//        [self.navigationController popViewControllerAnimated:NO];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 - (IBAction)rightAirControl:(id)sender {

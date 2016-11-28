@@ -16,4 +16,15 @@
     }];
 }
 
+-(void)scollAnimationAlphaOffSet:(CGPoint)point{
+    [UIView animateWithDuration:.5f animations:^{
+        self.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.contentOffset = point;
+        [UIView animateWithDuration:.5f animations:^{
+            self.alpha = 1;
+        }];
+    }];
+}
+
 @end

@@ -12,4 +12,6 @@
 
 -(void)scrollAnimationToOffSet:(CGPoint)offset;
 
+-(void)scollAnimationAlphaOffSet:(CGPoint)point;
+
 @end
