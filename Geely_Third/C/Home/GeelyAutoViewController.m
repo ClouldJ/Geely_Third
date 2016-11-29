@@ -8,9 +8,22 @@
 
 #import "GeelyAutoViewController.h"
 
-@interface GeelyAutoViewController () {
+
+#import "CWStarRateView.h"
+
+
+@interface GeelyAutoViewController () <CWStarRateViewDelegate> {
     UIImageView *wenduji_right;
     UIImageView *wenduji;
+    NSMutableArray *image_level_one;
+    NSMutableArray *image_level_two;
+    NSMutableArray *image_level_three;
+    NSMutableArray *image_level_four;
+    NSMutableArray *image_level_five;
+    NSMutableArray *image_level_six;
+    NSMutableArray *image_level_seven;
+    NSMutableArray *image_level_eight;
+
 }
 @property (weak, nonatomic) IBOutlet UIButton *rightShow;
 @property (weak, nonatomic) IBOutlet UIButton *leftShow;
@@ -23,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftSmall;
 @property (weak, nonatomic) IBOutlet UILabel *leftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *animationImageView;
 
 @end
 
@@ -31,8 +45,124 @@
 //    self.navigationController.navigationBar.alpha = 0;
 }
 
+-(void)actionOne{
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
+            [image_level_one addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
+            [image_level_one addObject:image];
+        }
+    }
+    [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:1000000 duration:2];
+}
+
+-(void)actionTwo{
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
+            [image_level_two addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"二级_000%d",i]];
+            [image_level_two addObject:image];
+        }
+    }
+}
+
+-(void)actionThree {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"三级_0000%d",i]];
+            [image_level_three addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"三级_000%d",i]];
+            [image_level_three addObject:image];
+        }
+    }
+}
+
+-(void)actionFour {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"四级_0000%d",i]];
+            [image_level_four addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"四级_000%d",i]];
+            [image_level_four addObject:image];
+        }
+    }
+}
+
+-(void)actionFive {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"五级_0000%d",i]];
+            [image_level_five addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"五级_000%d",i]];
+            [image_level_five addObject:image];
+        }
+    }
+}
+
+-(void)actionSix {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"六级_0000%d",i]];
+            [image_level_six addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"六级_000%d",i]];
+            [image_level_six addObject:image];
+        }
+    }
+}
+
+-(void)actionSeven {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"七级_0000%d",i]];
+            [image_level_seven addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"七级_000%d",i]];
+            [image_level_seven addObject:image];
+        }
+    }
+}
+
+-(void)actionEight {
+    for (int i =0; i<76; i++) {
+        if (i<10) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
+            [image_level_eight addObject:image];
+        }else{
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
+            [image_level_eight addObject:image];
+        }
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    image_level_one = [NSMutableArray array];
+    image_level_two = [NSMutableArray array];
+    image_level_three = [NSMutableArray array];
+    image_level_four = [NSMutableArray array];
+    image_level_five = [NSMutableArray array];
+    image_level_six = [NSMutableArray array];
+    image_level_seven = [NSMutableArray array];
+    image_level_eight = [NSMutableArray array];
+    
+    [NSThread detachNewThreadSelector:@selector(actionOne) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionTwo) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionThree) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionFour) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionFive) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionSix) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionSeven) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionEight) toTarget:self withObject:nil];
+
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionGesture:)];
     swipe.direction = UISwipeGestureRecognizerDirectionDown;
@@ -72,7 +202,15 @@
     
     self.leftLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:55];
     self.rightLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:55];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    CWStarRateView *ss = [[CWStarRateView alloc] initWithFrame:CGRectMake(510, 492-(61/2)-30, (96/2)*8, 61/2)];
+    ss.allowTouch = YES;
+    ss.backgroundColor = [UIColor clearColor];
+    ss.delegate = self;
+    ss.scorePercent = 0;
+    [self.contentImage addSubview:ss];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -157,6 +295,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+//TODO
+-(void)starRateView:(CWStarRateView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent {
+    [self.animationImageView stopAnimating];
+    if (newScorePercent == 0) {
+        [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:100000 duration:2];
+    }else if (newScorePercent == 2) {
+        [self.animationImageView startImageSequenceWithArray:image_level_two repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 3) {
+        [self.animationImageView startImageSequenceWithArray:image_level_three repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 4) {
+        [self.animationImageView startImageSequenceWithArray:image_level_four repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 5) {
+        [self.animationImageView startImageSequenceWithArray:image_level_five repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 6) {
+        [self.animationImageView startImageSequenceWithArray:image_level_six repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 7) {
+        [self.animationImageView startImageSequenceWithArray:image_level_seven repeatCount:100000 duration:2];
+
+    }else if (newScorePercent == 8) {
+        [self.animationImageView startImageSequenceWithArray:image_level_eight repeatCount:100000 duration:2];
+
+    }
+}
 
 /*
 #pragma mark - Navigation

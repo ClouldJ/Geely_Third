@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeelyAutoViewController">
             <connections>
+                <outlet property="animationImageView" destination="Ncc-oe-SjC" id="dYw-Cr-PY1"/>
                 <outlet property="contentImage" destination="ulW-Yu-M0s" id="bT0-pf-YZL"/>
                 <outlet property="leftBig" destination="5dW-j3-ktT" id="NwV-1q-6PG"/>
                 <outlet property="leftLabel" destination="4iT-GQ-fMI" id="FMW-0K-IS0"/>
@@ -31,11 +32,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epb-hV-nyi">
                     <rect key="frame" x="28" y="266" width="1310" height="492"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geely_autoair_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dasdasdasdadasdairauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
                             <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
                         </imageView>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="副驾座椅autoauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-P3-wcC">
-                            <rect key="frame" x="980" y="290" width="329.5" height="138"/>
+                            <rect key="frame" x="980" y="290" width="330" height="138"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="138" id="76g-ab-CgR"/>
                                 <constraint firstAttribute="width" constant="329.5" id="sgk-6o-0DO"/>
@@ -55,14 +56,14 @@
                             </connections>
                         </button>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="座椅autoauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-gg-sZN">
-                            <rect key="frame" x="0.0" y="290" width="322.5" height="138"/>
+                            <rect key="frame" x="0.0" y="290" width="323" height="138"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="322.5" id="09M-ne-vra"/>
                                 <constraint firstAttribute="height" constant="138" id="qWi-sG-sf8"/>
                             </constraints>
                         </imageView>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="左侧座椅设置airauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="5dW-j3-ktT">
-                            <rect key="frame" x="0.0" y="290" width="558" height="143.5"/>
+                            <rect key="frame" x="0.0" y="290" width="558" height="144"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="558" id="Gxv-lY-1N8"/>
                                 <constraint firstAttribute="height" constant="143.5" id="csv-2h-8F2"/>
@@ -86,6 +87,13 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-oe-SjC">
+                            <rect key="frame" x="285" y="97" width="740" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="740" id="OR8-XG-yJI"/>
+                                <constraint firstAttribute="height" constant="150" id="rbB-5w-7ea"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -97,6 +105,7 @@
                         <constraint firstAttribute="bottom" secondItem="3Of-O4-ts0" secondAttribute="bottom" constant="113" id="FeM-Np-hfv"/>
                         <constraint firstItem="5dW-j3-ktT" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="H7J-dr-viO"/>
                         <constraint firstItem="1P2-P3-wcC" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="980" id="ITM-Cy-E3W"/>
+                        <constraint firstItem="Ncc-oe-SjC" firstAttribute="centerX" secondItem="epb-hV-nyi" secondAttribute="centerX" id="Nqc-Hv-uYw"/>
                         <constraint firstAttribute="bottom" secondItem="Noz-7t-8Ju" secondAttribute="bottom" constant="124" id="OuZ-35-rnJ"/>
                         <constraint firstItem="nsy-zY-U3e" firstAttribute="top" secondItem="4iT-GQ-fMI" secondAttribute="top" id="PFD-Dv-9PI"/>
                         <constraint firstItem="1P2-P3-wcC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="290" id="PgP-hg-f9p"/>
@@ -105,6 +114,7 @@
                         <constraint firstAttribute="width" constant="1310" id="Wnc-b5-kWS"/>
                         <constraint firstAttribute="trailing" secondItem="Noz-7t-8Ju" secondAttribute="trailing" constant="134" id="ZyW-2q-DIN"/>
                         <constraint firstItem="Noz-7t-8Ju" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="1007" id="aCY-sU-ri8"/>
+                        <constraint firstItem="Ncc-oe-SjC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="97" id="bUY-sr-TvT"/>
                         <constraint firstAttribute="height" constant="492" id="bqc-95-RhG"/>
                         <constraint firstItem="3Of-O4-ts0" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="277" id="e0l-Eb-bH5"/>
                         <constraint firstAttribute="trailing" secondItem="nsy-zY-U3e" secondAttribute="trailing" constant="180" id="gEf-54-ctE"/>
@@ -132,7 +142,7 @@
     </objects>
     <resources>
         <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
-        <image name="geely_autoair_bg.png" width="1310" height="492"/>
+        <image name="dasdasdasdadasdairauto.png" width="1310" height="492"/>
         <image name="副驾座椅autoauto.png" width="329" height="138"/>
         <image name="右侧座椅设置airauto.png" width="559" height="143"/>
         <image name="左侧座椅设置airauto.png" width="558" height="143"/>
