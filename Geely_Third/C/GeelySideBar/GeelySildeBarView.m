@@ -9,6 +9,7 @@
 #import "GeelySildeBarView.h"
 
 #import "GeelySlideSettingCell.h"
+#import "GeelyBluetoothView.h"
 
 
 @interface GeelySildeBarView () <UITableViewDelegate,UITableViewDataSource,GeelyMusicCDAnimationViewDelegate> {
@@ -244,6 +245,13 @@
         case 2:
             //蓝牙
         {
+            if ([SingleModel sharedInstance].bluetooth) {
+                GeelyBluetoothView *view = [[GeelyBluetoothView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+                [view showAnimation];
+                [SingleModel sharedInstance].bluetooth = ![SingleModel sharedInstance].bluetooth;
+            }else{
+                [SingleModel sharedInstance].bluetooth = ![SingleModel sharedInstance].bluetooth;
+            }
             [dic setObject:@"2" forKey:@"style"];
         }
             break;

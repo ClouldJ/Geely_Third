@@ -445,6 +445,7 @@
 		C263FA4F1DD412F900ED9EC4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C263FA4E1DD412F900ED9EC4 /* Info.plist */; };
 		C26EFA311DD9677E0033559F /* Geely_home_red.png in Resources */ = {isa = PBXBuildFile; fileRef = C26EFA2F1DD9677E0033559F /* Geely_home_red.png */; };
 		C26EFA321DD9677E0033559F /* Geely_homeBtn_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C26EFA301DD9677E0033559F /* Geely_homeBtn_blue.png */; };
+		C27143601DED741200E6FCA3 /* bluetooth.xib in Resources */ = {isa = PBXBuildFile; fileRef = C271435F1DED741200E6FCA3 /* bluetooth.xib */; };
 		C27232CB1D9A23520070F431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C27232CA1D9A23520070F431 /* main.m */; };
 		C27232D71D9A23520070F431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27232D51D9A23520070F431 /* Main.storyboard */; };
 		C27232D91D9A23520070F431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27232D81D9A23520070F431 /* Assets.xcassets */; };
@@ -671,6 +672,8 @@
 		C2B5051B1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B5051A1DE5472C00E90EB6 /* 多功能卡片calling_bg@2x.png */; };
 		C2C0D2841DED4E4200DB4BED /* GeelyDisplayPowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F8661DD40D8300ED9EC4 /* GeelyDisplayPowerView.m */; };
 		C2D103EE1DED6BF4004176CA /* GeelyCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D103ED1DED6BF4004176CA /* GeelyCurrentViewController.m */; };
+		C2D103F01DED73A7004176CA /* GeelyBluetoothImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2D103EF1DED73A7004176CA /* GeelyBluetoothImage@2x.png */; };
+		C2D103F31DED73E7004176CA /* GeelyBluetoothView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D103F21DED73E7004176CA /* GeelyBluetoothView.m */; };
 		C2DCEFCF1DED2FB00088EA81 /* GeelyIconSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DCEFCB1DED2FB00088EA81 /* GeelyIconSelectedView.m */; };
 		C2DCEFD01DED2FB00088EA81 /* ImageIconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DCEFCD1DED2FB00088EA81 /* ImageIconModel.m */; };
 		C2DCEFD11DED2FB00088EA81 /* 省略号@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DCEFCE1DED2FB00088EA81 /* 省略号@2x.png */; };
@@ -1278,6 +1281,7 @@
 		C263FA4E1DD412F900ED9EC4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26EFA2F1DD9677E0033559F /* Geely_home_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Geely_home_red.png; path = ../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_home_red.png; sourceTree = "<group>"; };
 		C26EFA301DD9677E0033559F /* Geely_homeBtn_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Geely_homeBtn_blue.png; path = ../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_homeBtn_blue.png; sourceTree = "<group>"; };
+		C271435F1DED741200E6FCA3 /* bluetooth.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = bluetooth.xib; path = ../../../../../WillyZhao/Geely_Third/Geely_Third/V/PopView/bluetooth.xib; sourceTree = "<group>"; };
 		C27232C61D9A23520070F431 /* Geely_Third.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geely_Third.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27232CA1D9A23520070F431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C27232D61D9A23520070F431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1524,6 +1528,9 @@
 		C2C0D2851DED4EEB00DB4BED /* GeelyLeftFrameDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyLeftFrameDynamicView.h; path = ../../../../../../WillyZhao/Geely_Third/Geely_Third/V/Home/LeftContains/GeelyLeftFrameDynamicView.h; sourceTree = "<group>"; };
 		C2D103EC1DED6BF4004176CA /* GeelyCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyCurrentViewController.h; path = ../../../../WillyZhao/Geely_Third/Geely_Third/M/GeelyCurrentViewController.h; sourceTree = "<group>"; };
 		C2D103ED1DED6BF4004176CA /* GeelyCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeelyCurrentViewController.m; path = ../../../../WillyZhao/Geely_Third/Geely_Third/M/GeelyCurrentViewController.m; sourceTree = "<group>"; };
+		C2D103EF1DED73A7004176CA /* GeelyBluetoothImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GeelyBluetoothImage@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/GeelyBluetoothImage@2x.png"; sourceTree = "<group>"; };
+		C2D103F11DED73E7004176CA /* GeelyBluetoothView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyBluetoothView.h; path = ../../../../../WillyZhao/Geely_Third/Geely_Third/V/PopView/GeelyBluetoothView.h; sourceTree = "<group>"; };
+		C2D103F21DED73E7004176CA /* GeelyBluetoothView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeelyBluetoothView.m; path = ../../../../../WillyZhao/Geely_Third/Geely_Third/V/PopView/GeelyBluetoothView.m; sourceTree = "<group>"; };
 		C2DCEFCA1DED2FB00088EA81 /* GeelyIconSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyIconSelectedView.h; sourceTree = "<group>"; };
 		C2DCEFCB1DED2FB00088EA81 /* GeelyIconSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyIconSelectedView.m; sourceTree = "<group>"; };
 		C2DCEFCC1DED2FB00088EA81 /* ImageIconModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageIconModel.h; sourceTree = "<group>"; };
@@ -1697,6 +1704,7 @@
 		C263F7161DD40C9E00ED9EC4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2D103EF1DED73A7004176CA /* GeelyBluetoothImage@2x.png */,
 				C2DCEFD21DED31480088EA81 /* 空调11_29image@2x.png */,
 				C24BF65C1DEC0127005008E5 /* 环绕声icon@2x.png */,
 				C24BF65D1DEC0127005008E5 /* 手机电量icon@2x.png */,
@@ -2419,6 +2427,9 @@
 				C263F9F41DD410C400ED9EC4 /* GeelySettingLittleView.h */,
 				C263F9F51DD410C400ED9EC4 /* GeelySettingLittleView.m */,
 				C263F9F61DD410C400ED9EC4 /* presentPhoneView.xib */,
+				C2D103F11DED73E7004176CA /* GeelyBluetoothView.h */,
+				C2D103F21DED73E7004176CA /* GeelyBluetoothView.m */,
+				C271435F1DED741200E6FCA3 /* bluetooth.xib */,
 			);
 			path = PopView;
 			sourceTree = "<group>";
@@ -3171,6 +3182,7 @@
 				C2962E4C1DE28FD90038446E /* diantai_hui@2x.png in Resources */,
 				C27C022F1DD9AC8F00C1A278 /* phone on call_00015.png in Resources */,
 				C2B1EC671DE59017002C5121 /* 能量流动_00007.png in Resources */,
+				C2D103F01DED73A7004176CA /* GeelyBluetoothImage@2x.png in Resources */,
 				C263FA371DD410C400ED9EC4 /* GeelySettingTableViewCellWord.xib in Resources */,
 				C263F83D1DD40C9F00ED9EC4 /* 矩形-30-拷贝-9setting@2x.png in Resources */,
 				C2B1EC6C1DE59017002C5121 /* 能量流动_00012.png in Resources */,
@@ -3466,6 +3478,7 @@
 				C27C019C1DD99C6600C1A278 /* 音量red.png in Resources */,
 				C27C01FF1DD9AC8F00C1A278 /* 中控-电台_00001.png in Resources */,
 				C27C02231DD9AC8F00C1A278 /* phone on call_00003.png in Resources */,
+				C27143601DED741200E6FCA3 /* bluetooth.xib in Resources */,
 				C2B1EC9A1DE59017002C5121 /* 能量流动_00058.png in Resources */,
 				C2B1EC681DE59017002C5121 /* 能量流动_00008.png in Resources */,
 				C28536AB1DE6B891009AB3E5 /* settingtop@2x.png in Resources */,
@@ -3620,6 +3633,7 @@
 				C263F8EC1DD40D8300ED9EC4 /* AFImageDownloader.m in Sources */,
 				C263FA1D1DD410C400ED9EC4 /* GeelyLittleSettingTableViewCell.m in Sources */,
 				C263F9891DD40F3100ED9EC4 /* GeelyMusicAViewController.m in Sources */,
+				C2D103F31DED73E7004176CA /* GeelyBluetoothView.m in Sources */,
 				C263F8E61DD40D8300ED9EC4 /* AFNetworkReachabilityManager.m in Sources */,
 				C263F8F81DD40D8300ED9EC4 /* HGRequest.m in Sources */,
 				C263FA411DD4110400ED9EC4 /* ZXPAutoLayout.m in Sources */,

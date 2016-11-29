@@ -86,6 +86,8 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableArray *iconIndexArray;
 
+@property (nonatomic, assign) BOOL bluetooth;
+
 //-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 
 @end
