@@ -32,4 +32,6 @@
 
 #import "UIImageView+ImageSequence.h"
 
+#import "GeelyCurrentViewController.h"
+
 #endif

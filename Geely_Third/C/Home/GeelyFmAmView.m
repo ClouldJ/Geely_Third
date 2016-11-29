@@ -18,6 +18,7 @@
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"geelyfman" owner:self options:nil]firstObject];
         self.frame = frame;
+        
 //        [self loadSubViews];
     }
     return self;

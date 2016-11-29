@@ -76,6 +76,15 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableArray *dynamicViews2;
 
+/**
+ 以下为单例保存icon的选中状态
+ */
+
+@property (nonatomic, strong) NSMutableArray *iconDataArr;
+
+@property (nonatomic, strong) NSArray *iconData_Image;
+
+@property (nonatomic, strong) NSMutableArray *iconIndexArray;
 
 //-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 

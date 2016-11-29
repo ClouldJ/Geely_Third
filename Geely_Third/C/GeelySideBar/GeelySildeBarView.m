@@ -14,6 +14,7 @@
 @interface GeelySildeBarView () <UITableViewDelegate,UITableViewDataSource,GeelyMusicCDAnimationViewDelegate> {
     NSMutableArray *images;
     BOOL FMAM;
+    NSInteger indexCellSelected;
 }
 
 @end
@@ -176,6 +177,36 @@
     GeelySlideSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cella" forIndexPath:indexPath];
     [cell cellModel:indexPath];
     cell.backgroundColor = [UIColor clearColor];
+    
+//    switch (indexPath.row) {
+//        case 0:
+//            indexCellSelected = 5;
+//            break;
+//        case 1:
+//            indexCellSelected = 6;
+//            break;
+//        case 2:
+//            indexCellSelected = 2;
+//            break;
+//        case 3:
+//            indexCellSelected = 1;
+//            break;
+//        case 4:
+//            indexCellSelected = 7;
+//            break;
+//        case 5:
+//            indexCellSelected = 4;
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    for (NSString *str in [SingleModel sharedInstance].iconIndexArray) {
+//        if ([str integerValue] == indexCellSelected) {
+//            cell.cell_selected = YES;
+//        }
+//    }
+    
     return cell;
 }
 
@@ -184,7 +215,59 @@
     GeelySlideSettingCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.cell_selected = !cell.cell_selected;
     [cell cellReset:indexPath];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    
+    GeelyCurrentViewController *currentViewController =  [[GeelyCurrentViewController alloc] init];
+    
+    NSString *className = NSStringFromClass([[currentViewController topViewController] class]);
+    
+    if ([className isEqualToString:@"GeelyWeatherViewController"]) {
+        [dic setObject:@"3" forKey:@"classCurrent"];
+    }else if ([className isEqualToString:@"GeelyCallAViewController"] || [className isEqualToString:@"GeelyMusicAViewController"] || [className isEqualToString:@"GeelySettingAViewController"]){
+        [dic setObject:@"2" forKey:@"classCurrent"];
+    }else if ([className isEqualToString:@"GeelyHomeViewController"]){
+        [dic setObject:@"1" forKey:@"classCurrent"];
+    }
+    
+    NSLog(@"--------------------当前显示的controller：%@",className);
+//    [dic setObject:className forKey:@"classCurrent"];
+    
+    switch (indexPath.row) {
+        case 0:
+            //无线充电
+            [dic setObject:@"5" forKey:@"style"];
+            break;
+        case 1:
+            //环绕声
+            [dic setObject:@"6" forKey:@"style"];
+            break;
+        case 2:
+            //蓝牙
+        {
+            [dic setObject:@"2" forKey:@"style"];
+        }
+            break;
+        case 3:
+            //车载热点
+            [dic setObject:@"1" forKey:@"style"];
+            break;
+        case 4:
+            //行驶中视频限制
+            [dic setObject:@"7" forKey:@"style"];
+            break;
+        case 5:
+            //行车记录仪
+            [dic setObject:@"4" forKey:@"style"];
+            break;
+        default:
+            break;
+    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDESETTINGSTYLE object:nil userInfo:dic];
+
 }
+
+
 
 #pragma mark GeelyMusicCDAnimationViewDelegate
 -(float)musicTime {

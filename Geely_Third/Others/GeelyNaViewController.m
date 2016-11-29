@@ -12,6 +12,7 @@
 #import "GeelyNoVoliceView.h"
 #import "GeelyNo.h"
 #import "GeelyScreenView.h"
+#import "ImageIconModel.h"
 
 @interface GeelyNaViewController () {
     MainRequest *request;
@@ -59,8 +60,29 @@
     [SingleModel sharedInstance].isMusic = NO;
    timer =  [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(urlAction) userInfo:nil repeats:YES];
     
+    //初始化设置侧边栏icon需要的数据
     
+    ImageIconModel *model1 = [[ImageIconModel alloc] init];
+    ImageIconModel *model2 = [[ImageIconModel alloc] init];
+    ImageIconModel *model3 = [[ImageIconModel alloc] init];
+    ImageIconModel *model4 = [[ImageIconModel alloc] init];
     
+    model1.tag = 1;
+    model1.imageName = @"WIFIicon";
+    
+    model2.tag = 2;
+    model2.imageName = @"手机信号icon";
+    
+    model3.tag = 3;
+    model3.imageName = @"手机电量icon";
+    
+    model4.tag = 4;
+    model4.imageName = @"行车记录仪icon";
+
+    
+    [SingleModel sharedInstance].iconDataArr = [NSMutableArray array];
+    [SingleModel sharedInstance].iconData_Image = [NSMutableArray arrayWithObjects:model1,model2,model3,model4, nil];
+    [SingleModel sharedInstance].iconIndexArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4", nil];
     // Do any additional setup after loading the view.
 }
 

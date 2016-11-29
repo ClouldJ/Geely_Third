@@ -77,28 +77,63 @@
 }
 
 -(void)cellModel:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-            self.imageVV.image = [UIImage imageNamed:@"hui_01"];
+    
+    for (NSString *str in [SingleModel sharedInstance].iconIndexArray) {
+        NSInteger ii = [str integerValue];
+        
+        
+        if (ii == 1&&indexPath.row==3) {
+            self.imageVV.image = [UIImage imageNamed:@"dianji_04"];
+            self.cell_selected = YES;
             break;
-        case 1:
-            self.imageVV.image = [UIImage imageNamed:@"hui_02"];
+        }else if (((ii == 2)||(ii == 3))&&(indexPath.row == 2)){
+            self.imageVV.image = [UIImage imageNamed:@"dianji_03"];
+            self.cell_selected = YES;
             break;
-        case 2:
-            self.imageVV.image = [UIImage imageNamed:@"hui_03"];
+        }else if (ii == 4&&indexPath.row == 5){
+            self.imageVV.image = [UIImage imageNamed:@"dianji_06"];
+            self.cell_selected = YES;
             break;
-        case 3:
-            self.imageVV.image = [UIImage imageNamed:@"hui_04"];
+        }else if (ii == 5 &&indexPath.row == 0){
+            self.imageVV.image = [UIImage imageNamed:@"dianji_01"];
+            self.cell_selected = YES;
             break;
-        case 4:
-            self.imageVV.image = [UIImage imageNamed:@"hui_05"];
+        }else if (ii == 6&&indexPath.row == 1){
+            self.imageVV.image = [UIImage imageNamed:@"dianji_02"];
+            self.cell_selected = YES;
             break;
-        case 5:
-            self.imageVV.image = [UIImage imageNamed:@"hui_06"];
+        }else if (ii == 7&&indexPath.row == 4){
+            self.imageVV.image = [UIImage imageNamed:@"dianji_05"];
+            self.cell_selected = YES;
             break;
-        default:
-            break;
+        }else{
+            switch (indexPath.row) {
+                case 0:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_01"];
+                    break;
+                case 1:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_02"];
+                    break;
+                case 2:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_03"];
+                    break;
+                case 3:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_04"];
+                    break;
+                case 4:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_05"];
+                    break;
+                case 5:
+                    self.imageVV.image = [UIImage imageNamed:@"hui_06"];
+                    break;
+                default:
+                    break;
+            }
+        }
+ 
     }
+    
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

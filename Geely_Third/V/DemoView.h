@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GeelyIconSelectedView.h"
+
+
 @interface DemoView : UIView
+
+@property (nonatomic, strong) GeelyIconSelectedView *iconView;
+
 
 @end

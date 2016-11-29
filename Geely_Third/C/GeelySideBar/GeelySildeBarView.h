@@ -13,7 +13,15 @@
 #import "GeelyLeftFrameDynamicView.h"
 @class GeelyLeftFrameDynamicView;
 
+@protocol GeelySildeBarViewDelegate <NSObject>
+
+-(void)geelySettingSlideViewSelectedWith:(NSInteger)index;
+
+@end
+
 @interface GeelySildeBarView : UIView
+
+@property (nonatomic, assign) id<GeelySildeBarViewDelegate> delegate;
 
 @property (nonatomic, strong) UIImageView *bg_imageView;            //背景
 @property (nonatomic, strong) UITableView *setting_tableView;       //设置内容

@@ -22,6 +22,7 @@ typedef void(^Finish)(void);
     GeelyLeftFrameDynamicView *dynamicViewCall;
     
     GeelyLeftFrameDynamicView *dynamicViewSet;
+    DemoView *vv_bottom;
 }
 //@property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -32,10 +33,24 @@ typedef void(^Finish)(void);
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
     
     NSLog(@"%@ will Appear", NSStringFromClass([self class]));
 }
-
+#pragma mark 状态栏图标切换
+-(void)iconSelected:(NSNotification *)na {
+    NSDictionary *dic = na.userInfo;
+    
+//    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
+    
+    if ([dic[@"classCurrent"] isEqualToString:@"3"]) {
+//        NSLog(@"收到通知的controller:%@",str);
+        [vv_bottom.iconView btnCheckTags:[dic[@"style"] integerValue] dataIndex:[dic[@"style"] integerValue]];
+        if ([dic[@"style"] integerValue] == 2) {
+            [vv_bottom.iconView btnCheckTags:3 dataIndex:3];
+        }
+    }
+}
 #pragma mark 接收返回事件通知
 -(void)backDynamicView {
     [self dynamicdismissView];
@@ -96,18 +111,17 @@ typedef void(^Finish)(void);
     self.leftViewContains.tableView_.delegate = self;
     [self.contentView addSubview:self.leftViewContains];
     
-    DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
-    demo.backgroundColor = [UIColor clearColor];
+    vv_bottom = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
+    vv_bottom.backgroundColor = [UIColor clearColor];
     UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
     sw_air.direction = UISwipeGestureRecognizerDirectionUp;
-    [demo addGestureRecognizer:sw_air];
+    [vv_bottom addGestureRecognizer:sw_air];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [demo addGestureRecognizer:tap];
+    [vv_bottom addGestureRecognizer:tap];
     [tap requireGestureRecognizerToFail:sw_air];
     
     
-    
-    [self.contentView addSubview:demo];
+    [self.contentView addSubview:vv_bottom];
     
     self.scrollView_ = [[UIScrollView alloc] initWithFrame:CGRectMake(82, 0, 1310-82, 435)];
     self.scrollView_.backgroundColor = [UIColor clearColor];

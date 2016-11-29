@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "VoliceView.h"
+#import "GeelyIconSelectedView.h"
 
 
 @interface GeelyBottomAirAutoView : UIView
 
 @property (nonatomic, strong) VoliceView *vv;
+
+@property (nonatomic, strong) GeelyIconSelectedView *iconView;
 
 @end

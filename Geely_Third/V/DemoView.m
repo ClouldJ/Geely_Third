@@ -17,8 +17,14 @@
     if (self = [super initWithFrame:frame]) {
         UIImageView *im = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         im.userInteractionEnabled = YES;
-        im.image = [UIImage imageNamed:@"空调wqqweqw"];
+        im.image = [UIImage imageNamed:@"空调11_29image"];
         [self addSubview:im];
+        
+        self.iconView = [[GeelyIconSelectedView alloc] initWithFrame:CGRectMake(0, 20, 300, (self.frame.size.height-39/2)/2)];
+        self.iconView.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.iconView];
+        
+
         
         VoliceView *vv = [[VoliceView alloc] initWithFrame:CGRectMake(1940/2, 0, 185, 57)];
         [self addSubview:vv];
@@ -30,10 +36,15 @@
     if (self = [super initWithCoder:aDecoder]) {
         UIImageView *im = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1310, 57)];
         im.userInteractionEnabled = YES;
-        im.image = [UIImage imageNamed:@"空调wqqweqw"];
+        im.image = [UIImage imageNamed:@"空调11_29image"];
         [self addSubview:im];
         
         self.backgroundColor = [UIColor clearColor];
+        
+        self.iconView = [[GeelyIconSelectedView alloc] initWithFrame:CGRectMake(0, 20, 300, (57-39/2)/2)];
+        self.iconView.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.iconView];
+    
         
         VoliceView *vv = [[VoliceView alloc] initWithFrame:CGRectMake(1940/2, 0, 185, 57)];
         [self addSubview:vv];

@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "GeelySildeBarView.h"
+@class GeelyLeftFrameDynamicView;
 
+@protocol GeelyLeftFrameDynamicViewDelate <NSObject>
+
+-(void)check;
+-(void)didSelectedDynamciSetView:(GeelyLeftFrameDynamicView *)view selectedIndex:(NSInteger)index;
+
+@end
 typedef enum {
     DYNAMIC_MUSIC,                                  //音乐小侧边
     DYNAMIC_RADIO,                                  //电台小侧边
@@ -22,8 +28,17 @@ typedef void(^GeelyDynamicFinish)();
 
 typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 
+//@protocol GeelyLeftFrameDynamicDelegate <NSObject>
+//
+//
+//
+//@end
+
 
 @interface GeelyLeftFrameDynamicView : UIView
+
+
+@property (nonatomic, assign) id<GeelyLeftFrameDynamicViewDelate> delegate;
 
 -(instancetype)initWithFrame:(CGRect)frame;
 

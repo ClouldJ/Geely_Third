@@ -39,7 +39,7 @@
 #define DEV_W [UIScreen mainScreen].bounds.size.width
 #define BASEHEIGHT ((2732*720)/1920)/2
 
-@interface GeelyHomeViewController () <GeelyLeftContainsDelegate,GeelyMusicCDAnimationViewDelegate,GeelyPhoneInputViewDelegate,GeelyDisplayPowerViewDelegate,GeelyPhoneCalledViewDelegate,GeelyContentInfoViewDelegate,GeelyMusicLittleViewDelegate,UIGestureRecognizerDelegate,GeelyRightContainsViewMoveDelegate> {
+@interface GeelyHomeViewController () <GeelyLeftContainsDelegate,GeelyMusicCDAnimationViewDelegate,GeelyPhoneInputViewDelegate,GeelyDisplayPowerViewDelegate,GeelyPhoneCalledViewDelegate,GeelyContentInfoViewDelegate,GeelyMusicLittleViewDelegate,GeelyLeftFrameDynamicViewDelate,UIGestureRecognizerDelegate,GeelyRightContainsViewMoveDelegate> {
     /**
      **leftView    左侧视图容器**
      **contentView 中间视图容器**
@@ -126,9 +126,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
 }
 
+#pragma mark 状态栏图标切换
+-(void)iconSelected:(NSNotification *)na {
+    NSDictionary *dic = na.userInfo;
+    
+//    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
+    if ([dic[@"classCurrent"] isEqualToString:@"1"]) {
+//        NSLog(@"收到通知的controller:%@",str);
+        [vv_bottom.iconView btnCheckTags:[dic[@"style"] integerValue] dataIndex:[dic[@"style"] integerValue]];
+        if ([dic[@"style"] integerValue] == 2) {
+            [vv_bottom.iconView btnCheckTags:3 dataIndex:3];
+        }
+    }
 
+}
 
 #pragma mark 首页返回事件处理
 -(void)backDynamicView{
@@ -203,10 +217,6 @@
     [self.view addSubview:baseView];
     
 #pragma mark 首页逻辑需调整位置
-    //TODO 先加载需要推出的视图，再加载那张背景图，接着加载左右按钮
-//    dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_MUSIC];
-//    dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_CALLZ];
-//    dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435) animateStyle:DYNAMIC_SETTZ];
 
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -215,12 +225,15 @@
     [baseView addSubview:imageViewContentBG];
     
     dynamicViewMusic = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    dynamicViewMusic.delegate = self;
     [baseView addSubview:dynamicViewMusic];
     
     dynamicViewSet = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    dynamicViewSet.delegate = self;
     [baseView addSubview:dynamicViewSet];
     
     dynamicViewCall = [[GeelyLeftFrameDynamicView alloc] initWithFrame:CGRectMake(110-340, 0, 340, 435)];
+    dynamicViewCall.delegate = self;
     [baseView addSubview:dynamicViewCall];
 #pragma mark 初始化单例中的数据源，用来保存显示的view
     [SingleModel sharedInstance].dynamicViews = [NSMutableArray arrayWithObjects:dynamicViewMusic,dynamicViewCall,dynamicViewSet, nil];
@@ -230,11 +243,7 @@
     imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
     [baseView addSubview:imageNewBg];
     
-//    UIImageView *imageView_bottom = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"空调wqqweqw"]];
-//    imageView_bottom.frame = CGRectMake(0, baseView.frame.size.height - 57, 1310, 57);
-//    imageView_bottom.backgroundColor = [UIColor clearColor];
-//    imageView_bottom.userInteractionEnabled = YES;
-//    [baseView addSubview:imageView_bottom];
+
     
     
     vv_bottom = [[GeelyBottomAirAutoView alloc] initWithFrame:CGRectMake(0, baseView.frame.size.height - 57, 1310, 57)];
@@ -243,7 +252,7 @@
     
     UIButton *air_button = [[UIButton alloc] initWithFrame:CGRectMake(1180/2-212, 0, 552, 57)];
     air_button.backgroundColor = [UIColor clearColor];
-//    [air_button addTarget:self action:@selector(buttonAUTOAction:) forControlEvents:UIControlEventTouchUpInside];
+
     [vv_bottom addSubview:air_button];
     
     UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
@@ -255,60 +264,6 @@
     [tap_air requireGestureRecognizerToFail:sw_air];
     
     [self loadleftView:leftView contentView:contentView rightView:rightView];
-    
-//    presentScrollView = [[[NSBundle mainBundle] loadNibNamed:@"presentPhoneView" owner:self options:nil]firstObject];
-//    presentScrollView.backgroundColor = [UIColor clearColor];
-//    presentScrollView.frame = CGRectMake(82, 0, 0, 0);
-//    [baseView addSubview:presentScrollView];
-//    
-//    [SingleModel sharedInstance].didView = presentScrollView;
-//    
-//    viewScroll = (UIScrollView *)[presentScrollView viewWithTag:20160129];
-//    viewScroll.pagingEnabled = YES;
-//    viewScroll.scrollEnabled = NO;
-//    viewScroll.contentSize = CGSizeMake(340*3, 435*3);
-
-    
-//    //给侧面弹出视图添加view
-//    GeelyPhoneInputView *phoneInputView = [[GeelyPhoneInputView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
-//    phoneInputView.backgroundColor = [UIColor clearColor];
-//    phoneInputView.delegate = self;
-//    [viewScroll addSubview:phoneInputView];
-//    
-//    //setting
-//    GeelySettingLittleView *setting = [[GeelySettingLittleView alloc] initWithFrame:CGRectMake(340, 0, 340, 435)];
-//    [viewScroll addSubview:setting];
-//    
-//    //music
-//    musica = [[GeelyMusicLittleView alloc] initWithFrame:CGRectMake(340*2, 0, 340, 435)];
-//    musica.delegate = self;
-//    [viewScroll addSubview:musica];
-    
-//    GeelyMediaLittleView *media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(340*3, 0, 340, 435)];
-//    media.block = ^(){
-//        [acPlayer play];
-//        viewScroll.contentOffset = CGPointMake(340*2, 0);
-//        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-//        
-//        mainRequest.requestMusic.type = @1;
-//        mainRequest.requestPhone.type = @0;
-//        mainRequest.requestVoice.type = @0;
-//        mainRequest.requestRadio.type = @0;
-//        mainRequest.requestVolume.type = @1;
-//        mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-//        
-//        
-//        [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//        }];
-//
-//    };
-//    [viewScroll addSubview:media];
-    
-//    GeelyCalledListView *calledList = [[GeelyCalledListView alloc] initWithFrame:CGRectMake(340*4, 0, 340, 435)];
-//    [viewScroll addSubview:calledList];
     
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
@@ -1142,6 +1097,11 @@
         [self rightViewMoveToRight];
         imageNewBg.hidden = NO;
     }
+}
+
+#pragma mark 设置的点击
+-(void)didSelectedDynamciSetView:(GeelyLeftFrameDynamicView *)view selectedIndex:(NSInteger)index {
+    NSLog(@"点击了侧边栏设置:%ld",index);
 }
 
 /*

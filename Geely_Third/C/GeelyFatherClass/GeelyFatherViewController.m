@@ -32,6 +32,8 @@
     GeelyLeftFrameDynamicView *dynamicViewSet;
     
     BOOL showED;
+    
+    DemoView *vv_bottom;
 }
 
 @end
@@ -41,8 +43,25 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(littleShowDismiss:) name:SLIDEDISMISS object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected1:) name:SLIDESETTINGSTYLE object:nil];
+
     NSLog(@"%@ will appear",NSStringFromClass([self class]));
+}
+
+#pragma mark 状态栏图标切换
+-(void)iconSelected1:(NSNotification *)na {
+    NSDictionary *dic = na.userInfo;
+    
+//    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
+    
+    if ([dic[@"classCurrent"] isEqualToString:@"2"]) {
+//        NSLog(@"收到通知的controller:%@",str);
+
+        [vv_bottom.iconView btnCheckTags:[dic[@"style"] integerValue] dataIndex:[dic[@"style"] integerValue]];
+        if ([dic[@"style"] integerValue] == 2) {
+            [vv_bottom.iconView btnCheckTags:3 dataIndex:3];
+        }
+    }
 }
 
 -(void)littleShowDismiss:(NSNotification *)na {
@@ -155,15 +174,15 @@
 //    [leftFrameScroll addScrollView];
 //    [self.contentView addSubview:leftFrameScroll];
     
-    DemoView *demo = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
-    demo.backgroundColor = [UIColor clearColor];
+    vv_bottom = [[DemoView alloc] initWithFrame:CGRectMake(0, (492-57), 1310, 57)];
+    vv_bottom.backgroundColor = [UIColor clearColor];
     UISwipeGestureRecognizer *sw_air = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAir:)];
     sw_air.direction = UISwipeGestureRecognizerDirectionUp;
-    [demo addGestureRecognizer:sw_air];
+    [vv_bottom addGestureRecognizer:sw_air];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [demo addGestureRecognizer:tap];
+    [vv_bottom addGestureRecognizer:tap];
     
-    [self.contentView addSubview:demo];
+    [self.contentView addSubview:vv_bottom];
     [tap requireGestureRecognizerToFail:sw_air];
 
 }

@@ -11,7 +11,7 @@
 #import "GeelySildeBarView.h"
 #import "CellPhoneView.h"
 
-@interface GeelyLeftFrameDynamicView () <UITableViewDelegate,UITableViewDataSource> {
+@interface GeelyLeftFrameDynamicView () <UITableViewDelegate,GeelySildeBarViewDelegate,UITableViewDataSource> {
     
 }
 
@@ -53,6 +53,7 @@
         {
             //电台
             GeelySildeBarView *df = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_RADIO];
+//            df.delegate = self;
             [self addSubview:df];
             [self animationView:df finish:finish style:DYNAMIC_RADIO];
         }
@@ -61,6 +62,7 @@
         {
             //输入电话
             GeelySildeBarView *vd = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_CALLZ];
+//            vd.delegate = self;
             [self addSubview:vd];
             [self animationView:vd finish:finish style:DYNAMIC_CALLZ];
         }
@@ -79,6 +81,7 @@
         {
             //设置
             GeelySildeBarView *vf = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_SETTZ];
+//            vf.delegate = self;
             [self addSubview:vf];
             [self animationView:vf finish:finish style:DYNAMIC_SETTZ];
         }
@@ -87,6 +90,12 @@
             break;
     }
     
+}
+
+#pragma mark 设置点击效果
+-(void)geelySettingSlideViewSelectedWith:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(didSelectedDynamciSetView:selectedIndex:)]&&self.delegate) {
+            }
 }
 
 -(void)animationView:(GeelySildeBarView *)view finish:(GeelyDynamicFinishView)finish style:(GeelyDynamicViewStyle)style{
