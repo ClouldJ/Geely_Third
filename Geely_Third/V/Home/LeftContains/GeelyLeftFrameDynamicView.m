@@ -7,8 +7,7 @@
 //
 
 #import "GeelyLeftFrameDynamicView.h"
-
-#import "GeelySildeBarView.h"
+#import "GeelyCurrentView.h"
 #import "CellPhoneView.h"
 
 @interface GeelyLeftFrameDynamicView () <UITableViewDelegate,GeelySildeBarViewDelegate,UITableViewDataSource> {
@@ -142,9 +141,9 @@
 
 -(void)showAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish {
     
-    if (currentSlide) {
-        [currentSlide removeFromSuperview];
-        currentSlide = nil;
+    if ([GeelyCurrentView sharedInstance].slideView) {
+        [[GeelyCurrentView sharedInstance].slideView removeFromSuperview];
+        [GeelyCurrentView sharedInstance].slideView = nil;
     }
     
     switch (style) {
@@ -153,7 +152,7 @@
             GeelySildeBarView *na = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_MUSIC];
             na.backgroundColor = [UIColor clearColor];
             [self addSubview:na];
-            currentSlide = na;
+            [GeelyCurrentView sharedInstance].slideView = na;
         }
             break;
         case DYNAMIC_CALLZ:
@@ -161,7 +160,7 @@
             GeelySildeBarView *na1 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_CALLZ];
             na1.backgroundColor = [UIColor clearColor];
             [self addSubview:na1];
-            currentSlide = na1;
+            [GeelyCurrentView sharedInstance].slideView = na1;
         }
             break;
         case DYNAMIC_SETTZ:
@@ -169,7 +168,7 @@
             GeelySildeBarView *na2 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_SETTZ];
             na2.backgroundColor = [UIColor clearColor];
             [self addSubview:na2];
-            currentSlide = na2;
+            [GeelyCurrentView sharedInstance].slideView = na2;
         }
             break;
         default:

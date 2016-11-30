@@ -7,6 +7,7 @@
 //
 
 #import "GeelyHomeViewController.h"
+#import "GeelySildeBarView.h"
 
 #import "GeelyContentBottomView.h"
 #import "GeelyAutoViewController.h"
@@ -115,26 +116,21 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPresentView:) name:DISMISS object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dididididdididi) name:@"geelyfin" object:nil];
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:@"left" forKey:@"dismiss"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DISMISS object:nil userInfo:dic];
-    //添加驾驶模式转换通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
+
 }
 
 #pragma mark 状态栏图标切换
 -(void)iconSelected:(NSNotification *)na {
+    
+    NSLog(@"%@", na.object);
+    
+    NSLog(@"%@", na);
+    
+    
+    
     NSDictionary *dic = na.userInfo;
 //    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
     if ([dic[@"classCurrent"] isEqualToString:@"1"]) {
-//        NSLog(@"收到通知的controller:%@",str);
         [vv_bottom.iconView btnCheckTags:[dic[@"style"] integerValue] dataIndex:[dic[@"style"] integerValue]];
         if ([dic[@"style"] integerValue] == 2) {
             [vv_bottom.iconView btnCheckTags:3 dataIndex:3];
@@ -195,6 +191,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissPresentView:) name:DISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dididididdididi) name:@"geelyfin" object:nil];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"left" forKey:@"dismiss"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DISMISS object:nil userInfo:dic];
+    //添加驾驶模式转换通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeRed) name:MODE_RED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeBlue) name:MODE_BLUE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomegold) name:MODE_GOLD object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
     
     vvlioce = [[MPMusicPlayerController alloc] init];
     volume = vvlioce.volume;
@@ -859,6 +868,7 @@
 -(void)dismissPresentView:(NSNotification *)na {
     if ([na.userInfo[@"dismiss"] isEqualToString:@"left"]) {
         [self leftHiden];
+        [self dynamicdismissView];
     }else{
         [self rightHiden];
     }

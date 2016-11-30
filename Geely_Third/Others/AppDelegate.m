@@ -16,78 +16,6 @@
 
 @implementation AppDelegate
 
--(void)asyncAddImageData {
-    
-    [SingleModel sharedInstance].image_level_one = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_two = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_three = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_four = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_five = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_six = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_seven = [NSMutableArray array];
-    [SingleModel sharedInstance].image_level_eight = [NSMutableArray array];
-
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    for (int i = 0; i<76; i++) {
-        dispatch_async(queue, ^{
-            if (i<10) {
-                
-                UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_one addObject:image1];
-                
-                UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_two addObject:image2];
-                
-                UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_three addObject:image3];
-                
-                UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_four addObject:image4];
-                
-                UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_five addObject:image5];
-                
-                UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_six addObject:image6];
-                
-                UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_seven addObject:image7];
-                
-                UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
-                [[SingleModel sharedInstance].image_level_eight addObject:image8];
-                
-            }else{
-                UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_one addObject:image1];
-                
-                UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_two addObject:image2];
-                
-                UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_three addObject:image3];
-                
-                UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_four addObject:image4];
-                
-                UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_five addObject:image5];
-                
-                UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_six addObject:image6];
-                
-                UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_seven addObject:image7];
-                
-                UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
-                [[SingleModel sharedInstance].image_level_eight addObject:image8];
-                
-            }
-        });
-    }
-    
-}
 
 
 -(void)actionOne{
@@ -202,6 +130,9 @@
         }
     }
 }
+
+
+
 
 
 

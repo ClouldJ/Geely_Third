@@ -74,6 +74,7 @@
 		C22F2B0A1DE463BE0094626E /* menu_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C22F2AF21DE463BE0094626E /* menu_background@2x.jpg */; };
 		C22F2B0E1DE465B30094626E /* GeelyDriveModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22F2B0C1DE465B30094626E /* GeelyDriveModeViewController.m */; };
 		C22F2B0F1DE465B30094626E /* GeelyDriveModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22F2B0D1DE465B30094626E /* GeelyDriveModeViewController.xib */; };
+		C23475961DEEFADC00BA1A8D /* GeelyCurrentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C23475951DEEFADC00BA1A8D /* GeelyCurrentView.m */; };
 		C239C5481DD49DCA0017F443 /* Geely_mode_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */; };
 		C239C5491DD49DCA0017F443 /* Geely_mode_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */; };
 		C239C54A1DD49DCA0017F443 /* Geely_mode_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */; };
@@ -1425,6 +1426,8 @@
 		C22F2B0B1DE465B30094626E /* GeelyDriveModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeelyDriveModeViewController.h; sourceTree = "<group>"; };
 		C22F2B0C1DE465B30094626E /* GeelyDriveModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeelyDriveModeViewController.m; sourceTree = "<group>"; };
 		C22F2B0D1DE465B30094626E /* GeelyDriveModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeelyDriveModeViewController.xib; sourceTree = "<group>"; };
+		C23475941DEEFADC00BA1A8D /* GeelyCurrentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeelyCurrentView.h; path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/GeelyCurrentView.h; sourceTree = "<group>"; };
+		C23475951DEEFADC00BA1A8D /* GeelyCurrentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeelyCurrentView.m; path = ../../../../WillyZhao/Geely_Third/Geely_Third/C/GeelyCurrentView.m; sourceTree = "<group>"; };
 		C239C5451DD49DCA0017F443 /* Geely_mode_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_blue@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_blue@2x.png"; sourceTree = "<group>"; };
 		C239C5461DD49DCA0017F443 /* Geely_mode_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_red@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_red@2x.png"; sourceTree = "<group>"; };
 		C239C5471DD49DCA0017F443 /* Geely_mode_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_mode_yellow@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_mode_yellow@2x.png"; sourceTree = "<group>"; };
@@ -3436,6 +3439,8 @@
 				C263F9651DD40F3100ED9EC4 /* Others */,
 				C263F9681DD40F3100ED9EC4 /* SingleModel.h */,
 				C263F9691DD40F3100ED9EC4 /* SingleModel.m */,
+				C23475941DEEFADC00BA1A8D /* GeelyCurrentView.h */,
+				C23475951DEEFADC00BA1A8D /* GeelyCurrentView.m */,
 				C263F96A1DD40F3100ED9EC4 /* Weather */,
 			);
 			path = C;
@@ -6270,6 +6275,7 @@
 				C263FA281DD410C400ED9EC4 /* GeelyMediaLittleView.m in Sources */,
 				C2DCEFD01DED2FB00088EA81 /* ImageIconModel.m in Sources */,
 				C263F8EE1DD40D8300ED9EC4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				C23475961DEEFADC00BA1A8D /* GeelyCurrentView.m in Sources */,
 				C263F8E31DD40D8300ED9EC4 /* GeelyPowerDisplayView.m in Sources */,
 				C2549E451DE2E4E000A97188 /* GeelySildeBarView.m in Sources */,
 				C27C02E21DD9FE5400C1A278 /* Volume.m in Sources */,

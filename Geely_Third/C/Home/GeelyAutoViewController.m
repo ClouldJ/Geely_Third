@@ -232,6 +232,7 @@
     ss.scorePercent = 0;
     [self.contentImage addSubview:ss];
 
+
     
     //初始化数据源
     if ([SingleModel sharedInstance].image_level_one.count==0) {
@@ -376,53 +377,53 @@
             if (i<10) {
                 
                 UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
-                [image_level_one addObject:image1];
+                [[SingleModel sharedInstance].image_level_one addObject:image1];
                 
                 UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
-                [image_level_two addObject:image2];
+                [[SingleModel sharedInstance].image_level_two addObject:image2];
                 
                 UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_0000%d",i]];
-                [image_level_three addObject:image3];
+                [[SingleModel sharedInstance].image_level_three addObject:image3];
                 
                 UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_0000%d",i]];
-                [image_level_four addObject:image4];
+                [[SingleModel sharedInstance].image_level_four addObject:image4];
                 
                 UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_0000%d",i]];
-                [image_level_five addObject:image5];
+                [[SingleModel sharedInstance].image_level_five addObject:image5];
                 
                 UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_0000%d",i]];
-                [image_level_six addObject:image6];
+                [[SingleModel sharedInstance].image_level_six addObject:image6];
                 
                 UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_0000%d",i]];
-                [image_level_seven addObject:image7];
+                [[SingleModel sharedInstance].image_level_seven addObject:image7];
                 
                 UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
-                [image_level_eight addObject:image8];
+                [[SingleModel sharedInstance].image_level_eight addObject:image8];
                 
             }else{
                 UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
-                [image_level_one addObject:image1];
+                [[SingleModel sharedInstance].image_level_one addObject:image1];
                 
                 UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_000%d",i]];
-                [image_level_two addObject:image2];
+                [[SingleModel sharedInstance].image_level_two addObject:image2];
                 
                 UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_000%d",i]];
-                [image_level_three addObject:image3];
+                [[SingleModel sharedInstance].image_level_three addObject:image3];
                 
                 UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_000%d",i]];
-                [image_level_four addObject:image4];
+                [[SingleModel sharedInstance].image_level_four addObject:image4];
                 
                 UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_000%d",i]];
-                [image_level_five addObject:image5];
+                [[SingleModel sharedInstance].image_level_five addObject:image5];
                 
                 UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_000%d",i]];
-                [image_level_six addObject:image6];
+                [[SingleModel sharedInstance].image_level_six addObject:image6];
                 
                 UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_000%d",i]];
-                [image_level_seven addObject:image7];
+                [[SingleModel sharedInstance].image_level_seven addObject:image7];
                 
                 UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
-                [image_level_eight addObject:image8];
+                [[SingleModel sharedInstance].image_level_eight addObject:image8];
                 
             }
         });

@@ -13,6 +13,9 @@
 #import "GeelyLeftFrameDynamicView.h"
 @class GeelyLeftFrameDynamicView;
 
+
+FOUNDATION_EXTERN NSString *const SLIDESETTINGSTYLE_NOTICE;
+
 @protocol GeelySildeBarViewDelegate <NSObject>
 
 -(void)geelySettingSlideViewSelectedWith:(NSInteger)index;

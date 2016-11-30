@@ -11,6 +11,7 @@
 #import "GeelySlideSettingCell.h"
 #import "GeelyBluetoothView.h"
 
+NSString *const SLIDESETTINGSTYLE_NOTICE = @"SLIDESETTINGSTYLE_NOTICE";
 
 @interface GeelySildeBarView () <UITableViewDelegate,UITableViewDataSource,GeelyMusicCDAnimationViewDelegate> {
     NSMutableArray *images;
@@ -228,6 +229,9 @@
         [dic setObject:@"2" forKey:@"classCurrent"];
     }else if ([className isEqualToString:@"GeelyHomeViewController"]){
         [dic setObject:@"1" forKey:@"classCurrent"];
+    }else if ([className isEqualToString:@"GeelyAutoViewController"]){
+        NSLog(@"跳你个鸡巴");
+        return;
     }
     
     NSLog(@"--------------------当前显示的controller：%@",className);
@@ -271,7 +275,7 @@
             break;
     }
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDESETTINGSTYLE object:nil userInfo:dic];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDESETTINGSTYLE object:@"1" userInfo:dic];
 
 }
 
