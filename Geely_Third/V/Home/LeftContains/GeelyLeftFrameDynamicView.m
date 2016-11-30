@@ -154,7 +154,6 @@
             na.backgroundColor = [UIColor clearColor];
             [self addSubview:na];
             currentSlide = na;
-//            [SingleModel sharedInstance].dynamicSingleView = na;
         }
             break;
         case DYNAMIC_CALLZ:
@@ -163,7 +162,6 @@
             na1.backgroundColor = [UIColor clearColor];
             [self addSubview:na1];
             currentSlide = na1;
-//            [SingleModel sharedInstance].dynamicSingleView = na1;
         }
             break;
         case DYNAMIC_SETTZ:
@@ -172,8 +170,6 @@
             na2.backgroundColor = [UIColor clearColor];
             [self addSubview:na2];
             currentSlide = na2;
-
-//            [SingleModel sharedInstance].dynamicSingleView = na2;
         }
             break;
         default:

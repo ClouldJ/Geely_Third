@@ -46,7 +46,7 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     NSLog(@"%@", self.contentView);
 //    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
     
-    self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"callinglist"]];
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"onelastconstractBG"]];
     self.backgroundImageView.frame = CGRectMake(0, 0, 340, 435);
     
 //    self.backgroundImageView.image = [UIImage imageNamed:@"Callinglist"];

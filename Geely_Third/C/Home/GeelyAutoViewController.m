@@ -68,6 +68,7 @@
 
 -(void)actionTwo{
     for (int i =0; i<76; i++) {
+        
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
             [[SingleModel sharedInstance].image_level_two addObject:image];
@@ -140,19 +141,26 @@
 
 -(void)actionEight {
     for (int i =0; i<76; i++) {
-        if (i<10) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
-            [[SingleModel sharedInstance].image_level_eight addObject:image];
-        }else{
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
-            [[SingleModel sharedInstance].image_level_eight addObject:image];
+        
+        if (i%2!=0) {
+            if (i<10) {
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
+                [[SingleModel sharedInstance].image_level_eight addObject:image];
+            }else{
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
+                [[SingleModel sharedInstance].image_level_eight addObject:image];
+            }
         }
     }
+    
+    NSLog(@"数组数量:%ld",[SingleModel sharedInstance].image_level_eight.count);
+
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionGesture:)];
     swipe.direction = UISwipeGestureRecognizerDirectionDown;
 //    UIPanGestureRecognizer
