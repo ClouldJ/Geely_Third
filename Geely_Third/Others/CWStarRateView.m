@@ -60,9 +60,9 @@
     NSMutableArray *forArray = [NSMutableArray array];
     NSMutableArray *bacArray = [NSMutableArray array];
     
-    for (int i = 0; i<8; i++) {
-        UIImage *forImage = [UIImage imageNamed:[NSString stringWithFormat:@"a%d",i]];
-        UIImage *bacImage = [UIImage imageNamed:[NSString stringWithFormat:@"a0%d",i]];
+    for (int i = 1; i<9; i++) {
+        UIImage *forImage = [UIImage imageNamed:[NSString stringWithFormat:@"能量块1_0%d",i]];
+        UIImage *bacImage = [UIImage imageNamed:[NSString stringWithFormat:@"nengliangk_0%d",i]];
         [forArray addObject:forImage];
         [bacArray addObject:bacImage];
     }
@@ -85,7 +85,7 @@
     }else{
         CGPoint tapPoint = [gesture locationInView:self];
         CGFloat offset = tapPoint.x;
-        CGFloat realStarScore = offset / (95/2);
+        CGFloat realStarScore = offset / (81/2);
         CGFloat starScore = self.allowIncompleteStar ? realStarScore : ceilf(realStarScore);
         self.scorePercent = starScore / 8;
     }
@@ -98,7 +98,7 @@
     for (NSInteger i = 0; i < images.count; i ++)
     {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:images[i]];
-        imageView.frame = CGRectMake((i *(95/2)), 0, 95/2, 61/2);
+        imageView.frame = CGRectMake((i *(81/2)), 0, 81/2, 57/2);
         imageView.userInteractionEnabled = YES;
         imageView.backgroundColor = [UIColor clearColor];
 //        imageView.contentMode = UIViewContentModeScaleAspectFill;

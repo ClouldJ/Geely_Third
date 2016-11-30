@@ -206,7 +206,7 @@
     self.rightLabel.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:55];
     
     
-    CWStarRateView *ss = [[CWStarRateView alloc] initWithFrame:CGRectMake(510, 492-(61/2)-30, (96/2)*8, 61/2)];
+    CWStarRateView *ss = [[CWStarRateView alloc] initWithFrame:CGRectMake(505, 492-(57/2)-33, (81/2)*8, 57/2)];
     ss.allowTouch = YES;
     ss.backgroundColor = [UIColor clearColor];
     ss.delegate = self;

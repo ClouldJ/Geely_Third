@@ -88,10 +88,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-oe-SjC">
-                            <rect key="frame" x="285" y="97" width="740" height="150"/>
+                            <rect key="frame" x="174" y="100" width="962" height="195"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="740" id="OR8-XG-yJI"/>
-                                <constraint firstAttribute="height" constant="150" id="rbB-5w-7ea"/>
+                                <constraint firstAttribute="width" constant="962" id="OR8-XG-yJI"/>
+                                <constraint firstAttribute="height" constant="195" id="rbB-5w-7ea"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pm2.5airauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="LXd-eq-PGA">
+                            <rect key="frame" x="528.5" y="85" width="253.5" height="347"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="347" id="BVO-9K-cYS"/>
+                                <constraint firstAttribute="width" constant="253.5" id="hwG-Zb-kcs"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -100,6 +107,7 @@
                         <constraint firstItem="ulW-Yu-M0s" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="25L-Of-15m"/>
                         <constraint firstItem="5dW-j3-ktT" firstAttribute="top" secondItem="ZiZ-gg-sZN" secondAttribute="top" id="AJO-m2-OGJ"/>
                         <constraint firstItem="1tz-sA-BkN" firstAttribute="top" secondItem="1P2-P3-wcC" secondAttribute="top" id="BId-pv-7KD"/>
+                        <constraint firstItem="LXd-eq-PGA" firstAttribute="centerX" secondItem="epb-hV-nyi" secondAttribute="centerX" id="DeJ-z6-30q"/>
                         <constraint firstAttribute="bottom" secondItem="ulW-Yu-M0s" secondAttribute="bottom" id="FF4-bA-xvb"/>
                         <constraint firstItem="1tz-sA-BkN" firstAttribute="leading" secondItem="3Of-O4-ts0" secondAttribute="trailing" constant="449" id="FTg-ce-uvc"/>
                         <constraint firstAttribute="bottom" secondItem="3Of-O4-ts0" secondAttribute="bottom" constant="113" id="FeM-Np-hfv"/>
@@ -111,10 +119,11 @@
                         <constraint firstItem="1P2-P3-wcC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="290" id="PgP-hg-f9p"/>
                         <constraint firstItem="ulW-Yu-M0s" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" id="SiK-ug-BDj"/>
                         <constraint firstItem="ZiZ-gg-sZN" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" id="UTR-b8-Iua"/>
+                        <constraint firstItem="LXd-eq-PGA" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="85" id="VU2-xM-bjr"/>
                         <constraint firstAttribute="width" constant="1310" id="Wnc-b5-kWS"/>
                         <constraint firstAttribute="trailing" secondItem="Noz-7t-8Ju" secondAttribute="trailing" constant="134" id="ZyW-2q-DIN"/>
                         <constraint firstItem="Noz-7t-8Ju" firstAttribute="leading" secondItem="epb-hV-nyi" secondAttribute="leading" constant="1007" id="aCY-sU-ri8"/>
-                        <constraint firstItem="Ncc-oe-SjC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="97" id="bUY-sr-TvT"/>
+                        <constraint firstItem="Ncc-oe-SjC" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="100" id="bUY-sr-TvT"/>
                         <constraint firstAttribute="height" constant="492" id="bqc-95-RhG"/>
                         <constraint firstItem="3Of-O4-ts0" firstAttribute="top" secondItem="epb-hV-nyi" secondAttribute="top" constant="277" id="e0l-Eb-bH5"/>
                         <constraint firstAttribute="trailing" secondItem="nsy-zY-U3e" secondAttribute="trailing" constant="180" id="gEf-54-ctE"/>
@@ -143,6 +152,7 @@
     <resources>
         <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
         <image name="dasdasdasdadasdairauto.png" width="1310" height="492"/>
+        <image name="pm2.5airauto.png" width="253" height="347"/>
         <image name="副驾座椅autoauto.png" width="329" height="138"/>
         <image name="右侧座椅设置airauto.png" width="559" height="143"/>
         <image name="左侧座椅设置airauto.png" width="558" height="143"/>
