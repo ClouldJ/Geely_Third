@@ -56,6 +56,14 @@
         }
     }
     [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:1000000 duration:2];
+    
+    [NSThread detachNewThreadSelector:@selector(actionTwo) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionThree) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionFour) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionFive) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionSix) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionSeven) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(actionEight) toTarget:self withObject:nil];
 }
 
 -(void)actionTwo{
@@ -154,15 +162,9 @@
     image_level_seven = [NSMutableArray array];
     image_level_eight = [NSMutableArray array];
     
-    [NSThread detachNewThreadSelector:@selector(actionOne) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionTwo) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionThree) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionFour) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionFive) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionSix) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionSeven) toTarget:self withObject:nil];
-    [NSThread detachNewThreadSelector:@selector(actionEight) toTarget:self withObject:nil];
 
+
+    
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionGesture:)];
     swipe.direction = UISwipeGestureRecognizerDirectionDown;
@@ -211,12 +213,17 @@
     ss.scorePercent = 0;
     [self.contentImage addSubview:ss];
     
+//    [self asyncAddImageData];
+    
+        [NSThread detachNewThreadSelector:@selector(actionOne) toTarget:self withObject:nil];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+//    [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:100000 duration:2];
 }
+
 
 -(void)rightGesture:(UIPanGestureRecognizer *)pan {
     CGFloat ffl = [pan locationInView:self.contentImage].y;
@@ -297,8 +304,10 @@
 
 //TODO
 -(void)starRateView:(CWStarRateView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent {
+    NSLog(@"点击的分数:%f",newScorePercent);
+    
     [self.animationImageView stopAnimating];
-    if (newScorePercent == 0) {
+    if (newScorePercent == 1) {
         [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:100000 duration:2];
     }else if (newScorePercent == 2) {
         [self.animationImageView startImageSequenceWithArray:image_level_two repeatCount:100000 duration:2];
@@ -322,6 +331,68 @@
         [self.animationImageView startImageSequenceWithArray:image_level_eight repeatCount:100000 duration:2];
 
     }
+}
+
+-(void)asyncAddImageData {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    for (int i = 0; i<76; i++) {
+        dispatch_async(queue, ^{
+            if (i<10) {
+                
+                UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
+                [image_level_one addObject:image1];
+                
+                UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
+                [image_level_two addObject:image2];
+                
+                UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_0000%d",i]];
+                [image_level_three addObject:image3];
+                
+                UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_0000%d",i]];
+                [image_level_four addObject:image4];
+                
+                UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_0000%d",i]];
+                [image_level_five addObject:image5];
+                
+                UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_0000%d",i]];
+                [image_level_six addObject:image6];
+                
+                UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_0000%d",i]];
+                [image_level_seven addObject:image7];
+                
+                UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
+                [image_level_eight addObject:image8];
+                
+            }else{
+                UIImage *image1 = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
+                [image_level_one addObject:image1];
+                
+                UIImage *image2 = [UIImage imageNamed:[NSString stringWithFormat:@"二级_000%d",i]];
+                [image_level_two addObject:image2];
+                
+                UIImage *image3 = [UIImage imageNamed:[NSString stringWithFormat:@"三级_000%d",i]];
+                [image_level_three addObject:image3];
+                
+                UIImage *image4 = [UIImage imageNamed:[NSString stringWithFormat:@"四级_000%d",i]];
+                [image_level_four addObject:image4];
+                
+                UIImage *image5 = [UIImage imageNamed:[NSString stringWithFormat:@"五级_000%d",i]];
+                [image_level_five addObject:image5];
+                
+                UIImage *image6 = [UIImage imageNamed:[NSString stringWithFormat:@"六级_000%d",i]];
+                [image_level_six addObject:image6];
+                
+                UIImage *image7 = [UIImage imageNamed:[NSString stringWithFormat:@"七级_000%d",i]];
+                [image_level_seven addObject:image7];
+                
+                UIImage *image8 = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
+                [image_level_eight addObject:image8];
+                
+            }
+        });
+    }
+    
 }
 
 /*

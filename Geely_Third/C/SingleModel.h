@@ -88,6 +88,27 @@ typedef enum {
 
 @property (nonatomic, assign) BOOL bluetooth;
 
+
+/**
+ 以下为空调方面帧动画数据源
+ */
+
+@property (nonatomic, strong) NSMutableArray *image_level_one;
+
+@property (nonatomic, strong) NSMutableArray *image_level_two;
+
+@property (nonatomic, strong) NSMutableArray *image_level_three;;
+
+@property (nonatomic, strong) NSMutableArray *image_level_four;
+
+@property (nonatomic, strong) NSMutableArray *image_level_five;
+
+@property (nonatomic, strong) NSMutableArray *image_level_six;
+
+@property (nonatomic, strong) NSMutableArray *image_level_seven;
+
+@property (nonatomic, strong) NSMutableArray *image_level_eight;
+
 //-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 
 @end
