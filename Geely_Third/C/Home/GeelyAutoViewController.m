@@ -30,10 +30,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftHidden;
 @property (weak, nonatomic) IBOutlet UIButton *rightHidden;
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
-@property (weak, nonatomic) IBOutlet UIImageView *rightBig;
-@property (weak, nonatomic) IBOutlet UIImageView *rightSmall;
-@property (weak, nonatomic) IBOutlet UIImageView *leftBig;
-@property (weak, nonatomic) IBOutlet UIImageView *leftSmall;
+@property (strong, nonatomic) IBOutlet UIImageView *rightBig;
+@property (strong, nonatomic) IBOutlet UIImageView *rightSmall;
+@property (strong, nonatomic) IBOutlet UIImageView *leftBig;
+@property (strong, nonatomic) IBOutlet UIImageView *leftSmall;
 @property (weak, nonatomic) IBOutlet UILabel *leftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *animationImageView;
@@ -47,13 +47,18 @@
 
 -(void)actionOne{
     for (int i =0; i<76; i++) {
-        if (i<10) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
-            [[SingleModel sharedInstance].image_level_one addObject:image];
-        }else{
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
-            [[SingleModel sharedInstance].image_level_one addObject:image];
-        }
+        
+//        if (i%2!=0) {
+            if (i<10) {
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
+                [[SingleModel sharedInstance].image_level_one addObject:image];
+            }else{
+                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
+                [[SingleModel sharedInstance].image_level_one addObject:image];
+            }
+//        }
+        
+
     }
     [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:1000000 duration:2];
     
@@ -142,7 +147,7 @@
 -(void)actionEight {
     for (int i =0; i<76; i++) {
         
-        if (i%2!=0) {
+//        if (i%2!=0) {
             if (i<10) {
                 UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
                 [[SingleModel sharedInstance].image_level_eight addObject:image];
@@ -150,7 +155,7 @@
                 UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
                 [[SingleModel sharedInstance].image_level_eight addObject:image];
             }
-        }
+//        }
     }
     
     NSLog(@"数组数量:%ld",[SingleModel sharedInstance].image_level_eight.count);
@@ -171,6 +176,15 @@
     [self.leftHidden addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.rightHidden addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     
+    //左侧，未展开的座椅
+    self.leftSmall = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"座椅autoauto"]];
+    self.leftSmall.frame = CGRectMake(0, 290, self.leftSmall.image.size.width, self.leftSmall.image.size.height);
+    [self.contentImage addSubview:self.leftSmall];
+    
+    //左侧，展开后的座椅
+    self.leftBig = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"左侧座椅设置airauto"]];
+    self.leftBig.frame = CGRectMake(0, 290, self.leftBig.image.size.width, self.leftBig.image.size.height);
+    [self.contentImage addSubview:self.leftBig];
     
     wenduji = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
     wenduji.frame = CGRectMake(16.5, 395, 121/2, 121/2);
@@ -180,6 +194,16 @@
     
     UIPanGestureRecognizer *pan_left = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(leftPanGesture:)];
     [wenduji addGestureRecognizer:pan_left];
+    
+    
+    //右侧座椅,未展开的座椅
+    self.rightBig = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"右侧座椅设置airauto"]];
+    self.rightBig.frame = CGRectMake(1310-self.rightBig.image.size.width, 290, self.rightBig.image.size.width, self.rightBig.image.size.height);
+    [self.contentImage addSubview:self.rightBig];
+    
+    self.rightSmall = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"副驾座椅autoauto"]];
+    self.rightSmall.frame = CGRectMake(1310-self.rightSmall.image.size.width, 290, self.rightSmall.image.size.width, self.rightSmall.image.size.height);
+    [self.contentImage addSubview:self.rightSmall];
     
     wenduji_right = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"温度计"]];
     wenduji_right.frame = CGRectMake((D_W-116-18), 395, 121/2, 121/2);
@@ -320,28 +344,27 @@
     
     [self.animationImageView stopAnimating];
     if (newScorePercent == 1) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:100000 duration:3];
     }else if (newScorePercent == 2) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_two repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_two repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 3) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_three repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_three repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 4) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_four repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_four repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 5) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_five repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_five repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 6) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_six repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_six repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 7) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_seven repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_seven repeatCount:100000 duration:3];
 
     }else if (newScorePercent == 8) {
-        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_eight repeatCount:100000 duration:2];
-
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_eight repeatCount:100000 duration:3];
     }
 }
 
