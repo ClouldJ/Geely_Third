@@ -162,22 +162,22 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
     [self scrollToAddressView];
 }
 
-- (void)addressViewCellSelected:(Address *)address {
-    [self.delegate addressSelected];
-}
-
-- (void)callingViewButtonClicked:(UIButton *)button {
-    [self.delegate callingButtonClicked];
-}
-
-- (void)cellPhoneViewButtonClicked:(UIButton *)button {
-    [self.delegate callingOffButtonClicked];
-}
-
+//- (void)addressViewCellSelected:(Address *)address {
+//    [self.delegate addressSelected];
+//}
+//
+//- (void)callingViewButtonClicked:(UIButton *)button {
+//    [self.delegate callingButtonClicked];
+//}
+//
+//- (void)cellPhoneViewButtonClicked:(UIButton *)button {
+//    [self.delegate callingOffButtonClicked];
+//}
+//
 -(void)gotoCallWillView:(UIButton *)btn {
     [self scrollToCallWillView];
 }
-
+//
 #pragma mark - setter and getter
 
 

@@ -43,9 +43,16 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
 
 #pragma mark - private
 - (void)backgroundConfig {
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    self.backgroundImageView.image = [UIImage imageNamed:@"Callinglist"];
+    NSLog(@"%@", self.contentView);
+//    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
+    
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"callinglist"]];
+    self.backgroundImageView.frame = CGRectMake(0, 0, 340, 435);
+    
+//    self.backgroundImageView.image = [UIImage imageNamed:@"Callinglist"];
     self.backgroundImageView.userInteractionEnabled = YES;
+    NSLog(@"%@", self.backgroundImageView);
+    NSLog(@"%@", self.backgroundImageView.image);
     [self.contentView addSubview:self.backgroundImageView];
 }
 

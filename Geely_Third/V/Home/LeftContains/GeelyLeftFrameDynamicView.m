@@ -12,7 +12,7 @@
 #import "CellPhoneView.h"
 
 @interface GeelyLeftFrameDynamicView () <UITableViewDelegate,GeelySildeBarViewDelegate,UITableViewDataSource> {
-    
+    GeelySildeBarView *currentSlide;
 }
 
 @end
@@ -142,12 +142,10 @@
 
 -(void)showAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish {
     
-//    if ([SingleModel sharedInstance].dynamicSingleView) {
-//        [[SingleModel sharedInstance].dynamicSingleView removeFromSuperview];
-//        [SingleModel sharedInstance].dynamicSingleView = nil;
-//    }
-    
-    
+    if (currentSlide) {
+        [currentSlide removeFromSuperview];
+        currentSlide = nil;
+    }
     
     switch (style) {
         case DYNAMIC_MUSIC:
@@ -155,6 +153,7 @@
             GeelySildeBarView *na = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_MUSIC];
             na.backgroundColor = [UIColor clearColor];
             [self addSubview:na];
+            currentSlide = na;
 //            [SingleModel sharedInstance].dynamicSingleView = na;
         }
             break;
@@ -163,6 +162,7 @@
             GeelySildeBarView *na1 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_CALLZ];
             na1.backgroundColor = [UIColor clearColor];
             [self addSubview:na1];
+            currentSlide = na1;
 //            [SingleModel sharedInstance].dynamicSingleView = na1;
         }
             break;
@@ -171,6 +171,8 @@
             GeelySildeBarView *na2 = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 340, 435) customStyle:DYNAMIC_SETTZ];
             na2.backgroundColor = [UIColor clearColor];
             [self addSubview:na2];
+            currentSlide = na2;
+
 //            [SingleModel sharedInstance].dynamicSingleView = na2;
         }
             break;

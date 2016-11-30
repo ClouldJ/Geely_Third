@@ -109,6 +109,8 @@ typedef enum {
 
 @property (nonatomic, strong) NSMutableArray *image_level_eight;
 
+@property (nonatomic, strong) GeelyLeftFrameDynamicView *currentDynamic;
+
 //-(void)dynamicAnimationView:(GeelyLeftFrameDynamicView *)
 
 @end

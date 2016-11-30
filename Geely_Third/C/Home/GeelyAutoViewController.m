@@ -49,13 +49,13 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_0000%d",i]];
-            [image_level_one addObject:image];
+            [[SingleModel sharedInstance].image_level_one addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"一级_000%d",i]];
-            [image_level_one addObject:image];
+            [[SingleModel sharedInstance].image_level_one addObject:image];
         }
     }
-    [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:1000000 duration:2];
+    [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:1000000 duration:2];
     
     [NSThread detachNewThreadSelector:@selector(actionTwo) toTarget:self withObject:nil];
     [NSThread detachNewThreadSelector:@selector(actionThree) toTarget:self withObject:nil];
@@ -70,10 +70,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"二级_0000%d",i]];
-            [image_level_two addObject:image];
+            [[SingleModel sharedInstance].image_level_two addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"二级_000%d",i]];
-            [image_level_two addObject:image];
+            [[SingleModel sharedInstance].image_level_two addObject:image];
         }
     }
 }
@@ -82,10 +82,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"三级_0000%d",i]];
-            [image_level_three addObject:image];
+            [[SingleModel sharedInstance].image_level_three addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"三级_000%d",i]];
-            [image_level_three addObject:image];
+            [[SingleModel sharedInstance].image_level_three addObject:image];
         }
     }
 }
@@ -94,10 +94,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"四级_0000%d",i]];
-            [image_level_four addObject:image];
+            [[SingleModel sharedInstance].image_level_four addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"四级_000%d",i]];
-            [image_level_four addObject:image];
+            [[SingleModel sharedInstance].image_level_four addObject:image];
         }
     }
 }
@@ -106,10 +106,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"五级_0000%d",i]];
-            [image_level_five addObject:image];
+            [[SingleModel sharedInstance].image_level_five addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"五级_000%d",i]];
-            [image_level_five addObject:image];
+            [[SingleModel sharedInstance].image_level_five addObject:image];
         }
     }
 }
@@ -118,10 +118,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"六级_0000%d",i]];
-            [image_level_six addObject:image];
+            [[SingleModel sharedInstance].image_level_six addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"六级_000%d",i]];
-            [image_level_six addObject:image];
+            [[SingleModel sharedInstance].image_level_six addObject:image];
         }
     }
 }
@@ -130,10 +130,10 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"七级_0000%d",i]];
-            [image_level_seven addObject:image];
+            [[SingleModel sharedInstance].image_level_seven addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"七级_000%d",i]];
-            [image_level_seven addObject:image];
+            [[SingleModel sharedInstance].image_level_seven addObject:image];
         }
     }
 }
@@ -142,30 +142,17 @@
     for (int i =0; i<76; i++) {
         if (i<10) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_0000%d",i]];
-            [image_level_eight addObject:image];
+            [[SingleModel sharedInstance].image_level_eight addObject:image];
         }else{
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"八级_000%d",i]];
-            [image_level_eight addObject:image];
+            [[SingleModel sharedInstance].image_level_eight addObject:image];
         }
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    image_level_one = [NSMutableArray array];
-    image_level_two = [NSMutableArray array];
-    image_level_three = [NSMutableArray array];
-    image_level_four = [NSMutableArray array];
-    image_level_five = [NSMutableArray array];
-    image_level_six = [NSMutableArray array];
-    image_level_seven = [NSMutableArray array];
-    image_level_eight = [NSMutableArray array];
-    
 
-
-    
-    
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionGesture:)];
     swipe.direction = UISwipeGestureRecognizerDirectionDown;
 //    UIPanGestureRecognizer
@@ -212,16 +199,33 @@
     ss.delegate = self;
     ss.scorePercent = 0;
     [self.contentImage addSubview:ss];
+
     
-//    [self asyncAddImageData];
-    
+    //初始化数据源
+    if ([SingleModel sharedInstance].image_level_one.count==0) {
+        [SingleModel sharedInstance].image_level_one = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_two = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_three = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_four = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_five = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_six = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_seven = [NSMutableArray array];
+        [SingleModel sharedInstance].image_level_eight = [NSMutableArray array];
+        
+        //异步加载数据源
         [NSThread detachNewThreadSelector:@selector(actionOne) toTarget:self withObject:nil];
+        
+    }
     
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:100000 duration:2];
+    if ([SingleModel sharedInstance].image_level_one.count==76) {
+        NSLog(@"单例中存的数据已经有了 ，不需要再进行存储");
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:1000000 duration:2];
+    }
 }
 
 
@@ -302,33 +306,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-//TODO
+
 -(void)starRateView:(CWStarRateView *)starRateView scroePercentDidChange:(CGFloat)newScorePercent {
     NSLog(@"点击的分数:%f",newScorePercent);
     
     [self.animationImageView stopAnimating];
     if (newScorePercent == 1) {
-        [self.animationImageView startImageSequenceWithArray:image_level_one repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_one repeatCount:100000 duration:2];
     }else if (newScorePercent == 2) {
-        [self.animationImageView startImageSequenceWithArray:image_level_two repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_two repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 3) {
-        [self.animationImageView startImageSequenceWithArray:image_level_three repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_three repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 4) {
-        [self.animationImageView startImageSequenceWithArray:image_level_four repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_four repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 5) {
-        [self.animationImageView startImageSequenceWithArray:image_level_five repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_five repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 6) {
-        [self.animationImageView startImageSequenceWithArray:image_level_six repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_six repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 7) {
-        [self.animationImageView startImageSequenceWithArray:image_level_seven repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_seven repeatCount:100000 duration:2];
 
     }else if (newScorePercent == 8) {
-        [self.animationImageView startImageSequenceWithArray:image_level_eight repeatCount:100000 duration:2];
+        [self.animationImageView startImageSequenceWithArray:[SingleModel sharedInstance].image_level_eight repeatCount:100000 duration:2];
 
     }
 }

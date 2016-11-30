@@ -31,6 +31,8 @@
 
 #define SLIDEDISMISS @"slideviewdismiss"
 
+#define SLIDEREMOVE @"GEELYSLIDEVIEWREMOVEFROMSUPERVIEW"
+
 #define POWERDISMISS @"geelypoweranddisplaydismiss"
 
 #define SLIDESETTINGSTYLE @"GEELYSETTINGDIDSELECTED"

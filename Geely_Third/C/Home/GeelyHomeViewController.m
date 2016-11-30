@@ -132,7 +132,6 @@
 #pragma mark 状态栏图标切换
 -(void)iconSelected:(NSNotification *)na {
     NSDictionary *dic = na.userInfo;
-    
 //    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
     if ([dic[@"classCurrent"] isEqualToString:@"1"]) {
 //        NSLog(@"收到通知的controller:%@",str);
@@ -584,6 +583,9 @@
 #pragma mark GeelyLeftContainsDelegate
 
 -(void)geelyOneTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {
+    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:SLIDEREMOVE object:nil];
+    
     switch (indexPath.row) {
         case 0:
         {
@@ -598,31 +600,9 @@
                 NSLog(@"音乐移动完成");
             }];
             
-//            for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews) {
-//                if (viewSingle.showSingle) {
-//                    if (viewSingle  == dynamicViewMusic) {
-//                        NSLog(@"显示的就是当前view，不需要再次进行推出操作");
-//                    }else{
-//                        viewSingle.showSingle = NO;
-//                        viewSingle.frame = CGRectMake(110-340-50, 0, 340, 435);
-//                        [UIView animateWithDuration:.5f animations:^{
-//                            dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
-//                        } completion:^(BOOL finished) {
-//                            dynamicViewMusic.showSingle = YES;
-//                        }];
-//                    }
-//                }else{
-//                    [UIView animateWithDuration:.5f animations:^{
-//                        dynamicViewMusic.frame = CGRectMake(82, 0, 340, 435);
-//                    } completion:^(BOOL finished) {
-//                        dynamicViewMusic.showSingle = YES;
-//                    }];
-//                }
-//            }
-            
             [self dynamicAnimationView:dynamicViewMusic];
             
-
+            
             
         }
             break;
@@ -635,12 +615,6 @@
                 NSLog(@"新动画执行完成");
             }];
             [self dynamicAnimationView:dynamicViewCall];
-//            dynamicViewCall.showSingle = YES;
-//
-//            
-//            [UIView animateWithDuration:.5f animations:^{
-//                dynamicViewCall.frame = CGRectMake(82, 0, 340, 435);
-//            }];
             
         }
             break;
@@ -650,11 +624,6 @@
             [dynamicViewSet showAnimationStyle:DYNAMIC_SETTZ finish:^(UIView *amicView) {
             }];
             [self dynamicAnimationView:dynamicViewSet];
-//            dynamicViewSet.showSingle = YES;
-//
-//            [UIView animateWithDuration:.5f animations:^{
-//                dynamicViewSet.frame = CGRectMake(82, 0, 340, 435);
-//            }];
         }
             break;
         case 4:
@@ -668,84 +637,6 @@
         default:
             break;
     }
-
-//        }
-//            break;
-//        case 1:
-//        {
-//            if (![SingleModel sharedInstance].isMusic) {
-//                [SingleModel sharedInstance].isMusic = YES;
-//                viewScroll.contentOffset = CGPointMake(340*2, 0);
-//                [musica startMusicAnimation];
-//                GeelyMusicAudioManager *manager = [GeelyMusicAudioManager defaultManager];
-//                acPlayer = [manager playMusic:@"Zki & Dobre-Listen To The Talk"];
-//                musica.animationImage.delegate = self;
-//                singTime = (float)acPlayer.duration;
-//                
-//                [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//                } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-//                }];
-//            }else{
-//                viewScroll.contentOffset = CGPointMake(340*2, 0);
-//                [musica startMusicAnimation];
-//                musica.animationImage.delegate = self;
-//                singTime = 230;
-//            }
-//            
-//        }
-//            break;
-//        case 2:
-//        {
-//            [UIView animateWithDuration:.3f animations:^{
-//                viewScroll.contentOffset =CGPointMake(0, 0);
-//            }];
-//        }
-//            break;
-//        case 3:
-//            viewScroll.contentOffset = CGPointMake(340, 0);
-//            break;
-//        case 4:
-//            //回到主菜单
-//        {
-//                if (!isLeftBtn) {
-//                    [self leftHiden];
-//                }else{
-//                    [self rightHiden];
-//                }
-//        }
-//            return;
-//            break;
-//        default:
-//            break;
-//    }
-//    
-////    [SingleModel sharedInstance].isRel = isLeftBtn;
-////    
-////    if ([checkShowArray containsObject:indexPath]) {
-////        [checkShowArray removeObject:indexPath];
-////        
-////        if (!isLeftBtn) {
-////            [self leftHiden];
-////        }else{
-////            [self rightHiden];
-////        }
-////    }else{
-////        for (NSIndexPath *index in checkShowArray) {
-////            if (index == indexPath) {
-////                [checkShowArray addObject:indexPath];
-////            }else{
-////                [checkShowArray removeObject:index];
-////            }
-////        }
-////        
-////        if (!isLeftBtn) {
-////        }else{
-////            [self rightShow];
-////        }
-////    }
-//
 
 }
 
@@ -783,9 +674,7 @@
             }else{
                 [self rightHiden];
             }
-            [dynamicView dismissAnimationView:dynamicView.currentView animationFinish:^{
-                NSLog(@"隐藏成功");
-            }];
+            [self dynamicdismissView];
         }
             break;
         default:

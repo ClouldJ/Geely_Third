@@ -262,6 +262,18 @@
             }];
         }
     }
+    
+    if (!showED) {
+        showED = YES;
+        [scrollViewContent geelyContentViewFrameAnimation:^{
+            
+            self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
+            topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
+        } successful:^{
+            //TODO   侧边栏完全显示后
+        }];
+    }
+    
 }
 
 #pragma mark GeelyLeftContainsDelegate
@@ -315,23 +327,11 @@
             default:
                 break;
         }
-        
-        
-        if (!showED) {
-            [scrollViewContent geelyContentViewFrameAnimation:^{
-                
-                self.contentImageView.frame = CGRectMake(340, 0, 1310, 492);
-                topView.frame = CGRectMake(topView.frame.origin.x+340, topView.frame.origin.y, topView.frame.size.width, topView.frame.size.height);
-            } successful:^{
-                //TODO   侧边栏完全显示后
-                showED = YES;
-            }];
-        }
-//    }
 
 }
 
 -(void)dynamicdismissView{
+    showED = NO;
     for (GeelyLeftFrameDynamicView *viewSingle in [SingleModel sharedInstance].dynamicViews1) {
         if (viewSingle.showSingle) {
             viewSingle.showSingle = NO;
@@ -341,7 +341,6 @@
         }
     }
     
-    showED = NO;
 }
 
 -(void)geelySecTapLeftContainsTableView:(UITableView *)tableView didClickedIndexPath:(NSIndexPath *)indexPath {

@@ -32,7 +32,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epb-hV-nyi">
                     <rect key="frame" x="28" y="266" width="1310" height="492"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dasdasdasdadasdairauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11-30air-auto.png" translatesAutoresizingMaskIntoConstraints="NO" id="ulW-Yu-M0s">
                             <rect key="frame" x="0.0" y="0.0" width="1310" height="492"/>
                         </imageView>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="副驾座椅autoauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-P3-wcC">
@@ -95,7 +95,7 @@
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pm2.5airauto.png" translatesAutoresizingMaskIntoConstraints="NO" id="LXd-eq-PGA">
-                            <rect key="frame" x="528.5" y="85" width="253.5" height="347"/>
+                            <rect key="frame" x="529" y="85" width="253" height="347"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="347" id="BVO-9K-cYS"/>
                                 <constraint firstAttribute="width" constant="253.5" id="hwG-Zb-kcs"/>
@@ -151,7 +151,7 @@
     </objects>
     <resources>
         <image name="0930-IPAD-底图V2.png" width="1366" height="1024"/>
-        <image name="dasdasdasdadasdairauto.png" width="1310" height="492"/>
+        <image name="11-30air-auto.png" width="1310" height="492"/>
         <image name="pm2.5airauto.png" width="253" height="347"/>
         <image name="副驾座椅autoauto.png" width="329" height="138"/>
         <image name="右侧座椅设置airauto.png" width="559" height="143"/>
