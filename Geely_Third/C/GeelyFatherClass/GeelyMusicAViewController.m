@@ -34,6 +34,8 @@
     CGFloat endContentOffsetX;
     
     UIImageView *musicBGImageView;
+    GeelyFmAmView *fm;
+    UIView *view_first;
 }
 
 @end
@@ -91,6 +93,7 @@
     self.contentScrollView.delegate = self;
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.scrollEnabled = YES;
+    self.contentScrollView.contentSize  = CGSizeMake(1228*2, 0);
 
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
     [self addFixedView];
@@ -98,7 +101,7 @@
     __block __weak GeelyMusicAViewController *weakself = self;
     
     [self addImageViewAnimate:^{
-        UIView *view_first = [[[NSBundle mainBundle] loadNibNamed:@"musicScrollFirst" owner:weakself options:nil]firstObject];
+        view_first = [[[NSBundle mainBundle] loadNibNamed:@"musicScrollFirst" owner:weakself options:nil]firstObject];
         view_first.backgroundColor = [UIColor clearColor];
         view_first.frame = CGRectMake(0, 0, weakself.contentScrollView.bounds.size.width, weakself.contentScrollView.bounds.size.height);
         [weakself.contentScrollView addSubview:view_first];
@@ -133,12 +136,13 @@
         }
         
         
-        GeelyFmAmView *fm = [[GeelyFmAmView alloc] initWithFrame:CGRectMake(1228+10, 0, 1228, 364.5)];
+        fm = [[GeelyFmAmView alloc] initWithFrame:CGRectMake(0, 0, 1228, 364.5)];
         fm.backgroundColor = [UIColor clearColor];
+        fm.alpha = 0;
         [self.contentScrollView addSubview:fm];
         
         UIView *view_sec = [[[NSBundle mainBundle] loadNibNamed:@"GeelyMediaView" owner:self options:nil]firstObject];
-        view_sec.frame = CGRectMake(1228*2,0 , 1228, 364.5);
+        view_sec.frame = CGRectMake(1228+10,0 , 1228, 364.5);
         view_sec.backgroundColor = [UIColor clearColor];
         [self.contentScrollView addSubview:view_sec];
         tableView_ = (UITableView *)[view_sec viewWithTag:103987];
@@ -321,8 +325,14 @@
             fmAm = YES;
             UIButton *btn = buttons_array[3];
             [btn setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
-            [self.contentScrollView scollAnimationAlphaOffSet:CGPointMake(0, 0)];
-            
+            [UIView animateWithDuration:.5f animations:^{
+                fm.alpha = 0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:.3f animations:^{
+                    view_first.alpha = 1;
+                }];
+            }];
+            self.contentScrollView.scrollEnabled = YES;
             UIButton *btn3 = buttons_array[2];
             UIButton *btn4 = buttons_array[4];
             [btn3 setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
@@ -337,7 +347,7 @@
             [rightNow setBackgroundImage:[UIImage imageNamed:@"rightNowPlaying"] forState:UIControlStateNormal];
             if (fmAm) {
                 [btn setBackgroundImage:[UIImage imageNamed:@"ypjs_dianjis"] forState:UIControlStateNormal];
-                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228*2, 0)];
+                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
             }else{
                 [btn setBackgroundImage:[UIImage imageNamed:@"diantai_dianji_lists"] forState:UIControlStateNormal];
             }
@@ -361,9 +371,14 @@
             fmAm = NO;
             UIButton *btn1 = buttons_array[3];
             [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
-            [self.contentScrollView scollAnimationAlphaOffSet:CGPointMake(1228, 0)];
-//            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
-            
+            [UIView animateWithDuration:.5f animations:^{
+                view_first.alpha = 0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:.3f animations:^{
+                    fm.alpha = 1;
+                }];
+            }];
+            self.contentScrollView.scrollEnabled = NO;
 #pragma mark 电台操作
             [[[SingleModel sharedInstance] singleMainRequest:@"Radio" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
@@ -374,11 +389,8 @@
             break;
         case 3:
         {
-            if (fmAm) {
-                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
-            }else{
-                [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
-            }
+ 
+            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];
             [btn setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
             UIButton *btn_3 = buttons_array[3];
             if (fmAm) {
@@ -411,34 +423,38 @@
 #pragma mark scrollViewDelegate
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    NSLog(@"移动的距离:%f",scrollView.contentOffset.x);
+   
+//    if (scrollView.contentOffset.x == 1228) {
+//        UIButton *music_btn = buttons_array[0];
+//        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui"] forState:UIControlStateNormal];
+//        UIButton *btn = buttons_array[1];
+//        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui_s"] forState:UIControlStateNormal];
+//        
+//        fmAm = NO;
+//        UIButton *btn1 = buttons_array[3];
+//        [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
+//    }else{
+//        UIButton *music_btn = buttons_array[0];
+//        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui_s"] forState:UIControlStateNormal];
+//        UIButton *btn = buttons_array[1];
+//        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui"] forState:UIControlStateNormal];
+//        
+//        fmAm = YES;
+//        UIButton *btn1 = buttons_array[3];
+//        [btn1 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
+//    }
+    UIButton *btn1 = buttons_array[3];
+    UIButton *btn2 = buttons_array[2];
+    
     if (scrollView.contentOffset.x == 1228) {
-        UIButton *music_btn = buttons_array[0];
-        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui"] forState:UIControlStateNormal];
-        UIButton *btn = buttons_array[1];
-        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui_s"] forState:UIControlStateNormal];
-        
-        fmAm = NO;
-        UIButton *btn1 = buttons_array[3];
-        [btn1 setBackgroundImage:[UIImage imageNamed:@"diantai_hui_list"] forState:UIControlStateNormal];
+        [btn1 setBackgroundImage:[UIImage imageNamed:@"ypjs_dianjis"] forState:UIControlStateNormal];
+    
+        [btn2 setBackgroundImage:[UIImage imageNamed:@"rightNowPlaying"] forState:UIControlStateNormal];
     }else{
-        UIButton *music_btn = buttons_array[0];
-        [music_btn setBackgroundImage:[UIImage imageNamed:@"music_hui_s"] forState:UIControlStateNormal];
-        UIButton *btn = buttons_array[1];
-        [btn setBackgroundImage:[UIImage imageNamed:@"diantai_hui"] forState:UIControlStateNormal];
-        
-        fmAm = YES;
-        UIButton *btn1 = buttons_array[3];
         [btn1 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
+        
+        [btn2 setBackgroundImage:[UIImage imageNamed:@"dqbf_dianji"] forState:UIControlStateNormal];
     }
-    
-    endContentOffsetX = scrollView.contentOffset.x;
-    if (endContentOffsetX < willEndContentOffsetX && willEndContentOffsetX < startContentOffsetX) { //画面从右往左移动，前一页
-        NSLog(@"向左移动");
-    } else if (endContentOffsetX > willEndContentOffsetX && willEndContentOffsetX > startContentOffsetX) {//画面从左往右移动，后一页
-        NSLog(@"向右移动");
-    }
-    
 }
 
 //-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -476,9 +492,9 @@
     startContentOffsetX = scrollView.contentOffset.x;
 }
 
--(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    willEndContentOffsetX = scrollView.contentOffset.x;
-}
+//-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+//    willEndContentOffsetX = scrollView.contentOffset.x;
+//}
 
 //-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 //
