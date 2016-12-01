@@ -219,11 +219,11 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 //    scrollView scrollan
     if (scrollView.contentOffset.x == 0) {
-        imageView.image = [UIImage imageNamed:@"topcallgeely"];
+        imageView.image = [UIImage imageNamed:@"1callinput"];
     }else if (scrollView.contentOffset.x == 1228) {
-        imageView.image = [UIImage imageNamed:@"123123123123toptop"];
+        imageView.image = [UIImage imageNamed:@"2calllist"];
     }else if (scrollView.contentOffset.x == 1228*2) {
-        imageView.image = [UIImage imageNamed:@"top_0dasdaadio13i"];
+        imageView.image = [UIImage imageNamed:@"3callconstract"];
     }
 }
 

@@ -27,6 +27,11 @@
     NSMutableArray *buttons_array;
     UITableView *tableView_;
     BOOL fmAm;
+    
+    
+    CGFloat startContentOffsetX;
+    CGFloat willEndContentOffsetX;
+    CGFloat endContentOffsetX;
 }
 
 @end
@@ -39,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     fmAm = YES;
+    
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
     [self.view addSubview:button_volume_];
@@ -68,8 +74,8 @@
     self.contentScrollView.delegate = self;
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.scrollEnabled = YES;
-    self.contentScrollView.contentSize = CGSizeMake(1228*2, 0);
-    self.contentScrollView.bounces = NO;
+//    self.contentScrollView.contentSize = CGSizeMake(1228*2, 0);
+//    self.contentScrollView.bounces = NO;
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
     [self addFixedView];
     
@@ -109,7 +115,7 @@
         }
         
         
-        GeelyFmAmView *fm = [[GeelyFmAmView alloc] initWithFrame:CGRectMake(1228, 0, 1228, 364.5)];
+        GeelyFmAmView *fm = [[GeelyFmAmView alloc] initWithFrame:CGRectMake(1228+10, 0, 1228, 364.5)];
         fm.backgroundColor = [UIColor clearColor];
         [self.contentScrollView addSubview:fm];
         
@@ -407,7 +413,30 @@
         UIButton *btn1 = buttons_array[3];
         [btn1 setBackgroundImage:[UIImage imageNamed:@"ypjs_hui"] forState:UIControlStateNormal];
     }
+    
+    endContentOffsetX = scrollView.contentOffset.x;
+    if (endContentOffsetX < willEndContentOffsetX && willEndContentOffsetX < startContentOffsetX) { //画面从右往左移动，前一页
+        NSLog(@"向左移动");
+    } else if (endContentOffsetX > willEndContentOffsetX && willEndContentOffsetX > startContentOffsetX) {//画面从左往右移动，后一页
+        NSLog(@"向右移动");
+    }
+    
 }
+
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"移动的距离范围:%f",scrollView.contentOffset.x);
+//    if (scrollView.contentOffset.x>0) {
+//        if (fmAm) {
+//            self.contentScrollView.contentOffset = CGPointMake(1228*2, 0);
+//        }
+//    }else if(scrollView.contentOffset.x<0){
+//        if (fmAm) {
+//            self.contentScrollView.contentOffset = CGPointMake(0, 0);
+//        }else{
+//            [self.contentScrollView scrollAnimationToOffSet:CGPointMake(1228, 0)];
+//        }
+//    }
+//}
 
 #pragma mark tableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -423,6 +452,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark scrollViewDelegate
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    startContentOffsetX = scrollView.contentOffset.x;
+}
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    willEndContentOffsetX = scrollView.contentOffset.x;
+}
+
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//
+//}
 
 /*
 #pragma mark - Navigation

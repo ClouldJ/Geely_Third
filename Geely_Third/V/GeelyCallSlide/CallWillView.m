@@ -127,18 +127,33 @@
     CGFloat width1 = rightImage.size.width;
     CGFloat height1 = rightImage.size.height;
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:rightImage];
+    imageView.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-14, width1, height1);
+    imageView.userInteractionEnabled = YES;
+    [self.callWillContentView addSubview:imageView];
+    
+    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2, width1, height1);
-    [btn setBackgroundImage:rightImage forState:UIControlStateNormal];
+    btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-14, width1, height1);
+//    [btn setBackgroundImage:rightImage forState:UIControlStateNormal];
+//    btn.backgroundColor = [UIColor redColor];
     [self.callWillContentView addSubview:btn];
-    [btn addTarget:self action:@selector(gotoFrequentContacts:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoFrequentContacts:)];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gotoFrequentContacts:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [btn addGestureRecognizer:tap];
+    [btn addGestureRecognizer:swipe];
+    [tap requireGestureRecognizerToFail:swipe];
+    
+//    [btn addTarget:self action:@selector(gotoFrequentContacts:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
 #pragma mark 切换到常用联系人
--(void)gotoFrequentContacts:(UIButton *)btn {
-    if ([self.delegate respondsToSelector:@selector(frequentContactsButtonClicked:)]&&self.delegate) {
-        [self.delegate frequentContactsButtonClicked:btn];
+-(void)gotoFrequentContacts:(UIGestureRecognizer *)btn {
+    if ([self.delegate respondsToSelector:@selector(frequentContactsButtonClicked)]&&self.delegate) {
+        [self.delegate frequentContactsButtonClicked];
     }
 }
 
@@ -236,7 +251,6 @@
 
 - (void)fooButtonClicked:(UIButton *)sender {
     NSLog(@"挂断");
-//    [self.delegate callingViewButtonClicked:sender];
     if (!check) {
         self.callingContentView.hidden = YES;
         self.callWillContentView.hidden = NO;

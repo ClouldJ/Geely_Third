@@ -42,8 +42,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(littleShowDismiss:) name:SLIDEDISMISS object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected1:) name:SLIDESETTINGSTYLE object:nil];
+
 
     NSLog(@"%@ will appear",NSStringFromClass([self class]));
 }
@@ -79,6 +78,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(littleShowDismiss:) name:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected1:) name:SLIDESETTINGSTYLE object:nil];
     
     vvlioce = [[MPMusicPlayerController alloc] init];
     volume = vvlioce.volume;

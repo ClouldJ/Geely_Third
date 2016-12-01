@@ -158,7 +158,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 
 #pragma mark - event response
 
--(void)frequentContactsButtonClicked:(UIButton *)button {
+-(void)frequentContactsButtonClicked {
     [self scrollToAddressView];
 }
 
@@ -174,7 +174,7 @@ static NSString *const CallWillViewIdentifier = @"CallWillView";
 //    [self.delegate callingOffButtonClicked];
 //}
 //
--(void)gotoCallWillView:(UIButton *)btn {
+-(void)gotoCallWillView {
     [self scrollToCallWillView];
 }
 //

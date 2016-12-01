@@ -12,7 +12,7 @@
 
 @optional
 
-- (void)frequentContactsButtonClicked:(UIButton *)button;
+- (void)frequentContactsButtonClicked;
 
 @end
 

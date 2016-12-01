@@ -32,8 +32,7 @@ typedef void(^Finish)(void);
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
+
     
     NSLog(@"%@ will Appear", NSStringFromClass([self class]));
 }
@@ -65,6 +64,8 @@ typedef void(^Finish)(void);
     self.contentView.backgroundColor = [UIColor clearColor];
     [self addFixedView];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
     
     // Do any additional setup after loading the view from its nib.
 }

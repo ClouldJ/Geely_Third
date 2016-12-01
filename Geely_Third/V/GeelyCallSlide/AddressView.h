@@ -13,7 +13,7 @@
 
 - (void)addressViewCellSelected:(Address *)address;
 
--(void)gotoCallWillView:(UIButton *)btn;
+-(void)gotoCallWillView;
 
 @end
 

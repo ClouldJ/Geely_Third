@@ -43,16 +43,12 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
 
 #pragma mark - private
 - (void)backgroundConfig {
-    NSLog(@"%@", self.contentView);
-//    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 340, 435)];
     
     self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"onelastconstractBG"]];
     self.backgroundImageView.frame = CGRectMake(0, 0, 340, 435);
     
-//    self.backgroundImageView.image = [UIImage imageNamed:@"Callinglist"];
     self.backgroundImageView.userInteractionEnabled = YES;
-    NSLog(@"%@", self.backgroundImageView);
-    NSLog(@"%@", self.backgroundImageView.image);
+
     [self.contentView addSubview:self.backgroundImageView];
 }
 
@@ -64,7 +60,6 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     AddressCell *cell = [tableView dequeueReusableCellWithIdentifier:AddressCellIdentifier forIndexPath:indexPath];
     
     cell.address = self.addressArray[indexPath.row];
-//    cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
@@ -89,12 +84,20 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     btn.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:btn];
     
-    [btn addTarget:self action:@selector(gotoCallWill:) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoCallWill:)];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(gotoCallWill:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionUp;
+    [btn addGestureRecognizer:tap];
+    [btn addGestureRecognizer:swipe];
+    
+    [tap requireGestureRecognizerToFail:swipe];
+    
+//    [btn addTarget:self action:@selector(gotoCallWill:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)gotoCallWill:(UIButton *)btn {
-    if ([self.delegate respondsToSelector:@selector(gotoCallWillView:)]&&self.delegate) {
-        [self.delegate gotoCallWillView:btn];
+-(void)gotoCallWill:(UIGestureRecognizer *)btn {
+    if ([self.delegate respondsToSelector:@selector(gotoCallWillView)]&&self.delegate) {
+        [self.delegate gotoCallWillView];
     }
 }
 
