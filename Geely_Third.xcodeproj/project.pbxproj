@@ -1322,6 +1322,7 @@
 		C2DEC4F01DD5B0CA00343E80 /* Geely_home_right_downred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E31DD5B0CA00343E80 /* Geely_home_right_downred@2x.png */; };
 		C2DEC4F11DD5B0CA00343E80 /* Geely_music_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */; };
 		C2DEC4F21DD5B0CA00343E80 /* Geely_red_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */; };
+		C2EE57341DEFF59F005BADF5 /* nameofmusic1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EE57331DEFF59F005BADF5 /* nameofmusic1@2x.png */; };
 		C2F9224D1DDC47E40061B04F /* HGBaseRequest+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */; };
 		C2F9224E1DDC47E40061B04F /* InterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224C1DDC47E40061B04F /* InterfaceConfig.m */; };
 /* End PBXBuildFile section */
@@ -2813,6 +2814,7 @@
 		C2DEC4E31DD5B0CA00343E80 /* Geely_home_right_downred@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_home_right_downred@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_home_right_downred@2x.png"; sourceTree = "<group>"; };
 		C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_music_logo@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_music_logo@2x.png"; sourceTree = "<group>"; };
 		C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_red_info@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_red_info@2x.png"; sourceTree = "<group>"; };
+		C2EE57331DEFF59F005BADF5 /* nameofmusic1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nameofmusic1@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/nameofmusic1@2x.png"; sourceTree = "<group>"; };
 		C2F922491DDC47E40061B04F /* HGBaseRequest+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HGBaseRequest+Response.h"; sourceTree = "<group>"; };
 		C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HGBaseRequest+Response.m"; sourceTree = "<group>"; };
 		C2F9224B1DDC47E40061B04F /* InterfaceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceConfig.h; sourceTree = "<group>"; };
@@ -2966,6 +2968,7 @@
 		C263F7161DD40C9E00ED9EC4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C2EE57331DEFF59F005BADF5 /* nameofmusic1@2x.png */,
 				C2B3860E1DEED0ED0010EAB4 /* onelastconstractBG@2x.png */,
 				C2B385CD1DEEB1170010EAB4 /* 11-30air-auto@2x.png */,
 				C2B385CB1DEEA4F00010EAB4 /* pm2.5airauto@2x.png */,
@@ -5491,6 +5494,7 @@
 				C2B3847B1DED9A720010EAB4 /* 五级_00000.png in Resources */,
 				C2B384B21DED9A720010EAB4 /* 五级_00055.png in Resources */,
 				C2B3839C1DED9A720010EAB4 /* 二级_00005.png in Resources */,
+				C2EE57341DEFF59F005BADF5 /* nameofmusic1@2x.png in Resources */,
 				C2B1EC641DE59017002C5121 /* 能量流动_00004.png in Resources */,
 				C27C019A1DD99C2D00C1A278 /* 亮光red.png in Resources */,
 				C2549E651DE2F3FA00A97188 /* hui_05@2x.png in Resources */,

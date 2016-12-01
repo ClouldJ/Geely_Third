@@ -32,6 +32,8 @@
     CGFloat startContentOffsetX;
     CGFloat willEndContentOffsetX;
     CGFloat endContentOffsetX;
+    
+    UIImageView *musicBGImageView;
 }
 
 @end
@@ -105,6 +107,8 @@
         backMusciBtn = (UIButton *)[view_first viewWithTag:2010];
         stopMusicBtn = (UIButton *)[view_first viewWithTag:2011];
         nextMusicBtn = (UIButton *)[view_first viewWithTag:2012];
+        
+        musicBGImageView = (UIImageView *)[view_first viewWithTag:1203];
         
         buttons = [NSMutableArray arrayWithObjects:backMusciBtn,stopMusicBtn,nextMusicBtn, nil];
         
@@ -203,15 +207,10 @@
     switch (btn.tag) {
         case 0:
         {
-            
+            musicBGImageView.image = [UIImage imageNamed:@"nameofmusic"];
+            contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
             [manager.player stop];
             [manager playMusic:@"Sam Smith-Writing's On The Wall"];
-            
-            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            }];
             
         }
             break;
@@ -232,7 +231,14 @@
                 if ([SingleModel sharedInstance].isMusic) {
                     [manager.player play];
                 }else{
-                    [manager playMusic:@"Sam Smith-Writing's On The Wall"];
+                    
+                    if ([SingleModel sharedInstance].musciName) {
+                        [manager playMusic:[SingleModel sharedInstance].musciName];
+                    }else{
+                        [SingleModel sharedInstance].musciName = @"Sam Smith-Writing's On The Wall";
+                        [manager playMusic:[SingleModel sharedInstance].musciName];
+                    }
+                    
                 }
                 contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
                 
@@ -246,13 +252,11 @@
             break;
         case 2:
         {
+            musicBGImageView.image = [UIImage imageNamed:@"nameofmusic1"];
+            contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
             [manager.player stop];
-            [manager playMusic:@"Sam Smith-Writing's On The Wall"];
-            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            }];
+            [SingleModel sharedInstance].musciName = @"Zki & Dobre-Listen To The Talk";
+            [manager playMusic:[SingleModel sharedInstance].musciName];
         }
             break;
         default:

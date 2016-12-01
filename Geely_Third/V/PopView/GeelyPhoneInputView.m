@@ -40,6 +40,8 @@
 }
 
 -(void)action {
+    
+    
     self.btn0.tag = 1;
     [self.btn0 addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -80,7 +82,7 @@
 -(IBAction)btnAction:(UIButton *)btn {
     NSInteger index = btn.tag - 1;
     [buttons addObject:[NSString stringWithFormat:@"%ld",index]];
-    self.phoneTextField.text = [buttons componentsJoinedByString:@""];
+    self.nameTitle.text = [buttons componentsJoinedByString:@""];
 }
 
 -(void)deleteAction:(UIButton *)btn {
@@ -90,8 +92,8 @@
     }else{
         [buttons removeObjectAtIndex:buttons.count-2];
     }
-    
-    self.phoneTextField.text = [buttons componentsJoinedByString:@""];
+//    self.nameTitle.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:21];
+    self.nameTitle.text = [buttons componentsJoinedByString:@""];
 }
 
 -(void)phonecallAction:(UIButton *)btn {

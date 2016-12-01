@@ -23,6 +23,8 @@ typedef enum {
 
 @property (nonatomic, assign) BOOL isDisplay;
 
+@property (nonatomic, copy) NSString *musciName;
+
 @property (nonatomic, strong) Mute *muteSingle;
 
 //@property (nonatomic, strong) GeelySildeBarView *dynamicSingleView;

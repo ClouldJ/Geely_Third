@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -95,6 +95,12 @@
                         <action selector="ONCALL:" destination="x8J-Zt-txm" eventType="touchUpInside" id="v4L-S3-BnA"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqp-ag-uwD">
+                    <rect key="frame" x="20" y="27.5" width="191" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -151,6 +157,9 @@
                 <constraint firstItem="Gwh-X3-Ojv" firstAttribute="top" secondItem="GSN-Zf-1w0" secondAttribute="top" constant="-10" id="cEU-A5-HOn"/>
                 <constraint firstItem="hCu-ui-kRQ" firstAttribute="leading" secondItem="x8J-Zt-txm" secondAttribute="leading" constant="20" id="ctO-eh-fjo"/>
                 <constraint firstItem="2cf-Y0-TFw" firstAttribute="top" secondItem="Li4-CG-0PL" secondAttribute="bottom" constant="3" id="fEq-ie-2AO"/>
+                <constraint firstItem="EaG-LO-q5V" firstAttribute="leading" secondItem="Rqp-ag-uwD" secondAttribute="trailing" constant="10" id="fRm-oh-ugj"/>
+                <constraint firstItem="Rqp-ag-uwD" firstAttribute="top" secondItem="GSN-Zf-1w0" secondAttribute="top" id="hIb-DH-IbA"/>
+                <constraint firstItem="Rqp-ag-uwD" firstAttribute="leading" secondItem="x8J-Zt-txm" secondAttribute="leading" constant="20" id="hlj-0H-aJA"/>
                 <constraint firstItem="Gwh-X3-Ojv" firstAttribute="leading" secondItem="dtb-24-lx7" secondAttribute="trailing" constant="8" id="hre-ik-XwG"/>
                 <constraint firstAttribute="bottom" secondItem="hCu-ui-kRQ" secondAttribute="bottom" constant="159.5" id="hxr-FA-4Kc"/>
                 <constraint firstItem="GSN-Zf-1w0" firstAttribute="centerY" secondItem="EaG-LO-q5V" secondAttribute="centerY" id="kTB-b2-eam"/>
@@ -165,6 +174,7 @@
                 <constraint firstItem="EaG-LO-q5V" firstAttribute="leading" secondItem="GSN-Zf-1w0" secondAttribute="trailing" constant="10" id="u8u-DW-Pc4"/>
                 <constraint firstItem="EaG-LO-q5V" firstAttribute="top" secondItem="x8J-Zt-txm" secondAttribute="top" constant="35" id="vfB-GE-2hs"/>
                 <constraint firstItem="eDb-Se-3f1" firstAttribute="leading" secondItem="x8J-Zt-txm" secondAttribute="leading" constant="165" id="w2a-hc-pvB"/>
+                <constraint firstItem="Rqp-ag-uwD" firstAttribute="bottom" secondItem="GSN-Zf-1w0" secondAttribute="bottom" id="wPs-MQ-SMj"/>
                 <constraint firstAttribute="bottom" secondItem="Li4-CG-0PL" secondAttribute="bottom" constant="105.5" id="xLp-aw-snH"/>
                 <constraint firstAttribute="bottom" secondItem="8ct-rf-g7W" secondAttribute="bottom" constant="59.5" id="zhM-yM-y1T"/>
             </constraints>
@@ -185,6 +195,7 @@
                 <outlet property="calljing" destination="2cf-Y0-TFw" id="DnF-RZ-RX7"/>
                 <outlet property="callxin" destination="8ct-rf-g7W" id="IbY-kB-BH4"/>
                 <outlet property="closeBtn" destination="EaG-LO-q5V" id="5Wj-76-PNq"/>
+                <outlet property="nameTitle" destination="Rqp-ag-uwD" id="auy-ky-HDa"/>
                 <outlet property="phoneTextField" destination="GSN-Zf-1w0" id="x1b-DK-Xbh"/>
                 <outlet property="tableView_" destination="Gwh-X3-Ojv" id="OVW-tq-Vvi"/>
             </connections>

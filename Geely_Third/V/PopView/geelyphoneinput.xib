@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -123,6 +123,12 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CB-z2-SKj">
                     <rect key="frame" x="298" y="138" width="42" height="136"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqD-uw-jru">
+                    <rect key="frame" x="50" y="90" width="200" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -150,6 +156,7 @@
                 <constraint firstItem="u8G-xx-QCc" firstAttribute="top" secondItem="p10-IU-Ksm" secondAttribute="bottom" constant="25" id="G4Z-iI-3Ie"/>
                 <constraint firstItem="fGJ-TU-QxJ" firstAttribute="top" secondItem="s4s-3C-O4D" secondAttribute="bottom" constant="19" id="Gaf-nc-oZw"/>
                 <constraint firstAttribute="trailing" secondItem="p10-IU-Ksm" secondAttribute="trailing" constant="35" id="Hfn-ev-tWQ"/>
+                <constraint firstAttribute="trailing" secondItem="CqD-uw-jru" secondAttribute="trailing" constant="90" id="JTJ-J7-h9z"/>
                 <constraint firstItem="fGJ-TU-QxJ" firstAttribute="top" secondItem="1Dt-1j-2Dm" secondAttribute="bottom" constant="19" id="KIE-S9-cv2"/>
                 <constraint firstItem="1Dt-1j-2Dm" firstAttribute="leading" secondItem="aKu-GO-7cQ" secondAttribute="trailing" id="NJv-2Z-xWp"/>
                 <constraint firstItem="Brt-J1-SAR" firstAttribute="centerY" secondItem="6Ly-Xk-wGR" secondAttribute="centerY" id="NgZ-tO-Swv"/>
@@ -159,8 +166,10 @@
                 <constraint firstItem="efk-iY-ybN" firstAttribute="top" secondItem="aU0-lt-nur" secondAttribute="top" constant="90" id="XpN-Sx-wlq"/>
                 <constraint firstItem="6jy-BN-2Q6" firstAttribute="top" secondItem="efk-iY-ybN" secondAttribute="bottom" constant="25" id="a8K-ol-VZt"/>
                 <constraint firstAttribute="bottom" secondItem="0CB-z2-SKj" secondAttribute="bottom" constant="161" id="aED-8S-4ih"/>
+                <constraint firstItem="CqD-uw-jru" firstAttribute="bottom" secondItem="efk-iY-ybN" secondAttribute="bottom" id="aF1-AZ-8po"/>
                 <constraint firstItem="KIi-3T-Or0" firstAttribute="leading" secondItem="aU0-lt-nur" secondAttribute="leading" id="b71-fp-ToK"/>
                 <constraint firstItem="KIi-3T-Or0" firstAttribute="top" secondItem="aU0-lt-nur" secondAttribute="top" id="dfh-pP-f88"/>
+                <constraint firstItem="CqD-uw-jru" firstAttribute="leading" secondItem="aU0-lt-nur" secondAttribute="leading" constant="50" id="eUb-VB-zxq"/>
                 <constraint firstItem="fGJ-TU-QxJ" firstAttribute="leading" secondItem="aU0-lt-nur" secondAttribute="leading" constant="15" id="iqD-Uu-qDG"/>
                 <constraint firstAttribute="bottom" secondItem="KIi-3T-Or0" secondAttribute="bottom" id="ixw-J6-YO6"/>
                 <constraint firstAttribute="trailing" secondItem="fGJ-TU-QxJ" secondAttribute="trailing" constant="39" id="klc-Ka-cL4"/>
@@ -170,6 +179,7 @@
                 <constraint firstAttribute="trailing" secondItem="6Ly-Xk-wGR" secondAttribute="trailing" constant="55" id="rXK-9M-iS0"/>
                 <constraint firstItem="s4s-3C-O4D" firstAttribute="top" secondItem="EXv-Tb-vnw" secondAttribute="bottom" id="rel-R0-C6s"/>
                 <constraint firstItem="dQ3-b6-0ZA" firstAttribute="leading" secondItem="kbV-LJ-aMQ" secondAttribute="trailing" id="rvk-nH-YxE"/>
+                <constraint firstItem="CqD-uw-jru" firstAttribute="top" secondItem="efk-iY-ybN" secondAttribute="top" id="sF8-ro-Fcp"/>
                 <constraint firstAttribute="bottom" secondItem="efk-iY-ybN" secondAttribute="bottom" constant="315" id="tsf-6G-UdE"/>
                 <constraint firstAttribute="trailing" secondItem="u8G-xx-QCc" secondAttribute="trailing" constant="50" id="v1v-Al-D2u"/>
                 <constraint firstAttribute="trailing" secondItem="EXv-Tb-vnw" secondAttribute="trailing" constant="55" id="wPx-bw-QxT"/>
@@ -193,6 +203,7 @@
                 <outlet property="btnjing" destination="s4s-3C-O4D" id="dGh-vK-iU7"/>
                 <outlet property="btnxin" destination="aKu-GO-7cQ" id="6kr-ny-1bz"/>
                 <outlet property="listBtn" destination="0CB-z2-SKj" id="Ajc-to-yzV"/>
+                <outlet property="nameTitle" destination="CqD-uw-jru" id="ZAt-yL-Coo"/>
                 <outlet property="phoneCallBtn" destination="fGJ-TU-QxJ" id="6XC-XH-W02"/>
                 <outlet property="phoneTextField" destination="efk-iY-ybN" id="GGe-O4-vdV"/>
             </connections>

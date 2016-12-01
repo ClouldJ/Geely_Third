@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnback;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIButton *listBtn;
+@property (weak, nonatomic) IBOutlet UILabel *nameTitle;
 
 @property (nonatomic ,assign) id<GeelyPhoneInputViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;

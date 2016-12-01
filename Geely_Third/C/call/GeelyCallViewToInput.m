@@ -33,6 +33,7 @@
 //        scrollView.scrollEnabled=NO;
 //        [self addSubview:scrollView];
 //        [scrollView addSubview:callInputView];
+        self.nameTitle.font = [UIFont fontWithName:@"GEELY Narrow regular 20151114" size:21];
         [self actionButtons];
     }
     return self;
@@ -89,7 +90,8 @@
 
     NSInteger index = btn.tag - 1;
     [buttons addObject:[NSString stringWithFormat:@"%ld",index]];
-    self.phoneTextField.text = [buttons componentsJoinedByString:@""];
+
+    self.nameTitle.text = [buttons componentsJoinedByString:@""];
 }
 
 -(void)callBtnAction:(UIButton *)btn {
@@ -100,26 +102,21 @@
     [UIView animateWithDuration:0.3 animations:^{
         [self addSubview:vc];
         self.bgImageView.hidden=YES;
-        self.phoneTextField.hidden=YES;
+        self.nameTitle.hidden=YES;
     }];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-    mainRequest.requestRadio.type = @0;
-    mainRequest.requestPhone.type = @2;
-    mainRequest.requestMusic.type = @0;
-    mainRequest.requestVoice.type = @0;
-    mainRequest.requestVolume.type = @1;
-    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
     
-    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+    [[[SingleModel sharedInstance] singleMainRequest:@"Phone" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     }];
+
 }
 - (void)calledEnd{
     self.bgImageView.hidden=NO;
-    self.phoneTextField.hidden=NO;
+    self.nameTitle.hidden=NO;
     [vc removeFromSuperview];
     
 }
@@ -130,7 +127,7 @@
     }else if(buttons.count>0){
         [buttons removeObjectAtIndex:buttons.count-2];
     }
-    self.phoneTextField.text = [buttons componentsJoinedByString:@""];
+    self.nameTitle.text = [buttons componentsJoinedByString:@""];
 
 }
 
