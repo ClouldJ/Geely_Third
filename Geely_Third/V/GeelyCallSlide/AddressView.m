@@ -67,12 +67,12 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     return _maintableView.frame.size.height/5;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    AddressCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self.delegate addressViewCellSelected:cell.address];
-    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    AddressCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    [self.delegate addressViewCellSelected:cell.address];
+//    
+//}
 
 - (void)initialize {
     [self backgroundConfig];
@@ -80,12 +80,12 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(340-45, (435-60)/2-10, 30, 60);
+    btn.frame = CGRectMake(340-45, (435-60)/2+20, 30, 60);
     btn.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:btn];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoCallWill:)];
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(gotoCallWill:)];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(daodioanisdnioasniodnoi:)];
     swipe.direction = UISwipeGestureRecognizerDirectionUp;
     [btn addGestureRecognizer:tap];
     [btn addGestureRecognizer:swipe];
@@ -93,6 +93,14 @@ static NSString *const AddressCellIdentifier = @"AddressCell";
     [tap requireGestureRecognizerToFail:swipe];
     
 //    [btn addTarget:self action:@selector(gotoCallWill:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)daodioanisdnioasniodnoi:(UISwipeGestureRecognizer *)ss {
+    if (ss.direction == UISwipeGestureRecognizerDirectionUp) {
+        if ([self.delegate respondsToSelector:@selector(gotoCallWillView)]&&self.delegate) {
+            [self.delegate gotoCallWillView];
+        }
+    }
 }
 
 -(void)gotoCallWill:(UIGestureRecognizer *)btn {

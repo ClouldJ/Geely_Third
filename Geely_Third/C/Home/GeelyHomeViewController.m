@@ -990,11 +990,20 @@
         imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bgLeft"];
         [self rightViewMoveToLeft];
         imageNewBg.hidden = YES;
+        
+        dynamicViewSet.hidden = YES;
+        dynamicViewCall.hidden = YES;
+        dynamicViewMusic.hidden = YES;
+        
     }else{
         [[NSNotificationCenter defaultCenter] postNotificationName:TORIGHT object:nil];
         imageViewContentBG.image = [UIImage imageNamed:@"Geely_11-17home_bg"];
         [self rightViewMoveToRight];
         imageNewBg.hidden = NO;
+        
+        dynamicViewSet.hidden = NO;
+        dynamicViewCall.hidden = NO;
+        dynamicViewMusic.hidden = NO;
     }
 }
 
