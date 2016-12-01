@@ -34,4 +34,6 @@
 
 #import "GeelyCurrentViewController.h"
 
+#import "SettingSound.h"
+
 #endif

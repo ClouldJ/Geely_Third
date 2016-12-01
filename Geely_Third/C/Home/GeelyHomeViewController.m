@@ -206,8 +206,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backDynamicView) name:SLIDEDISMISS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected:) name:SLIDESETTINGSTYLE object:nil];
     
-    vvlioce = [[MPMusicPlayerController alloc] init];
-    volume = vvlioce.volume;
     
     isShowing = NO;
     music = NO;
@@ -356,38 +354,40 @@
 }
 
 -(void)volumeAdd{
-    [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-    } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-    }];
-    
-    if (vvlioce.volume<=1) {
-        volume = volume+0.1;
-        vvlioce.volume = volume;
-        [vv_bottom.vv autoMakeViewFrame:vvlioce.volume*2];
+    if (volume<1) {
+        volume += 0.1;
+        [vv_bottom.vv autoMakeViewFrame:volume*2];
+        [SettingSound setSysVolumWith:volume];
+        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
     }
+
 }
 
 -(void)volumeLes {
-    if (vvlioce.volume>=0) {
-        volume = volume-0.1;
-        vvlioce.volume = volume;
-        [vv_bottom.vv autoMakeViewFrame:vvlioce.volume*2];
+    if (volume <= 0) {
+        //静音
+        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@0] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
         
-        if (vvlioce.volume == 0) {
-            [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@0] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            }];
-        }else{
-            [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
-            }];
-        }
+    }else{
+        volume -= 0.1;
+        [SettingSound setSysVolumWith:volume];
+        [vv_bottom.vv autoMakeViewFrame:volume*2];
+        [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
+        [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+        }];
     }
 }
 

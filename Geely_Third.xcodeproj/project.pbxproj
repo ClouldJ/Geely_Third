@@ -1323,6 +1323,7 @@
 		C2DEC4F11DD5B0CA00343E80 /* Geely_music_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */; };
 		C2DEC4F21DD5B0CA00343E80 /* Geely_red_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */; };
 		C2EE57341DEFF59F005BADF5 /* nameofmusic1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EE57331DEFF59F005BADF5 /* nameofmusic1@2x.png */; };
+		C2EE57371DF01C71005BADF5 /* SettingSound.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EE57361DF01C71005BADF5 /* SettingSound.m */; };
 		C2F9224D1DDC47E40061B04F /* HGBaseRequest+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */; };
 		C2F9224E1DDC47E40061B04F /* InterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9224C1DDC47E40061B04F /* InterfaceConfig.m */; };
 /* End PBXBuildFile section */
@@ -2815,6 +2816,8 @@
 		C2DEC4E41DD5B0CA00343E80 /* Geely_music_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_music_logo@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_music_logo@2x.png"; sourceTree = "<group>"; };
 		C2DEC4E51DD5B0CA00343E80 /* Geely_red_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Geely_red_info@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/Geely_red_info@2x.png"; sourceTree = "<group>"; };
 		C2EE57331DEFF59F005BADF5 /* nameofmusic1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nameofmusic1@2x.png"; path = "../../../../WillyZhao/Geely_Third/Geely_Third/Images/nameofmusic1@2x.png"; sourceTree = "<group>"; };
+		C2EE57351DF01C71005BADF5 /* SettingSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingSound.h; path = ../../../../WillyZhao/Geely_Third/Geely_Third/M/SettingSound.h; sourceTree = "<group>"; };
+		C2EE57361DF01C71005BADF5 /* SettingSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingSound.m; path = ../../../../WillyZhao/Geely_Third/Geely_Third/M/SettingSound.m; sourceTree = "<group>"; };
 		C2F922491DDC47E40061B04F /* HGBaseRequest+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HGBaseRequest+Response.h"; sourceTree = "<group>"; };
 		C2F9224A1DDC47E40061B04F /* HGBaseRequest+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HGBaseRequest+Response.m"; sourceTree = "<group>"; };
 		C2F9224B1DDC47E40061B04F /* InterfaceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceConfig.h; sourceTree = "<group>"; };
@@ -3761,6 +3764,8 @@
 		C263FA3A1DD4110400ED9EC4 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				C2EE57351DF01C71005BADF5 /* SettingSound.h */,
+				C2EE57361DF01C71005BADF5 /* SettingSound.m */,
 				C263FA3B1DD4110400ED9EC4 /* GeelyPublicHeader.h */,
 				C27C02671DD9B3B300C1A278 /* UIImageView+ImageSequence.h */,
 				C27C02681DD9B3B300C1A278 /* UIImageView+ImageSequence.m */,
@@ -6179,6 +6184,7 @@
 				C263FA151DD410C400ED9EC4 /* GeelyMusicCDAnimationView.m in Sources */,
 				C263FA141DD410C400ED9EC4 /* GeelyMusicAudioManager.m in Sources */,
 				2C0E974F1DD46407002EEC72 /* CLAVPlayerView.m in Sources */,
+				C2EE57371DF01C71005BADF5 /* SettingSound.m in Sources */,
 				C263F9981DD40F3100ED9EC4 /* GeelyHomeViewController.m in Sources */,
 				C263F97A1DD40F3100ED9EC4 /* GeelyKeyBoardCustom.m in Sources */,
 				C27C02691DD9B3B300C1A278 /* UIImageView+ImageSequence.m in Sources */,
