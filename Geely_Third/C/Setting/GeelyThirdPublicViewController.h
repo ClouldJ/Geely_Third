@@ -9,8 +9,12 @@
 #import "GeelyPublicViewController.h"
 
 #import "GeelyLeftFrameDynamicView.h"
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface GeelyThirdPublicViewController : GeelyPublicViewController
+@interface GeelyThirdPublicViewController : GeelyPublicViewController {
+    MPMusicPlayerController *vvlioce;
+    CGFloat volume;
+}
 
 @property (nonatomic, strong) UIScrollView *scrollView_;
 
@@ -27,4 +31,6 @@
 
 @property (nonatomic, strong) UIImageView *imageViewBGBBG;
 -(void)addFixedView;
+
+-(void)showPopAnimation;
 @end

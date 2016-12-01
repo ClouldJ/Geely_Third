@@ -156,8 +156,9 @@
     [SingleModel sharedInstance].iconDataArr = [NSMutableArray array];
     [SingleModel sharedInstance].iconData_Image = [NSMutableArray arrayWithObjects:model1,model2,model3,model4, nil];
     [SingleModel sharedInstance].iconIndexArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4", nil];
-    // Do any additional setup after loading the view.
     
+    [SingleModel sharedInstance].energyFlowDatas = [NSMutableArray array];
+
     
 //    [self asyncAddImageData];
 }

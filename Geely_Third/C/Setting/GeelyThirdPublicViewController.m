@@ -60,6 +60,10 @@ typedef void(^Finish)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    vvlioce = [[MPMusicPlayerController alloc] init];
+    volume = vvlioce.volume;
+    
     self.view.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = [UIColor clearColor];
     [self addFixedView];
@@ -133,9 +137,9 @@ typedef void(^Finish)(void);
     [self.contentView addSubview:self.slideView];
     
     
-    [self.volumeAdd addTarget:self action:@selector(volumeAddd:) forControlEvents:UIControlEventTouchUpInside];
-    [self.volumeLes addTarget:self action:@selector(volumeLedd:) forControlEvents:UIControlEventTouchUpInside];
-    [self.homeBtn addTarget:self action:@selector(homeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.volumeAdd addTarget:self action:@selector(volumeAddd:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.volumeLes addTarget:self action:@selector(volumeLedd:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.homeBtn addTarget:self action:@selector(homeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)swipeGestureAir:(UISwipeGestureRecognizer *)ss {
@@ -235,6 +239,14 @@ typedef void(^Finish)(void);
         }
     }
 }
+
+-(void)showPopAnimation {
+    NSLog(@"首页");
+    GeelyDisplayPowerView *cc = [[GeelyDisplayPowerView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    cc.delegate = self;
+    [cc showAnimation];
+}
+
 
 
 -(void)contentViewAnimation:(Finish)finish{

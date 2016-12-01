@@ -25,6 +25,8 @@ typedef enum {
 
 @property (nonatomic, copy) NSString *musciName;
 
+@property (nonatomic, strong) NSMutableArray *energyFlowDatas;
+
 @property (nonatomic, strong) Mute *muteSingle;
 
 //@property (nonatomic, strong) GeelySildeBarView *dynamicSingleView;

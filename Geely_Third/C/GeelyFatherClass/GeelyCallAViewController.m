@@ -99,17 +99,13 @@
 
 -(void)volumeAdd{
     [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-    mainRequest.requestVolume.type = @2;
-    mainRequest.requestPhone.type = @0;
-    mainRequest.requestRadio.type = @0;
-    mainRequest.requestVoice.type = @0;
-    mainRequest.requestMusic.type = @0;
-    mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-    [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+    
+    [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     } failure:^(__kindof HGBaseRequest *request, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
     }];
+
     if (vvlioce.volume<=1) {
         volume = volume+0.1;
         vvlioce.volume = volume;

@@ -12,4 +12,6 @@
 
 -(void)btnCheckTags:(NSInteger)tag dataIndex:(NSInteger)index;
 
+-(void)addImageViewWithIndex:(NSInteger)index;
+
 @end

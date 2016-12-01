@@ -43,9 +43,22 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
+
+-(void)checkMusicState:(NSNotification *)na {
+    manager = [GeelyMusicAudioManager defaultManager];
+    if (manager.player.playing) {
+        contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
+    }else{
+        contentImage.image = [UIImage imageNamed:@"icon213123iundoinadoin1"];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     fmAm = YES;
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkMusicState:) name:POWERDISMISS object:nil];
     
     UIButton *button_volume_ = [[UIButton alloc] initWithFrame:CGRectMake(WWWWWWWWWWW/2 - 160, HHHHHHHHHHH-180, 60, 60)];
     button_volume_.backgroundColor = [UIColor clearColor];
@@ -76,8 +89,7 @@
     self.contentScrollView.delegate = self;
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.scrollEnabled = YES;
-//    self.contentScrollView.contentSize = CGSizeMake(1228*2, 0);
-//    self.contentScrollView.bounces = NO;
+
     self.contentImageView.image = [UIImage imageNamed:@"12.3_ts_comfort_audio-text_20160928"];
     [self addFixedView];
     

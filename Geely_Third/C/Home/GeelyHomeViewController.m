@@ -116,20 +116,17 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    if ([SingleModel sharedInstance].iconData_Image.count>0) {
+        [vv_bottom.iconView addImageViewWithIndex:[SingleModel sharedInstance].iconData_Image.count];
+    }
 
 }
 
 #pragma mark 状态栏图标切换
 -(void)iconSelected:(NSNotification *)na {
-    
-    NSLog(@"%@", na.object);
-    
-    NSLog(@"%@", na);
-    
-    
-    
+
     NSDictionary *dic = na.userInfo;
-//    NSString *str = NSStringFromClass([[[GeelyCurrentViewController new] topViewController] class]);
     if ([dic[@"classCurrent"] isEqualToString:@"1"]) {
         [vv_bottom.iconView btnCheckTags:[dic[@"style"] integerValue] dataIndex:[dic[@"style"] integerValue]];
         if ([dic[@"style"] integerValue] == 2) {
@@ -142,7 +139,11 @@
 #pragma mark 首页返回事件处理
 -(void)backDynamicView{
     
-    [self leftHiden];
+    if (!isLeftBtn) {
+        [self leftHiden];
+    }else{
+        [self rightHiden];
+    }
     [self dynamicdismissView];
 
 }
@@ -323,7 +324,11 @@
 //    UIWindow *window = [UIApplication sharedApplication].keyWindow;
 //    window.rootViewController = [[GeelyHomeViewController alloc] init];
     NSLog(@"单击处理");
-    [self leftHiden];
+    if (!isLeftBtn) {
+        [self leftHiden];
+    }else{
+        [self rightHiden];
+    }
     [self dynamicdismissView];
 }
 

@@ -8,8 +8,11 @@
 
 #import "GeelyDisplayPowerView.h"
 
+#import "GeelyMusicAudioManager.h"
+
 @interface GeelyDisplayPowerView () {
     UIView *dis;
+    GeelyMusicAudioManager *manager;
 }
 
 @end
@@ -40,7 +43,6 @@
 
 -(void)removeAction {
     [self removeFromSuperview];
-    [[NSNotificationCenter defaultCenter] postNotificationName:POWERDISMISS object:nil];
 }
 
 -(void)showAnimation {
@@ -63,6 +65,14 @@
 -(void)backBtnAction:(UIButton *)btn {
         if (btn.tag == 1) {
             if ([self.delegate respondsToSelector:@selector(showPowerView:)]&&self.delegate) {
+                
+                //TODO关闭音乐
+                manager = [GeelyMusicAudioManager defaultManager];
+                
+                if (manager.player.playing) {
+                    [manager.player pause];
+                }
+                
                 [self.delegate showPowerView:self];
             }
         }else if (btn.tag == 2) {
