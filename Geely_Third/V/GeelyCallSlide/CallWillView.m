@@ -128,13 +128,13 @@
     CGFloat height1 = rightImage.size.height;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:rightImage];
-    imageView.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-14, width1, height1);
+    imageView.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-4, width1, height1);
     imageView.userInteractionEnabled = YES;
     [self.callWillContentView addSubview:imageView];
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-14, width1, height1);
+    btn.frame = CGRectMake(self.contentView.bounds.size.width-width1, (435 - height1)/2-4, width1, height1);
 //    [btn setBackgroundImage:rightImage forState:UIControlStateNormal];
 //    btn.backgroundColor = [UIColor redColor];
     [self.callWillContentView addSubview:btn];
@@ -194,7 +194,6 @@
 
 - (void)buttonClicked:(UIButton *)sender {
     NSInteger index = sender.tag - 2000;
-    //    _keyboardImageView.image = nil;
     _keyboardImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"keyboard_%lu_selected@2x.jpg", index + 1]];
     
     NSString *indexString;

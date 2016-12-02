@@ -35,6 +35,8 @@
 #import "GeelyCallAViewController.h"
 #import "GeelyMusicAViewController.h"
 #import "GeelySettingAViewController.h"
+#import "GeelyMapViewController.h"
+
 
 #define DEV_H [UIScreen mainScreen].bounds.size.height
 #define DEV_W [UIScreen mainScreen].bounds.size.width
@@ -112,6 +114,10 @@
 
 
 @implementation GeelyHomeViewController
+
+-(void)check {
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -250,7 +256,7 @@
     imageNewBg.image = [UIImage imageNamed:@"imageNewBg"];
     [baseView addSubview:imageNewBg];
     
-
+    volume = [SettingSound getSystemVolumValue];
     
     
     vv_bottom = [[GeelyBottomAirAutoView alloc] initWithFrame:CGRectMake(0, baseView.frame.size.height - 57, 1310, 57)];
@@ -365,7 +371,6 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
         }];
     }
-
 }
 
 -(void)volumeLes {
@@ -661,6 +666,8 @@
         case 0:
         {
             NSLog(@"点击的第一个图表，不做任何反应");
+            GeelyMapViewController *map = [[GeelyMapViewController alloc] init];
+            [self.navigationController pushViewController:map animated:NO];
         }
             break;
         case 1:

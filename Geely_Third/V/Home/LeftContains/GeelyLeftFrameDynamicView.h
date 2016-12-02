@@ -42,8 +42,6 @@ typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 
 -(instancetype)initWithFrame:(CGRect)frame;
 
--(instancetype)initWithFrame:(CGRect)frame animateStyle:(GeelyDynamicViewStyle)style;
-
 @property (nonatomic, strong) UITableView *tableView_;
 
 @property (nonatomic, assign) GeelyDynamicViewStyle style;
@@ -54,12 +52,12 @@ typedef void(^GeelyDynamicFinishView)(UIView *amicView);
 
 @property (nonatomic, assign) BOOL showSingle;
 
--(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
+//-(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
 
 -(void)dismissAnimationView:(UIView *)animaView animationFinish:(GeelyDynamicFinish)finish;
 
 -(void)showAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
--(void)dismissAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
+//-(void)dismissAnimationStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinishView)finish;
 
 
 @end

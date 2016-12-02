@@ -61,7 +61,7 @@
     [self addFixedView];
     
     __block __weak GeelySettingAViewController *weakself = self;
-    
+//    __block __weak UITableView *weakTableView_ = tableView_;
     [self addImageViewAnimate:^{
         
         UIView *view_setting = [[[NSBundle mainBundle] loadNibNamed:@"GeelySettingviewA" owner:weakself options:nil]firstObject];

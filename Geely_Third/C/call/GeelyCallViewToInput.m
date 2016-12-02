@@ -16,7 +16,6 @@
     NSMutableArray *buttons;
     MainRequest *mainRequest;
     UIView *callInputView;
-    UIScrollView *scrollView;
     GeelyPhoneCalledView *vc;
 }
 
@@ -89,6 +88,11 @@
 -(void)btnAction:(UIButton *)btn {
 
     NSInteger index = btn.tag - 1;
+    
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"12-2callAViewKeyBoard%ld",index]];
+    
+    self.bgImageView.image = image;
+    
     [buttons addObject:[NSString stringWithFormat:@"%ld",index]];
 
     self.nameTitle.text = [buttons componentsJoinedByString:@""];

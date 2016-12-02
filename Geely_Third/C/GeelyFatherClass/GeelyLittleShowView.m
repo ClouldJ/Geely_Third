@@ -54,6 +54,9 @@
     
     //media
     media = [[GeelyMediaLittleView alloc] initWithFrame:CGRectMake(0, 435, 340, 435)];
+    
+//    __block __weak AVAudioPlayer *weakAcPlayer = acPlayer;
+//    __block __weak GeelyLittleShowView *weakSelf = self;
     media.block = ^(){
         [acPlayer play];
         [self.contentScrollView scrollAnimationToOffSet:CGPointMake(0, 0)];

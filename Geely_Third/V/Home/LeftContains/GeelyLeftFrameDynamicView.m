@@ -10,7 +10,7 @@
 #import "GeelyCurrentView.h"
 #import "CellPhoneView.h"
 
-@interface GeelyLeftFrameDynamicView () <UITableViewDelegate,GeelySildeBarViewDelegate,UITableViewDataSource> {
+@interface GeelyLeftFrameDynamicView () <GeelySildeBarViewDelegate> {
     GeelySildeBarView *currentSlide;
 }
 
@@ -35,61 +35,61 @@
 }
 
 
--(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinish)finish{
-    self.style = style;
-    
-    switch (self.style) {
-        case DYNAMIC_MUSIC:
-        {
-            //音乐
-            GeelySildeBarView *vc = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_MUSIC];
-            [self addSubview:vc];
-            [self animationView:vc finish:finish style:DYNAMIC_MUSIC];
-            
-        }
-            break;
-        case DYNAMIC_RADIO:
-        {
-            //电台
-            GeelySildeBarView *df = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_RADIO];
-//            df.delegate = self;
-            [self addSubview:df];
-            [self animationView:df finish:finish style:DYNAMIC_RADIO];
-        }
-            break;
-        case DYNAMIC_CALLZ:
-        {
-            //输入电话
-            GeelySildeBarView *vd = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_CALLZ];
-//            vd.delegate = self;
-            [self addSubview:vd];
-            [self animationView:vd finish:finish style:DYNAMIC_CALLZ];
-        }
-            break;
-        case DYNAMIC_CALLD:
-        {
-            //呼出电话
-        }
-            break;
-        case DYNAMIC_CALLL:
-        {
-            //常用联系人
-        }
-            break;
-        case DYNAMIC_SETTZ:
-        {
-            //设置
-            GeelySildeBarView *vf = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_SETTZ];
-//            vf.delegate = self;
-            [self addSubview:vf];
-            [self animationView:vf finish:finish style:DYNAMIC_SETTZ];
-        }
-            break;
-        default:
-            break;
-    }
-    
-}
+//-(void)startAnimationViewStyle:(GeelyDynamicViewStyle)style finish:(GeelyDynamicFinish)finish{
+//    self.style = style;
+//    
+//    switch (self.style) {
+//        case DYNAMIC_MUSIC:
+//        {
+//            //音乐
+//            GeelySildeBarView *vc = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_MUSIC];
+//            [self addSubview:vc];
+//            [self animationView:vc finish:finish style:DYNAMIC_MUSIC];
+//            
+//        }
+//            break;
+//        case DYNAMIC_RADIO:
+//        {
+//            //电台
+//            GeelySildeBarView *df = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_RADIO];
+////            df.delegate = self;
+//            [self addSubview:df];
+//            [self animationView:df finish:finish style:DYNAMIC_RADIO];
+//        }
+//            break;
+//        case DYNAMIC_CALLZ:
+//        {
+//            //输入电话
+//            GeelySildeBarView *vd = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_CALLZ];
+////            vd.delegate = self;
+//            [self addSubview:vd];
+//            [self animationView:vd finish:finish style:DYNAMIC_CALLZ];
+//        }
+//            break;
+//        case DYNAMIC_CALLD:
+//        {
+//            //呼出电话
+//        }
+//            break;
+//        case DYNAMIC_CALLL:
+//        {
+//            //常用联系人
+//        }
+//            break;
+//        case DYNAMIC_SETTZ:
+//        {
+//            //设置
+//            GeelySildeBarView *vf = [[GeelySildeBarView alloc] initWithFrame:CGRectMake(0, 0, 0, 435) customStyle:DYNAMIC_SETTZ];
+////            vf.delegate = self;
+//            [self addSubview:vf];
+//            [self animationView:vf finish:finish style:DYNAMIC_SETTZ];
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//}
 
 #pragma mark 设置点击效果
 -(void)geelySettingSlideViewSelectedWith:(NSInteger)index {

@@ -99,7 +99,7 @@
     [self addFixedView];
     
     __block __weak GeelyMusicAViewController *weakself = self;
-    
+
     [self addImageViewAnimate:^{
         view_first = [[[NSBundle mainBundle] loadNibNamed:@"musicScrollFirst" owner:weakself options:nil]firstObject];
         view_first.backgroundColor = [UIColor clearColor];
@@ -225,6 +225,12 @@
     switch (btn.tag) {
         case 0:
         {
+            [[NSNotificationCenter defaultCenter]postNotificationName:URLSTOP object:nil];
+            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+            }];
             musicBGImageView.image = [UIImage imageNamed:@"nameofmusic"];
             contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
             [manager.player stop];
@@ -237,7 +243,7 @@
             if (manager.player.playing) {
                 
                 [manager.player pause];
-                
+                [[NSNotificationCenter defaultCenter]postNotificationName:URLSTOP object:nil];
                 [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@0] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
                 } failure:^(__kindof HGBaseRequest *request, NSError *error) {
@@ -259,7 +265,7 @@
                     
                 }
                 contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
-                
+                [[NSNotificationCenter defaultCenter]postNotificationName:URLSTOP object:nil];
                 [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
                 } failure:^(__kindof HGBaseRequest *request, NSError *error) {
@@ -270,6 +276,12 @@
             break;
         case 2:
         {
+            [[NSNotificationCenter defaultCenter]postNotificationName:URLSTOP object:nil];
+            [[[SingleModel sharedInstance] singleMainRequest:@"Music" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+            } failure:^(__kindof HGBaseRequest *request, NSError *error) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
+            }];
             musicBGImageView.image = [UIImage imageNamed:@"nameofmusic1"];
             contentImage.image = [UIImage imageNamed:@"暂停musciBG"];
             [manager.player stop];
@@ -378,6 +390,7 @@
                     fm.alpha = 1;
                 }];
             }];
+            self.contentScrollView.contentOffset = CGPointMake(0, 0);
             self.contentScrollView.scrollEnabled = NO;
 #pragma mark 电台操作
             [[[SingleModel sharedInstance] singleMainRequest:@"Radio" type_value:@1] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {

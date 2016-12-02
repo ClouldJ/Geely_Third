@@ -22,6 +22,14 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)showPowerView:(GeelyDisplayPowerView *)view {
+    
+}
+
+-(void)showDisplayView:(GeelyDisplayPowerView *)view {
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning {

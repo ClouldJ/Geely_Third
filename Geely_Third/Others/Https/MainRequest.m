@@ -21,7 +21,8 @@
 - (NSString *)requestUrl {
 //    return @"http://115.29.160.160/tr.php";
     
-    NSString *urlString = @"http://115.29.160.160/tr.php";
+//    NSString *urlString = @"http://115.29.160.160/tr.php";
+    NSString *urlString = @"http://172.26.135.1/tr.php";
     
     if (self.requestMusic) {
         urlString = [HGNetworkPrivate anotherUrlStringWithOriginUrlString:urlString appendParameters:[self.requestMusic mj_keyValues] keyString:@"music"];

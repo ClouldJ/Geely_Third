@@ -85,7 +85,6 @@ NSString *const SLIDESETTINGSTYLE_NOTICE = @"SLIDESETTINGSTYLE_NOTICE";
             
             self.animaeCD = [[GeelyMusicCDAnimationView alloc] initWithFrame:CGRectMake((340-180)/2-15, 170, 180, 180)];
             self.animaeCD.delegate = self;
-//            self.animaeCD.alpha = 0;
             [self.bg_imageView addSubview:self.animaeCD];
             
             images = [NSMutableArray array];
@@ -300,6 +299,23 @@ NSString *const SLIDESETTINGSTYLE_NOTICE = @"SLIDESETTINGSTYLE_NOTICE";
     }
     NSString *showtimeNew = [formatter stringFromDate:d];
     return showtimeNew;
+}
+
+-(void)musicCDAnimationPaused:(GeelyMusicCDAnimationView *)musicView {
+    //暂停
+    NSLog(@"音乐暂停");
+}
+
+-(void)musicCDAnimationResumed:(GeelyMusicCDAnimationView *)musicView {
+    NSLog(@"恢复音乐操作");
+}
+
+-(void)musicCDAnimationWillStart:(GeelyMusicCDAnimationView *)musicView {
+    NSLog(@"即将开始音乐操作");
+}
+
+-(void)musicCDAnimationDidFinish:(GeelyMusicCDAnimationView *)musicView {
+    NSLog(@"已经完成一首播放");
 }
 
 /*

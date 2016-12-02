@@ -31,14 +31,7 @@
 }
 
 -(void)loadubView {
-    
-    mainRequest = [[MainRequest alloc] init];
-    mainRequest.requestMusic = [[Music alloc] init];
-    mainRequest.requestVolume = [[Volume alloc] init];
-    mainRequest.requestMute = [[Mute alloc] init];
-    mainRequest.requestPhone = [[Phone alloc] init];
-    mainRequest.requestRadio = [[Radio alloc] init];
-    mainRequest.requestMute =[[Mute alloc] init];
+
     
      btn = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 21, (self.frame.size.height - 33/2)/2, 21, 33/2)];
     [btn setBackgroundImage:[UIImage imageNamed:@"音量auto"] forState:UIControlStateNormal];
@@ -60,7 +53,6 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
     [image_gesture addGestureRecognizer:pan];
     
-    vvlioce = [[MPMusicPlayerController alloc] init];
     [self btnAction:btn];
     //
 //    [btn setBackgroundImage:[UIImage imageNamed:@"音量blue"] forState:UIControlStateNormal];
@@ -99,16 +91,11 @@
             if (vol<=0) {
                 vol = 0;
             }
-            vvlioce.volume = vol;
+            [SettingSound setSysVolumWith:vol];
             
             [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
-            mainRequest.requestVolume.type = @2;
-            mainRequest.requestPhone.type = @0;
-            mainRequest.requestRadio.type = @0;
-            mainRequest.requestVoice.type = @0;
-            mainRequest.requestMusic.type = @0;
-            mainRequest.requestMute = [SingleModel sharedInstance].muteSingle;
-            [mainRequest startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
+            
+            [[[SingleModel sharedInstance] singleMainRequest:@"Volume" type_value:@2] startWithBlockSuccess:^(__kindof HGBaseRequest *request) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];
             } failure:^(__kindof HGBaseRequest *request, NSError *error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:urlstart object:nil];

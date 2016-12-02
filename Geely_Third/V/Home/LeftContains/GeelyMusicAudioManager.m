@@ -177,11 +177,11 @@ static GeelyMusicAudioManager *instance_ = nil;
 }
 
 -(void)monitoringPlayback:(AVPlayerItem *)item {
-    __block __weak GeelyMusicAudioManager *weakself = self;
+//    __block __weak GeelyMusicAudioManager *weakself = self;
     //每秒执行30次
     _playTimeObserver = [self.musicPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 30) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         //计算当前在第几秒
-        float currentPlayTime = (double)item.currentTime.value/item.currentTime.timescale;
+//        float currentPlayTime = (double)item.currentTime.value/item.currentTime.timescale;
         //更新slider
     }];
 }

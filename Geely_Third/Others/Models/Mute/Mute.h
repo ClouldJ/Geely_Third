@@ -30,5 +30,6 @@
 //0 无 1打开
 @property (nonatomic, strong) NSNumber *menuState;
 @property (nonatomic, strong) NSNumber *menuIndex;
+@property (nonatomic, strong) NSNumber *settingIndex;
 
 @end

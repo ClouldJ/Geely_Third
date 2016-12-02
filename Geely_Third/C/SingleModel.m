@@ -79,6 +79,8 @@ static NSString *path;
         re.requestVoice.type = value;
     }else if (class == [Car class]) {
         re.requestCar.state = value;
+    }else if (class == [Music class]) {
+        re.requestMusic.type = value;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:URLSTOP object:nil];
     return re;

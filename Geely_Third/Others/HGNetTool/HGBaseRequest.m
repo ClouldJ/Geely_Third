@@ -30,6 +30,7 @@
     _requestArgument = nil;
     _requestTimeoutInterval = 60;
     _buildCustomUrlRequest = nil;
+//    CALayer
 }
 
 - (void)start {

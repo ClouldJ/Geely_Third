@@ -10,7 +10,6 @@
 typedef void (^AnimationBlock)();
 typedef void (^AnimationCompletedBlock)();
 @interface UIView (LevelAnimation)
-@property (nonatomic, assign) AnimationBlock block;
 -(void)geelyContentViewFrameAnimation:(AnimationBlock)block successful:(AnimationCompletedBlock)success;
 
 -(void)geelyContentViewDismiss:(AnimationBlock)running successful:(AnimationCompletedBlock)compelete;

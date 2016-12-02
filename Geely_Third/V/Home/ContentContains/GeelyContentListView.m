@@ -53,7 +53,7 @@ typedef enum {
 
 @property (nonatomic, strong) GeelyCustomPromptView *topView;
 
--(instancetype)initWithCustomType:(ButtonType)type andFrame:(CGRect)frame;
+//-(instancetype)initWithCustomType:(ButtonType)type andFrame:(CGRect)frame;
 @end
 
 @implementation GeelyContentCustomButton

@@ -82,8 +82,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(littleShowDismiss:) name:SLIDEDISMISS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iconSelected1:) name:SLIDESETTINGSTYLE object:nil];
     
-    vvlioce = [[MPMusicPlayerController alloc] init];
-    volume = vvlioce.volume;
+
     
     showED = NO;
     

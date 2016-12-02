@@ -61,8 +61,6 @@ typedef void(^Finish)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    vvlioce = [[MPMusicPlayerController alloc] init];
-    volume = vvlioce.volume;
     
     self.view.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = [UIColor clearColor];

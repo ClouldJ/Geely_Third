@@ -15,7 +15,7 @@
 #import "ImageIconModel.h"
 
 @interface GeelyNaViewController () {
-    MainRequest *request;
+    MainRequest *request1;
     NSTimer *timer;
     GeelyNoVoliceView *noVolce;
     GeelyNo *NONONONO;
@@ -129,7 +129,7 @@
     [SingleModel sharedInstance].displayType = GOLD;
     noVolce = [[GeelyNoVoliceView alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
     NONONONO = [[GeelyNo alloc] initWithFrame:CGRectMake(0, 0, WWWWWWWWWWW, HHHHHHHHHHH)];
-    request = [[MainRequest alloc] init];
+    request1 = [[MainRequest alloc] init];
     [SingleModel sharedInstance].isMusic = NO;
    timer =  [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(urlAction) userInfo:nil repeats:YES];
     
@@ -174,7 +174,7 @@
 //        [screenView showAnimate];
 //    }
 //    
-    [request startWithBlockSuccess:^(MainRequest *request) {
+    [request1 startWithBlockSuccess:^(MainRequest *request) {
         [SingleModel sharedInstance].currentRequest = request;
         NSDictionary *dic = (NSDictionary *)request.responseJSONObject;
 //        NSLog(@"数据接收状态:%@",dic);
